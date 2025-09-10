@@ -1,4 +1,5 @@
 "use client";
+import { StarAndCrescentIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,32 +10,33 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/resources", label: "Resources" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/faq", label: "FAQ" }
+    { href: "/faq", label: "FAQ" },
   ];
 
   const authLinks = [
     { href: "/login", label: "Log in", isButton: false },
-    { href: "/get-started", label: "Get Started", isButton: true }
+    { href: "/get-started", label: "Get Started", isButton: true },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed left-0 right-0 top-0 z-50 mt-12 font-neueMontreal leading-4">
+      <div className="mx-16 border">
+        <div className="flex items-center">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-white font-medium text-lg">
-              Osmo
+          <div className="flex gap-[306px] text-4xl text-white">
+            <p>Osmo</p>
+            <Link href="/">
+              <StarAndCrescentIcon />
             </Link>
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="ml-80 hidden space-x-11 border md:flex">
             {navLinks.map((link) => (
-              <Link 
+              <Link
                 key={link.href}
-                href={link.href} 
-                className="text-white hover:text-gray-300 transition-colors text-sm font-medium"
+                href={link.href}
+                className="text-[21px] text-white transition-colors hover:text-gray-300"
               >
                 {link.label}
               </Link>
@@ -42,14 +44,15 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Right side buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="ml-auto hidden items-center space-x-[42px] text-[21px] md:flex">
             {authLinks.map((link) => (
-              <Link 
+              <Link
                 key={link.href}
-                href={link.href} 
-                className={link.isButton 
-                  ? "bg-white text-black px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors"
-                  : "text-white hover:text-gray-300 transition-colors text-sm font-medium"
+                href={link.href}
+                className={
+                  link.isButton
+                    ? "rounded-md bg-white px-5 py-5 text-black transition-colors hover:bg-gray-100"
+                    : "text-white transition-colors hover:text-gray-300"
                 }
               >
                 {link.label}
@@ -59,18 +62,28 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-gray-300 transition-colors"
+              className="text-white transition-colors hover:text-gray-300"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               ) : (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               )}
             </button>
@@ -80,25 +93,26 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-black border-t border-gray-800">
+            <div className="space-y-1 border-t border-gray-800 bg-black px-2 pb-3 pt-2">
               {navLinks.map((link) => (
-                <Link 
+                <Link
                   key={link.href}
-                  href={link.href} 
-                  className="block px-3 py-2 text-white hover:text-gray-300 transition-colors text-sm font-medium"
+                  href={link.href}
+                  className="block px-3 py-2 text-sm font-medium text-white transition-colors hover:text-gray-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-gray-700 mt-4">
+              <div className="mt-4 border-t border-gray-700 pt-4">
                 {authLinks.map((link) => (
-                  <Link 
+                  <Link
                     key={link.href}
-                    href={link.href} 
-                    className={link.isButton 
-                      ? "block mx-3 mt-2 bg-white text-black px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors text-center"
-                      : "block px-3 py-2 text-white hover:text-gray-300 transition-colors text-sm font-medium"
+                    href={link.href}
+                    className={
+                      link.isButton
+                        ? "mx-3 mt-2 block rounded-md bg-white px-4 py-2 text-center text-sm font-medium text-black transition-colors hover:bg-gray-100"
+                        : "block px-3 py-2 text-sm font-medium text-white transition-colors hover:text-gray-300"
                     }
                     onClick={() => setIsMenuOpen(false)}
                   >

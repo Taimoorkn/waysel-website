@@ -114,7 +114,7 @@ export default function RootLayout({ children }) {
       </head>
       <body
         suppressHydrationWarning
-        className={`pt-[3.5rem] xl:pt-[4.5rem] ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} antialiased`}
+        className={`bg-black pt-[3.5rem] xl:pt-[4.5rem] ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} antialiased`}
       >
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
