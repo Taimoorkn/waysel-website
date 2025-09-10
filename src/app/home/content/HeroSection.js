@@ -25,15 +25,6 @@ const HeroSection = () => {
             try {
               // Try different initialization methods
               window.UnicornStudio.init();
-
-              // Also try adding scene manually
-              if (window.UnicornStudio.addScene) {
-                console.log("Trying addScene...");
-                window.UnicornStudio.addScene({
-                  element: element,
-                  projectSrc: "/mesh.json",
-                });
-              }
             } catch (e) {
               console.error("Manual init failed:", e);
             }
@@ -68,7 +59,7 @@ const HeroSection = () => {
         data-us-disablemobile="false"
         data-us-scale="1"
         data-us-dpi="1.5"
-        data-us-production="true"
+        data-us-production="false"
         className="absolute inset-0 h-full w-full"
         style={{ width: "100%", height: "100%" }}
       ></div>
