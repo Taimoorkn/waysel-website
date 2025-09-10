@@ -31,7 +31,7 @@ const HomePage = () => {
       <LazyNextGenAI />
       <LazyServicesCarousel />
       <IndustriesWeServe />
-      <LazySuccessStories />
+      {/* <LazySuccessStories /> */}
       <LazyTechStack />
       <LazyTestimonials />
       <LazyFAQ faqs={generalFaqs} />
