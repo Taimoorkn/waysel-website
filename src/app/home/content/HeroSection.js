@@ -1,9 +1,82 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const HeroSection = () => {
+  const heroLinksRef = useRef([]);
+  
+  useEffect(() => {
+    // GSAP animations for hero section links
+    if (heroLinksRef.current.length > 0) {
+      gsap.fromTo(
+        heroLinksRef.current,
+        {
+          y: 30,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power2.out",
+          delay: 0.5,
+        }
+      );
+
+      // Function to wrap each letter in a span
+      const wrapLetters = (element) => {
+        const text = element.textContent;
+        const wrappedText = text
+          .split('')
+          .map((char, index) => {
+            if (char === ' ') {
+              return ' ';
+            }
+            return `<span class="letter-span" style="display: inline-block;">${char}</span>`;
+          })
+          .join('');
+        element.innerHTML = wrappedText;
+        return element.querySelectorAll('.letter-span');
+      };
+
+      // Hover animations
+      heroLinksRef.current.forEach((link) => {
+        if (link) {
+          const letters = wrapLetters(link);
+          
+          const handleMouseEnter = () => {
+            gsap.to(letters, {
+              rotationY: 360,
+              duration: 0.6,
+              stagger: 0.05,
+              ease: "power2.out",
+            });
+          };
+
+          const handleMouseLeave = () => {
+            gsap.to(letters, {
+              rotationY: 0,
+              duration: 0.4,
+              stagger: 0.02,
+              ease: "power2.out",
+            });
+          };
+
+          link.addEventListener("mouseenter", handleMouseEnter);
+          link.addEventListener("mouseleave", handleMouseLeave);
+
+          return () => {
+            link.removeEventListener("mouseenter", handleMouseEnter);
+            link.removeEventListener("mouseleave", handleMouseLeave);
+          };
+        }
+      });
+    }
+  }, []);
+
   useEffect(() => {
     // Load Unicorn Studio library
     const script = document.createElement("script");
@@ -94,10 +167,11 @@ const HeroSection = () => {
           {[
             { href: "/login", label: "Become a Member" },
             { href: "/get-started", label: "Abous Us" },
-          ].map((link) => (
+          ].map((link, index) => (
             <Link
               key={link.href}
               href={link.href}
+              ref={(el) => (heroLinksRef.current[index] = el)}
               className="rounded-md bg-[#efeeec] px-8 py-6 leading-[1] text-[#131313]"
             >
               {link.label}
