@@ -112,11 +112,11 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className="fixed top-0 z-50 w-full bg-black pl-4 pr-1 shadow-navbar 2xl:px-[9.5rem]"
+        className="fixed top-0 z-50 w-full bg-black shadow-navbar"
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="flex h-[3.5rem] w-full items-center justify-between xl:h-[4.5rem]">
+        <div className="mx-auto flex h-[3.5rem] w-full max-w-7xl items-center justify-between px-6 xl:h-[4.5rem] xl:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3" aria-label="Osmo home">
             <span className="font-neueMontreal text-xl text-white font-medium xl:text-2xl">
@@ -162,15 +162,15 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden h-[4.5rem] items-center gap-8 lg:flex">
-            <ul className="flex h-[4.5rem] items-center space-x-6 font-neueMontreal text-sm font-medium text-primary_text">
+          <div className="hidden h-[4.5rem] items-center gap-12 lg:flex">
+            <ul className="flex h-[4.5rem] items-center space-x-8 font-neueMontreal text-sm font-medium text-primary_text">
               {MENU_ITEMS.map(renderDesktopNavItem)}
             </ul>
-            <div className="flex items-center gap-4">
-              <Link href="/login" className="text-gray-300 hover:text-white transition-colors duration-200">
+            <div className="flex items-center gap-6">
+              <Link href="/login" className="text-gray-300 hover:text-white transition-colors duration-200 font-medium">
                 Log in
               </Link>
-              <Button variant="primary" className="bg-white text-black hover:bg-gray-100">
+              <Button variant="primary" className="bg-white text-black hover:bg-gray-100 px-6 py-2.5 font-medium">
                 Get Started
               </Button>
             </div>
