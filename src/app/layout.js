@@ -13,8 +13,8 @@ const robotoMono = Roboto_Mono({
 
 const neueMontreal = localFont({
   src: [
-    { path: "../../public/font/neue-montreal/NeueMontreal-Regular.otf", weight: "400" },
-    { path: "../../public/font/neue-montreal/NeueMontreal-Medium.otf", weight: "500" },
+    { path: "../../public/font/neue-montreal/ppneuemontreal-book.otf", weight: "400" },
+    { path: "../../public/font/neue-montreal/ppneuemontreal-medium.otf", weight: "500" },
     { path: "../../public/font/neue-montreal/NeueMontreal-Bold.otf", weight: "700" },
   ],
   variable: "--font-neueMontreal",
@@ -114,7 +114,7 @@ export default function RootLayout({ children }) {
       </head>
       <body
         suppressHydrationWarning
-        className={`bg-black pt-[3.5rem] xl:pt-[4.5rem] ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} antialiased`}
+        className={`bg-black ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} antialiased`}
       >
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
