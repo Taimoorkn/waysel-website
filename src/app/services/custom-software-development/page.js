@@ -11,37 +11,37 @@ import DevelopmentProcess from "./content/DevelopmentProcess";
 import HelpYourBusiness from "./content/HelpYourBusiness";
 
 const customDevServiceData = {
-  name: 'Custom Software Development Services',
-  description: 'Tailored custom software development solutions for businesses. Build scalable, enterprise-grade software applications.',
-  features: [
-    'Business Analysis & Consulting',
-    'Custom Application Development',
-    'Enterprise Software Solutions',
-    'AI & Machine Learning Integration',
-    'Legacy System Modernization'
-  ]
+ name: 'Custom Software Development Services',
+ description: 'Tailored custom software development solutions for businesses. Build scalable, enterprise-grade software applications.',
+ features: [
+ 'Business Analysis & Consulting',
+ 'Custom Application Development',
+ 'Enterprise Software Solutions',
+ 'AI & Machine Learning Integration',
+ 'Legacy System Modernization'
+ ]
 };
 
 const breadcrumbData = [
-  { name: 'Home', url: 'https://techitech.com' },
-  { name: 'Services', url: 'https://techitech.com/services' },
-  { name: 'Custom Software Development', url: 'https://techitech.com/services/custom-software-development' }
+ { name: 'Home', url: 'https://techitech.com' },
+ { name: 'Services', url: 'https://techitech.com/services' },
+ { name: 'Custom Software Development', url: 'https://techitech.com/services/custom-software-development' }
 ];
 
 const CustomSoftwareDevelopment = () => {
-  return (
-    <div>
-      <StructuredData data={serviceSchema(customDevServiceData)} />
-      <StructuredData data={breadcrumbSchema(breadcrumbData)} />
-      <Navbar />
-      <HeroSection />
-      <ServiceBoxes />
-      <DevelopmentProcess />
-      <HelpYourBusiness />
-      <Banner variant="customDev" />
-      <Footer />
-    </div>
-  );
+ return (
+ <div>
+ <StructuredData data={serviceSchema(customDevServiceData)} />
+ <StructuredData data={breadcrumbSchema(breadcrumbData)} />
+ <Navbar />
+ <HeroSection />
+ <ServiceBoxes />
+ <DevelopmentProcess />
+ <HelpYourBusiness />
+ <Banner variant="customDev" />
+ <Footer />
+ </div>
+ );
 };
 
 export default CustomSoftwareDevelopment;

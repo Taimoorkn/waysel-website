@@ -11,37 +11,37 @@ import DevelopmentProcess from "./content/DevelopmentProcess";
 import HelpYourBusiness from "./content/HelpYourBusiness";
 
 const ecommerceDevServiceData = {
-  name: 'E-Commerce Development Services',
-  description: 'Professional e-commerce development services including Shopify, WooCommerce, and custom online stores.',
-  features: [
-    'Shopify Development',
-    'WooCommerce Development',
-    'Custom E-Commerce Solutions',
-    'Payment Gateway Integration',
-    'Inventory Management Systems'
-  ]
+ name: 'E-Commerce Development Services',
+ description: 'Professional e-commerce development services including Shopify, WooCommerce, and custom online stores.',
+ features: [
+ 'Shopify Development',
+ 'WooCommerce Development',
+ 'Custom E-Commerce Solutions',
+ 'Payment Gateway Integration',
+ 'Inventory Management Systems'
+ ]
 };
 
 const breadcrumbData = [
-  { name: 'Home', url: 'https://techitech.com' },
-  { name: 'Services', url: 'https://techitech.com/services' },
-  { name: 'E-Commerce Development', url: 'https://techitech.com/services/ecommerce-development' }
+ { name: 'Home', url: 'https://techitech.com' },
+ { name: 'Services', url: 'https://techitech.com/services' },
+ { name: 'E-Commerce Development', url: 'https://techitech.com/services/ecommerce-development' }
 ];
 
 const ECommerceDevelopment = () => {
-  return (
-    <div>
-      <StructuredData data={serviceSchema(ecommerceDevServiceData)} />
-      <StructuredData data={breadcrumbSchema(breadcrumbData)} />
-      <Navbar />
-      <HeroSection />
-      <ServiceBoxes />
-      <DevelopmentProcess />
-      <HelpYourBusiness />
-      <Banner variant="ecommerceDev" />
-      <Footer />
-    </div>
-  );
+ return (
+ <div>
+ <StructuredData data={serviceSchema(ecommerceDevServiceData)} />
+ <StructuredData data={breadcrumbSchema(breadcrumbData)} />
+ <Navbar />
+ <HeroSection />
+ <ServiceBoxes />
+ <DevelopmentProcess />
+ <HelpYourBusiness />
+ <Banner variant="ecommerceDev" />
+ <Footer />
+ </div>
+ );
 };
 
 export default ECommerceDevelopment;

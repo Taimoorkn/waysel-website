@@ -5,158 +5,158 @@
 /* Section Header */
 
 .section_padding {
-  @apply py-10 sm:py-12 md:py-16 px-4 2xl:px-[9.5rem]
+ @apply py-10 sm:py-12 md:py-16 px-4 2xl:px-[9.5rem]
 }
 
 .section-header {
-  @apply text-3xl font-medium sm:text-[42px] font-clashGrotesk sm:font-medium leading-none text-primary_text text-start mb-6;
+ @apply text-3xl font-medium sm:text-[42px] font-neueMontreal sm:font-medium leading-none text-primary_text text-start mb-6;
 }
 
 .service-header {
-  @apply text-3xl sm:text-4xl md:text-5xl font-clashGrotesk font-semibold leading-tight text-primary_text mb-4;
+ @apply text-3xl sm:text-4xl md:text-5xl font-neueMontreal font-semibold text-primary_text mb-4;
 }
 
 .devprocess_section {
-  @apply bg-primary_bg py-8 md:py-16 px-4 md:px-16;
+ @apply bg-primary_bg py-8 md:py-16 px-4 md:px-16;
 }
 
 /* Industries we Serve *
 .industry-card {
-  @apply flex items-center justify-center text-center w-full h-[200px] bg-primary_bg border border-dark_border rounded-lg flex-col;
+ @apply flex items-center justify-center text-center w-full h-[200px] bg-primary_bg border border-dark_border rounded-lg flex-col;
 }
 
 /* Industries we Serve */
 .industry-card {
-  @apply flex items-center justify-center text-center w-full h-[100px] xl:h-[200px] bg-primary_bg border border-dark_border rounded-lg flex-col transition-all duration-300;
+ @apply flex items-center justify-center text-center w-full h-[100px] xl:h-[200px] bg-primary_bg border border-dark_border rounded-lg flex-col transition-all duration-300;
 }
 
 .industry-icon {
-  @apply size-6 sm:size-8 md:size-10 lg:size-12 text-accent;
+ @apply size-6 sm:size-8 md:size-10 lg:size-12 text-accent;
 }
 
 .industry-card:hover {
-  @apply scale-105 shadow-custom-blue;
+ @apply scale-105 shadow-custom-blue;
 }
 
 .custom-dashed-border {
-  background-image: linear-gradient(to right, #c0c0c0 50%, transparent 50%),
-    linear-gradient(to right, #c0c0c0 50%, transparent 50%);
-  background-position: 0 0, 0 100%;
-  background-size: 10px 0.5px;
-  background-repeat: repeat-x;
+ background-image: linear-gradient(to right, #c0c0c0 50%, transparent 50%),
+ linear-gradient(to right, #c0c0c0 50%, transparent 50%);
+ background-position: 0 0, 0 100%;
+ background-size: 10px 0.5px;
+ background-repeat: repeat-x;
 }
 
 .timestamp-dashed-border {
-  background-image: linear-gradient(to bottom, #c0c0c0 50%, transparent 50%);
-  background-position: 0 0, 0 100%;
-  background-size: 1px 16px;
-  background-repeat: repeat-y;
-  width: 1px;
-  height: 100%;
+ background-image: linear-gradient(to bottom, #c0c0c0 50%, transparent 50%);
+ background-position: 0 0, 0 100%;
+ background-size: 1px 16px;
+ background-repeat: repeat-y;
+ width: 1px;
+ height: 100%;
 }
 
 .custom-dashed-border-faq {
-  border-top: none;
-  background-image: linear-gradient(to right, #c0c0c0 50%, transparent 50%);
-  background-position: 0 0, 0 100%;
-  background-size: 10px 0.5px;
-  background-repeat: repeat-x;
+ border-top: none;
+ background-image: linear-gradient(to right, #c0c0c0 50%, transparent 50%);
+ background-position: 0 0, 0 100%;
+ background-size: 10px 0.5px;
+ background-repeat: repeat-x;
 }
 
 @keyframes dash {
-  to {
-    background-position: 100% 0%;
-  }
+ to {
+ background-position: 100% 0%;
+ }
 }
 
 @keyframes expand {
-  from {
-    transform: scaleX(0);
-  }
+ from {
+ transform: scaleX(0);
+ }
 
-  to {
-    transform: scaleX(1);
-  }
+ to {
+ transform: scaleX(1);
+ }
 }
 
 .animate-expand {
-  animation: expand 0.4s ease-out forwards;
+ animation: expand 0.4s ease-out forwards;
 }
 
 .tech_stack_icon_img {
-  @apply w-8 sm:w-16
+ @apply w-8 sm:w-16
 }
 
 .tech_stack_icon {
-  @apply relative size-24 sm:size-32 bg-primary_bg rounded-2xl flex flex-col items-center justify-center shadow-custom-light transition-all duration-300
+ @apply relative size-24 sm:size-32 bg-primary_bg rounded-2xl flex flex-col items-center justify-center shadow-custom-light transition-all duration-300
 }
 
 .tech_stack_icon:hover {
-  @apply scale-105 shadow-custom-blue;
+ @apply scale-105 shadow-custom-blue;
 }
 
 .contact-input-field {
-  @apply border border-dark_border rounded-md focus:outline-none focus:ring-2 focus:ring-accent
+ @apply border border-dark_border rounded-md focus:outline-none focus:ring-2 focus:ring-accent
 }
 
 .semicircle-border {
-  border: 2px solid transparent;
-  background-image: linear-gradient(#F0F2FE, #F0F2FE),
-    linear-gradient(to var(--semicircle-side), transparent 0% 50%, #3A5BFF 50% 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  border-radius: 50%;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  width: 86px;
-  height: 86px;
-  aspect-ratio: 1 / 1;
-  padding: 1rem;
+ border: 2px solid transparent;
+ background-image: linear-gradient(#F0F2FE, #F0F2FE),
+ linear-gradient(to var(--semicircle-side), transparent 0% 50%, #3A5BFF 50% 100%);
+ background-origin: border-box;
+ background-clip: padding-box, border-box;
+ border-radius: 50%;
+ display: flex;
+ place-items: center;
+ justify-content: center;
+ width: 86px;
+ height: 86px;
+ aspect-ratio: 1 / 1;
+ padding: 1rem;
 }
 
 .dashed-line {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(90deg, #3A5BFF 50%, transparent 50%);
-  background-repeat: repeat-x;
-  background-size: 16px 1px;
-  animation: dash 50s linear infinite;
+ height: 100%;
+ width: 100%;
+ background: linear-gradient(90deg, #3A5BFF 50%, transparent 50%);
+ background-repeat: repeat-x;
+ background-size: 16px 1px;
+ animation: dash 50s linear infinite;
 }
 
 /* About Us Page */
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+ from {
+ opacity: 0;
+ transform: translateY(30px);
+ }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+ to {
+ opacity: 1;
+ transform: translateY(0);
+ }
 }
 
 @keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
+ from {
+ transform: rotate(0deg);
+ }
 
-  to {
-    transform: rotate(360deg);
-  }
+ to {
+ transform: rotate(360deg);
+ }
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
+ animation: fade-in-up 0.8s ease-out forwards;
 }
 
 .bg-grid-white10 {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+ background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+ background-size: 20px 20px;
 }
 
 .bg-grid-white30 {
-  background-image: radial-gradient(circle, rgba(226, 232, 240, 0.3) 1px, transparent 1px);
-  background-size: 20px 20px;
+ background-image: radial-gradient(circle, rgba(226, 232, 240, 0.3) 1px, transparent 1px);
+ background-size: 20px 20px;
 }

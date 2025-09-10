@@ -18,24 +18,24 @@ import TechStack from "@/components/TechStack";
 import SuccessStories from "@/components/SuccessStories";
 
 const HomePage = () => {
-  return (
-    <>
-      {/* Above the fold - Load immediately */}
-      <HeroSection />
-      <StatsBar />
-      <CompaniesShowcase />
-      
-      {/* Below the fold - Now loading directly */}
-      <NextGenAICarousel />
-      <ServicesCarousel />
-      <IndustriesWeServe />
-      {/* <SuccessStories /> */}
-      <TechStack />
-      <Testimonials />
-      <FAQs faqs={generalFaqs} />
-      <Banner variant="landingPage" />
-    </>
-  );
+ return (
+ <>
+ {/* Above the fold - Load immediately */}
+ <HeroSection />
+ <StatsBar />
+ <CompaniesShowcase />
+ 
+ {/* Below the fold - Now loading directly */}
+ <NextGenAICarousel />
+ <ServicesCarousel />
+ <IndustriesWeServe />
+ {/* <SuccessStories /> */}
+ <TechStack />
+ <Testimonials />
+ <FAQs faqs={generalFaqs} />
+ <Banner variant="landingPage" />
+ </>
+ );
 };
 
 export default HomePage;
