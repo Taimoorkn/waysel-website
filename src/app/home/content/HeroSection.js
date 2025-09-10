@@ -1,10 +1,78 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 
 const HeroSection = () => {
+  useEffect(() => {
+    // Load Unicorn Studio library
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.30/dist/unicornStudio.umd.js";
+    script.async = true;
+
+    script.onload = () => {
+      console.log("Unicorn Studio script loaded successfully");
+      // Check if UnicornStudio is available
+      if (window.UnicornStudio) {
+        console.log("UnicornStudio object found:", window.UnicornStudio);
+        // Try to manually initialize
+        setTimeout(() => {
+          const element = document.querySelector("[data-us-project-src]");
+          if (element && window.UnicornStudio) {
+            console.log("Attempting manual initialization...");
+            console.log("Found element:", element);
+            try {
+              // Try different initialization methods
+              window.UnicornStudio.init();
+
+              // Also try adding scene manually
+              if (window.UnicornStudio.addScene) {
+                console.log("Trying addScene...");
+                window.UnicornStudio.addScene({
+                  element: element,
+                  projectSrc: "/mesh.json",
+                });
+              }
+            } catch (e) {
+              console.error("Manual init failed:", e);
+            }
+          }
+        }, 500);
+      } else {
+        console.log("UnicornStudio object not found on window");
+      }
+    };
+
+    script.onerror = () => {
+      console.error("Failed to load Unicorn Studio script");
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+ 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden bg-black">
+      {/* Unicorn Studio WebGL mesh background */}
+      <div
+        id="unicorn-canvas"
+        data-us-alttext="graphic background"
+        data-us-project-src="/mesh.json"
+        data-us-disablemobile="false"
+        data-us-scale="1"
+        data-us-dpi="1.5"
+        data-us-production="true"
+        className="absolute inset-0 h-full w-full"
+        style={{ width: "100%", height: "100%" }}
+      ></div>
+
       {/* Left sidebar text */}
       <div className="absolute left-[107px] top-[258px] z-20 font-neueMontreal text-[21px] font-medium text-[#9c9b9a]">
         <div className="flex gap-16">
