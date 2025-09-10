@@ -198,7 +198,7 @@ const Navbar = () => {
       role="menu"
       aria-label="Services submenu"
     >
-      <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-2xl backdrop-blur-sm">
+      <div className="overflow-hidden rounded-xl border border-border_primary bg-card_bg shadow-2xl backdrop-blur-sm">
         <div className="py-2">
           {Object.entries(SUB_SERVICES).map(([category, services]) => (
             <div key={category} className="mb-2 last:mb-0">
@@ -222,7 +222,7 @@ const Navbar = () => {
                           ? "bg-accent/8 font-medium text-accent"
                           : isHovered
                             ? "bg-accent/5 text-accent"
-                            : "text-gray-700 hover:bg-gray-50"
+                            : "text-secondary_text hover:bg-hover_bg"
                       }`}
                       role="menuitem"
                     >
@@ -234,7 +234,7 @@ const Navbar = () => {
                             ? "translate-x-0 text-accent opacity-100"
                             : isHovered
                               ? "translate-x-1 text-accent opacity-100"
-                              : "translate-x-[-4px] text-gray-400 opacity-0 group-hover/item:translate-x-0 group-hover/item:opacity-100"
+                              : "translate-x-[-4px] text-tertiary_text opacity-0 group-hover/item:translate-x-0 group-hover/item:opacity-100"
                         }`}
                         aria-hidden="true"
                       />
@@ -304,9 +304,9 @@ const Navbar = () => {
       role="region"
       aria-label={`${label} submenu`}
     >
-      <div className="bg-white/8 overflow-hidden rounded-lg border border-white/20 backdrop-blur-sm">
+      <div className="overflow-hidden rounded-lg border border-border_secondary bg-surface_bg/30 backdrop-blur-sm">
         {Object.entries(SUB_SERVICES).map(([category, services], categoryIndex) => (
-          <div key={category} className="border-b border-white/10 last:border-b-0">
+          <div key={category} className="border-b border-border_secondary last:border-b-0">
             <div className="flex items-center gap-2 px-4 py-2 font-medium text-primary_text">
               <span className="h-1.5 w-1.5 rounded-full bg-accent/80" aria-hidden="true"></span>
               <span className="text-xs">{category}</span>
@@ -323,7 +323,7 @@ const Navbar = () => {
                     className={`group relative mx-2 my-0.5 flex items-center justify-between overflow-hidden rounded-md py-2 pl-6 pr-4 transition-all duration-300 ease-out ${
                       isServiceActive
                         ? "bg-accent/8 font-medium text-accent"
-                        : "text-primary_text hover:bg-white/10 hover:text-accent"
+                        : "text-primary_text hover:bg-hover_bg hover:text-accent"
                     }`}
                     style={{
                       transitionDelay:
@@ -391,20 +391,20 @@ const Navbar = () => {
                 aria-hidden="true"
               >
                 <g strokeWidth="4" strokeLinecap="round">
-                  <path d="M72 82.286h28.75" stroke="#3A5BFF" />
+                  <path d="M72 82.286h28.75" stroke="#FF4C24" />
                   <path
                     d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
                     fill="none"
-                    stroke="#3A5BFF"
+                    stroke="#FF4C24"
                   />
-                  <path d="M72 125.143h28.75" stroke="#3A5BFF" />
+                  <path d="M72 125.143h28.75" stroke="#FF4C24" />
                   <path
                     d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
                     fill="none"
-                    stroke="#3A5BFF"
+                    stroke="#FF4C24"
                   />
-                  <path d="M100.75 82.286h28.75" stroke="#3A5BFF" />
-                  <path d="M100.75 125.143h28.75" stroke="#3A5BFF" />
+                  <path d="M100.75 82.286h28.75" stroke="#FF4C24" />
+                  <path d="M100.75 125.143h28.75" stroke="#FF4C24" />
                 </g>
               </svg>
             </button>
@@ -473,7 +473,7 @@ const Navbar = () => {
           transform: scale(0.95);
         }
         .container:focus {
-          outline: 2px solid #3a5bff;
+          outline: 2px solid #ff4c24;
           outline-offset: 2px;
           border-radius: 4px;
         }

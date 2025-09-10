@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 
 const ContactItem = ({ icon: Icon, title, details }) => (
   <div className="group flex items-center space-x-4 sm:space-x-6">
-    <div className="flex size-10 items-center justify-center rounded-full bg-light_blue_bg transition-colors duration-200 group-hover:bg-blue-100 sm:size-12">
+    <div className="flex size-10 items-center justify-center rounded-full bg-card_bg transition-colors duration-200 group-hover:bg-hover_bg sm:size-12">
       <Icon weight="fill" className="size-5 text-accent sm:size-6" />
     </div>
     <div className="flex-1">
@@ -210,7 +210,7 @@ const Contact = () => {
   return (
     <section className="bg-primary_bg px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-12 xl:px-16 2xl:px-[9.5rem]">
       <div className="mb-8 text-center">
-        <div className="mb-4 inline-flex items-center rounded-full bg-blue-50 px-3 py-1.5 font-neueMontreal text-xs font-medium text-accent transition-all hover:bg-blue-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
+        <div className="mb-4 inline-flex items-center rounded-full bg-card_bg px-3 py-1.5 font-neueMontreal text-xs font-medium text-accent transition-all hover:bg-hover_bg sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
           <StarFourIcon weight="fill" className="mr-2 h-4 w-4" />
           CONTACT US
         </div>
@@ -226,7 +226,7 @@ const Contact = () => {
       <div className="mx-auto">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           {/* Left Section - Contact Info */}
-          <div className="w-full rounded-2xl border border-gray-100 bg-white p-8 shadow-sm lg:w-2/6">
+          <div className="w-full rounded-2xl border border-border_primary bg-card_bg p-8 shadow-sm lg:w-2/6">
             <h3 className="mb-6 font-neueMontreal text-2xl font-medium text-primary_text">
               Get in Touch
             </h3>
@@ -236,7 +236,7 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="mt-10 flex justify-between border-t border-gray-100 pt-8">
+            <div className="mt-10 flex justify-between border-t border-border_secondary pt-8">
               {[
                 { name: "twitter", icon: TwitterLogoIcon, url: "https://twitter.com/yourusername" },
                 {
@@ -260,7 +260,7 @@ const Contact = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative rounded-full border border-gray-100 bg-white p-3 shadow-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50 hover:shadow-md"
+                  className="group relative rounded-full border border-border_secondary bg-surface_bg p-3 shadow-sm transition-all duration-300 hover:border-accent hover:bg-hover_bg hover:shadow-md"
                   aria-label={`Visit our ${social.name} page`}
                 >
                   <social.icon
@@ -275,7 +275,7 @@ const Contact = () => {
 
           {/* Right Section - Contact Form */}
           <div className="w-full lg:w-4/6">
-            <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
+            <div className="rounded-2xl border border-border_primary bg-card_bg p-8 shadow-sm">
               <h3 className="mb-6 font-neueMontreal text-2xl font-medium text-primary_text">
                 Send Us a Message
               </h3>
@@ -287,7 +287,7 @@ const Contact = () => {
                   <div className="w-full sm:w-1/2">
                     <label
                       htmlFor="name"
-                      className="mb-2 block text-sm font-medium text-gray-900 sm:text-base"
+                      className="mb-2 block text-sm font-medium text-primary_text sm:text-base"
                     >
                       Name
                     </label>
@@ -296,12 +296,12 @@ const Contact = () => {
                         id="name"
                         type="text"
                         placeholder="Your full name"
-                        className={`w-full rounded-xl border-2 bg-white px-4 py-3 transition-all duration-200 focus:outline-none ${
+                        className={`w-full rounded-xl border-2 bg-surface_bg px-4 py-3 text-primary_text transition-all duration-200 focus:outline-none ${
                           errors.name
                             ? "border-red-400 focus:border-red-500"
                             : activeField === "name"
-                              ? "border-blue-600"
-                              : "border-gray-200 hover:border-gray-300"
+                              ? "border-accent"
+                              : "border-border_secondary hover:border-border_primary"
                         }`}
                         value={formData.name}
                         onChange={handleChange}
@@ -322,7 +322,7 @@ const Contact = () => {
                   <div className="w-full sm:w-1/2">
                     <label
                       htmlFor="email"
-                      className="mb-2 block text-sm font-medium text-gray-900 sm:text-base"
+                      className="mb-2 block text-sm font-medium text-primary_text sm:text-base"
                     >
                       Email
                     </label>
@@ -331,12 +331,12 @@ const Contact = () => {
                         id="email"
                         type="email"
                         placeholder="your.email@example.com"
-                        className={`w-full rounded-xl border-2 bg-white px-4 py-3 transition-all duration-200 focus:outline-none ${
+                        className={`w-full rounded-xl border-2 bg-surface_bg px-4 py-3 text-primary_text transition-all duration-200 focus:outline-none ${
                           errors.email
                             ? "border-red-400 focus:border-red-500"
                             : activeField === "email"
-                              ? "border-blue-600"
-                              : "border-gray-200 hover:border-gray-300"
+                              ? "border-accent"
+                              : "border-border_secondary hover:border-border_primary"
                         }`}
                         value={formData.email}
                         onChange={handleChange}
@@ -367,12 +367,12 @@ const Contact = () => {
                       id="subject"
                       type="text"
                       placeholder="What's this about?"
-                      className={`w-full rounded-xl border-2 bg-white px-4 py-3 transition-all duration-200 focus:outline-none ${
+                      className={`w-full rounded-xl border-2 bg-surface_bg px-4 py-3 text-primary_text transition-all duration-200 focus:outline-none ${
                         errors.subject
                           ? "border-red-400 focus:border-red-500"
                           : activeField === "subject"
-                            ? "border-blue-600"
-                            : "border-gray-200 hover:border-gray-300"
+                            ? "border-accent"
+                            : "border-border_secondary hover:border-border_primary"
                       }`}
                       value={formData.subject}
                       onChange={handleChange}
@@ -401,12 +401,12 @@ const Contact = () => {
                     <textarea
                       id="message"
                       placeholder="Tell us about your project or question..."
-                      className={`h-32 w-full resize-none rounded-xl border-2 bg-white px-4 py-3 transition-all duration-200 focus:outline-none sm:h-40 ${
+                      className={`h-32 w-full resize-none rounded-xl border-2 bg-surface_bg px-4 py-3 text-primary_text transition-all duration-200 focus:outline-none sm:h-40 ${
                         errors.message
                           ? "border-red-400 focus:border-red-500"
                           : activeField === "message"
-                            ? "border-blue-600"
-                            : "border-gray-200 hover:border-gray-300"
+                            ? "border-accent"
+                            : "border-border_secondary hover:border-border_primary"
                       }`}
                       value={formData.message}
                       onChange={handleChange}
@@ -427,7 +427,7 @@ const Contact = () => {
                 <div className="flex flex-col items-center gap-4 pt-2 sm:flex-row">
                   <button
                     type="submit"
-                    className="flex w-full items-center justify-center rounded-xl bg-blue-600 px-6 py-3.5 font-medium text-white transition-colors duration-200 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50 sm:flex-1"
+                    className="flex w-full items-center justify-center rounded-xl bg-accent px-6 py-3.5 font-medium text-white transition-colors duration-200 hover:bg-accent_dark disabled:cursor-not-allowed disabled:opacity-50 sm:flex-1"
                     disabled={isSubmitting}
                     aria-label="Send contact message"
                   >
@@ -444,11 +444,11 @@ const Contact = () => {
                     )}
                   </button>
 
-                  <span className="hidden text-sm font-medium text-gray-500 sm:block">OR</span>
+                  <span className="hidden text-sm font-medium text-tertiary_text sm:block">OR</span>
 
                   <button
                     type="button"
-                    className="flex w-full items-center justify-center rounded-xl bg-gray-800 px-6 py-3.5 font-medium text-white transition-colors duration-200 hover:bg-gray-900 sm:flex-1"
+                    className="flex w-full items-center justify-center rounded-xl border border-border_primary bg-surface_bg px-6 py-3.5 font-medium text-primary_text transition-colors duration-200 hover:bg-hover_bg sm:flex-1"
                     //onClick={() => router.push('/appointment')}
                     aria-label="Book a meeting"
                   >

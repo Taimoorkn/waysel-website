@@ -253,12 +253,12 @@ const ServicesCarousel = () => {
         .swiper-pagination-bullet {
           width: 8px !important;
           height: 8px !important;
-          background: #d1d5db !important;
+          background: #666666 !important;
           opacity: 1 !important;
           margin: 0 8px !important;
         }
         .swiper-pagination-bullet-active {
-          background: #3b82f6 !important;
+          background: #ff4c24 !important;
         }
         @media (max-width: 640px) {
           .swiper {

@@ -55,7 +55,7 @@ const SuccessStories = ({ type }) => {
         {filteredStories.map((story, index) => (
           <div
             key={index}
-            className="flex w-full flex-col justify-between rounded-3xl border border-dark_border bg-white text-start shadow-md"
+            className="flex w-full flex-col justify-between rounded-3xl border border-dark_border bg-card_bg text-start shadow-md"
           >
             <img
               src={story.image}

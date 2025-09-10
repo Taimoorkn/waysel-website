@@ -315,10 +315,10 @@ const TechStack = ({ techToDisplay }) => {
           {categories.map((category) => (
             <button
               key={category}
-              className={`text-primary-text rounded-lg px-4 py-2 text-sm font-medium sm:px-6 sm:py-3 sm:text-[16px] ${
+              className={`rounded-lg px-4 py-2 text-sm font-medium text-primary_text sm:px-6 sm:py-3 sm:text-[16px] ${
                 activeCategory === category
-                  ? "bg-black text-primary_bg"
-                  : "border border-black hover:bg-black hover:text-white"
+                  ? "bg-accent text-primary_bg"
+                  : "border border-accent hover:bg-accent hover:text-primary_text"
               }`}
               onClick={() => setActiveCategory(category)}
             >

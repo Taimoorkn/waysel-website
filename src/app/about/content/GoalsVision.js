@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const GoalsVision = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 px-4 py-8 sm:py-12 lg:py-16 2xl:px-[9.5rem]">
+    <section className="relative overflow-hidden bg-secondary_bg px-4 py-8 sm:py-12 lg:py-16 2xl:px-[9.5rem]">
       <div className="absolute inset-0">
         <div className="bg-grid-white30 absolute left-0 top-0 h-full w-full"></div>
       </div>
@@ -15,22 +15,22 @@ const GoalsVision = () => {
         <div className="mb-8 text-center sm:mb-12 lg:mb-16">
           <h2 className="mb-4 font-neueMontreal text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
             Our{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent to-accent_light bg-clip-text text-transparent">
               Mission
             </span>{" "}
             Ahead
           </h2>
-          <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 sm:w-24"></div>
+          <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-accent to-accent_light sm:w-24"></div>
         </div>
 
         <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-2 lg:gap-16">
           <div className="group">
-            <div className="rounded-2xl border border-white/50 bg-white p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl group-hover:border-blue-200 sm:rounded-3xl sm:p-8">
+            <div className="rounded-2xl border border-border_primary bg-card_bg p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl group-hover:border-accent sm:rounded-3xl sm:p-8">
               <div className="mb-4 flex items-center sm:mb-6">
                 <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent_purple sm:mr-4 sm:h-12 sm:w-12">
                   <TargetIcon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="font-neueMontreal text-xl font-medium text-blue-600 sm:text-2xl">
+                <h3 className="font-neueMontreal text-xl font-medium text-accent sm:text-2xl">
                   Our Goals
                 </h3>
               </div>
@@ -52,7 +52,7 @@ const GoalsVision = () => {
           </div>
 
           <div className="group">
-            <div className="rounded-2xl border border-white/50 bg-white p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl group-hover:border-purple-200 sm:rounded-3xl sm:p-8">
+            <div className="rounded-2xl border border-border_primary bg-card_bg p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl group-hover:border-accent sm:rounded-3xl sm:p-8">
               <div className="mb-4 flex items-center sm:mb-6">
                 <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent_purple sm:mr-4 sm:h-12 sm:w-12">
                   <EyeIcon className="h-5 w-5 text-white sm:h-6 sm:w-6" />

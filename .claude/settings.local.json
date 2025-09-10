@@ -15,7 +15,8 @@
       "Bash(taskkill:*)",
       "Bash(npm uninstall:*)",
       "Bash(npm ls:*)",
-      "Bash(npm run format:*)"
+      "Bash(npm run format:*)",
+      "Read(//c/Users/Taimoor/Downloads/screenshots/**)"
     ],
     "deny": [],
     "ask": []

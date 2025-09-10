@@ -1,164 +1,134 @@
 "use client";
 
 import Button from "@/components/Button";
-import { useRef, useState, useEffect } from "react";
+import { ArrowRightIcon } from "@phosphor-icons/react";
 
 const HeroSection = () => {
-  const mapRef = useRef(null);
-  const [tooltip, setTooltip] = useState({
-    visible: false,
-    city: "",
-    x: 0,
-    y: 0,
-  });
-
-  useEffect(() => {
-    const object = mapRef.current;
-
-    const setupEventListeners = () => {
-      if (object && object.contentDocument) {
-        const svgDoc = object.contentDocument;
-        const svg = svgDoc.querySelector("svg");
-        const paths = {
-          Lahore: svgDoc.getElementById("Lahore"),
-          Manchester: svgDoc.getElementById("Manchester"),
-          Texas: svgDoc.getElementById("Texas"),
-        };
-
-        const showTooltip = (city, path) => {
-          if (!path) return;
-          const bbox = path.getBBox();
-          const svgPoint = svg.createSVGPoint();
-          // Center horizontally, top vertically
-          svgPoint.x = bbox.x + bbox.width / 2; // Center of the hexagon
-          svgPoint.y = bbox.y; // Top of the hexagon
-          const screenPoint = svgPoint.matrixTransform(svg.getScreenCTM());
-          const x = screenPoint.x;
-          const y = screenPoint.y - 10; // Small offset above the hexagon
-          setTooltip({ visible: true, city, x, y });
-        };
-
-        const hideTooltip = () => {
-          setTooltip({ visible: false, city: "", x: 0, y: 0 });
-        };
-
-        Object.entries(paths).forEach(([city, path]) => {
-          if (path) {
-            path.addEventListener("mouseenter", () => showTooltip(city, path));
-            path.addEventListener("mouseleave", hideTooltip);
-          }
-        });
-
-        return () => {
-          Object.entries(paths).forEach(([city, path]) => {
-            if (path) {
-              path.removeEventListener("mouseenter", () => showTooltip(city, path));
-              path.removeEventListener("mouseleave", hideTooltip);
-            }
-          });
-        };
-      }
-    };
-
-    const checkSVGLoaded = () => {
-      if (object && object.contentDocument) {
-        const cleanup = setupEventListeners();
-        return cleanup;
-      } else {
-        const timeout = setTimeout(checkSVGLoaded, 100);
-        return () => clearTimeout(timeout);
-      }
-    };
-
-    const handleLoad = () => {
-      const cleanup = setupEventListeners();
-      if (cleanup) {
-        cleanupFunctions.push(cleanup);
-      }
-    };
-
-    const cleanupFunctions = [];
-    if (object) {
-      object.addEventListener("load", handleLoad);
-      const cleanup = checkSVGLoaded();
-      if (cleanup) {
-        cleanupFunctions.push(cleanup);
-      }
-    }
-
-    return () => {
-      if (object) {
-        object.removeEventListener("load", handleLoad);
-      }
-      cleanupFunctions.forEach((cleanup) => cleanup && cleanup());
-    };
-  }, []);
-
   return (
-    <section className="relative flex h-[630px] bg-primary_bg px-4 max-2xl:items-center max-2xl:justify-center max-2xl:overflow-hidden max-2xl:bg-gradient-to-br max-2xl:from-indigo-900 max-2xl:to-blue-900 2xl:px-[9.5rem] 3xl:h-[800px]">
-      {/* -----------------------------Animated Pulsing elements & Grid pattern overlay------------------------------*/}
-      <div className="absolute left-10 top-20 size-24 animate-pulse rounded-full bg-blue-400/20 blur-xl 2xl:hidden" />
-      <div className="absolute bottom-20 right-10 size-24 animate-pulse rounded-full bg-purple-400/30 blur-2xl 2xl:hidden" />
-      <div className="bg-grid-white10 absolute inset-0 2xl:hidden" />
-      {/* -----------------------------------------------------------------------------------------------------------*/}
+    <section className="relative min-h-screen overflow-hidden bg-primary_bg">
+      {/* Background geometric elements */}
+      <div className="absolute inset-0">
+        {/* Large gradient orb - top right */}
+        <div className="absolute right-[-200px] top-[-100px] h-[600px] w-[600px] rounded-full bg-gradient-to-br from-accent via-accent_light to-accent_dark opacity-80 blur-3xl"></div>
 
-      <div className="flex h-full flex-col items-center justify-center max-sm:z-10 max-sm:text-center 2xl:items-start 2xl:text-left">
-        <p className="font-neueMontreal text-[10px] font-medium text-white 2xl:text-primary_text 3xl:text-sm">
-          All good stories deserve embellishment - Gandalf the Grey
-        </p>
-        <span className="font-neueMontreal text-4xl font-medium text-white xl:text-[54px] xl:font-medium 2xl:text-primary_text 3xl:text-[64px]">
-          We are a{" "}
-          <span className="text-accent">
-            Software
-            <p>
-              Development <span className="text-white 2xl:text-primary_text">Company.</span>
-            </p>
-          </span>
-        </span>
-        <p className="mt-4 font-neueMontreal text-sm font-medium text-white xl:text-lg 2xl:text-primary_text">
-          Partnering with You to Build Smarter, Stronger Digital Solutions
-        </p>
-        <Button variant="primary" className="mt-4 xl:mt-8">
-          Get Started
-        </Button>
-        <div className="mt-8 flex w-full items-center justify-center gap-4 text-xs font-medium text-white lg:hidden">
-          <div className="w-1/3 rounded-lg bg-accent/20 py-3">
-            <div className="mx-auto mb-2 h-3 w-3 rounded-full bg-accent"></div>
-            <span>Lahore</span>
-          </div>
-          <div className="w-1/3 rounded-lg bg-accent/20 py-3">
-            <div className="mx-auto mb-2 h-3 w-3 rounded-full bg-accent"></div>
-            <span>Manchester</span>
-          </div>
-          <div className="w-1/3 rounded-lg bg-accent/20 py-3">
-            <div className="mx-auto mb-2 h-3 w-3 rounded-full bg-accent"></div>
-            <span>Texas</span>
-          </div>
+        {/* Medium gradient orb - left center */}
+        <div className="absolute left-[-150px] top-[40%] h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-accent_dark via-accent to-accent_light opacity-60 blur-2xl"></div>
+
+        {/* Small accent elements */}
+        <div className="absolute right-[20%] top-[20%] h-[200px] w-[200px] rounded-full bg-gradient-to-br from-accent to-accent_light opacity-40 blur-xl"></div>
+
+        {/* Geometric lines/shapes */}
+        <div className="absolute left-[10%] top-[30%] h-[1px] w-[200px] bg-gradient-to-r from-accent to-transparent opacity-30"></div>
+        <div className="absolute bottom-[40%] right-[15%] h-[150px] w-[1px] bg-gradient-to-b from-accent to-transparent opacity-30"></div>
+      </div>
+
+      {/* Left sidebar navigation */}
+      <div className="absolute left-8 top-1/2 z-20 hidden -translate-y-1/2 lg:block">
+        <div className="flex flex-col space-y-4 text-sm text-secondary_text">
+          <a href="#" className="transition-colors hover:text-accent">
+            Business
+          </a>
+          <a href="#" className="transition-colors hover:text-accent">
+            Commerce
+          </a>
+          <a href="#" className="transition-colors hover:text-accent">
+            Portfolios
+          </a>
+          <a href="#" className="transition-colors hover:text-accent">
+            Blogging
+          </a>
+          <a href="#" className="transition-colors hover:text-accent">
+            Leaders
+          </a>
+        </div>
+        <div className="mt-8 flex flex-col space-y-4 border-t border-border_secondary pt-8 text-sm text-secondary_text">
+          <a href="#" className="transition-colors hover:text-accent">
+            Documentation
+          </a>
+          <a href="#" className="transition-colors hover:text-accent">
+            Help
+          </a>
+          <a href="#" className="transition-colors hover:text-accent">
+            References
+          </a>
+          <a href="#" className="transition-colors hover:text-accent">
+            API
+          </a>
         </div>
       </div>
 
-      <div className="absolute right-6 hidden 2xl:block 3xl:right-20">
-        <object
-          ref={mapRef}
-          type="image/svg+xml"
-          data="/images/Map.svg"
-          className="2xl:h-[500px] 2xl:w-[878px] 3xl:h-[600px] 3xl:w-[1052px]"
-        >
-          Your browser does not support SVG
-        </object>
-        {tooltip.visible && (
-          <div
-            className="absolute rounded-lg bg-primary_bg px-4 py-2 text-black shadow-lg"
-            style={{
-              left: tooltip.x,
-              top: tooltip.y,
-              transform: "translate(-50%, -100%)",
-            }}
-          >
-            {tooltip.city}
+      {/* Main content */}
+      <div className="relative z-10 flex min-h-screen items-center justify-center px-4 lg:px-8">
+        <div className="max-w-4xl text-center">
+          {/* Main heading */}
+          <h1 className="mb-8 font-neueMontreal text-5xl font-medium text-primary_text lg:text-7xl xl:text-8xl">
+            Start building{" "}
+            <span className="relative">
+              websites
+              {/* Gradient underline effect */}
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent_light to-accent_dark"></div>
+            </span>
+            <br />
+            people{" "}
+            <span className="bg-gradient-to-r from-accent via-accent_light to-accent_dark bg-clip-text text-transparent">
+              remember.
+            </span>
+          </h1>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button
+              variant="primary"
+              className="border-border_primary bg-surface_bg px-8 py-4 text-base text-primary_text hover:bg-hover_bg"
+            >
+              Become a member
+            </Button>
+
+            <button className="flex items-center gap-2 rounded-lg bg-transparent px-8 py-4 text-base text-secondary_text transition-colors hover:text-primary_text">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-white">
+                <ArrowRightIcon size={16} />
+              </span>
+              About us
+            </button>
           </div>
-        )}
+
+          {/* Bottom tagline */}
+          <p className="mx-auto mt-16 max-w-2xl text-sm text-secondary_text lg:text-base">
+            Osmo came from constantly digging through old projects wondering 'how did I build that
+            again?' It's basically our personal toolkit, loaded with components, techniques, tools
+            and learnings — and it's totally yours.
+          </p>
+        </div>
       </div>
+
+      {/* Bottom right geometric element */}
+      <div className="absolute bottom-0 right-0 h-[300px] w-[300px] opacity-20">
+        <svg viewBox="0 0 300 300" className="h-full w-full">
+          <defs>
+            <linearGradient id="bottomGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FF4C24" />
+              <stop offset="100%" stopColor="#E63E1B" />
+            </linearGradient>
+          </defs>
+          <polygon
+            points="150,50 250,150 150,250 50,150"
+            fill="url(#bottomGradient)"
+            opacity="0.3"
+          />
+        </svg>
+      </div>
+
+      {/* Grid overlay for texture */}
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `
+          linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
+        `,
+          backgroundSize: "50px 50px",
+        }}
+      ></div>
     </section>
   );
 };

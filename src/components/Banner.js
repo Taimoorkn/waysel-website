@@ -3,7 +3,7 @@
 import React from "react";
 import Button from "./Button";
 
-const Banner = ({ variant = "default", className = "bg-light_blue_bg", ...props }) => {
+const Banner = ({ variant = "default", className = "bg-card_bg", ...props }) => {
   const baseStyles = "relative py-8 sm:py-10 lg:py-[60px] px-4 sm:px-6 lg:px-8 2xl:px-[9.5rem]";
 
   const variants = {

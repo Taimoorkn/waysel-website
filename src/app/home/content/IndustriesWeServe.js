@@ -64,13 +64,13 @@ const IndustriesWeServe = () => {
         <span className="text-accent">Industries </span>
         <span className="text-primary_text">We Serve</span>
       </h2>
-      <div className="grid grid-cols-2 border-l border-t border-gray-200 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
+      <div className="grid grid-cols-2 border-l border-t border-border_primary sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
         {industries.map((industry, index) => {
           const [isHovered, setIsHovered] = useState(false);
           return (
             <div
               key={index}
-              className="flex flex-col items-center justify-center border-b border-r border-gray-200 px-4 py-12 text-center hover:bg-gray-50"
+              className="flex flex-col items-center justify-center border-b border-r border-border_primary px-4 py-12 text-center hover:bg-hover_bg"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >

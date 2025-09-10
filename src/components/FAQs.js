@@ -22,7 +22,7 @@ const FAQ = ({ faqs = [] }) => {
           >
             <AccordionHeader
               onClick={() => handleOpen(index)}
-              className={`px-4 py-4 text-left font-neueMontreal text-xs text-primary_text transition-colors sm:px-6 sm:py-6 sm:text-base lg:px-9 ${open === index ? "text-blue-500" : ""} flex w-full items-center justify-between`}
+              className={`px-4 py-4 text-left font-neueMontreal text-xs text-primary_text transition-colors sm:px-6 sm:py-6 sm:text-base lg:px-9 ${open === index ? "text-accent" : ""} flex w-full items-center justify-between`}
             >
               <span className="flex-1">{item.question}</span>
               <span className="ml-2 sm:ml-4">
