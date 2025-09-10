@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 mt-[42px] font-neueMontreal font-medium leading-4">
       <div className="mx-16">
-        <div className="flex items-center border">
+        <div className="flex items-center">
           {/* Logo */}
           <div className="flex items-center gap-[306px] text-4xl text-white">
             <p>Osmo</p>
@@ -31,7 +31,7 @@ const Navbar = () => {
                 width="100%"
                 viewBox="0 0 160 160"
                 fill="none"
-                className="relative size-8 flex-shrink-0 border"
+                className="relative size-8 flex-shrink-0"
               >
                 <path
                   d="M94.8284 53.8578C92.3086 56.3776 88 54.593 88 51.0294V0H72V59.9999C72 66.6273 66.6274 71.9999 60 71.9999H0V87.9999H51.0294C54.5931 87.9999 56.3777 92.3085 53.8579 94.8283L18.3431 130.343L29.6569 141.657L65.1717 106.142C67.684 103.63 71.9745 105.396 72 108.939V160L88.0001 160L88 99.9999C88 93.3725 93.3726 87.9999 100 87.9999H160V71.9999H108.939C105.407 71.9745 103.64 67.7091 106.12 65.1938L106.142 65.1716L141.657 29.6568L130.343 18.3432L94.8284 53.8578Z"

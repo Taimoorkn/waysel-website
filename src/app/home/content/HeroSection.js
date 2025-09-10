@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
+
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Left sidebar text */}
-      <div className="absolute left-[107px] top-[262px] z-20 font-neueMontreal text-[21px] font-medium text-[#9c9b9a]">
+      <div className="absolute left-[107px] top-[258px] z-20 font-neueMontreal text-[21px] font-medium text-[#9c9b9a]">
         <div className="flex gap-16">
           <div className="flex flex-col">
             {["Buttons", "Components", "Transitions", "Animations", "Loaders"].map(
@@ -23,26 +25,25 @@ const HeroSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-8">
-        <div className="w-full max-w-[836px] text-center">
-          {/* Main heading */}
-          <h1 className="mb-12 text-start font-neueMontreal text-[120px] font-medium leading-[0.8] text-[#EFEEEC]">
-            Start building <br />
-            websites people <br />
-            remember.
-          </h1>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <button className="rounded-md bg-white px-7 py-2.5 text-sm font-medium text-black transition-all hover:scale-105 hover:bg-gray-100">
-              Become a member
-            </button>
-
-            <button className="flex items-center gap-2 rounded-md bg-transparent px-7 py-2.5 text-sm text-gray-400 transition-all hover:text-white">
-              <span className="text-base">👋👤</span>
-              About us
-            </button>
-          </div>
+      <div className="relative ml-[670px] mt-[234px] flex max-w-[844px] flex-col items-start justify-start">
+        <div className="space-y-5 text-start font-neueMontreal text-[118px] font-medium leading-[0.8] text-[#EFEEEC]">
+          <h1>Start building</h1>
+          <h1>websites people</h1>
+          <h1>remember.</h1>
+        </div>
+        <div className="mt-16 flex items-center space-x-[42px] font-neueMontreal text-[21px] font-medium">
+          {[
+            { href: "/login", label: "Become a Member" },
+            { href: "/get-started", label: "Abous Us" },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-md bg-[#efeeec] px-8 py-6 leading-[1] text-[#131313]"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
 
