@@ -57,20 +57,28 @@ const Navbar = () => {
           
           const handleMouseEnter = () => {
             gsap.to(letters, {
-              rotationY: 360,
-              duration: 0.6,
-              stagger: 0.05,
-              ease: "power2.out",
+              y: 30,
+              opacity: 0,
+              duration: 0.3,
+              stagger: 0.03,
+              ease: "power2.in",
+              onComplete: () => {
+                gsap.fromTo(letters, 
+                  { y: -30, opacity: 0 },
+                  {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.3,
+                    stagger: 0.03,
+                    ease: "power2.out",
+                  }
+                );
+              }
             });
           };
 
           const handleMouseLeave = () => {
-            gsap.to(letters, {
-              rotationY: 0,
-              duration: 0.4,
-              stagger: 0.02,
-              ease: "power2.out",
-            });
+            gsap.set(letters, { y: 0, opacity: 1 });
           };
 
           link.addEventListener("mouseenter", handleMouseEnter);
