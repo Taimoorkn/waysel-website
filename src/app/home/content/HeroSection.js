@@ -106,7 +106,7 @@ const HeroSection = () => {
         <p className="font-neueMontreal text-[10px] font-medium text-white 2xl:text-primary_text 3xl:text-sm">
           All good stories deserve embellishment - Gandalf the Grey
         </p>
-        <span className="font-neueMontreal text-4xl font-normal text-white xl:text-[54px] xl:font-semibold 2xl:text-primary_text 3xl:text-[64px]">
+        <span className="font-neueMontreal text-4xl font-medium text-white xl:text-[54px] xl:font-medium 2xl:text-primary_text 3xl:text-[64px]">
           We are a{" "}
           <span className="text-accent">
             Software

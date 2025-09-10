@@ -24,7 +24,7 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="mb-4 bg-clip-text font-neueMontreal text-4xl font-semibold text-transparent text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-[72px]">
+          <h1 className="mb-4 bg-clip-text font-neueMontreal text-4xl font-medium text-transparent text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-[72px]">
             Build <span className="text-accent">Smart</span>,<br />
             Scale <span className="text-accent">Fast</span>,<br />
             Win <span className="text-accent">Globally</span>
@@ -37,7 +37,7 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col items-center justify-center gap-3 font-neueMontreal sm:flex-row sm:gap-4">
-            <button className="group flex transform items-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-blue-700 hover:shadow-2xl sm:px-8 sm:py-4 sm:text-base">
+            <button className="group flex transform items-center rounded-full bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-blue-700 hover:shadow-2xl sm:px-8 sm:py-4 sm:text-base">
               Start Your Journey
               <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
             </button>

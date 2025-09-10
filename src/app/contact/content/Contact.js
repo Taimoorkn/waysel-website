@@ -214,7 +214,7 @@ const Contact = () => {
           <StarFourIcon weight="fill" className="mr-2 h-4 w-4" />
           CONTACT US
         </div>
-        <h2 className="mb-4 font-neueMontreal text-3xl font-semibold text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
+        <h2 className="mb-4 font-neueMontreal text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
           Bring that Idea to <span className="text-accent">Life</span>
         </h2>
         <p className="mx-auto max-w-3xl font-neueMontreal text-base text-secondary_text sm:text-lg lg:text-xl">
@@ -227,7 +227,7 @@ const Contact = () => {
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           {/* Left Section - Contact Info */}
           <div className="w-full rounded-2xl border border-gray-100 bg-white p-8 shadow-sm lg:w-2/6">
-            <h3 className="mb-6 font-neueMontreal text-2xl font-semibold text-primary_text">
+            <h3 className="mb-6 font-neueMontreal text-2xl font-medium text-primary_text">
               Get in Touch
             </h3>
             <div className="space-y-6 sm:space-y-8">
@@ -276,7 +276,7 @@ const Contact = () => {
           {/* Right Section - Contact Form */}
           <div className="w-full lg:w-4/6">
             <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
-              <h3 className="mb-6 font-neueMontreal text-2xl font-semibold text-primary_text">
+              <h3 className="mb-6 font-neueMontreal text-2xl font-medium text-primary_text">
                 Send Us a Message
               </h3>
 
@@ -427,7 +427,7 @@ const Contact = () => {
                 <div className="flex flex-col items-center gap-4 pt-2 sm:flex-row">
                   <button
                     type="submit"
-                    className="flex w-full items-center justify-center rounded-xl bg-blue-600 px-6 py-3.5 font-semibold text-white transition-colors duration-200 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50 sm:flex-1"
+                    className="flex w-full items-center justify-center rounded-xl bg-blue-600 px-6 py-3.5 font-medium text-white transition-colors duration-200 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50 sm:flex-1"
                     disabled={isSubmitting}
                     aria-label="Send contact message"
                   >
@@ -448,7 +448,7 @@ const Contact = () => {
 
                   <button
                     type="button"
-                    className="flex w-full items-center justify-center rounded-xl bg-gray-800 px-6 py-3.5 font-semibold text-white transition-colors duration-200 hover:bg-gray-900 sm:flex-1"
+                    className="flex w-full items-center justify-center rounded-xl bg-gray-800 px-6 py-3.5 font-medium text-white transition-colors duration-200 hover:bg-gray-900 sm:flex-1"
                     //onClick={() => router.push('/appointment')}
                     aria-label="Book a meeting"
                   >

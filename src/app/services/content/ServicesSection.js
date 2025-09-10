@@ -179,7 +179,7 @@ const ServicesSection = () => {
           <StarFourIcon weight="fill" className="mr-2 h-4 w-4" />
           Our Technology Services
         </div>
-        <h2 className="mb-3 font-neueMontreal text-3xl font-semibold text-primary_text sm:mb-4 sm:text-4xl lg:text-5xl">
+        <h2 className="mb-3 font-neueMontreal text-3xl font-medium text-primary_text sm:mb-4 sm:text-4xl lg:text-5xl">
           Services that <span className="text-accent">Transform</span>
         </h2>
         <p className="mx-auto max-w-3xl font-neueMontreal text-base text-secondary_text sm:text-lg lg:text-xl">
@@ -216,7 +216,7 @@ const ServicesSection = () => {
                         <span className="text-lg">{service.icon}</span>
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-neueMontreal text-lg font-semibold">{service.title}</h3>
+                        <h3 className="font-neueMontreal text-lg font-medium">{service.title}</h3>
                         <p className="mt-0.5 text-sm opacity-80">{service.shortDesc}</p>
                       </div>
                     </div>
@@ -238,7 +238,7 @@ const ServicesSection = () => {
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <h4 className="mb-3 flex items-center gap-2 font-neueMontreal text-base font-semibold text-primary_text">
+                    <h4 className="mb-3 flex items-center gap-2 font-neueMontreal text-base font-medium text-primary_text">
                       <div
                         className={`h-4 w-1 rounded-full bg-gradient-to-b ${service.gradient}`}
                       ></div>
@@ -262,7 +262,7 @@ const ServicesSection = () => {
                   </div>
 
                   <div>
-                    <h4 className="mb-3 flex items-center gap-2 font-neueMontreal text-base font-semibold text-primary_text">
+                    <h4 className="mb-3 flex items-center gap-2 font-neueMontreal text-base font-medium text-primary_text">
                       <div
                         className={`h-4 w-1 rounded-full bg-gradient-to-b ${service.gradient} opacity-60`}
                       ></div>
@@ -278,7 +278,7 @@ const ServicesSection = () => {
                             <div className="flex h-5 w-5 items-center justify-center rounded-md bg-white shadow-sm">
                               <span className="text-xs">{benefit.icon}</span>
                             </div>
-                            <span className="font-neueMontreal text-xs font-semibold text-primary_text">
+                            <span className="font-neueMontreal text-xs font-medium text-primary_text">
                               {benefit.title}
                             </span>
                           </div>
@@ -293,7 +293,7 @@ const ServicesSection = () => {
 
                 <div className="flex flex-col gap-2 border-t border-gray-100 pt-3 sm:flex-row">
                   <button
-                    className={`group relative flex-1 overflow-hidden rounded-md bg-gradient-to-r px-3 py-2 text-xs font-normal text-white shadow-lg transition-all duration-300 hover:scale-[1.02] ${service.gradient}`}
+                    className={`group relative flex-1 overflow-hidden rounded-md bg-gradient-to-r px-3 py-2 text-xs font-medium text-white shadow-lg transition-all duration-300 hover:scale-[1.02] ${service.gradient}`}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {service.buttonText}
@@ -328,7 +328,7 @@ const ServicesSection = () => {
                   <span className="text-lg text-white">{services[selectedService].icon}</span>
                 </div>
                 <div>
-                  <h3 className="font-neueMontreal text-xl font-semibold text-primary_text">
+                  <h3 className="font-neueMontreal text-xl font-medium text-primary_text">
                     Choose Service
                   </h3>
                   <p className="font-neueMontreal text-sm text-secondary_text">
@@ -352,7 +352,7 @@ const ServicesSection = () => {
                       <div className="mb-1 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <span className="text-base">{service.icon}</span>
-                          <span className="font-neueMontreal text-sm font-semibold">
+                          <span className="font-neueMontreal text-sm font-medium">
                             {service.title}
                           </span>
                         </div>
@@ -417,7 +417,7 @@ const ServicesSection = () => {
                     </div>
                   </div>
 
-                  <h3 className="mb-4 font-neueMontreal text-3xl font-semibold lg:text-4xl">
+                  <h3 className="mb-4 font-neueMontreal text-3xl font-medium lg:text-4xl">
                     {services[selectedService].title}
                   </h3>
                   <p className="max-w-2xl font-neueMontreal text-base opacity-90">
@@ -430,7 +430,7 @@ const ServicesSection = () => {
               <div className="p-6">
                 <div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
                   <div>
-                    <h4 className="mb-4 flex items-center gap-2 font-neueMontreal text-lg font-semibold text-primary_text">
+                    <h4 className="mb-4 flex items-center gap-2 font-neueMontreal text-lg font-medium text-primary_text">
                       <div
                         className={`h-6 w-1 rounded-full bg-gradient-to-b ${services[selectedService].gradient}`}
                       ></div>
@@ -455,7 +455,7 @@ const ServicesSection = () => {
                   </div>
 
                   <div>
-                    <h4 className="mb-4 flex items-center gap-2 font-neueMontreal text-lg font-semibold text-primary_text">
+                    <h4 className="mb-4 flex items-center gap-2 font-neueMontreal text-lg font-medium text-primary_text">
                       <div
                         className={`h-6 w-1 rounded-full bg-gradient-to-b ${services[selectedService].gradient} opacity-60`}
                       ></div>
@@ -472,7 +472,7 @@ const ServicesSection = () => {
                             <div className="flex h-6 w-6 items-center justify-center rounded-md bg-white shadow-sm">
                               <span className="text-sm">{benefit.icon}</span>
                             </div>
-                            <span className="font-neueMontreal text-sm font-semibold text-primary_text">
+                            <span className="font-neueMontreal text-sm font-medium text-primary_text">
                               {benefit.title}
                             </span>
                           </div>
@@ -488,7 +488,7 @@ const ServicesSection = () => {
                 {/* Enhanced Action Buttons */}
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <button
-                    className={`group relative flex-1 overflow-hidden rounded-xl bg-gradient-to-r px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-[1.02] ${services[selectedService].gradient}`}
+                    className={`group relative flex-1 overflow-hidden rounded-xl bg-gradient-to-r px-6 py-3 font-medium text-white shadow-lg transition-all duration-300 hover:scale-[1.02] ${services[selectedService].gradient}`}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {services[selectedService].buttonText}
@@ -501,7 +501,7 @@ const ServicesSection = () => {
 
                   <button
                     onClick={() => handleClick(services[selectedService].src)}
-                    className={`group relative flex-1 overflow-hidden rounded-xl border-2 border-gray-300 px-6 py-3 font-semibold text-primary_text transition-all duration-300 hover:scale-[1.02] hover:border-gray-400 hover:bg-gray-50`}
+                    className={`group relative flex-1 overflow-hidden rounded-xl border-2 border-gray-300 px-6 py-3 font-medium text-primary_text transition-all duration-300 hover:scale-[1.02] hover:border-gray-400 hover:bg-gray-50`}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Learn More

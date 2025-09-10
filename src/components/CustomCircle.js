@@ -50,7 +50,7 @@ const CustomCircle = ({ size, iconSize, children }) => {
     zIndex: 4,
     fontFamily: '"Inter", sans-serif',
     letterSpacing: "-0.05em",
-    fontWeight: 500,
+    fontWeight: 500, // Using medium weight (500)
     color: "rgba(0, 0, 0, 0)",
     backgroundImage: "linear-gradient(135deg, rgba(25, 25, 25, 1), rgba(75, 75, 75, 1))",
     WebkitBackgroundClip: "text",

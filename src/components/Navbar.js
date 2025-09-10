@@ -202,7 +202,7 @@ const Navbar = () => {
         <div className="py-2">
           {Object.entries(SUB_SERVICES).map(([category, services]) => (
             <div key={category} className="mb-2 last:mb-0">
-              <div className="flex items-center gap-2 px-4 py-2 font-bold text-primary_text">
+              <div className="flex items-center gap-2 px-4 py-2 font-medium text-primary_text">
                 <div className="h-3 w-1 rounded-full bg-accent" aria-hidden="true"></div>
                 <span className="text-xs">{category}</span>
               </div>
@@ -307,7 +307,7 @@ const Navbar = () => {
       <div className="bg-white/8 overflow-hidden rounded-lg border border-white/20 backdrop-blur-sm">
         {Object.entries(SUB_SERVICES).map(([category, services], categoryIndex) => (
           <div key={category} className="border-b border-white/10 last:border-b-0">
-            <div className="flex items-center gap-2 px-4 py-2 font-bold text-primary_text">
+            <div className="flex items-center gap-2 px-4 py-2 font-medium text-primary_text">
               <span className="h-1.5 w-1.5 rounded-full bg-accent/80" aria-hidden="true"></span>
               <span className="text-xs">{category}</span>
             </div>
@@ -441,7 +441,7 @@ const Navbar = () => {
                 transitionDelay: isOpen ? `${MENU_ITEMS.length * MOBILE_ANIMATION_DELAY}ms` : "0ms",
               }}
             >
-              <Button variant="primary" className="w-full py-3 text-base font-semibold">
+              <Button variant="primary" className="w-full py-3 text-base font-medium">
                 Book a Call
               </Button>
             </div>

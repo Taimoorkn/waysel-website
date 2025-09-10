@@ -13,7 +13,7 @@
 }
 
 .service-header {
-  @apply mb-4 font-neueMontreal text-3xl font-semibold text-primary_text sm:text-4xl md:text-5xl;
+  @apply mb-4 font-neueMontreal text-3xl font-medium text-primary_text sm:text-4xl md:text-5xl;
 }
 
 .devprocess_section {

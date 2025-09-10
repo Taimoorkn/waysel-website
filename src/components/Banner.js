@@ -51,7 +51,7 @@ const Banner = ({ variant = "default", className = "bg-light_blue_bg", ...props 
         </div>
 
         {/* Content */}
-        <h2 className="relative z-10 px-4 text-center font-neueMontreal text-xl font-semibold sm:px-0 sm:text-2xl lg:text-[42px]">
+        <h2 className="relative z-10 px-4 text-center font-neueMontreal text-xl font-medium sm:px-0 sm:text-2xl lg:text-[42px]">
           {heading}
         </h2>
         <p className="relative z-10 px-4 text-center font-neueMontreal text-sm sm:px-0 sm:text-base lg:text-lg">

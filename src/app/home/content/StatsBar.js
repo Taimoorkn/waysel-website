@@ -35,7 +35,7 @@ const StatsBar = () => {
             }`}
           >
             <div className="flex flex-1 flex-col items-start font-neueMontreal text-white sm:flex-none sm:items-center lg:flex-1 lg:items-start">
-              <p className="text-xl font-semibold sm:text-2xl lg:text-[2rem]">{stat.value}</p>
+              <p className="text-xl font-medium sm:text-2xl lg:text-[2rem]">{stat.value}</p>
               <p className="mt-1 text-xs font-medium sm:text-center sm:text-sm lg:text-left lg:text-sm">
                 {stat.label}
               </p>

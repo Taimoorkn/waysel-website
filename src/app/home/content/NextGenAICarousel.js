@@ -20,7 +20,7 @@ const NextGenAICard = ({ name, description, buttonText, icon, backgroundImage })
       />
       <div className="relative flex w-full max-w-[480px] flex-col items-start text-start">
         <div className="mb-6 text-white">
-          <h1 className="mb-2 font-neueMontreal text-2xl font-medium sm:text-4xl sm:font-semibold">
+          <h1 className="mb-2 font-neueMontreal text-2xl font-medium sm:text-4xl sm:font-medium">
             {name}
           </h1>
           <p className="font-neueMontreal text-base sm:text-lg">{description}</p>

@@ -31,7 +31,7 @@ const FAQ = ({ faqs = [] }) => {
                 />
               </span>
             </AccordionHeader>
-            <AccordionBody className="bg-light_blue_bg px-4 py-3 text-sm font-normal text-primary_text sm:px-6 sm:py-4 sm:text-base lg:px-9">
+            <AccordionBody className="bg-light_blue_bg px-4 py-3 text-sm font-medium text-primary_text sm:px-6 sm:py-4 sm:text-base lg:px-9">
               <p>{item.answer}</p>
             </AccordionBody>
           </Accordion>

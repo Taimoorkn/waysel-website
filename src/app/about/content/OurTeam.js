@@ -46,7 +46,7 @@ const OurTeam = () => {
     <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-primary_bg px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 2xl:px-[9.5rem]">
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center sm:mb-12 lg:mb-16">
-          <h2 className="mb-4 font-neueMontreal text-3xl font-semibold text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
+          <h2 className="mb-4 font-neueMontreal text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Our Team
             </span>
@@ -75,10 +75,10 @@ const OurTeam = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
               <div className="p-4 font-neueMontreal sm:p-6">
-                <div className="mb-2 text-xs font-semibold uppercase text-blue-600 sm:text-sm">
+                <div className="mb-2 text-xs font-medium uppercase text-blue-600 sm:text-sm">
                   {member.role}
                 </div>
-                <h3 className="mb-3 text-lg font-bold text-gray-900 transition-colors group-hover:text-blue-600 sm:mb-4 sm:text-xl lg:text-2xl">
+                <h3 className="mb-3 text-lg font-medium text-gray-900 transition-colors group-hover:text-blue-600 sm:mb-4 sm:text-xl lg:text-2xl">
                   {member.name}
                 </h3>
                 <div className="h-1 w-full overflow-hidden rounded-full bg-gray-100">

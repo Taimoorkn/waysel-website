@@ -13,7 +13,7 @@ const GoalsVision = () => {
 
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center sm:mb-12 lg:mb-16">
-          <h2 className="mb-4 font-neueMontreal text-3xl font-semibold text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
+          <h2 className="mb-4 font-neueMontreal text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
             Our{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Mission
@@ -30,11 +30,11 @@ const GoalsVision = () => {
                 <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent_purple sm:mr-4 sm:h-12 sm:w-12">
                   <TargetIcon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="font-neueMontreal text-xl font-bold text-blue-600 sm:text-2xl">
+                <h3 className="font-neueMontreal text-xl font-medium text-blue-600 sm:text-2xl">
                   Our Goals
                 </h3>
               </div>
-              <h4 className="mb-4 font-neueMontreal text-xl font-semibold text-primary_text sm:mb-6 sm:text-2xl lg:text-[32px]">
+              <h4 className="mb-4 font-neueMontreal text-xl font-medium text-primary_text sm:mb-6 sm:text-2xl lg:text-[32px]">
                 To upscale your business to a higher level
               </h4>
               <p className="font-neueMontreal text-sm text-secondary_text sm:text-base lg:text-lg">
@@ -44,7 +44,7 @@ const GoalsVision = () => {
               </p>
               <Link
                 href={"/contact"}
-                className="mt-4 flex items-center font-neueMontreal text-sm font-semibold text-accent transition-transform group-hover:translate-x-2 sm:mt-6 sm:text-base"
+                className="mt-4 flex items-center font-neueMontreal text-sm font-medium text-accent transition-transform group-hover:translate-x-2 sm:mt-6 sm:text-base"
               >
                 Get Started <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>
@@ -57,11 +57,11 @@ const GoalsVision = () => {
                 <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent_purple sm:mr-4 sm:h-12 sm:w-12">
                   <EyeIcon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="font-neueMontreal text-xl font-bold text-accent sm:text-2xl">
+                <h3 className="font-neueMontreal text-xl font-medium text-accent sm:text-2xl">
                   Our Vision
                 </h3>
               </div>
-              <h4 className="mb-4 font-neueMontreal text-xl font-semibold text-primary_text sm:mb-6 sm:text-2xl lg:text-[32px]">
+              <h4 className="mb-4 font-neueMontreal text-xl font-medium text-primary_text sm:mb-6 sm:text-2xl lg:text-[32px]">
                 To provide solutions for growing companies
               </h4>
               <p className="font-neueMontreal text-sm text-secondary_text sm:text-base lg:text-lg">
@@ -71,7 +71,7 @@ const GoalsVision = () => {
               </p>
               <Link
                 href={"/contact"}
-                className="mt-4 flex items-center font-neueMontreal text-sm font-semibold text-accent transition-transform group-hover:translate-x-2 sm:mt-6 sm:text-base"
+                className="mt-4 flex items-center font-neueMontreal text-sm font-medium text-accent transition-transform group-hover:translate-x-2 sm:mt-6 sm:text-base"
               >
                 Get Started <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>

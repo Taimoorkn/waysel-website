@@ -132,7 +132,7 @@ const Footer = () => {
           {/* Services & Technologies */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-1">
             <div>
-              <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
+              <h3 className="mb-4 flex items-center gap-2 text-lg font-medium text-white">
                 <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent/20">
                   <div className="h-2 w-2 rounded-full bg-accent"></div>
                 </div>
@@ -151,7 +151,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
+              <h3 className="mb-4 flex items-center gap-2 text-lg font-medium text-white">
                 <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent/20">
                   <div className="h-2 w-2 rounded-full bg-accent"></div>
                 </div>
@@ -172,7 +172,7 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div className="lg:col-span-4">
-            <h3 className="mb-6 flex items-center gap-2 text-lg font-semibold text-white">
+            <h3 className="mb-6 flex items-center gap-2 text-lg font-medium text-white">
               <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent/20">
                 <div className="h-2 w-2 rounded-full bg-accent"></div>
               </div>
