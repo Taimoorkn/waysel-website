@@ -16,7 +16,9 @@
       "Bash(npm uninstall:*)",
       "Bash(npm ls:*)",
       "Bash(npm run format:*)",
-      "Read(//c/Users/Taimoor/Downloads/screenshots/**)"
+      "Read(//c/Users/Taimoor/Downloads/screenshots/**)",
+      "Bash(claude doctor)",
+      "Bash(npm i:*)"
     ],
     "deny": [],
     "ask": []

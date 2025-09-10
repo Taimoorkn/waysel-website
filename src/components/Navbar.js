@@ -1,122 +1,45 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CaretDownIcon, ArrowRightIcon } from "@phosphor-icons/react";
+import { Star } from "@phosphor-icons/react";
 import Button from "./Button";
 
 // Configuration objects moved outside component to prevent recreating on each render
-const SUB_SERVICES = {
-  "Application Development": [
-    { title: "Web Development", src: "/services/web-development" },
-    { title: "Mobile App Development", src: "/services/mobile-development" },
-    { title: "Custom Software Development", src: "/services/custom-software-development" },
-  ],
-  "Business Solutions": [
-    { title: "E-Commerce Development", src: "/services/ecommerce-development" },
-    { title: "Enterprise Solutions", src: "/services/enterprise-solutions" },
-  ],
-  "Technical Services": [
-    { title: "Cloud Integration", src: "/services/cloud-integration" },
-    { title: "Chrome Browser Extensions", src: "/services/chrome-extension-development" },
-  ],
-};
 
 const MENU_ITEMS = [
   { href: "/", label: "Home" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/services", label: "Services", hasSubmenu: true },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/resources", label: "Resources", hasBadge: true },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 // Animation timing constants
-const DROPDOWN_DELAY = 150;
 const MOBILE_ANIMATION_DELAY = 50;
-const MOBILE_SUBMENU_DELAY = 40;
 
 const Navbar = () => {
   const pathname = usePathname();
 
   // State management
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState(null);
-  const [isDesktopDropdownOpen, setIsDesktopDropdownOpen] = useState(false);
-  const [hoveredService, setHoveredService] = useState(null);
 
-  // Refs
-  const dropdownRef = useRef(null);
-  const timeoutRef = useRef(null);
-
-  // Memoized derived state
-  const isServicesActive = useMemo(() => pathname.startsWith("/services"), [pathname]);
-
-  const activeServiceInfo = useMemo(() => {
-    for (const [category, services] of Object.entries(SUB_SERVICES)) {
-      const activeService = services.find((service) => pathname === service.src);
-      if (activeService) return { category, service: activeService };
-    }
-    return null;
-  }, [pathname]);
 
   // Memoized handlers
   const toggleMenu = useCallback(() => setIsOpen((prev) => !prev), []);
-
-  const toggleSubmenu = useCallback((label) => {
-    setActiveSubmenu((prev) => (prev === label ? null : label));
-  }, []);
-
-  const handleMouseEnter = useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setIsDesktopDropdownOpen(true);
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    timeoutRef.current = setTimeout(() => {
-      setIsDesktopDropdownOpen(false);
-      setHoveredService(null);
-    }, DROPDOWN_DELAY);
-  }, []);
-
   const closeMobileMenu = useCallback(() => setIsOpen(false), []);
-
-  // Effects
-  useEffect(() => {
-    // Auto-open mobile submenu if on a service page
-    if (activeServiceInfo && isOpen) {
-      setActiveSubmenu("Services");
-    }
-  }, [activeServiceInfo, isOpen]);
-
-  useEffect(() => {
-    // Cleanup timeout on unmount
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
 
   // Enhanced keyboard navigation
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === "Escape") {
-        if (isDesktopDropdownOpen) {
-          setIsDesktopDropdownOpen(false);
-        }
-        if (isOpen) {
-          setIsOpen(false);
-        }
+      if (e.key === "Escape" && isOpen) {
+        setIsOpen(false);
       }
     };
 
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
-  }, [isDesktopDropdownOpen, isOpen]);
+  }, [isOpen]);
 
   // Body scroll lock for mobile menu
   useEffect(() => {
@@ -133,124 +56,32 @@ const Navbar = () => {
 
   // Render helpers
   const renderDesktopNavItem = (item, index) => {
-    const isActive = pathname === item.href || (item.label === "Services" && isServicesActive);
-
-    if (item.hasSubmenu) {
-      return (
-        <li
-          key={item.label}
-          className="relative flex items-center px-3"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          ref={dropdownRef}
-        >
-          <div className="group flex h-[4.5rem] cursor-pointer items-center">
-            <Link
-              href={item.href}
-              className={`relative mx-3 px-0.5 transition-colors duration-200 ${
-                isActive
-                  ? "text-accent after:w-full"
-                  : "after:w-0 group-hover:text-accent group-hover:after:w-full"
-              } after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:bg-accent after:transition-all after:duration-200`}
-            >
-              {item.label}
-            </Link>
-            <CaretDownIcon
-              size={14}
-              className={`ml-1 transition-all duration-300 ease-out ${
-                isDesktopDropdownOpen
-                  ? "rotate-180 text-accent"
-                  : "text-primary_text group-hover:text-accent"
-              }`}
-              aria-hidden="true"
-            />
-          </div>
-
-          {renderDesktopDropdown()}
-        </li>
-      );
-    }
+    const isActive = pathname === item.href;
 
     return (
       <li key={item.label}>
         <Link href={item.href} className="group flex h-[4.5rem] items-center px-3">
           <span
-            className={`relative px-0.5 transition-colors duration-200 ${
-              isActive ? "text-accent" : "group-hover:text-accent"
-            } after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:bg-accent ${
+            className={`relative px-0.5 transition-colors duration-200 flex items-center gap-1 ${
+              isActive ? "text-white" : "text-gray-300 group-hover:text-white"
+            } after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:bg-white ${
               isActive ? "after:w-full" : "after:w-0 group-hover:after:w-full"
             } after:transition-all after:duration-200`}
           >
             {item.label}
+            {item.hasBadge && (
+              <span className="ml-1 rounded-full bg-orange-500 px-2 py-0.5 text-xs text-white font-medium">
+                Hot
+              </span>
+            )}
           </span>
         </Link>
       </li>
     );
   };
 
-  const renderDesktopDropdown = () => (
-    <div
-      className={`absolute left-0 top-[calc(100%-4px)] z-50 w-[300px] transition-all duration-300 ease-out ${
-        isDesktopDropdownOpen
-          ? "visible translate-y-0 opacity-100"
-          : "pointer-events-none invisible translate-y-[-10px] opacity-0"
-      }`}
-      role="menu"
-      aria-label="Services submenu"
-    >
-      <div className="overflow-hidden rounded-xl border border-border_primary bg-card_bg shadow-2xl backdrop-blur-sm">
-        <div className="py-2">
-          {Object.entries(SUB_SERVICES).map(([category, services]) => (
-            <div key={category} className="mb-2 last:mb-0">
-              <div className="flex items-center gap-2 px-4 py-2 font-medium text-primary_text">
-                <div className="h-3 w-1 rounded-full bg-accent" aria-hidden="true"></div>
-                <span className="text-xs">{category}</span>
-              </div>
-              <div className="pl-4">
-                {services.map((service) => {
-                  const isServiceActive = pathname === service.src;
-                  const isHovered = hoveredService === service.src;
-
-                  return (
-                    <Link
-                      key={service.title}
-                      href={service.src}
-                      onMouseEnter={() => setHoveredService(service.src)}
-                      onMouseLeave={() => setHoveredService(null)}
-                      className={`group/item relative flex items-center justify-between py-2 pl-6 pr-4 transition-all duration-200 ${
-                        isServiceActive
-                          ? "bg-accent/8 font-medium text-accent"
-                          : isHovered
-                            ? "bg-accent/5 text-accent"
-                            : "text-secondary_text hover:bg-hover_bg"
-                      }`}
-                      role="menuitem"
-                    >
-                      <span className="relative z-10 text-xs">{service.title}</span>
-                      <ArrowRightIcon
-                        size={12}
-                        className={`transition-all duration-200 ${
-                          isServiceActive
-                            ? "translate-x-0 text-accent opacity-100"
-                            : isHovered
-                              ? "translate-x-1 text-accent opacity-100"
-                              : "translate-x-[-4px] text-tertiary_text opacity-0 group-hover/item:translate-x-0 group-hover/item:opacity-100"
-                        }`}
-                        aria-hidden="true"
-                      />
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-
   const renderMobileNavItem = (item, index) => {
-    const isActive = pathname === item.href || (item.label === "Services" && isServicesActive);
+    const isActive = pathname === item.href;
 
     return (
       <li
@@ -262,116 +93,36 @@ const Navbar = () => {
       >
         <div
           className={`relative flex h-9 cursor-pointer items-center gap-4 rounded-lg pl-4 pr-1 transition-all duration-200 ${
-            isActive ? "border-l-4 border-accent bg-accent/5 text-accent" : "active:scale-95"
+            isActive ? "border-l-4 border-white bg-white/5 text-white" : "active:scale-95"
           }`}
         >
-          {item.hasSubmenu ? (
-            <>
-              <Link href={item.href} className="flex-1" onClick={closeMobileMenu}>
-                {item.label}
-              </Link>
-              <button
-                onClick={() => toggleSubmenu(item.label)}
-                className="flex size-9 items-center justify-center rounded-lg transition-colors duration-200 hover:bg-accent/10 focus:outline-none"
-                aria-label={`Toggle ${item.label.toLowerCase()} submenu`}
-                aria-expanded={activeSubmenu === item.label}
-              >
-                <CaretDownIcon
-                  size={16}
-                  className={`transition-all duration-300 ease-out ${
-                    activeSubmenu === item.label ? "rotate-180 text-accent" : "text-primary_text"
-                  }`}
-                />
-              </button>
-            </>
-          ) : (
-            <Link href={item.href} className="flex-1" onClick={closeMobileMenu}>
-              {item.label}
-            </Link>
-          )}
+          <Link href={item.href} className="flex-1 flex items-center gap-2" onClick={closeMobileMenu}>
+            {item.label}
+            {item.hasBadge && (
+              <span className="ml-1 rounded-full bg-orange-500 px-2 py-0.5 text-xs text-white font-medium">
+                Hot
+              </span>
+            )}
+          </Link>
         </div>
-
-        {item.hasSubmenu && renderMobileSubmenu(item.label)}
       </li>
     );
   };
 
-  const renderMobileSubmenu = (label) => (
-    <div
-      className={`overflow-hidden transition-all duration-500 ease-out ${
-        activeSubmenu === label ? "mt-3 max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-      }`}
-      role="region"
-      aria-label={`${label} submenu`}
-    >
-      <div className="overflow-hidden rounded-lg border border-border_secondary bg-surface_bg/30 backdrop-blur-sm">
-        {Object.entries(SUB_SERVICES).map(([category, services], categoryIndex) => (
-          <div key={category} className="border-b border-border_secondary last:border-b-0">
-            <div className="flex items-center gap-2 px-4 py-2 font-medium text-primary_text">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent/80" aria-hidden="true"></span>
-              <span className="text-xs">{category}</span>
-            </div>
-            <div className="pb-1 pl-4">
-              {services.map((subService, serviceIndex) => {
-                const isServiceActive = pathname === subService.src;
-
-                return (
-                  <Link
-                    key={subService.title}
-                    href={subService.src}
-                    onClick={closeMobileMenu}
-                    className={`group relative mx-2 my-0.5 flex items-center justify-between overflow-hidden rounded-md py-2 pl-6 pr-4 transition-all duration-300 ease-out ${
-                      isServiceActive
-                        ? "bg-accent/8 font-medium text-accent"
-                        : "text-primary_text hover:bg-hover_bg hover:text-accent"
-                    }`}
-                    style={{
-                      transitionDelay:
-                        activeSubmenu === label
-                          ? `${(categoryIndex * services.length + serviceIndex) * MOBILE_SUBMENU_DELAY + 100}ms`
-                          : "0ms",
-                    }}
-                  >
-                    <span className="relative z-10 text-xs">{subService.title}</span>
-                    <ArrowRightIcon
-                      size={10}
-                      className={`transition-all duration-300 ${
-                        isServiceActive
-                          ? "translate-x-0 text-accent opacity-100"
-                          : "translate-x-[-8px] text-accent opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
-                      }`}
-                      aria-hidden="true"
-                    />
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
   return (
     <>
       <nav
-        className="fixed top-0 z-50 w-full bg-primary_bg pl-4 pr-1 shadow-navbar 2xl:px-[9.5rem]"
+        className="fixed top-0 z-50 w-full bg-black pl-4 pr-1 shadow-navbar 2xl:px-[9.5rem]"
         role="navigation"
         aria-label="Main navigation"
       >
         <div className="flex h-[3.5rem] w-full items-center justify-between xl:h-[4.5rem]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2" aria-label="TechiTech Solutions home">
-            <img
-              src="/images/TechiTechLogo.svg"
-              alt="TechiTech Logo"
-              className="size-9 md:h-10 md:w-12"
-              width={48}
-              height={40}
-            />
-            <span className="font-neueMontreal text-lg text-accent xl:text-2xl">
-              TechiTech Solutions
+          <Link href="/" className="flex items-center gap-3" aria-label="Osmo home">
+            <span className="font-neueMontreal text-xl text-white font-medium xl:text-2xl">
+              Osmo
             </span>
+            <Star size={20} className="text-white" weight="fill" />
           </Link>
 
           {/* Hamburger Button */}
@@ -411,11 +162,18 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden h-[4.5rem] items-center gap-4 lg:flex">
-            <ul className="flex h-[4.5rem] items-center space-x-4 font-neueMontreal text-sm font-medium text-primary_text">
+          <div className="hidden h-[4.5rem] items-center gap-8 lg:flex">
+            <ul className="flex h-[4.5rem] items-center space-x-6 font-neueMontreal text-sm font-medium text-primary_text">
               {MENU_ITEMS.map(renderDesktopNavItem)}
             </ul>
-            <Button variant="primary">Book a Call</Button>
+            <div className="flex items-center gap-4">
+              <Link href="/login" className="text-gray-300 hover:text-white transition-colors duration-200">
+                Log in
+              </Link>
+              <Button variant="primary" className="bg-white text-black hover:bg-gray-100">
+                Get Started
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -441,9 +199,18 @@ const Navbar = () => {
                 transitionDelay: isOpen ? `${MENU_ITEMS.length * MOBILE_ANIMATION_DELAY}ms` : "0ms",
               }}
             >
-              <Button variant="primary" className="w-full py-3 text-base font-medium">
-                Book a Call
-              </Button>
+              <div className="flex flex-col gap-3">
+                <Link 
+                  href="/login" 
+                  className="text-center py-3 text-base font-medium text-gray-300 hover:text-white transition-colors duration-200"
+                  onClick={closeMobileMenu}
+                >
+                  Log in
+                </Link>
+                <Button variant="primary" className="w-full py-3 text-base font-medium bg-white text-black hover:bg-gray-100">
+                  Get Started
+                </Button>
+              </div>
             </div>
           </div>
         </div>
