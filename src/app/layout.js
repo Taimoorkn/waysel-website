@@ -27,6 +27,26 @@ const clashGrotesk = localFont({
   display: 'swap',
 });
 
+const neueMontreal = localFont({
+  src: [
+    { path: "../../public/font/neue-montreal/NeueMontreal-Regular.otf", weight: "400" },
+    { path: "../../public/font/neue-montreal/NeueMontreal-Medium.otf", weight: "500" },
+    { path: "../../public/font/neue-montreal/NeueMontreal-Bold.otf", weight: "700" },
+  ],
+  variable: "--font-neueMontreal",
+  display: 'swap',
+});
+
+const rmMono = localFont({
+  src: [
+    { path: "../../public/font/rm-mono/RMMono-Regular.woff2", weight: "400" },
+    { path: "../../public/font/rm-mono/RMMono-SemiBold.woff2", weight: "600" },
+    { path: "../../public/font/rm-mono/RMMono-Black.woff2", weight: "900" },
+  ],
+  variable: "--font-rmMono",
+  display: 'swap',
+});
+
 export const metadata = {
   metadataBase: new URL('https://techitech.com'),
   title: {
@@ -101,7 +121,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icons/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </head>
-      <body suppressHydrationWarning className={`pt-[3.5rem] xl:pt-[4.5rem] ${clashGrotesk.variable} ${manrope.variable} ${robotoMono.variable} antialiased`}>
+      <body suppressHydrationWarning className={`pt-[3.5rem] xl:pt-[4.5rem] ${clashGrotesk.variable} ${manrope.variable} ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} antialiased`}>
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
         

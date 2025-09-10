@@ -14,8 +14,10 @@ module.exports = {
     extend: {
       fontFamily: {
         manrope: ["var(--font-manrope)", "sans-serif"],
-        clashGrotesk: ["var(--font-clashGrotesk), sans-serif"],
+        clashGrotesk: ["var(--font-clashGrotesk)", "sans-serif"],
         roboto_mono: ['var(--font-roboto-mono)', 'monospace'],
+        neueMontreal: ["var(--font-neueMontreal)", "sans-serif"],
+        rmMono: ["var(--font-rmMono)", "monospace"],
       },
       colors: {
         // Main Colours:
