@@ -9,15 +9,13 @@ import IndustriesWeServe from "./content/IndustriesWeServe";
 import Banner from "@/components/Banner";
 import { generalFaqs } from "@/constants/FaqConstants";
 
-// Lazy imported heavy components
-import {
-  LazyServicesCarousel,
-  LazyTestimonials,
-  LazyNextGenAI,
-  LazyFAQ,
-  LazyTechStack,
-  LazySuccessStories
-} from "@/components/DynamicLoader";
+// Regular imports
+import ServicesCarousel from "./content/ServicesCarousel";
+import Testimonials from "./content/Testimonials";
+import NextGenAICarousel from "./content/NextGenAICarousel";
+import FAQs from "@/components/FAQs";
+import TechStack from "@/components/TechStack";
+import SuccessStories from "@/components/SuccessStories";
 
 const HomePage = () => {
   return (
@@ -27,14 +25,14 @@ const HomePage = () => {
       <StatsBar />
       <CompaniesShowcase />
       
-      {/* Below the fold - Load dynamically */}
-      <LazyNextGenAI />
-      <LazyServicesCarousel />
+      {/* Below the fold - Now loading directly */}
+      <NextGenAICarousel />
+      <ServicesCarousel />
       <IndustriesWeServe />
-      {/* <LazySuccessStories /> */}
-      <LazyTechStack />
-      <LazyTestimonials />
-      <LazyFAQ faqs={generalFaqs} />
+      {/* <SuccessStories /> */}
+      <TechStack />
+      <Testimonials />
+      <FAQs faqs={generalFaqs} />
       <Banner variant="landingPage" />
     </>
   );

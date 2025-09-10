@@ -2,7 +2,7 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import React from 'react';
-import { LazyServicesSection } from '@/components/DynamicLoader';
+import ServicesSection from './content/ServicesSection';
 
 
 export const metadata = {
@@ -38,7 +38,7 @@ const Services = () => {
   return (
     <>
       <Navbar />
-      <LazyServicesSection />
+      <ServicesSection />
       <Footer />
     </>
   );

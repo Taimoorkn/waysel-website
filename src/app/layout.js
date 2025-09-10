@@ -2,7 +2,6 @@
 import { Manrope, Roboto_Mono} from "next/font/google";
 import localFont from "next/font/local";
 import "./styles/globals.css";
-import { Suspense } from "react";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 
 const manrope = Manrope({
@@ -107,13 +106,7 @@ export default function RootLayout({ children }) {
         <StructuredData data={websiteSchema} />
         
         <div id="root">
-          <Suspense fallback={
-            <div className="flex items-center justify-center min-h-screen">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
-            </div>
-          }>
-            {children}
-          </Suspense>
+          {children}
         </div>
       </body>
     </html>

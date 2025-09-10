@@ -6,7 +6,9 @@ import Footer from "@/components/Footer";
 import React from "react";
 import HeroSection from "./content/HeroSection";
 import Banner from "@/components/Banner";
-import { LazyComponent } from "@/components/DynamicLoader";
+import ServiceBoxes from "./content/ServiceBoxes";
+import DevelopmentProcess from "./content/DevelopmentProcess";
+import HelpYourBusiness from "./content/HelpYourBusiness";
 
 const webDevServiceData = {
   name: 'Web Development Services',
@@ -26,33 +28,6 @@ const breadcrumbData = [
   { name: 'Web Development', url: 'https://techitech.com/services/web-development' }
 ];
 
-const LazyServiceBoxes = (props) => (
-  <LazyComponent
-    importFn={() => import('./content/ServiceBoxes')}
-    className="min-h-[500px]"
-    minHeight="500px"
-    {...props}
-  />
-);
-
-const LazyDevelopmentProcess = (props) => (
-  <LazyComponent
-    importFn={() => import('./content/DevelopmentProcess')}
-    className="min-h-[600px]"
-    minHeight="600px"
-    {...props}
-  />
-);
-
-const LazyHelpYourBusiness = (props) => (
-  <LazyComponent
-    importFn={() => import('./content/HelpYourBusiness')}
-    className="min-h-[400px]"
-    minHeight="400px"
-    {...props}
-  />
-);
-
 const WebDevelopment = () => {
   return (
     <div>
@@ -60,9 +35,9 @@ const WebDevelopment = () => {
       <StructuredData data={breadcrumbSchema(breadcrumbData)} />
       <Navbar />
       <HeroSection />
-      <LazyServiceBoxes />
-      <LazyDevelopmentProcess />
-      <LazyHelpYourBusiness />
+      <ServiceBoxes />
+      <DevelopmentProcess />
+      <HelpYourBusiness />
       <Banner variant="webDev" />
       <Footer />
     </div>
