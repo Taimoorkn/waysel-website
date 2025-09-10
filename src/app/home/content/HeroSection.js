@@ -42,41 +42,48 @@ const HeroSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-4 lg:px-8">
-        <div className="max-w-4xl text-center">
+      <div className="relative z-10 flex min-h-screen items-center justify-center px-4 lg:px-8 pt-16">
+        <div className="max-w-5xl text-center">
           {/* Main heading */}
-          <h1 className="mb-8 font-neueMontreal text-5xl font-medium text-white lg:text-7xl xl:text-8xl">
+          <h1 className="mb-12 font-neueMontreal text-6xl font-normal text-white lg:text-8xl xl:text-9xl leading-tight">
             Start building websites<br />
             people remember.
           </h1>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button
-              variant="primary"
-              className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 text-base border border-gray-700"
-            >
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row mb-16">
+            <button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 text-base border border-gray-600 rounded-lg transition-colors">
               Become a member
-            </Button>
+            </button>
 
-            <button className="flex items-center gap-2 rounded-lg bg-transparent px-8 py-4 text-base text-gray-300 hover:text-white transition-colors">
+            <button className="flex items-center gap-3 rounded-lg bg-transparent px-8 py-3 text-base text-gray-300 hover:text-white transition-colors">
               <span className="text-lg">👋👤</span>
               About us
             </button>
           </div>
 
-          {/* Bottom tagline */}
-          <p className="mx-auto mt-16 max-w-2xl text-sm text-gray-400 lg:text-base">
-            Osmo came from constantly digging through old projects wondering, 'How did I build that again?' It is basically our personal toolbox, packed with components, techniques, tricks and tutorials—and it will keep growing.
-          </p>
         </div>
       </div>
 
+      {/* Bottom tagline - positioned absolutely */}
+      <div className="absolute bottom-16 left-8 right-8 z-20 lg:left-16 lg:right-auto lg:max-w-lg">
+        <p className="text-sm text-gray-400 lg:text-base">
+          Osmo came from constantly digging through old projects wondering, 'How did I build that again?' It is basically our personal toolbox, packed with components, techniques, tricks and tutorials—and it will keep growing.
+        </p>
+      </div>
+
       {/* Right side preview cards */}
-      <div className="absolute bottom-8 right-8 z-20 hidden lg:block">
-        <div className="flex flex-col gap-3">
-          <div className="h-16 w-24 rounded-lg bg-gray-800 border border-gray-700 opacity-60"></div>
-          <div className="h-16 w-24 rounded-lg bg-gray-800 border border-gray-700 opacity-80"></div>
+      <div className="absolute bottom-16 right-16 z-20 hidden lg:block">
+        <div className="flex flex-col gap-4">
+          <div className="h-20 w-32 rounded-lg bg-gray-900 border border-gray-700 opacity-70 relative overflow-hidden">
+            <div className="absolute inset-2 bg-gray-800 rounded"></div>
+            <div className="absolute top-3 left-3 w-2 h-2 bg-gray-600 rounded-full"></div>
+          </div>
+          <div className="h-20 w-32 rounded-lg bg-gray-900 border border-gray-700 opacity-80 relative overflow-hidden">
+            <div className="absolute inset-2 bg-gray-800 rounded"></div>
+            <div className="absolute top-3 left-3 w-2 h-2 bg-orange-500 rounded-full"></div>
+            <div className="absolute top-3 right-3 text-xs text-gray-400">WAYSEL</div>
+          </div>
         </div>
       </div>
 

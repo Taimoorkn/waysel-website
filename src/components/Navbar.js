@@ -180,7 +180,7 @@ const Navbar = () => {
         {/* Mobile Sidebar */}
         <div
           id="mobile-menu"
-          className={`fixed right-0 min-h-screen transform bg-primary_bg transition-transform duration-300 ease-in-out ${
+          className={`fixed right-0 min-h-screen transform bg-black transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           } z-50 w-[calc(100%-20%)] overflow-y-auto`}
           role="dialog"
