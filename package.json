@@ -9,7 +9,9 @@
     "lint": "next lint",
     "analyze": "cross-env ANALYZE=true next build",
     "build:analyze": "cross-env ANALYZE=true next build",
-    "build:production": "next build && next start"
+    "build:production": "next build && next start",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,md}\""
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
@@ -38,6 +40,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "postcss": "^8.4.49",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^3.4.15",
     "webpack-bundle-analyzer": "^4.10.2"
   }
