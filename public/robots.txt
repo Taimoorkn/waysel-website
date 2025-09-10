@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /temp/
+Disallow: /analyze/
+
+# Sitemap location
+Sitemap: https://techitech.com/sitemap.xml
+
+# Crawl-delay (optional)
+Crawl-delay: 1
