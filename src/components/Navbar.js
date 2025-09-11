@@ -3,6 +3,7 @@ import { StarAndCrescentIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import AnimatedText from "./AnimatedText";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -162,7 +163,7 @@ const Navbar = () => {
                 ref={(el) => (navLinksRef.current[index] = el)}
                 className="text-[21px] text-white transition-colors"
               >
-                {link.label}
+                <AnimatedText text={link.label} />
               </Link>
             ))}
           </div>
@@ -180,7 +181,7 @@ const Navbar = () => {
                     : "text-white transition-colors"
                 }
               >
-                {link.label}
+                <AnimatedText text={link.label} />
               </Link>
             ))}
           </div>
