@@ -22,6 +22,10 @@
     transition: transform var(--animation-default);
 }
 
+.button:hover .single-letter, .link:hover .single-letter {
+    transform: translateY(-4px);
+}
+
 /* Hide scrollbar for all browsers */
 html {
   scrollbar-width: none; /* Firefox */

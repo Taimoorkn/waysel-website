@@ -1,90 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useEffect } from "react";
+import AnimatedText from "../../../components/AnimatedText";
 
 const HeroSection = () => {
-  const heroLinksRef = useRef([]);
-
-  useEffect(() => {
-    // GSAP animations for hero section links
-    if (heroLinksRef.current.length > 0) {
-      gsap.fromTo(
-        heroLinksRef.current,
-        {
-          y: 30,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power2.out",
-          delay: 0.5,
-        }
-      );
-
-      // Function to wrap each letter in a span
-      const wrapLetters = (element) => {
-        const text = element.textContent;
-        const wrappedText = text
-          .split("")
-          .map((char, index) => {
-            if (char === " ") {
-              return " ";
-            }
-            return `<span class="letter-span" style="display: inline-block;">${char}</span>`;
-          })
-          .join("");
-        element.innerHTML = wrappedText;
-        return element.querySelectorAll(".letter-span");
-      };
-
-      // Hover animations
-      heroLinksRef.current.forEach((link) => {
-        if (link) {
-          const letters = wrapLetters(link);
-
-          const handleMouseEnter = () => {
-            gsap.to(letters, {
-              y: 30,
-              opacity: 0,
-              duration: 0.3,
-              stagger: 0.03,
-              ease: "power2.in",
-              onComplete: () => {
-                gsap.fromTo(
-                  letters,
-                  { y: -30, opacity: 0 },
-                  {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.3,
-                    stagger: 0.03,
-                    ease: "power2.out",
-                  }
-                );
-              },
-            });
-          };
-
-          const handleMouseLeave = () => {
-            gsap.set(letters, { y: 0, opacity: 1 });
-          };
-
-          link.addEventListener("mouseenter", handleMouseEnter);
-          link.addEventListener("mouseleave", handleMouseLeave);
-
-          return () => {
-            link.removeEventListener("mouseenter", handleMouseEnter);
-            link.removeEventListener("mouseleave", handleMouseLeave);
-          };
-        }
-      });
-    }
-  }, []);
 
   useEffect(() => {
     // Load Unicorn Studio library
@@ -179,10 +99,9 @@ const HeroSection = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                ref={(el) => (heroLinksRef.current[index] = el)}
-                className="w-full rounded-md bg-[#efeeec] px-4 py-3 text-center text-[#131313] sm:w-auto sm:px-[26px] sm:py-[15px]"
+                className="button w-full rounded-md bg-[#efeeec] px-4 py-3 text-center text-[#131313] sm:w-auto sm:px-[26px] sm:py-[15px]"
               >
-                {link.label}
+                <AnimatedText text={link.label} />
               </Link>
             ))}
           </div>

@@ -1,127 +1,10 @@
 "use client";
-import { StarAndCrescentIcon } from "@phosphor-icons/react";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useState } from "react";
 import AnimatedText from "./AnimatedText";
-import logoUrl from "../../public/Logo.svg";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navLinksRef = useRef([]);
-  const authLinksRef = useRef([]);
-  const mobileNavLinksRef = useRef([]);
-  const mobileAuthLinksRef = useRef([]);
-
-  useEffect(() => {
-    // Initial animation for navbar links
-    const allNavLinks = [...navLinksRef.current, ...authLinksRef.current].filter(Boolean);
-
-    if (allNavLinks.length > 0) {
-      gsap.fromTo(
-        allNavLinks,
-        {
-          y: -20,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power2.out",
-          delay: 0.2,
-        }
-      );
-    }
-
-    // Function to wrap each letter in a span
-    const wrapLetters = (element) => {
-      const text = element.textContent;
-      const wrappedText = text
-        .split("")
-        .map((char, index) => {
-          if (char === " ") {
-            return " ";
-          }
-          return `<span class="letter-span" style="display: inline-block;">${char}</span>`;
-        })
-        .join("");
-      element.innerHTML = wrappedText;
-      return element.querySelectorAll(".letter-span");
-    };
-
-    // Hover animations for desktop links
-    const addHoverAnimations = (links) => {
-      links.forEach((link) => {
-        if (link) {
-          const letters = wrapLetters(link);
-
-          const handleMouseEnter = () => {
-            gsap.to(letters, {
-              y: 30,
-              opacity: 0,
-              duration: 0.3,
-              stagger: 0.03,
-              ease: "power2.in",
-              onComplete: () => {
-                gsap.fromTo(
-                  letters,
-                  { y: -30, opacity: 0 },
-                  {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.3,
-                    stagger: 0.03,
-                    ease: "power2.out",
-                  }
-                );
-              },
-            });
-          };
-
-          const handleMouseLeave = () => {
-            gsap.set(letters, { y: 0, opacity: 1 });
-          };
-
-          link.addEventListener("mouseenter", handleMouseEnter);
-          link.addEventListener("mouseleave", handleMouseLeave);
-
-          return () => {
-            link.removeEventListener("mouseenter", handleMouseEnter);
-            link.removeEventListener("mouseleave", handleMouseLeave);
-          };
-        }
-      });
-    };
-
-    addHoverAnimations(navLinksRef.current);
-    addHoverAnimations(authLinksRef.current);
-  }, []);
-
-  useEffect(() => {
-    // Mobile menu animation
-    if (isMenuOpen) {
-      const allMobileLinks = [...mobileNavLinksRef.current, ...mobileAuthLinksRef.current].filter(
-        Boolean
-      );
-
-      gsap.fromTo(
-        allMobileLinks,
-        {
-          x: -30,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.1,
-          ease: "power2.out",
-        }
-      );
-    }
-  }, [isMenuOpen]);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -163,7 +46,6 @@ const Navbar = () => {
             <Link
               key={link.href}
               href={link.href}
-              ref={(el) => (navLinksRef.current[index] = el)}
               className="py-[5px] text-[17px] tracking-wide text-[#EFEEEC] transition-colors 3xl:text-[21px]"
             >
               <AnimatedText text={link.label} />
@@ -176,7 +58,6 @@ const Navbar = () => {
             <Link
               key={link.href}
               href={link.href}
-              ref={(el) => (authLinksRef.current[index] = el)}
               className={
                 link.isButton
                   ? "rounded-sm bg-[#efeeec] tracking-wide text-[#131313] sm:px-4 sm:py-2"
@@ -225,11 +106,10 @@ const Navbar = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  ref={(el) => (mobileNavLinksRef.current[index] = el)}
                   className="block px-3 py-2 text-sm font-medium text-white transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {link.label}
+                  <AnimatedText text={link.label} />
                 </Link>
               ))}
               <div className="mt-4 border-t border-gray-700 pt-4">
@@ -237,7 +117,6 @@ const Navbar = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    ref={(el) => (mobileAuthLinksRef.current[index] = el)}
                     className={
                       link.isButton
                         ? "mx-3 mt-2 block rounded-sm bg-white px-4 py-2 text-center text-sm font-medium text-black transition-colors"
@@ -245,7 +124,7 @@ const Navbar = () => {
                     }
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {link.label}
+                    <AnimatedText text={link.label} />
                   </Link>
                 ))}
               </div>
