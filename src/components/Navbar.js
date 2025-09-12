@@ -133,11 +133,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 mt-[42px] font-neueMontreal font-medium leading-4">
-      <div className="mx-16">
+    <nav className="fixed left-0 right-0 top-0 z-50 mt-6 md:mt-8 lg:mt-10 font-neueMontreal font-medium leading-4">
+      <div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16">
         <div className="flex items-center">
           {/* Logo */}
-          <div className="flex items-center gap-[306px] text-4xl text-white">
+          <div className="flex items-center justify-between w-full md:w-auto md:gap-32 lg:gap-64 xl:gap-80 text-2xl md:text-3xl lg:text-4xl text-white">
             <p>Waysel</p>
             <Link href="/">
               <svg width="40" height="40" viewBox="0 0 232 233" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -161,13 +161,13 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="ml-[332px] hidden space-x-11 md:flex">
+          <div className="hidden md:flex md:ml-8 lg:ml-16 xl:ml-20 space-x-4 lg:space-x-8 xl:space-x-11">
             {navLinks.map((link, index) => (
               <Link
                 key={link.href}
                 href={link.href}
                 ref={(el) => (navLinksRef.current[index] = el)}
-                className="text-[21px] text-white transition-colors"
+                className="text-base lg:text-lg xl:text-[21px] text-white transition-colors"
               >
                 <AnimatedText text={link.label} />
               </Link>
@@ -175,7 +175,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Right side buttons */}
-          <div className="ml-auto hidden items-center space-x-[42px] text-[21px] md:flex">
+          <div className="ml-auto hidden items-center space-x-4 lg:space-x-8 xl:space-x-[42px] text-base lg:text-lg xl:text-[21px] md:flex">
             {authLinks.map((link, index) => (
               <Link
                 key={link.href}
@@ -183,7 +183,7 @@ const Navbar = () => {
                 ref={(el) => (authLinksRef.current[index] = el)}
                 className={
                   link.isButton
-                    ? "rounded-md bg-[#efeeec] px-5 py-[18px] tracking-wide text-[#131313]"
+                    ? "rounded-md bg-[#efeeec] px-3 lg:px-4 xl:px-5 py-3 lg:py-4 xl:py-[18px] tracking-wide text-[#131313]"
                     : "text-white transition-colors"
                 }
               >
@@ -193,7 +193,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="ml-auto md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white transition-colors"

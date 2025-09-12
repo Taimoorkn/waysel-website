@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 
 const HeroSection = () => {
   const heroLinksRef = useRef([]);
-  
+
   useEffect(() => {
     // GSAP animations for hero section links
     if (heroLinksRef.current.length > 0) {
@@ -46,7 +46,7 @@ const HeroSection = () => {
       heroLinksRef.current.forEach((link) => {
         if (link) {
           const letters = wrapLetters(link);
-          
+
           const handleMouseEnter = () => {
             gsap.to(letters, {
               y: 30,
@@ -55,7 +55,7 @@ const HeroSection = () => {
               stagger: 0.03,
               ease: "power2.in",
               onComplete: () => {
-                gsap.fromTo(letters, 
+                gsap.fromTo(letters,
                   { y: -30, opacity: 0 },
                   {
                     y: 0,
@@ -129,7 +129,7 @@ const HeroSection = () => {
       }
     };
   }, []);
- 
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-black">
       {/* Unicorn Studio WebGL mesh background */}
@@ -146,16 +146,16 @@ const HeroSection = () => {
       ></div>
 
       {/* Left sidebar text */}
-      <div className="absolute left-[107px] top-[258px] z-20 font-neueMontreal text-[21px] font-medium text-[#9c9b9a]">
-        <div className="flex gap-16">
-          <div className="flex flex-col">
+      <div className="absolute left-4 sm:left-8 md:left-16 lg:left-20 xl:left-[107px] top-32 sm:top-40 md:top-48 lg:top-56 xl:top-[258px] z-20 font-neueMontreal text-sm sm:text-base md:text-lg lg:text-xl xl:text-[21px] font-medium text-[#9c9b9a] hidden md:block">
+        <div className="flex gap-4 sm:gap-8 md:gap-12 lg:gap-16">
+          <div className="flex flex-col space-y-1">
             {["Buttons", "Components", "Transitions", "Animations", "Loaders"].map(
               (item, index) => (
                 <span key={index}>{item}</span>
               )
             )}
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col space-y-1">
             {" "}
             {["Documentation", "Tools", "References", "Tutorials"].map((item, index) => (
               <span key={index}>{item}</span>
@@ -165,13 +165,13 @@ const HeroSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative ml-[670px] mt-[234px] flex max-w-[844px] flex-col items-start justify-start">
-        <div className="space-y-5 text-start font-neueMontreal text-[118px] font-medium leading-[0.8] text-[#EFEEEC]">
+      <div className="relative px-4 sm:px-8 md:px-0 md:ml-64 lg:ml-96 xl:ml-[670px] mt-20 sm:mt-28 md:mt-36 lg:mt-48 xl:mt-[234px] flex max-w-full md:max-w-2xl lg:max-w-3xl xl:max-w-[844px] flex-col items-start justify-start">
+        <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-5 text-start font-neueMontreal text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[118px] font-medium leading-[0.8] text-[#EFEEEC]">
           <h1>Start building</h1>
           <h1>websites people</h1>
           <h1>remember.</h1>
         </div>
-        <div className="mt-16 flex items-center space-x-[42px] font-neueMontreal text-[21px] font-medium">
+        <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-[42px] font-neueMontreal text-sm sm:text-base md:text-lg lg:text-xl xl:text-[21px] font-medium">
           {[
             { href: "/login", label: "Become a Member" },
             { href: "/get-started", label: "Abous Us" },
@@ -180,8 +180,7 @@ const HeroSection = () => {
               key={link.href}
               href={link.href}
               ref={(el) => (heroLinksRef.current[index] = el)}
-              className="rounded-md bg-[#efeeec] px-8 py-6 leading-[1] text-[#131313]"
-            >
+              className="rounded-md bg-[#efeeec] px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 py-3 sm:py-4 md:py-5 lg:py-5 xl:py-6 leading-[1] text-[#131313] w-full sm:w-auto text-center">
               {link.label}
             </Link>
           ))}
@@ -189,8 +188,8 @@ const HeroSection = () => {
       </div>
 
       {/* Bottom tagline - positioned absolutely */}
-      <div className="absolute bottom-16 left-8 right-8 z-20 lg:bottom-20 lg:left-12 xl:left-16 xl:right-auto xl:max-w-lg">
-        <p className="text-xs leading-relaxed text-gray-500 lg:text-sm">
+      <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 left-4 sm:left-6 md:left-8 lg:left-12 xl:left-16 right-4 sm:right-6 md:right-8 lg:right-auto z-20 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-lg">
+        <p className="text-xs sm:text-sm leading-relaxed text-gray-500">
           Waysel came from constantly digging through old projects wondering, 'How did I build that
           again?' It is basically our personal toolbox, packed with components, techniques, tricks
           and tutorials—and it will keep growing.
@@ -198,10 +197,11 @@ const HeroSection = () => {
       </div>
 
       {/* Cross indicator in bottom right */}
-      <div className="absolute bottom-48 right-48 z-10 hidden xl:block">
+      <div className="absolute bottom-32 md:bottom-40 lg:bottom-48 right-8 md:right-16 lg:right-32 xl:right-48 z-10 hidden lg:block">
         <svg
-          width="120"
-          height="120"
+          width="80"
+          height="80"
+          className="md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32"
           viewBox="0 0 120 120"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
