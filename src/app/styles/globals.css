@@ -18,30 +18,26 @@
     --animation-ease-double: 0.4s ease;
 }
 
-.button .single-letter, .link .single-letter {
+.button .single-letter, .nav-link-text .single-letter {
     transition: transform var(--animation-default);
 }
 
 @keyframes letterLoop {
     0% {
         transform: translateY(0);
-        opacity: 1;
     }
     50% {
         transform: translateY(-30px);
-        opacity: 0;
     }
     51% {
         transform: translateY(30px);
-        opacity: 0;
     }
     100% {
         transform: translateY(0);
-        opacity: 1;
     }
 }
 
-.button:hover .single-letter, .link:hover .single-letter {
+.button:hover .single-letter, .nav-link-text:hover .single-letter {
     animation: letterLoop var(--duration-default) var(--cubic-default);
     animation-fill-mode: both;
 }

@@ -21,13 +21,17 @@ const AnimatedText = ({ text, className = '', ...props }) => {
   });
 
   return (
-    <div 
-      style={{ position: 'relative', display: 'inline-block' }} 
-      className={`link ${className}`}
+    <p 
+      data-letters-delay=""
+      data-split="letters"
+      className={`nav-link-text ${className}`}
+      split-ran="true"
       {...props}
     >
-      {letters}
-    </div>
+      <div style={{ position: 'relative', display: 'inline-block', overflow: 'hidden' }}>
+        {letters}
+      </div>
+    </p>
   );
 };
 
