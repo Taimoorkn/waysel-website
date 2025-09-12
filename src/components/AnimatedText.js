@@ -15,7 +15,8 @@ const AnimatedText = ({ text, className = '', ...props }) => {
         }}
         className="single-letter"
       >
-        {char === ' ' ? '\u00A0' : char}
+        <span>{char === ' ' ? '\u00A0' : char}</span>
+        <span style={{ position: 'absolute', top: '100%', left: 0 }}>{char === ' ' ? '\u00A0' : char}</span>
       </div>
     );
   });
