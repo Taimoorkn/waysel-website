@@ -92,7 +92,8 @@ module.exports = {
         'navbar': '0 4px 8px accent',
       },
       screens: {
-        "3xl": "2000px",
+        "3xl": "1920px",
+        "4xl": "2000px",
       },
     },
   },
