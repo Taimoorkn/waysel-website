@@ -191,53 +191,10 @@ const HeroSection = () => {
       {/* Bottom tagline - positioned absolutely */}
       <div className="absolute bottom-16 left-8 right-8 z-20 lg:bottom-20 lg:left-12 xl:left-16 xl:right-auto xl:max-w-lg">
         <p className="text-xs leading-relaxed text-gray-500 lg:text-sm">
-          Osmo came from constantly digging through old projects wondering, 'How did I build that
+          Waysel came from constantly digging through old projects wondering, 'How did I build that
           again?' It is basically our personal toolbox, packed with components, techniques, tricks
           and tutorials—and it will keep growing.
         </p>
-      </div>
-
-      {/* Right side video preview */}
-      <div className="absolute bottom-16 right-16 z-20 hidden xl:block">
-        <div className="relative">
-          {/* Video container with avatars */}
-          <div className="relative h-48 w-80 overflow-hidden rounded-xl border border-gray-700 bg-gray-900 shadow-2xl">
-            {/* Video placeholder */}
-            <div className="h-full w-full bg-gradient-to-br from-gray-800 to-gray-900">
-              {/* Avatar strip at bottom */}
-              <div className="absolute bottom-4 left-4 flex -space-x-2">
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                  <div
-                    key={i}
-                    className="h-8 w-8 rounded-full border-2 border-gray-700 bg-gradient-to-br from-gray-600 to-gray-700"
-                  />
-                ))}
-                <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-700 bg-gray-800 text-xs text-gray-400">
-                  +
-                </div>
-              </div>
-
-              {/* Play button and timestamp */}
-              <div className="absolute bottom-4 right-4 flex items-center gap-3">
-                <span className="text-xs text-gray-400">00:35</span>
-                <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20">
-                  <svg className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* VRTL WRLD label */}
-              <div className="absolute right-4 top-4">
-                <span className="font-mono text-xs text-gray-400">
-                  VRTL
-                  <br />
-                  WRLD
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Cross indicator in bottom right */}
