@@ -22,6 +22,25 @@
     transition: transform var(--animation-default);
 }
 
+.button, .nav-link-text {
+    position: relative;
+}
+
+.button::after, .nav-link-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: currentColor;
+    transition: width var(--animation-default);
+}
+
+.button:hover::after, .nav-link-text:hover::after {
+    width: 100%;
+}
+
 @keyframes letterLoop {
     0% {
         transform: translateY(0);
@@ -29,6 +48,20 @@
     100% {
         transform: translateY(-100%);
     }
+}
+
+@keyframes letterLoopReverse {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.button .single-letter, .nav-link-text .single-letter {
+    animation: letterLoopReverse var(--duration-default) var(--cubic-default);
+    animation-fill-mode: both;
 }
 
 .button:hover .single-letter, .nav-link-text:hover .single-letter {
