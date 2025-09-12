@@ -10,7 +10,8 @@ const AnimatedText = ({ text, className = '', ...props }) => {
         style={{
           position: 'relative',
           display: 'inline-block',
-          transitionDelay: `${delay}s`
+          transitionDelay: `${delay}s`,
+          animationDelay: `${delay}s`
         }}
         className="single-letter"
       >
