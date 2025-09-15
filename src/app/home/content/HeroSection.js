@@ -59,8 +59,8 @@ const HeroSection = () => {
           </div>
           <div className="mt-20 max-w-md">
             <p className="font-neueMontreal text-sm font-medium leading-snug text-[#EFEEEC] sm:text-[17px]">
-              Waysel came from constantly digging through old projects wondering, 'How did I build
-              that again?' It is basically our personal toolbox, packed with components, techniques,
+              Waysel came from constantly digging through old projects wondering, &apos;How did I build
+              that again?&apos; It is basically our personal toolbox, packed with components, techniques,
               tricks and tutorials—and it will keep growing.
             </p>
           </div>

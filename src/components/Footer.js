@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
   MapPinIcon,
   PhoneIcon,
@@ -70,7 +71,7 @@ const Footer = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/20">
                 <CodeIcon size={24} weight="bold" className="text-accent" />
               </div>
-              <img src="/images/TechiTechLogo.svg" alt="TechTech" className="h-8" />
+              <Image src="/images/TechiTechLogo.svg" alt="TechTech" width={120} height={32} className="h-8" />
             </div>
 
             <p className="text-lg text-secondary_text">

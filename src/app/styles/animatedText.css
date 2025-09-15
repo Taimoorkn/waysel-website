@@ -54,27 +54,20 @@
 }
 
 .button-animate {
-  --padding-y: 12px;
-  --padding-x: 16px;
-  --padding-y-sm: 15px;
-  --padding-x-sm: 26px;
-
-  box-sizing: border-box;
-  transition:
-    transform var(--animation-default),
-    background-color 0.2s ease-in-out,
-    padding var(--animation-default),
-    margin var(--animation-default);
+  position: relative;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.button-animate:hover {
-  padding: calc(var(--padding-y) * 0.87) calc(var(--padding-x) * 0.87);
-  margin: calc(var(--padding-y) * 0.13) calc(var(--padding-x) * 0.13);
-}   
+.button-animate::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #efeeec26;
+  border-radius: inherit;
+  transition: transform var(--animation-default);
+  z-index: -1;
+}
 
-@media (min-width: 640px) {
-  .button-animate:hover {
-    padding: calc(var(--padding-y-sm) * 0.87) calc(var(--padding-x-sm) * 0.87);
-    margin: calc(var(--padding-y-sm) * 0.13) calc(var(--padding-x-sm) * 0.13);
-  }
+.button-animate:hover::before {
+  transform: scale(0.87);
 }

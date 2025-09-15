@@ -32,7 +32,7 @@ const HeroSection = () => {
 
           <p className="mx-auto mb-8 max-w-3xl font-neueMontreal text-base text-secondary_bg sm:mb-10 sm:text-lg lg:mb-12 lg:text-xl">
             TechiTech Solutions was founded by passionate tech enthusiasts in 2014 with a vision to
-            transform businesses through innovative technology. Over the years, we've grown into a
+            transform businesses through innovative technology. Over the years, we&apos;ve grown into a
             trusted development agency.
           </p>
 

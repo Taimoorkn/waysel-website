@@ -42,7 +42,6 @@ const AboutPage = () => {
       <HeroSection />
       <GoalsVision />
       <WhyChooseUs />
-      <NotaTypicalCompany />
       <OurTeam /> 
       <Footer />
     </>

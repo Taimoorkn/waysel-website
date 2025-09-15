@@ -19,7 +19,7 @@ const Button = ({
 
   const variants = {
     primary: "button bg-[#efeeec] text-center text-[#131313]",
-    secondary: "button-animate button text-[#efeeec] bg-[#efeeec26] backdrop-blur-[25px] rounded-md",
+    secondary: "button-animate button text-[#efeeec]   rounded-md",
   };
 
   const classes = `${baseStyles} ${variants[variant]} ${className}`;
