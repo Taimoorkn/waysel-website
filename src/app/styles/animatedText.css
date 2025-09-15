@@ -53,21 +53,55 @@
   animation-fill-mode: both;
 }
 
-.button-animate {
+.button-animate-secondary {
   position: relative;
   transition: background-color 0.2s ease-in-out;
 }
 
-.button-animate::before {
-  content: '';
+.button-animate-secondary::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: #efeeec26;
+
+  backdrop-filter: blur(24px);
   border-radius: inherit;
   transition: transform var(--animation-default);
   z-index: -1;
 }
 
-.button-animate:hover::before {
-  transform: scale(0.87);
+.button-animate-secondary:hover::before {
+  transform: scale(0.92);
 }
+
+.button-animate-secondary::before {
+  background: #efeeec26;
+}
+
+ 
+
+ 
+.button-animate-primary {
+  position: relative;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button-animate-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  backdrop-filter: blur(24px);
+  border-radius: inherit;
+  transition: transform var(--animation-default);
+  z-index: -1;
+}
+
+.button-animate-primary:hover::before {
+  transform: scale(0.92);
+}
+
+.button-animate-primary::before {
+  background: #efeeec;
+}
+
+ 
