@@ -9,14 +9,19 @@ const TextField = ({ children, variant = "animated", className = "", ...props })
         <div className={`${baseStyles} static ${className}`} {...props}>
           <p>{children}</p>
         </div>
-      )
+      ),
     },
     animated: {
-      component: renderAnimatedText(children, `${baseStyles} nav-link-text border ${className}`, props)
+      component: renderAnimatedText(children, `${baseStyles} nav-link-text ${className}`, props),
     },
     animated_underlined: {
-      component: renderAnimatedText(children, `${baseStyles} nav-link-text border animated-underlined ${className}`, props, true)
-    }
+      component: renderAnimatedText(
+        children,
+        `${baseStyles} nav-link-text animated-underlined ${className}`,
+        props,
+        true
+      ),
+    },
   };
 
   return variants[variant].component;

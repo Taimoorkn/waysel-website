@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import TextField from "../../../components/TextField";
+import Button from "@/components/Button";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -53,18 +54,8 @@ const HeroSection = () => {
             <h1>people remember.</h1>
           </div>
           <div className="mt-8 flex items-center justify-between gap-2 font-neueMontreal text-sm font-medium sm:mt-12 sm:text-[17px]">
-            {[
-              { href: "/login", label: "Become a Member" },
-              { href: "/get-started", label: "Abous Us" },
-            ].map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="button w-full rounded-md bg-[#efeeec] px-4 py-3 text-center text-[#131313] sm:w-auto sm:px-[26px] sm:py-[15px]"
-              >
-                <TextField variant="animated">{link.label}</TextField>
-              </Link>
-            ))}
+            <Button variant="primary" href="/login">Become a Member</Button>
+            <Button variant="secondary" href="/get-started">Abous Us</Button>
           </div>
           <div className="mt-20 max-w-md">
             <p className="font-neueMontreal text-sm font-medium leading-snug text-[#EFEEEC] sm:text-[17px]">

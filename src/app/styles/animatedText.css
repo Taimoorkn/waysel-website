@@ -50,3 +50,5 @@
     animation: letterLoop var(--duration-default) var(--cubic-default);
     animation-fill-mode: both;
 }
+
+ 

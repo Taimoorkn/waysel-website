@@ -20,3 +20,7 @@ body {
 body::-webkit-scrollbar {
   display: none; /* WebKit */
 }
+
+.button-bg {
+  transition: var(--animation-default), 0.2s ease-in-out;
+}
