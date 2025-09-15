@@ -3,52 +3,58 @@
 @tailwind utilities;
 
 :root {
-    --cubic-default: cubic-bezier(0.625, 0.05, 0, 1);
-    --duration-default-double: 1.6s;
-    --duration-default-onehalf: 1.2s;
-    --duration-default: 0.8s;
-    --duration-default-half: 0.4s;
-    --animation-default-double: var(--duration-default-double) var(--cubic-default);
-    --animation-default-onehalf: var(--duration-default-onehalf) var(--cubic-default);
-    --duration-default-quarter: 0.2s;
-    --animation-default: var(--duration-default) var(--cubic-default);
-    --animation-default-half: var(--duration-default-half) var(--cubic-default);
-    --animation-default-quarter: var(--duration-default-quarter) var(--cubic-default);
-    --animation-ease: 0.2s ease;
-    --animation-ease-double: 0.4s ease;
+  --cubic-default: cubic-bezier(0.625, 0.05, 0, 1);
+  --duration-default-double: 1.6s;
+  --duration-default-onehalf: 1.2s;
+  --duration-default: 0.8s;
+  --duration-default-half: 0.4s;
+  --animation-default-double: var(--duration-default-double) var(--cubic-default);
+  --animation-default-onehalf: var(--duration-default-onehalf) var(--cubic-default);
+  --duration-default-quarter: 0.2s;
+  --animation-default: var(--duration-default) var(--cubic-default);
+  --animation-default-half: var(--duration-default-half) var(--cubic-default);
+  --animation-default-quarter: var(--duration-default-quarter) var(--cubic-default);
+  --animation-ease: 0.2s ease;
+  --animation-ease-double: 0.4s ease;
 }
 
-.button .single-letter, .nav-link-text .single-letter {
-    transition: transform var(--animation-default);
+.button .single-letter,
+.nav-link-text .single-letter {
+  transition: transform var(--animation-default);
 }
-
 
 @keyframes letterLoop {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 @keyframes letterLoopReverse {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.button .single-letter, .nav-link-text .single-letter {
-    animation: letterLoopReverse var(--duration-default) var(--cubic-default);
-    animation-fill-mode: both;
+.button .single-letter,
+.nav-link-text .single-letter {
+  animation: letterLoopReverse var(--duration-default) var(--cubic-default);
+  animation-fill-mode: both;
 }
 
-.button:hover .single-letter, .nav-link-text:hover .single-letter {
-    animation: letterLoop var(--duration-default) var(--cubic-default);
-    animation-fill-mode: both;
+.button:hover .single-letter,
+.nav-link-text:hover .single-letter {
+  animation: letterLoop var(--duration-default) var(--cubic-default);
+  animation-fill-mode: both;
 }
 
- 
+.button-animate {
+  transition:
+    var(--animation-default),
+    0.2s ease-in-out;
+}
