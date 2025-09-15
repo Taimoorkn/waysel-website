@@ -2,8 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import React from "react";
 import HeroSection from "./content/HeroSection";
-import GoalsVision from "./content/GoalsVision";
-import Banner from "@/components/Banner";
+import GoalsVision from "./content/GoalsVision"; 
 import WhyChooseUs from "./content/WhyChooseUs";
 import OurTeam from "./content/OurTeam";
 
@@ -44,8 +43,7 @@ const AboutPage = () => {
       <GoalsVision />
       <WhyChooseUs />
       <NotaTypicalCompany />
-      <OurTeam />
-      <Banner variant="about2" />
+      <OurTeam /> 
       <Footer />
     </>
   );

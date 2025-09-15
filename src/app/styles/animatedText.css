@@ -63,8 +63,8 @@
   transition:
     transform var(--animation-default),
     background-color 0.2s ease-in-out,
-    padding 0.2s ease-in-out,
-    margin 0.2s ease-in-out;
+    padding var(--animation-default),
+    margin var(--animation-default);
 }
 
 .button-animate:hover {
