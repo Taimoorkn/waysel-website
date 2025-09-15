@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import AnimatedText from "../../../components/AnimatedText";
+import TextField from "../../../components/TextField";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -62,7 +62,7 @@ const HeroSection = () => {
                 href={link.href}
                 className="button w-full rounded-md bg-[#efeeec] px-4 py-3 text-center text-[#131313] sm:w-auto sm:px-[26px] sm:py-[15px]"
               >
-                <AnimatedText text={link.label} />
+                <TextField variant="animated">{link.label}</TextField>
               </Link>
             ))}
           </div>

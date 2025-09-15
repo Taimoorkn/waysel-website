@@ -2,14 +2,15 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
+import TextField from "./TextField";
 
-const Button = ({ children, variant = "primary", className = "", onClick, ...props }) => {
+const Button = ({ children, variant = "primary", className = "", onClick, textVariant = "animated", ...props }) => {
   const router = useRouter();
-  const baseStyles = "font-neueMontreal transition-colors duration-200";
+  const baseStyles = "font-neueMontreal font-medium transition-all duration-200";
 
   const variants = {
     primary:
-      "bg-accent text-white hover:bg-accent_dark hover:text-white px-6 py-2 rounded-lg font-medium text-base border border-accent transition-all duration-200 max-sm:text-xs max-sm:px-3 max-sm:py-[6px] max-sm:font-medium",
+      "w-full rounded-md bg-[#efeeec] px-4 py-3 text-center text-[#131313] sm:w-auto sm:px-[26px] sm:py-[15px] text-sm sm:text-[17px]",
     secondary:
       "bg-surface_bg text-primary_text px-6 py-[10px] font-medium text-[14px] border border-border_primary hover:bg-hover_bg hover:text-primary_text rounded-lg transition-all duration-200 max-sm:text-xs max-sm:px-3 max-sm:py-[6px] max-sm:font-medium",
   };
@@ -21,7 +22,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
 
   return (
     <button className={classes} onClick={handleClick} {...props}>
-      {children}
+      <TextField variant={textVariant}>{children}</TextField>
     </button>
   );
 };

@@ -18,7 +18,8 @@
       "Bash(npm run format:*)",
       "Read(//c/Users/Taimoor/Downloads/screenshots/**)",
       "Bash(claude doctor)",
-      "Bash(npm i:*)"
+      "Bash(npm i:*)",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []

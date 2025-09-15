@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import AnimatedText from "./AnimatedText";
+import TextField from "./TextField";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,7 +48,7 @@ const Navbar = () => {
               href={link.href}
               className="py-[5px] text-[17px] tracking-wide text-[#EFEEEC] transition-colors 3xl:text-[21px]"
             >
-              <AnimatedText text={link.label} />
+              <TextField variant="animated_underlined">{link.label}</TextField>
             </Link>
           ))}
         </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
                   : "text-white transition-colors"
               }
             >
-              <AnimatedText text={link.label} />
+              <TextField variant="animated_underlined">{link.label}</TextField>
             </Link>
           ))}
         </div>
@@ -109,7 +109,7 @@ const Navbar = () => {
                   className="block px-3 py-2 text-sm font-medium text-white transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <AnimatedText text={link.label} />
+                  <TextField variant="animated_underlined">{link.label}</TextField>
                 </Link>
               ))}
               <div className="mt-4 border-t border-gray-700 pt-4">
@@ -124,7 +124,7 @@ const Navbar = () => {
                     }
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <AnimatedText text={link.label} />
+                    <TextField variant="animated_underlined">{link.label}</TextField>
                   </Link>
                 ))}
               </div>
