@@ -2,7 +2,7 @@
 import { Roboto_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./styles/globals.css";
-import "./styles/animatedText.css";
+import "./styles/animations.css";
 
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 

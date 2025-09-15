@@ -53,55 +53,32 @@
   animation-fill-mode: both;
 }
 
-.button-animate-secondary {
+.btn-scale {
   position: relative;
   transition: background-color 0.2s ease-in-out;
 }
 
-.button-animate-secondary::before {
+.btn-scale::before {
   content: "";
   position: absolute;
   inset: 0;
-
   backdrop-filter: blur(24px);
   border-radius: inherit;
   transition: transform var(--animation-default);
   z-index: -1;
+  background: var(--btn-bg);
 }
 
-.button-animate-secondary:hover::before {
+.btn-scale:hover::before {
   transform: scale(0.92);
 }
 
-.button-animate-secondary::before {
-  background: #efeeec26;
+.btn-primary {
+  --btn-bg: #efeeec;
 }
 
- 
-
- 
-.button-animate-primary {
-  position: relative;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.button-animate-primary::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  backdrop-filter: blur(24px);
-  border-radius: inherit;
-  transition: transform var(--animation-default);
-  z-index: -1;
-}
-
-.button-animate-primary:hover::before {
-  transform: scale(0.92);
-}
-
-.button-animate-primary::before {
-  background: #efeeec;
+.btn-secondary {
+  --btn-bg: #efeeec26;
 }
 
  
