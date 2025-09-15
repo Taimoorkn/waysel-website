@@ -2,6 +2,8 @@
 import { Roboto_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./styles/globals.css";
+import "./styles/animatedText.css";
+
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 
 const robotoMono = Roboto_Mono({

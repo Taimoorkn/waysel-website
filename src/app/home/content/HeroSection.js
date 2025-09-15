@@ -5,67 +5,28 @@ import { useEffect } from "react";
 import AnimatedText from "../../../components/AnimatedText";
 
 const HeroSection = () => {
-
   useEffect(() => {
-    // Load Unicorn Studio library
-    const script = document.createElement("script");
-    script.src =
-      "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.30/dist/unicornStudio.umd.js";
-    script.async = true;
-
-    script.onload = () => {
-      console.log("Unicorn Studio script loaded successfully");
-      // Check if UnicornStudio is available
-      if (window.UnicornStudio) {
-        console.log("UnicornStudio object found:", window.UnicornStudio);
-        // Try to manually initialize
-        setTimeout(() => {
-          const element = document.querySelector("[data-us-project-src]");
-          if (element && window.UnicornStudio) {
-            console.log("Attempting manual initialization...");
-            console.log("Found element:", element);
-            try {
-              // Try different initialization methods
-              window.UnicornStudio.init();
-            } catch (e) {
-              console.error("Manual init failed:", e);
-            }
-          }
-        }, 500);
-      } else {
-        console.log("UnicornStudio object not found on window");
-      }
-    };
-
-    script.onerror = () => {
-      console.error("Failed to load Unicorn Studio script");
-    };
-
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
+    // Load Unicorn Studio library with initialization
+    if (!window.UnicornStudio) {
+      window.UnicornStudio = { isInitialized: !1 };
+      var i = document.createElement("script");
+      i.src =
+        "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.30/dist/unicornStudio.umd.js";
+      i.onload = function () {
+        window.UnicornStudio.isInitialized ||
+          (UnicornStudio.init(), (window.UnicornStudio.isInitialized = !0));
+      };
+      (document.head || document.body).appendChild(i);
+    }
   }, []);
 
   return (
-    <section className="relative mt-[200px] flex min-h-screen flex-col items-start overflow-hidden">
+    <section className="relative flex min-h-screen flex-col items-start overflow-hidden px-4 pt-[200px] sm:px-9">
       {/* Unicorn Studio WebGL mesh background */}
       <div
-        id="unicorn-canvas"
-        data-us-alttext="graphic background"
-        data-us-project-src="/mesh.json"
-        data-us-disablemobile="false"
-        data-us-scale="1"
-        data-us-dpi="1.5"
-        data-us-production="false"
+        data-us-project="u8G0keiRdDw7PbxSpQ3N"
         className="absolute inset-0 -z-10 h-full w-full"
-        style={{ width: "100%", height: "100%" }}
       ></div>
-
       {/* Left sidebar text */}
       <div className="flex items-start justify-between gap-24">
         <div className="hidden items-center justify-between pr-20 pt-6 font-neueMontreal text-sm font-medium text-[#9c9b9a] sm:flex sm:text-lg">

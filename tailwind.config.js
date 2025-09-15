@@ -1,14 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    // "./src/**/*.{js,ts,jsx,tsx}",
     "./src",
     "./src/app/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
-
-    // "./src/app/**/*.{js,ts,jsx,tsx,mdx}", // Scan all files in the 'app' folder
-    // "./src/components/**/*.{js,ts,jsx,tsx,mdx}", // Scan all files in 'components'
-    // "./src/**/*.{js,ts,jsx,tsx,mdx}", // For any other subfolders in 'src'
   ],
   theme: {
     extend: {
@@ -60,18 +55,6 @@ module.exports = {
         'error': '#EF4444',           // Error states
         'info': '#3B82F6',            // Info states
         
-        // Legacy color mappings for compatibility
-        'dark_purple': '#0E0E0E',
-        'accent_purple': '#FF4C24',
-        'service_arrow': '#FFFFFF',
-        'service_icon': '#FF4C24',
-        'grey_primary': '#131313',
-        'light_border': '#333333',
-        'dark_border': '#2A2A2A',
-        'grey_inactive1': '#666666',
-        'grey_inactive2': '#818180',
-        'error_red': '#EF4444',
-        'map_unit': '#131313'
       },
       boxShadow: {
         // Dark mode shadows
@@ -99,139 +82,3 @@ module.exports = {
   },
   plugins: [],
 };
-
-
-
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: [
-//     "./src",
-//     "./src/app/**/*.{js,ts,jsx,tsx}",
-//     "./src/components/**/*.{js,ts,jsx,tsx}",
-//   ],
-//   theme: {
-//     extend: {
-//       fontFamily: {
-//         manrope: ["var(--font-manrope)", "sans-serif"],
-//         clashGrotesk: ["var(--font-clashGrotesk)", "sans-serif"],
-//       },
-//       colors: {
-//         // Assuming these are your existing colors, matching the second config
-//         'black': '#1b1b1b',
-//         'white': '#ffffff',
-//         // 'blue': '#3a5bff',
-//         'purple': '#392DCA',
-//         'dark_purple': '#0A142F',
-
-//         // Accent Colours
-//         'accent': '#3A5BFF',
-
-//         // Section Background Colours
-//         'primary_bg': '#ffffff',
-//         'secondary_bg': '#f6f7f8',
-//         'light_blue_bg': '#F0F2FE',
-
-//         // Text Colours
-//         'primary_text': '#1b1b1b',
-//         'secondary_text': '#505050',
-//         'tertiary_text': '#707070',
-
-//         // Services Carousel
-//         'service_arrow': '#1b1b1b',
-//         'service_icon': '#1b1b1b',
-
-//         // Grey
-//         'grey_primary': '#ECF0F4',
-//         'light_border': '#EDEDED',
-//         'dark_border': '#D9D9D9',
-//         'grey_inactive1': '#CCCCCC',
-//         'grey_inactive2': '#C0C0C0',
-
-//         // Extras
-//         'error_red': '#B3261E',
-//         'map_unit': '#EBEBEB'
-//       },
-//     },
-//   },
-  
-// plugins: [
-//     function ({ addUtilities }) {
-//       const newUtilities = {
-//         // Repeated Styles
-//         '.text-heading1': {
-//           '@apply font-clashGrotesk text-[42px] font-medium leading-[51.7px]': {},
-//         },
-//         '.text-heading2': {
-//           '@apply font-clashGrotesk text-2xl font-medium leading-[29.5px]': {},
-//         },
-//         '.text-body1': {
-//           '@apply font-manrope text-base leading-[21.9px]': {},
-//         },
-//         '.text-body2': {
-//           '@apply font-manrope text-lg leading-[24.6px]': {},
-//         },
-//         '.text-body3': {
-//           '@apply font-manrope text-base font-medium': {},
-//         },
-
-//         // Unique Styles
-//         '.text-hero-subtitle': {
-//           '@apply font-manrope text-[11px] font-medium': {},
-//         },
-//         '.text-hero-main': {
-//           '@apply font-clashGrotesk text-[54px] font-semibold leading-[54px] tracking-[-1%]': {},
-//         },
-//         '.text-stats-value': {
-//           '@apply font-manrope text-2xl font-semibold': {},
-//         },
-//         '.text-stats-label': {
-//           '@apply font-manrope text-sm font-medium': {},
-//         },
-//         '.text-service-description': {
-//           '@apply font-manrope text-xl leading-[27.3px]': {},
-//         },
-//         '.text-ai-card-title': {
-//           '@apply font-clashGrotesk text-4xl font-semibold leading-[44.3px]': {},
-//         },
-//         '.text-industry-name-hover': {
-//           '@apply font-bold text-[18px]': {},
-//         },
-//         '.text-success-story-title': {
-//           '@apply font-clashGrotesk text-[38px] font-medium leading-[46.7px]': {},
-//         },
-//         '.text-howtostart-subtitle': {
-//           '@apply font-manrope text-base font-medium leading-[27.3px]': {},
-//         },
-//         '.text-tech-stack-button': {
-//           '@apply text-base font-semibold leading-[19.1px]': {},
-//         },
-//         '.text-project-label': {
-//           '@apply font-clashGrotesk text-lg font-medium leading-[22px]': {},
-//         },
-//         '.text-engagement-title': {
-//           '@apply font-manrope text-2xl font-semibold': {},
-//         },
-//         '.text-testimonial-name': {
-//           '@apply font-manrope text-xl font-medium': {},
-//         },
-//         '.text-testimonial-role': {
-//           '@apply font-manrope text-sm leading-[19.1px]': {},
-//         },
-//         '.text-faq-question': {
-//           '@apply font-manrope text-base leading-[22px]': {},
-//         },
-//         '.text-faq-answer': {
-//           '@apply font-manrope text-base font-normal': {},
-//         },
-//         '.text-navbar-logo': {
-//           '@apply font-clashGrotesk text-2xl font-semibold': {},
-//         },
-//         '.text-nav-links': {
-//           '@apply font-manrope text-sm font-medium': {},
-//         },
-//       };
-//       addUtilities(newUtilities);
-//     },
-//   ],
-// };
-

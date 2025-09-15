@@ -19,7 +19,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 mt-4 font-neueMontreal font-medium leading-4 sm:mt-[34px]">
+    <nav className="fixed left-0 right-0 top-0 z-50 mx-4 mt-4 font-neueMontreal font-medium leading-4 sm:mx-9 sm:mt-[34px]">
       <div className="mx-4 flex items-center justify-between sm:mx-9">
         {/* Left side - Brand, Logo, Nav Links */}
         <p className="text-2xl text-white 3xl:text-3xl">Waysel</p>
