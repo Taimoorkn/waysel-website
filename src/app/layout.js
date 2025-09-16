@@ -34,13 +34,13 @@ const rmMono = localFont({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://techitech.com"),
+  metadataBase: new URL("https://waysel.com"),
   title: {
-    default: "TechiTech Solutions - Software Development Company",
-    template: "%s | TechiTech Solutions",
+    default: "Waysel - Web Development Components & Resources",
+    template: "%s | Waysel",
   },
   description:
-    "Professional software development services including web development, mobile apps, custom software, and cloud solutions. Transform your business with our expert team.",
+    "Start building websites people remember with Waysel's collection of components, techniques, tricks and tutorials. Your personal toolbox for web development.",
   keywords: [
     "software development",
     "web development",
@@ -53,9 +53,9 @@ export const metadata = {
     "TechiTech",
     "software company",
   ],
-  authors: [{ name: "TechiTech Solutions" }],
-  creator: "TechiTech Solutions",
-  publisher: "TechiTech Solutions",
+  authors: [{ name: "Waysel" }],
+  creator: "Waysel",
+  publisher: "Waysel",
   robots: {
     index: true,
     follow: true,
@@ -70,34 +70,34 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://techitech.com",
-    siteName: "TechiTech Solutions",
-    title: "TechiTech Solutions - Software Development Company",
+    url: "https://waysel.com",
+    siteName: "Waysel",
+    title: "Waysel - Web Development Components & Resources",
     description:
-      "Professional software development services including web development, mobile apps, custom software, and cloud solutions. Transform your business with our expert team.",
+      "Start building websites people remember with Waysel's collection of components, techniques, tricks and tutorials. Your personal toolbox for web development.",
     images: [
       {
-        url: "/images/TechiTechLogo.svg",
+        url: "/waysellogo.svg",
         width: 1200,
         height: 630,
-        alt: "TechiTech Solutions Logo",
+        alt: "Waysel Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TechiTech Solutions - Software Development Company",
+    title: "Waysel - Web Development Components & Resources",
     description:
-      "Professional software development services including web development, mobile apps, custom software, and cloud solutions.",
-    images: ["/images/TechiTechLogo.svg"],
-    creator: "@techitech",
+      "Start building websites people remember with Waysel's collection of components, techniques, tricks and tutorials.",
+    images: ["/waysellogo.svg"],
+    creator: "@waysel",
   },
   verification: {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
   },
   alternates: {
-    canonical: "https://techitech.com",
+    canonical: "https://waysel.com",
   },
 };
 

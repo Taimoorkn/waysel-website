@@ -7,55 +7,49 @@ export default function StructuredData({ data }) {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "TechiTech Solutions",
-  url: "https://techitech.com",
-  logo: "https://techitech.com/images/TechiTechLogo.svg",
+  name: "Waysel",
+  url: "https://waysel.com",
+  logo: "https://waysel.com/waysellogo.svg",
   description:
-    "Professional software development services including web development, mobile apps, custom software, and cloud solutions.",
+    "Start building websites people remember with Waysel's collection of components, techniques, tricks and tutorials. Your personal toolbox for web development.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Austin, Texas",
     addressCountry: "US",
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-XXX-XXX-XXXX",
     contactType: "Customer Service",
     availableLanguage: ["English"],
   },
   sameAs: [
-    "https://linkedin.com/company/techitech-solutions",
-    "https://twitter.com/techitech",
-    "https://github.com/techitech",
+    "https://linkedin.com/company/waysel",
+    "https://twitter.com/waysel",
+    "https://github.com/waysel",
   ],
-  foundingDate: "2020",
-  employees: {
-    "@type": "QuantitativeValue",
-    value: "10-50",
-  },
+  foundingDate: "2024",
   makesOffer: [
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Web Development",
-        description: "Custom web development services",
+        name: "Web Components",
+        description: "Ready-to-use web development components",
       },
     },
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Mobile App Development",
-        description: "iOS and Android app development",
+        name: "Development Resources",
+        description: "Tools, tutorials, and documentation for web developers",
       },
     },
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Custom Software Development",
-        description: "Tailored software solutions",
+        name: "Design System",
+        description: "Complete design system for building memorable websites",
       },
     },
   ],
@@ -64,17 +58,17 @@ export const organizationSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "TechiTech Solutions",
-  url: "https://techitech.com",
+  name: "Waysel",
+  url: "https://waysel.com",
   description:
-    "Professional software development company offering web development, mobile apps, and custom solutions.",
+    "Start building websites people remember with Waysel's collection of components, techniques, tricks and tutorials.",
   publisher: {
     "@type": "Organization",
-    name: "TechiTech Solutions",
+    name: "Waysel",
   },
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://techitech.com/search?q={search_term_string}",
+    target: "https://waysel.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };
@@ -97,8 +91,8 @@ export const serviceSchema = (service) => ({
   description: service.description,
   provider: {
     "@type": "Organization",
-    name: "TechiTech Solutions",
-    url: "https://techitech.com",
+    name: "Waysel",
+    url: "https://waysel.com",
   },
   areaServed: {
     "@type": "Country",
@@ -128,14 +122,14 @@ export const articleSchema = (article) => ({
   dateModified: article.dateModified,
   author: {
     "@type": "Organization",
-    name: "TechiTech Solutions",
+    name: "Waysel",
   },
   publisher: {
     "@type": "Organization",
-    name: "TechiTech Solutions",
+    name: "Waysel",
     logo: {
       "@type": "ImageObject",
-      url: "https://techitech.com/images/TechiTechLogo.svg",
+      url: "https://waysel.com/waysellogo.svg",
     },
   },
 });

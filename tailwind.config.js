@@ -13,48 +13,15 @@ module.exports = {
         rmMono: ["var(--font-rmMono)", "monospace"],
       },
       colors: {
-        // Dark Mode Main Colors
-        'black': '#000000',           // Pure black background
-        'dark_surface': '#0E0E0E',    // Slightly lighter surface
-        'dark_card': '#131313',       // Card/component background
-        'white': '#FFFFFF',           // Pure white text
-        
-        // Brand & Accent Colors
-        'accent': '#FF4C24',          // Brand red-orange
-        'accent_light': '#FF6B47',    // Lighter brand color
-        'accent_dark': '#E63E1B',     // Darker brand color
-        'accent_glow': '#FF4C2440',   // Accent with opacity for glows
-        
-        // Text Colors (Dark Mode)
-        'primary_text': '#FFFFFF',    // Primary white text
-        'secondary_text': '#818180',  // Muted grey text
-        'tertiary_text': '#A1A1A0',   // Lighter grey text
-        'text_muted': '#666666',      // Very muted text
-        
-        // Background Colors
-        'primary_bg': '#000000',      // Main page background
-        'secondary_bg': '#0E0E0E',    // Section backgrounds
-        'card_bg': '#131313',         // Card backgrounds
-        'surface_bg': '#1A1A1A',      // Interactive surfaces
-        'light_blue_bg': '#131313',   // Converted light sections
-        
-        // Border Colors
-        'border_primary': '#333333',  // Primary borders
-        'border_secondary': '#2A2A2A', // Secondary borders  
-        'border_accent': '#FF4C24',   // Accent borders
-        'border_muted': '#1A1A1A',    // Subtle borders
-        
-        // State Colors
-        'hover_bg': '#1F1F1F',        // Hover states
-        'active_bg': '#252525',       // Active states
-        'focus_ring': '#FF4C2460',    // Focus ring color
-        
-        // Utility Colors
-        'success': '#22C55E',         // Success states
-        'warning': '#F59E0B',         // Warning states
-        'error': '#EF4444',           // Error states
-        'info': '#3B82F6',            // Info states
-        
+        'black': '#000000',
+        'dark': '#090909',
+        'surface': '#131313',
+        'light': '#EFEEEC',
+        'muted': '#9c9b9a',
+        'border': '#1f2937',
+        'divider': '#374151',
+        'white': '#FFFFFF',
+        'accent': '#FF4C24',
       },
       boxShadow: {
         // Dark mode shadows
