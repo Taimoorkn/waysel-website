@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import TextField from "../../../components/TextField";
 import Button from "@/components/Button";
 
@@ -53,13 +54,36 @@ const HeroSection = () => {
         {/* Main content */}
         <div className="flex w-full flex-col items-start justify-start lg:w-auto lg:flex-1">
           <div className="space-y-[8px] text-start font-neueMontreal text-3xl font-medium !leading-[0.9] !tracking-[-1px] text-[#EFEEEC] sm:space-y-[10px] sm:text-5xl md:text-6xl lg:text-[94px]">
-            <h1 className="break-words">Start building websites</h1>
-            <h1 className="break-words">people remember.</h1>
+            <div className="overflow-hidden">
+              <motion.h1 
+                className="break-words"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              >
+                Start building websites
+              </motion.h1>
+            </div>
+            <div className="overflow-hidden">
+              <motion.h1 
+                className="break-words"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              >
+                people remember.
+              </motion.h1>
+            </div>
           </div>
-          <div className="mt-6 flex w-full flex-col items-start gap-3 font-neueMontreal text-sm font-medium sm:mt-8 sm:flex-row sm:items-center sm:gap-4 sm:text-base lg:mt-12">
+          <motion.div 
+            className="mt-6 flex w-full flex-col items-start gap-3 font-neueMontreal text-sm font-medium sm:mt-8 sm:flex-row sm:items-center sm:gap-4 sm:text-base lg:mt-12"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+          >
             <Button variant="primary" href="/login" className="w-full sm:w-auto">Become a Member</Button>
             <Button variant="secondary" href="/get-started" className="w-full sm:w-auto">About Us</Button>
-          </div>
+          </motion.div>
           <div className="mt-12 max-w-md sm:mt-16 lg:mt-20">
             <p className="font-neueMontreal text-sm font-medium leading-relaxed text-[#EFEEEC] sm:text-base sm:leading-snug">
               Waysel came from constantly digging through old projects wondering, &apos;How did I build
