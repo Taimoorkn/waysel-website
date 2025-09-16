@@ -12,10 +12,10 @@ function PortfolioSection() {
           with efficiency.
         </p>
       </div>
-      <div className="flex items-center justify-between gap-8 bg-black">
-        <div className="flex flex-col items-center justify-between gap-8">
+      <div className="flex items-center justify-between gap-4 bg-black w-1/2 h-[500px] overflow-hidden">
+        <div className="flex flex-col items-center justify-center gap-16 -ml-16 -my-48 overflow-hidden">
           {[...Array(6)].map((_, index) => (
-            <div className="rounded-2xl border-2 border-[#FFFFFF29] p-1">
+            <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-1">
               <Image
                 src="/images/portfolio/project1.svg"
                 alt="Mobile mockup 3"
@@ -26,9 +26,9 @@ function PortfolioSection() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col items-center justify-between gap-8">
+        <div className="flex flex-col items-center justify-center gap-16 -my-48">
           {[...Array(6)].map((_, index) => (
-            <div className="rounded-2xl border-2 border-[#FFFFFF29] p-1">
+            <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-1">
               <Image
                 src="/images/portfolio/project1.svg"
                 alt="Mobile mockup 3"
@@ -39,9 +39,9 @@ function PortfolioSection() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col items-center justify-between gap-8">
+        <div className="flex flex-col items-center justify-center gap-16 -mr-16 -my-48 overflow-hidden">
           {[...Array(6)].map((_, index) => (
-            <div className="rounded-2xl border-2 border-[#FFFFFF29] p-1">
+            <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-1">
               <Image
                 src="/images/portfolio/project1.svg"
                 alt="Mobile mockup 3"
