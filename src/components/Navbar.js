@@ -1,12 +1,74 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import TextField from "./TextField";
 import Button from "./Button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const navbar = navRef.current;
+    if (!navbar) return;
+
+    // Initial animation on page load
+    gsap.fromTo(navbar,
+      {
+        y: -100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: 0.2,
+        ease: "power2.out"
+      }
+    );
+
+    // Scroll trigger animation
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "top -50px",
+      end: "bottom bottom",
+      onEnter: () => {
+        // Check if mobile or desktop
+        const isMobile = window.innerWidth < 640; // sm breakpoint
+        const expandedMargin = isMobile ? "0.5rem" : "1.5rem"; // Slight expansion
+
+        gsap.to(navbar, {
+          y: -10,
+          marginLeft: expandedMargin,
+          marginRight: expandedMargin,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      },
+      onLeaveBack: () => {
+        // Return to original responsive margins
+        const isMobile = window.innerWidth < 640;
+        const originalMargin = isMobile ? "1rem" : "2.25rem"; // mx-4 = 1rem, sm:mx-9 = 2.25rem
+
+        gsap.to(navbar, {
+          y: 0,
+          marginLeft: originalMargin,
+          marginRight: originalMargin,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      }
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -22,6 +84,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
+      ref={navRef}
       className="fixed left-0 right-0 top-0 z-50 mx-4 mt-4 font-neueMontreal font-medium leading-4 sm:mx-9 sm:mt-[34px]"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
