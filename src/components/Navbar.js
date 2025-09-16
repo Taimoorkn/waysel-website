@@ -28,13 +28,14 @@ const Navbar = () => {
         </Link>
         <div className="ml-[7%] hidden space-x-8 sm:flex">
           {navLinks.map((link, index) => (
-            <Link
+            <Button
               key={link.href}
+              variant="base"
               href={link.href}
-              className="py-[5px] text-sm tracking-wide text-[#EFEEEC] sm:text-base"
+              textVariant="animated_underlined"
             >
-              <TextField variant="animated_underlined">{link.label}</TextField>
-            </Link>
+              {link.label}
+            </Button>
           ))}
         </div>
         {/* Right side - Auth buttons */}
@@ -78,33 +79,28 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="sm:hidden">
-            <div className="space-y-1 border-t border-gray-800 bg-black px-2 pb-3 pt-2">
+          <div className="absolute left-0 right-0 top-full mt-2 sm:hidden">
+            <div className="mx-4 space-y-1 rounded-lg border border-gray-800 bg-black/95 px-4 pb-4 pt-4 backdrop-blur-sm">
               {navLinks.map((link, index) => (
-                <Link
+                <Button 
                   key={link.href}
-                  href={link.href}
-                  className="block px-3 py-2 text-sm font-medium text-white"
+                  variant="base" 
+                  href={link.href} 
+                  className="w-full !py-3"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <TextField variant="animated_underlined">{link.label}</TextField>
-                </Link>
+                  {link.label}
+                </Button>
               ))}
               <div className="mt-4 border-t border-gray-700 pt-4">
-                {authLinks.map((link, index) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={
-                      link.isButton
-                        ? "mx-3 mt-2 block rounded-sm bg-white px-4 py-2 text-center text-sm font-medium text-black"
-                        : "block px-3 py-2 text-sm font-medium text-white"
-                    }
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <TextField variant="animated_underlined">{link.label}</TextField>
-                  </Link>
-                ))}
+                <div className="space-y-3">
+                  <Button variant="base" href="/login" className="w-full">
+                    Log In
+                  </Button>
+                  <Button variant="primary" href="/get-started" className="w-full">
+                    Get Started
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
