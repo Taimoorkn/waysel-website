@@ -13,14 +13,12 @@ module.exports = {
         rmMono: ["var(--font-rmMono)", "monospace"],
       },
       colors: {
-        'black': '#000000',
         'dark': '#090909',
-        'surface': '#131313',
-        'light': '#EFEEEC',
+        'secondary': '#131313',
+        'primary': '#EFEEEC',
         'muted': '#9c9b9a',
         'border': '#1f2937',
         'divider': '#374151',
-        'white': '#FFFFFF',
         'accent': '#FF4C24',
       },
       boxShadow: {

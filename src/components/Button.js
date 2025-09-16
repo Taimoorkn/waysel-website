@@ -18,9 +18,9 @@ const Button = ({
     "button font-neueMontreal text-sm sm:text-base tracking-wide font-medium text-center w-full rounded-[4px] px-4 py-3 sm:w-auto sm:px-[26px] sm:py-[14px]";
 
   const variants = {
-    base: "text-[#efeeec] !p-0 !w-auto",
-    primary: "btn-scale btn-primary text-[#131313]",
-    secondary: "btn-scale btn-secondary text-[#efeeec]",
+    base: "text-primary !p-0 !w-auto",
+    primary: "btn-scale btn-primary text-secondary",
+    secondary: "btn-scale btn-secondary text-primary",
   };
 
   const classes = `${baseStyles} ${variants[variant]} ${className}`;
