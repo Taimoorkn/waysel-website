@@ -19,7 +19,9 @@
       "Read(//c/Users/Taimoor/Downloads/screenshots/**)",
       "Bash(claude doctor)",
       "Bash(npm i:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Read(//c/Users/Taimoor/Downloads/**)",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\images\\portfolio\")"
     ],
     "deny": [],
     "ask": []

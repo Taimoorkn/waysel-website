@@ -62,7 +62,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col items-start overflow-hidden px-4 pt-[120px] sm:px-9 sm:pt-[200px]">
+    <section className="relative flex min-h-screen flex-col items-start overflow-hidden px-4 pt-[120px] sm:px-12 sm:pt-[200px]">
       {/* Unicorn Studio WebGL mesh background */}
       {showWebGL && (
         <div
