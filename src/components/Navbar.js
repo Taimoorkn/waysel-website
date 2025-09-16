@@ -83,13 +83,27 @@ const Navbar = () => {
   ];
 
   return (
-    <motion.nav
-      ref={navRef}
-      className="fixed left-0 right-0 top-0 z-50 mx-4 mt-4 font-neueMontreal font-medium leading-4 sm:mx-9 sm:mt-[34px]"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-    >
+    <>
+      <div
+        className="fixed left-0 right-0 top-0 z-40 pointer-events-none"
+        style={{
+          height: '200px',
+          backgroundImage: `linear-gradient(
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(0, 0, 0, 0.15) 65%,
+            rgba(0, 0, 0, 0.019) 88%,
+            rgba(0, 0, 0, 0) 100%
+          )`
+        }}
+      />
+      <motion.nav
+        ref={navRef}
+        className="fixed left-0 right-0 top-0 z-50 mx-4 pt-4 font-neueMontreal font-medium leading-4 sm:mx-9 sm:pt-[34px]"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+      >
       <div className="flex items-center justify-between">
         {/* Left side - Brand, Logo, Nav Links */}
         <motion.div
@@ -220,6 +234,7 @@ const Navbar = () => {
         )}
       </div>
     </motion.nav>
+    </>
   );
 };
 
