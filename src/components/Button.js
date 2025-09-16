@@ -15,11 +15,12 @@ const Button = ({
 }) => {
   const router = useRouter();
   const baseStyles =
-    "font-neueMontreal font-medium w-full rounded-md px-4 py-3 sm:w-auto sm:px-[26px] sm:py-[15px]";
+    "button font-neueMontreal text-sm sm:text-base font-medium text-center w-full rounded-[4px] px-4 py-2.5 sm:w-auto sm:px-[26px] sm:py-[14px]";
 
   const variants = {
-    primary: "btn-scale btn-primary button text-center text-[#131313]",
-    secondary: "btn-scale btn-secondary button text-[#efeeec] rounded-md",
+    base: "text-[#efeeec] !p-0",
+    primary: "btn-scale btn-primary text-[#131313]",
+    secondary: "btn-scale btn-secondary text-[#efeeec]",
   };
 
   const classes = `${baseStyles} ${variants[variant]} ${className}`;

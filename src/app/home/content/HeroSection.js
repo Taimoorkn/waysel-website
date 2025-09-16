@@ -26,8 +26,11 @@ const HeroSection = () => {
       {/* Unicorn Studio WebGL mesh background */}
       <div
         data-us-project="u8G0keiRdDw7PbxSpQ3N"
-        className="absolute inset-0 -z-10 h-full w-full"
+        className="absolute inset-0 -z-20 h-full w-full"
       ></div>
+      {/* Overlay to cover watermark - adjust position as needed */}
+      <div className="absolute bottom-6 left-0 right-0 -z-10 mx-auto h-16 w-48 bg-[#090909]"/>
+
       {/* Left sidebar text */}
       <div className="flex items-start justify-between gap-24">
         <div className="hidden items-center justify-between pr-20 pt-6 font-neueMontreal text-sm font-medium text-[#9c9b9a] sm:flex sm:text-lg">
@@ -49,16 +52,16 @@ const HeroSection = () => {
 
         {/* Main content */}
         <div className="flex w-full flex-col items-start justify-start">
-          <div className="space-y-[10px] text-start font-neueMontreal text-3xl font-medium !leading-[0.9] !tracking-[-1px] text-[#EFEEEC] sm:text-8xl">
+          <div className="space-y-[10px] text-start font-neueMontreal text-3xl font-medium !leading-[0.9] !tracking-[-1px] text-[#EFEEEC] sm:text-[94px]">
             <h1>Start building websites</h1>
             <h1>people remember.</h1>
           </div>
-          <div className="mt-8 flex items-center justify-between gap-2 font-neueMontreal text-sm font-medium sm:mt-12 sm:text-[17px]">
+          <div className="mt-8 flex items-center justify-between gap-2 font-neueMontreal text-sm font-medium sm:mt-12 sm:text-base">
             <Button variant="primary" href="/login">Become a Member</Button>
             <Button variant="secondary" href="/get-started">Abous Us</Button>
           </div>
           <div className="mt-20 max-w-md">
-            <p className="font-neueMontreal text-sm font-medium leading-snug text-[#EFEEEC] sm:text-[17px]">
+            <p className="font-neueMontreal text-sm font-medium leading-snug text-[#EFEEEC] sm:text-base">
               Waysel came from constantly digging through old projects wondering, &apos;How did I build
               that again?&apos; It is basically our personal toolbox, packed with components, techniques,
               tricks and tutorials—and it will keep growing.
