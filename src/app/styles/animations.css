@@ -81,4 +81,30 @@
   --btn-bg: #efeeec26;
 }
 
+/* Underline animation using scaleX - grows left to right, shrinks right to left */
+.animated-underlined {
+  display: inline-block;
+  position: relative;
+}
+
+.animated-underlined::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #efeeec;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.animated-underlined:hover::after,
+.button:hover .animated-underlined::after,
+a:hover .animated-underlined::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
  

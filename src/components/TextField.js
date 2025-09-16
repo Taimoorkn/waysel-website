@@ -19,7 +19,7 @@ const TextField = ({ children, variant = "animated", className = "", ...props })
         children,
         `${baseStyles} nav-link-text animated-underlined ${className}`,
         props,
-        true
+        false
       ),
     },
   };
@@ -58,8 +58,7 @@ const renderAnimatedText = (text, className, props, showUnderline = false) => {
       split-ran="true"
       {...props}
     >
-      <p style={{ position: "relative", overflow: "hidden" }}>{letters}</p>
-      {showUnderline && <div className="animated-underline"></div>}
+      <div style={{ position: "relative", overflow: "hidden" }}>{letters}</div> 
     </div>
   );
 };
