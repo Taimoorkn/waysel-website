@@ -99,7 +99,7 @@ const Navbar = () => {
       />
       <motion.nav
         ref={navRef}
-        className="fixed left-0 right-0 top-0 z-50 mx-4 pt-4 font-neueMontreal font-medium leading-4 sm:mx-9 sm:pt-[34px]"
+        className="fixed left-0 right-0 top-0 z-50 mx-4 pt-2 font-neueMontreal font-medium leading-4 sm:mx-9 sm:pt-[26px]"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
