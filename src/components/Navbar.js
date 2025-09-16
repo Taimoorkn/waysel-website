@@ -104,19 +104,20 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between h-12">
         {/* Left side - Brand, Logo, Nav Links */}
         <motion.div
+          className="flex items-center"
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         >
           <Link href="/" aria-label="Waysel home">
-            <img src="/waysellogo.svg" alt="Waysel Logo" className="w-16 sm:w-28" />
+            <img src="/waysellogo.svg" alt="Waysel Logo" className="w-16 sm:w-28 h-auto" />
           </Link>
         </motion.div>
         <motion.div
-          className="ml-[7%] hidden space-x-8 sm:flex"
+          className="ml-[7%] hidden space-x-8 sm:flex items-center"
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -124,6 +125,7 @@ const Navbar = () => {
           {navLinks.map((link, index) => (
             <motion.div
               key={link.href}
+              className="flex items-center"
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.5 + index * 0.1, ease: "easeOut" }}
@@ -132,6 +134,7 @@ const Navbar = () => {
                 variant="base"
                 href={link.href}
                 textVariant="animated_underlined"
+                className="flex items-center justify-center h-8"
               >
                 {link.label}
               </Button>
@@ -145,17 +148,17 @@ const Navbar = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
         >
-          <Button variant="base" href="/login">
+          <Button variant="base" href="/login" className="flex items-center justify-center h-8">
             Log In
           </Button>
-          <Button variant="primary" href="/get-started" className="tracking-wide sm:!px-4 sm:!py-2">
+          <Button variant="primary" href="/get-started" className="tracking-wide sm:!px-4 sm:!py-2 flex items-center justify-center h-8">
             Get Started
           </Button>
         </motion.div>
 
         {/* Mobile menu button */}
         <motion.div
-          className="ml-auto sm:hidden"
+          className="ml-auto sm:hidden flex items-center"
           initial={{ x: 30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
