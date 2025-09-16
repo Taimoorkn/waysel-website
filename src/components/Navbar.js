@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import TextField from "./TextField";
 import Button from "./Button";
 
@@ -20,36 +21,68 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 mx-4 mt-4 font-neueMontreal font-medium leading-4 sm:mx-9 sm:mt-[34px]">
+    <motion.nav
+      className="fixed left-0 right-0 top-0 z-50 mx-4 mt-4 font-neueMontreal font-medium leading-4 sm:mx-9 sm:mt-[34px]"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+    >
       <div className="flex items-center justify-between">
         {/* Left side - Brand, Logo, Nav Links */}
-        <Link href="/" aria-label="Waysel home">
-          <img src="/waysellogo.svg" alt="Waysel Logo" className="w-16 sm:w-28" />
-        </Link>
-        <div className="ml-[7%] hidden space-x-8 sm:flex">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+        >
+          <Link href="/" aria-label="Waysel home">
+            <img src="/waysellogo.svg" alt="Waysel Logo" className="w-16 sm:w-28" />
+          </Link>
+        </motion.div>
+        <motion.div
+          className="ml-[7%] hidden space-x-8 sm:flex"
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+        >
           {navLinks.map((link, index) => (
-            <Button
+            <motion.div
               key={link.href}
-              variant="base"
-              href={link.href}
-              textVariant="animated_underlined"
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.5 + index * 0.1, ease: "easeOut" }}
             >
-              {link.label}
-            </Button>
+              <Button
+                variant="base"
+                href={link.href}
+                textVariant="animated_underlined"
+              >
+                {link.label}
+              </Button>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         {/* Right side - Auth buttons */}
-        <div className="hidden items-center gap-7 sm:flex">
+        <motion.div
+          className="hidden items-center gap-7 sm:flex"
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+        >
           <Button variant="base" href="/login">
             Log In
           </Button>
           <Button variant="primary" href="/get-started" className="tracking-wide sm:!px-4 sm:!py-2">
             Get Started
           </Button>
-        </div>
+        </motion.div>
 
         {/* Mobile menu button */}
-        <div className="ml-auto sm:hidden">
+        <motion.div
+          className="ml-auto sm:hidden"
+          initial={{ x: 30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+        >
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-white"
@@ -75,24 +108,41 @@ const Navbar = () => {
               </svg>
             )}
           </button>
-        </div>
+        </motion.div>
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="absolute left-0 right-0 top-full mt-2 sm:hidden">
+          <motion.div
+            className="absolute left-0 right-0 top-full mt-2 sm:hidden"
+            initial={{ y: -20, opacity: 0, scale: 0.95 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            exit={{ y: -20, opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
             <div className="mx-4 space-y-1 rounded-lg border border-gray-800 bg-black/95 px-4 pb-4 pt-4 backdrop-blur-sm">
               {navLinks.map((link, index) => (
-                <Button 
+                <motion.div
                   key={link.href}
-                  variant="base" 
-                  href={link.href} 
-                  className="w-full !py-3"
-                  onClick={() => setIsMenuOpen(false)}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1, ease: "easeOut" }}
                 >
-                  {link.label}
-                </Button>
+                  <Button
+                    variant="base"
+                    href={link.href}
+                    className="w-full !py-3"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Button>
+                </motion.div>
               ))}
-              <div className="mt-4 border-t border-gray-700 pt-4">
+              <motion.div
+                className="mt-4 border-t border-gray-700 pt-4"
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
+              >
                 <div className="space-y-3">
                   <Button variant="base" href="/login" className="w-full">
                     Log In
@@ -101,12 +151,12 @@ const Navbar = () => {
                     Get Started
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
