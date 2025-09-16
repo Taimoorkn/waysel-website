@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 function PortfolioSection() {
   return (
@@ -13,45 +14,74 @@ function PortfolioSection() {
         </p>
       </div>
       <div className="flex items-center justify-between gap-4 bg-black w-1/2 h-[500px] overflow-hidden">
-        <div className="flex flex-col items-center justify-center gap-16 -ml-16 -my-48 overflow-hidden">
+        {/* First column - top to bottom */}
+        <motion.div
+          className="flex flex-col items-center justify-center gap-8 -ml-32 -my-48 overflow-hidden"
+          animate={{ y: [-200, 200] }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
           {[...Array(6)].map((_, index) => (
             <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-1">
               <Image
                 src="/images/portfolio/project1.svg"
                 alt="Mobile mockup 3"
-                width={378}
-                height={232}
+                width={450}
+                height={280}
                 className="rounded-xl border-2 border-[#1F3547]"
               />
             </div>
           ))}
-        </div>
-        <div className="flex flex-col items-center justify-center gap-16 -my-48">
+        </motion.div>
+
+        {/* Second column - bottom to top */}
+        <motion.div
+          className="flex flex-col items-center justify-center gap-8 -my-48"
+          animate={{ y: [200, -200] }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
           {[...Array(6)].map((_, index) => (
             <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-1">
               <Image
                 src="/images/portfolio/project1.svg"
                 alt="Mobile mockup 3"
-                width={378}
-                height={232}
+                width={450}
+                height={280}
                 className="rounded-xl border-2 border-[#1F3547]"
               />
             </div>
           ))}
-        </div>
-        <div className="flex flex-col items-center justify-center gap-16 -mr-16 -my-48 overflow-hidden">
+        </motion.div>
+
+        {/* Third column - top to bottom */}
+        <motion.div
+          className="flex flex-col items-center justify-center gap-8 -mr-32 -my-48 overflow-hidden"
+          animate={{ y: [-200, 200] }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
           {[...Array(6)].map((_, index) => (
             <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-1">
               <Image
                 src="/images/portfolio/project1.svg"
                 alt="Mobile mockup 3"
-                width={378}
-                height={232}
+                width={450}
+                height={280}
                 className="rounded-xl border-2 border-[#1F3547]"
               />
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
