@@ -1,8 +1,20 @@
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 function PortfolioSection() {
+  const { scrollY } = useScroll();
+
+  // Transform scroll position to movement values
+  const column1YRaw = useTransform(scrollY, [0, 1000], [0, -400]);
+  const column2YRaw = useTransform(scrollY, [0, 1000], [0, 400]);
+  const column3YRaw = useTransform(scrollY, [0, 1000], [0, -400]);
+
+  // Add smooth spring physics to the transforms
+  const column1Y = useSpring(column1YRaw, { stiffness: 100, damping: 30, mass: 0.8 });
+  const column2Y = useSpring(column2YRaw, { stiffness: 100, damping: 30, mass: 0.8 });
+  const column3Y = useSpring(column3YRaw, { stiffness: 100, damping: 30, mass: 0.8 });
+
   return (
     <section className="flex items-center justify-between px-4 py-12 text-white sm:px-12 sm:py-20 h-screen">
       <div className="w-1/2 h-full px-16 bg-[#121211] flex flex-col items-start justify-center rounded-l-[32px]">
@@ -25,15 +37,10 @@ function PortfolioSection() {
           className="absolute bottom-0 left-0 right-0 h-20 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(180deg, rgba(13, 13, 12, 0) 0%, #0D0D0C 100%)' }}
         ></div>
-        {/* First column - top to bottom */}
+        {/* First column - scroll down moves down */}
         <motion.div
           className="flex flex-col items-center justify-center gap-8 -ml-32 -my-48 overflow-hidden"
-          animate={{ y: [-200, 200] }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
+          style={{ y: column1Y }}
         >
           {[...Array(6)].map((_, index) => (
             <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
@@ -48,15 +55,10 @@ function PortfolioSection() {
           ))}
         </motion.div>
 
-        {/* Second column - bottom to top */}
+        {/* Second column - scroll down moves up */}
         <motion.div
           className="flex flex-col items-center justify-center gap-8 -my-48"
-          animate={{ y: [200, -200] }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
+          style={{ y: column2Y }}
         >
           {[...Array(6)].map((_, index) => (
             <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
@@ -71,15 +73,10 @@ function PortfolioSection() {
           ))}
         </motion.div>
 
-        {/* Third column - top to bottom */}
+        {/* Third column - scroll down moves down */}
         <motion.div
           className="flex flex-col items-center justify-center gap-8 -mr-32 -my-48 overflow-hidden"
-          animate={{ y: [-200, 200] }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
+          style={{ y: column3Y }}
         >
           {[...Array(6)].map((_, index) => (
             <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
