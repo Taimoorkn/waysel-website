@@ -126,11 +126,11 @@ const FillerSection = () => {
           </p>
         </div>
 
-        <div className="z-10 grid w-full grid-cols-2 gap-4 px-16">
+        <div className="z-10 grid w-full grid-cols-2 gap-4 px-10">
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`card relative overflow-hidden p-0.5 ${
+              className={`card relative overflow-hidden p-[0.5px] ${
                 index % 2 === 0
                   ? "rounded-bl-[32px] rounded-tl-[32px]"
                   : "rounded-br-[32px] rounded-tr-[32px]"
