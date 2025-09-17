@@ -32,13 +32,6 @@ const FillerSection = () => {
     }
   ];
 
-  const getBorderStyle = (index) => {
-    const isLeft = index % 2 === 0;
-    return isLeft
-      ? "rounded-tl-[32px] rounded-bl-[32px]"
-      : "rounded-tr-[32px] rounded-br-[32px]";
-  };
-
   return (
     <div className="w-full max-w-[1440px] pt-20 pb-40 flex flex-col items-center bg-[#0d0d0c] text-primary mx-auto">
       <div className="py-16 flex flex-col gap-4 items-center">
@@ -51,21 +44,22 @@ const FillerSection = () => {
         </p>
       </div>
 
-      <div className="w-full px-16 flex flex-col gap-4">
-        {[0, 2].map(rowIndex => (
-          <div key={rowIndex} className="flex gap-4">
-            {cards.slice(rowIndex, rowIndex + 2).map((card, index) => (
-              <div key={index} className={`flex-1 h-[520px] p-10 border border-accent ${getBorderStyle(rowIndex + index)}`}>
-                <h3 className="text-3xl font-semibold mb-8">{card.title}</h3>
-                <div className="text-lg leading-relaxed">
-                  {card.content.map((item, i) => (
-                    <p key={i} className="mb-4">
-                      <span className="font-bold">{item.label}</span> {item.text}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
+      <div className="w-full px-16 grid grid-cols-2 gap-4">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className={`h-[520px] p-10 border border-accent ${
+              index % 2 === 0 ? 'rounded-tl-[32px] rounded-bl-[32px]' : 'rounded-tr-[32px] rounded-br-[32px]'
+            }`}
+          >
+            <h3 className="text-3xl font-semibold mb-8">{card.title}</h3>
+            <div className="text-lg leading-relaxed">
+              {card.content.map((item, i) => (
+                <p key={i} className="mb-4">
+                  <span className="font-bold">{item.label}</span> {item.text}
+                </p>
+              ))}
+            </div>
           </div>
         ))}
       </div>
