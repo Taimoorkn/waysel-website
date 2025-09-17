@@ -99,10 +99,9 @@ const FillerSection = () => {
           top: 0;
           opacity: 0;
           left: 0;
-          width: 250px;
-          height: 250px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.5);
+          width: 500px;
+          height: 500px;
+          background: #ff4c24;
           transition: all 300ms ease-in-out;
         }
         .fakeblob {
@@ -111,37 +110,14 @@ const FillerSection = () => {
           z-index: -1;
           top: 0;
           left: 0;
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-        }
-        .card {
-          overflow: hidden;
-          padding: 3px;
-          margin: 0;
-          background: rgba(128, 128, 128, 0.2);
-          border-radius: 10px;
-          position: relative;
-          transition: all 300ms ease-in-out;
-        }
-        .inner {
-          border-radius: 7px;
-          padding: 10px;
-          width: 210px;
-          height: 150px;
-          background: rgb(26, 26, 26);
-          backdrop-filter: blur(80px);
-          transition: all 300ms ease-in-out;
-        }
-        .card:hover > .inner {
-          background: rgba(26, 26, 26, 0.6);
-          backdrop-filter: blur(80px);
+          width: 500px;
+          height: 500px;
         }
       `}</style>
 
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center bg-[#0d0d0c]  pb-40 pt-20 text-primary">
-        <div className="flex flex-col items-center gap-4 py-16">
-          <h1 className="w-full max-w-[825px] text-center text-6xl font-normal leading-tight">
+      <div className="mx-auto flex w-full flex-col items-center bg-[#0d0d0c] pb-40 pt-20 text-primary">
+        <div className="z-10 flex flex-col items-center gap-4 py-16">
+          <h1 className="w-full text-center text-6xl font-normal leading-tight">
             The platform we wish we had, <br />
             so we built it for you
           </h1>
@@ -150,11 +126,11 @@ const FillerSection = () => {
           </p>
         </div>
 
-        <div className="grid w-full grid-cols-2 gap-4 px-16">
+        <div className="z-10 grid w-full grid-cols-2 gap-4 px-16">
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`card relative overflow-hidden p-1 ${
+              className={`card relative overflow-hidden p-0.5 ${
                 index % 2 === 0
                   ? "rounded-bl-[32px] rounded-tl-[32px]"
                   : "rounded-br-[32px] rounded-tr-[32px]"
@@ -165,10 +141,10 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`h-[520px] bg-[#0d0d0c] p-10 ${
+                className={`h-full bg-[#0d0d0c] p-10 ${
                   index % 2 === 0
-                    ? "rounded-bl-[31px] rounded-tl-[31px]"
-                    : "rounded-br-[31px] rounded-tr-[31px]"
+                    ? "rounded-bl-[32px] rounded-tl-[32px]"
+                    : "rounded-br-[32px] rounded-tr-[32px]"
                 }`}
                 style={{
                   backdropFilter: "blur(80px)",

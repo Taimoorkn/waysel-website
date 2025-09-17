@@ -25,8 +25,7 @@ module.exports = {
         // Dark mode shadows
         'navbar': '0 2px 4px rgba(0, 0, 0, 0.3)',
         'stats_bar': "0 0 40px rgba(255, 76, 36, 0.3)",
-        'card': '0 4px 12px rgba(0, 0, 0, 0.4)',
-        'card-hover': '0 8px 24px rgba(0, 0, 0, 0.5)',
+  
         'accent-glow': '0 0 20px rgba(255, 76, 36, 0.4)',
         'accent-glow-lg': '0 0 40px rgba(255, 76, 36, 0.3)',
         'inner-dark': 'inset 0 2px 4px rgba(0, 0, 0, 0.3)',
