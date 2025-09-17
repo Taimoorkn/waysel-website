@@ -27,7 +27,7 @@ const StarWars = () => {
         <div
           className="absolute inset-0 text-gray-300/80 font-mono"
           style={{
-            transform: "perspective(170px) rotateX(-25deg)",
+            transform: "perspective(200px) rotateX(-25deg)",
             transformOrigin: "center top",
             clipPath: "polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%)"
           }}
