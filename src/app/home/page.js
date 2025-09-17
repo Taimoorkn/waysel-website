@@ -5,13 +5,13 @@ import React from "react";
 import HeroSection from "./content/HeroSection";
 import PortfolioSection from "./content/PortfolioSection";
 import FillerSection from "./content/FillerSection";
+import StarWars from "./content/StarWars";
 
 const HomePage = () => {
   return (
     <>
-      <HeroSection />
-      <PortfolioSection />
-      <FillerSection/>
+ 
+      <StarWars/>
     </>
   );
 };
