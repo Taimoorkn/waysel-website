@@ -1,57 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 
 const StarWars = () => {
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    const updateWidth = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    updateWidth();
-    window.addEventListener('resize', updateWidth);
-
-    return () => window.removeEventListener('resize', updateWidth);
-  }, []);
-
-  const generateBinaryLine = () => {
-    const charWidth = 8; // approximate width of a monospace character in pixels
-    const length = Math.ceil(screenWidth / charWidth) + 20; // add buffer for transforms
-    return Array.from({ length }, () => Math.round(Math.random())).join('');
-  };
+  const binaryText = "0110100101001010101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010";
 
   return (
     <div className="relative w-full h-screen bg-black text-white overflow-hidden">
       {/* Top Binary Pattern */}
       <div className="absolute top-0 left-0 w-full h-1/2 overflow-hidden">
         <div
-          className="absolute inset-0 text-gray-300/80 font-mono"
+          className="relative w-full h-full text-gray-300/80 font-mono"
           style={{
             transform: "perspective(200px) rotateX(-25deg)",
             transformOrigin: "center top",
             clipPath: "polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%)"
           }}
         >
-          {Array.from({ length: 20 }, (_, i) => {
-            const distance = (19 - i) / 19;
-            const scale = 1 + distance * 0.8;
-            const opacity = 0.3 - distance * 0.2;
-
-            return (
-              <div
-                key={i}
-                className="w-full text-center"
-                style={{
-                  fontSize: `${1.2 + distance * 1.5}rem`,
-                  lineHeight: `${1.4 + distance * 0.5}`,
-                  opacity: opacity,
-                  letterSpacing: `${distance * 0.2}rem`
-                }}
-              >
-                {generateBinaryLine()}
-              </div>
-            );
-          })}
+          {Array.from({ length: 20 }, (_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-full text-center"
+              style={{
+                fontSize: "1rem",
+                opacity: 0.6,
+                letterSpacing: "0.1rem"
+              }}
+              animate={{
+                y: [600, -200]
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "linear",
+                delay: i * 0.6
+              }}
+            >
+              {binaryText}
+            </motion.div>
+          ))}
         </div>
       </div>
 
@@ -67,33 +53,35 @@ const StarWars = () => {
       {/* Bottom Binary Pattern */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 overflow-hidden">
         <div
-          className="absolute inset-0 text-gray-300/80 font-mono"
+          className="relative w-full h-full text-gray-300/80 font-mono"
           style={{
             transform: "perspective(170px) rotateX(25deg)",
             transformOrigin: "center bottom",
             clipPath: "polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%)"
           }}
         >
-          {Array.from({ length: 20 }, (_, i) => {
-            const distance = (19 - i) / 19;
-            const scale = 1 + distance * 0.8;
-            const opacity = 0.3 - distance * 0.2;
-
-            return (
-              <div
-                key={i}
-                className="w-full text-center"
-                style={{
-                  fontSize: `${1.2 + distance * 1.5}rem`,
-                  lineHeight: `${1.4 + distance * 0.5}`,
-                  opacity: opacity,
-                  letterSpacing: `${distance * 0.2}rem`
-                }}
-              >
-                {generateBinaryLine()}
-              </div>
-            );
-          })}
+          {Array.from({ length: 20 }, (_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-full text-center"
+              style={{
+                fontSize: "1rem",
+                opacity: 0.6,
+                letterSpacing: "0.1rem"
+              }}
+              animate={{
+                y: [600, -200]
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "linear",
+                delay: i * 0.6
+              }}
+            >
+              {binaryText}
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

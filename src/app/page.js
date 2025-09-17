@@ -4,7 +4,8 @@ import HomePage from "./home/page";
 
 export default function Home() {
   return (
-    <> 
+    <>
+      <Navbar />
       <HomePage />
       <Footer />
     </>
