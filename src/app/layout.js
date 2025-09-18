@@ -5,6 +5,15 @@ import "./styles/globals.css";
 import "./styles/animations.css";
 
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
+const hurme = localFont({
+  src: [
+    { path: "../../public/font/hurme/HurmeGeometricSans1-Regular.ttf", weight: "400" },
+    { path: "../../public/font/hurme/HurmeGeometricSans1-SemiBold.ttf", weight: "500" },
+    { path: "../../public/font/hurme/HurmeGeometricSans1-Bold.ttf", weight: "700" },
+  ],
+  variable: "--font-hurme",
+  display: "swap",
+});
 
 const robotoMono = Roboto_Mono({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -116,7 +125,7 @@ export default function RootLayout({ children }) {
       </head>
       <body
         suppressHydrationWarning
-        className={`bg-black ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} antialiased`}
+        className={`bg-black ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} ${hurme.variable} antialiased`}
       >
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />

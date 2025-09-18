@@ -3,20 +3,26 @@
 @tailwind utilities;
 
 /* Hide scrollbar for all browsers */
-html {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+/* html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 html::-webkit-scrollbar {
-  display: none; /* WebKit */
+  display: none;
 }
 
 body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
-  display: none; /* WebKit */
+  display: none;
+} */
+
+@layer components {
+  .section {
+    @apply border bg-dark px-4 py-9 sm:px-12 sm:py-20;
+  }
 }

@@ -17,32 +17,38 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
   const column3Y = useSpring(column3YRaw, { stiffness: 100, damping: 30, mass: 0.8 });
 
   const textSection = (
-    <div className={`w-1/2 h-full px-16 bg-[#121211] flex flex-col items-start justify-center ${isReversed ? 'rounded-r-[32px]' : 'rounded-l-[32px]'}`}>
-      <h2 className="mb-6 text-4xl font-semibold">{title}</h2>
-      <p className="text-xl">{description}</p>
+    <div
+      className={`font-hurme flex h-full w-1/2 flex-col items-start justify-center gap-4 bg-[#121211] sm:px-16 ${isReversed ? "rounded-r-[32px]" : "rounded-l-[32px]"}`}
+    >
+      <h2 className="bg-gradient-to-b from-white to-[#F7FEDD] bg-clip-text text-5xl font-semibold leading-[92px] tracking-[-2%] text-transparent">
+        {title}
+      </h2>
+      <p className="text-[22px] leading-[42px] text-white">{description}</p>
     </div>
   );
 
   const imageSection = (
-    <div className={`relative flex items-center justify-between gap-4 bg-black w-1/2 h-full overflow-hidden ${isReversed ? 'rounded-l-[32px]' : 'rounded-r-[32px]'}`}>
+    <div
+      className={`relative flex h-full w-1/2 items-center justify-between gap-4 overflow-hidden bg-black ${isReversed ? "rounded-l-[32px]" : "rounded-r-[32px]"}`}
+    >
       {/* Top gradient */}
       <div
-        className="absolute top-0 left-0 right-0 h-20 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(180deg, #0D0D0C 0%, rgba(13, 13, 12, 0) 100%)' }}
+        className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-20"
+        style={{ background: "linear-gradient(180deg, #0D0D0C 0%, rgba(13, 13, 12, 0) 100%)" }}
       ></div>
 
       {/* Bottom gradient */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-20 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(180deg, rgba(13, 13, 12, 0) 0%, #0D0D0C 100%)' }}
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-20"
+        style={{ background: "linear-gradient(180deg, rgba(13, 13, 12, 0) 0%, #0D0D0C 100%)" }}
       ></div>
 
       {/* First column - scroll down moves down */}
       <motion.div
-        className="flex flex-col items-center justify-center gap-8 -ml-32 -my-48 overflow-hidden"
+        className="-my-48 -ml-32 flex flex-col items-center justify-center gap-8 overflow-hidden"
         style={{ y: column1Y }}
       >
-        {[...Array(6)].map((_, index) => (
+        {[...Array(8)].map((_, index) => (
           <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
             <Image
               src={imageSrc}
@@ -57,10 +63,10 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
       {/* Second column - scroll down moves up */}
       <motion.div
-        className="flex flex-col items-center justify-center gap-8 -my-48"
+        className="-my-48 flex flex-col items-center justify-center gap-8"
         style={{ y: column2Y }}
       >
-        {[...Array(6)].map((_, index) => (
+        {[...Array(8)].map((_, index) => (
           <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
             <Image
               src={imageSrc}
@@ -75,10 +81,10 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
       {/* Third column - scroll down moves down */}
       <motion.div
-        className="flex flex-col items-center justify-center gap-8 -mr-32 -my-48 overflow-hidden"
+        className="-my-48 -mr-32 flex flex-col items-center justify-center gap-8 overflow-hidden"
         style={{ y: column3Y }}
       >
-        {[...Array(6)].map((_, index) => (
+        {[...Array(8)].map((_, index) => (
           <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
             <Image
               src={imageSrc}
@@ -94,7 +100,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
   );
 
   return (
-    <section className="flex items-center justify-between px-4 py-12 text-white sm:px-12 sm:py-20 h-screen">
+    <section className="flex h-[65vh] items-center justify-between border border-[#fed7be33] text-white">
       {isReversed ? (
         <>
           {imageSection}
@@ -112,33 +118,45 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
 function PortfolioSection() {
   return (
-    <div>
+    <div className="section">
+      <div className="flex flex-col items-center justify-center space-y-4 py-16 text-center">
+        <h1 className="font-hurme bg-gradient-to-b from-white to-[#FFBA8F] bg-clip-text text-4xl tracking-[-3%] text-transparent sm:text-[64px] sm:leading-[80px]">
+          The platform we wish we had,
+          <br />
+          so we built it for you
+        </h1>
+        <p className="text-lg leading-relaxed text-gray-400">
+          Crafting user-friendly, cross platform solutions with efficiency
+        </p>
+      </div>
       {/* Project 1 - Text left, Images right */}
-      <ProjectSection
-        title="Hospice Care Web"
-        description="Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency."
-        imageSrc="/images/portfolio/project1.svg"
-        isReversed={false}
-        scrollOffset={0}
-      />
+      <div className="flex flex-col gap-16 py-8">
+        <ProjectSection
+          title="Hospice Care Web"
+          description="Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency."
+          imageSrc="/images/portfolio/project1.svg"
+          isReversed={false}
+          scrollOffset={0}
+        />
 
-      {/* Project 2 - Images left, Text right */}
-      <ProjectSection
-        title="E-Commerce Platform"
-        description="Building modern, scalable online shopping experiences with seamless user journeys. Optimized for performance and conversion across all devices and platforms."
-        imageSrc="/images/portfolio/project1.svg"
-        isReversed={true}
-        scrollOffset={1000}
-      />
+        {/* Project 2 - Images left, Text right */}
+        <ProjectSection
+          title="E-Commerce Platform"
+          description="Building modern, scalable online shopping experiences with seamless user journeys. Optimized for performance and conversion across all devices and platforms."
+          imageSrc="/images/portfolio/project1.svg"
+          isReversed={true}
+          scrollOffset={1000}
+        />
 
-      {/* Project 3 - Text left, Images right */}
-      <ProjectSection
-        title="Mobile Banking App"
-        description="Secure, intuitive financial management at your fingertips. Streamlined interface design focused on user trust and accessibility for modern banking needs."
-        imageSrc="/images/portfolio/project1.svg"
-        isReversed={false}
-        scrollOffset={2000}
-      />
+        {/* Project 3 - Text left, Images right */}
+        <ProjectSection
+          title="Mobile Banking App"
+          description="Secure, intuitive financial management at your fingertips. Streamlined interface design focused on user trust and accessibility for modern banking needs."
+          imageSrc="/images/portfolio/project1.svg"
+          isReversed={false}
+          scrollOffset={2000}
+        />
+      </div>
     </div>
   );
 }

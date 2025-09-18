@@ -1,9 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import TextField from "../../../components/TextField";
 import Button from "@/components/Button";
 
 const HeroSection = () => {
@@ -62,16 +60,16 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col items-start overflow-hidden px-4 pt-[120px] sm:px-12 sm:pt-[200px]">
+    <section className="section relative min-h-screen overflow-hidden bg-transparent pt-[120px] sm:pt-[200px]">
       {/* Unicorn Studio WebGL mesh background */}
       {showWebGL && (
         <div
           data-us-project="u8G0keiRdDw7PbxSpQ3N"
           className="absolute inset-0 -z-20 h-full w-full"
-        ></div>
+        />
       )}
       {/* Overlay to cover watermark - adjust position as needed */}
-      <div className="absolute bottom-6 left-0 right-0 -z-10 mx-auto h-16 w-48 bg-[#090909]" />
+      <div className="absolute bottom-6 left-0 right-0 -z-10 mx-auto h-16 w-48 bg-dark" />
 
       {/* Left sidebar text */}
       <div className="flex w-full items-start justify-between gap-4 lg:gap-24">

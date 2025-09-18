@@ -11,9 +11,10 @@ module.exports = {
         roboto_mono: ['var(--font-roboto-mono)', 'monospace'],
         neueMontreal: ["var(--font-neueMontreal)", "sans-serif"],
         rmMono: ["var(--font-rmMono)", "monospace"],
+        hurme: ["var(--font-hurme)", "sans-serif"],
       },
       colors: {
-        'dark': '#090909',
+        'dark': '#0D0D0C',
         'secondary': '#131313',
         'primary': '#EFEEEC',
         'muted': '#9c9b9a',

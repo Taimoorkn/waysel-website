@@ -115,7 +115,7 @@ const FillerSection = () => {
         }
       `}</style>
 
-      <div className="mx-auto flex w-full flex-col items-center bg-[#0d0d0c] pb-40 pt-20 text-primary">
+      <div className="section mx-auto flex w-full flex-col items-center text-primary">
         <div className="z-10 flex flex-col items-center gap-4 py-16">
           <h1 className="w-full text-center text-6xl font-normal leading-tight">
             The platform we wish we had, <br />
