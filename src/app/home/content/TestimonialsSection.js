@@ -99,7 +99,7 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="section px-0">
+    <section className="section relative px-0">
       <SectionHeading
         title={"Our clients be talking shit man"}
         description={
@@ -126,7 +126,7 @@ const TestimonialsSection = () => {
           const IconComponent = testimonial.icon;
           return (
             <SwiperSlide key={testimonial.id} onClick={() => handleSlideClick(index)}>
-              <div className="font-hurme flex h-full flex-col gap-8 rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-[#121211] bg-opacity-80 px-10 py-8 backdrop-blur-sm transition-all duration-300 sm:max-h-[460px]">
+              <div className="flex h-full flex-col gap-8 rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-[#121211] bg-opacity-80 px-10 py-8 font-hurme backdrop-blur-sm transition-all duration-300 sm:max-h-[460px]">
                 <div className="flex flex-col items-start justify-between gap-4">
                   <h3 className="text-[32px] font-semibold tracking-[-2%] text-[#ffffffcc] sm:text-3xl">
                     {testimonial.projectName}
@@ -164,6 +164,8 @@ const TestimonialsSection = () => {
           );
         })}
       </Swiper>
+      {/* Gradient vector blur at bottom edge */}
+      <div className="gradient-vector-blur bottom-0 left-1/2 z-50 -translate-x-1/2 transform" />
     </section>
   );
 };

@@ -19,7 +19,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const textSection = (
     <div
-      className={`font-hurme flex h-full w-1/2 flex-col items-start justify-center gap-4 border border-[#fed7be33] bg-[#121211] sm:px-16 ${isReversed ? "rounded-r-[32px] border-l-0" : "rounded-l-[32px] border-r-0"}`}
+      className={`flex h-full w-1/2 flex-col items-start justify-center gap-4 border border-[#fed7be33] bg-[#121211] font-hurme sm:px-16 ${isReversed ? "rounded-r-[32px] border-l-0" : "rounded-l-[32px] border-r-0"}`}
     >
       <h2 className="bg-gradient-to-b from-white to-[#F7FEDD] bg-clip-text text-5xl font-semibold leading-[92px] tracking-[-2%] text-transparent">
         {title}
@@ -101,19 +101,23 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
   );
 
   return (
-    <section className="flex h-[65vh] items-center justify-between text-white">
-      {isReversed ? (
-        <>
-          {imageSection}
-          {textSection}
-        </>
-      ) : (
-        <>
-          {textSection}
-          {imageSection}
-        </>
-      )}
-    </section>
+    <div className="relative">
+      <div className="oval-blur left-1/2 top-[-10%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
+
+      <section className="relative z-10 flex h-[65vh] items-center justify-between text-white">
+        {isReversed ? (
+          <>
+            {imageSection}
+            {textSection}
+          </>
+        ) : (
+          <>
+            {textSection}
+            {imageSection}
+          </>
+        )}
+      </section>
+    </div>
   );
 }
 
@@ -121,8 +125,9 @@ function PortfolioSection() {
   return (
     <div className="section">
       <SectionHeading
-        title="The platform we wish we had, so we built it for you"
-        description="Crafting user-friendly, cross platform solutions with efficiency"
+        title="Work we've built, fixed & rescued"
+        description="Real builds that launched and worked. Not case studies with fake testimonials.
+"
       />
       {/* Project 1 - Text left, Images right */}
       <div className="flex flex-col gap-16 py-8">

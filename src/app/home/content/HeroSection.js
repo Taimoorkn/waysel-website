@@ -100,7 +100,7 @@ const HeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                Start building websites
+                Curating the kind of solutions you
               </motion.h1>
             </div>
             <div className="overflow-hidden">
@@ -110,7 +110,7 @@ const HeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                people remember.
+                wish you started with.
               </motion.h1>
             </div>
           </div>
@@ -121,10 +121,10 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           >
             <Button variant="primary" href="/login" className="w-full sm:w-auto">
-              Become a Member
+              Dis a Button
             </Button>
             <Button variant="secondary" href="/get-started" className="w-full sm:w-auto">
-              About Us
+              Work Batton
             </Button>
           </motion.div>
           <div className="mt-12 max-w-md sm:mt-16 lg:mt-20">

@@ -116,9 +116,9 @@ const FillerSection = () => {
         }
       `}</style>
 
-      <div className="section mx-auto flex w-full flex-col items-center text-primary">
+      <div className="section relative mx-auto flex w-full flex-col items-center text-primary">
         <SectionHeading
-          title="The platform we wish we had, so we built it for you"
+          title="This is (some of the insane stuff) we actually do."
           description="Crafting user-friendly, cross platform solutions with efficiency"
         />
 
@@ -161,6 +161,9 @@ const FillerSection = () => {
             </div>
           ))}
         </div>
+
+        {/* Gradient vector blur at bottom edge */}
+        <div className="gradient-vector-blur bottom-0 left-1/2 z-50 -translate-x-1/2 transform rotate-180" />
       </div>
     </>
   );

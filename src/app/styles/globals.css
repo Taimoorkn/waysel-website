@@ -25,4 +25,20 @@ body::-webkit-scrollbar {
   .section {
     @apply border bg-dark px-4 py-9 sm:px-12 sm:py-20;
   }
+
+  .oval-blur {
+    @apply absolute w-[360px] h-[200px] rounded-full;
+    background-color: #C84D00;
+    filter: blur(300px);
+  }
+
+  .gradient-vector-blur {
+    @apply absolute;
+    background: linear-gradient(180deg, #FF711B 0%, rgba(255, 113, 27, 0.00) 100%);
+    border: 1px solid #FFF;
+    filter: blur(40px);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    width: 300px;
+    height: 200px;
+  }
 }
