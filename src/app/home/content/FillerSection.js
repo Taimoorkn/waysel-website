@@ -122,7 +122,7 @@ const FillerSection = () => {
           description="Crafting user-friendly, cross platform solutions with efficiency"
         />
 
-        <div className="z-10 grid w-full grid-cols-2 gap-4 px-10">
+        <div className="z-10 grid w-full grid-cols-2 gap-4">
           {cards.map((card, index) => (
             <div
               key={index}
@@ -137,7 +137,7 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`h-full bg-[#0D0D0C] p-10 ${
+                className={`h-full max-h-[520px] bg-[#0D0D0C] font-hurme p-10 sm:min-h-[460px] ${
                   index % 2 === 0
                     ? "rounded-bl-[32px] rounded-tl-[32px]"
                     : "rounded-br-[32px] rounded-tr-[32px]"
@@ -147,14 +147,18 @@ const FillerSection = () => {
                   transition: "all 300ms ease-in-out",
                 }}
               >
-                <h3 className="mb-8 text-3xl font-semibold">{card.title}</h3>
-                <div className="text-lg leading-relaxed">
-                  {card.content.map((item, i) => (
-                    <p key={i} className="mb-4">
-                      <span className="font-bold">{item.label}</span> {item.text}
-                    </p>
-                  ))}
-                </div>
+                <h3 className="mb-4 text-base font-semibold leading-[48px] tracking-[-2%] text-[#ffffffcc] sm:text-[32px]">
+                  {card.title}
+                </h3>
+
+                {card.content.map((item, i) => (
+                  <p
+                    key={i}
+                    className="mb-4 text-base leading-[36px] text-[#ffffffcc] sm:text-[20px]"
+                  >
+                    <span className="font-semibold">{item.label}</span> {item.text}
+                  </p>
+                ))}
               </div>
               <div className="blob"></div>
               <div className="fakeblob"></div>
