@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import SectionHeading from "../../../components/SectionHeading";
 
 // Single project component
 function ProjectSection({ title, description, imageSrc, isReversed = false, scrollOffset = 0 }) {
@@ -119,16 +120,10 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 function PortfolioSection() {
   return (
     <div className="section">
-      <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
-        <h1 className="font-hurme bg-gradient-to-b from-white to-[#FFBA8F] bg-clip-text text-4xl tracking-[-3%] text-transparent sm:text-[64px] sm:leading-[80px]">
-          The platform we wish we had,
-          <br />
-          so we built it for you
-        </h1>
-        <p className="text-lg leading-relaxed text-gray-400">
-          Crafting user-friendly, cross platform solutions with efficiency
-        </p>
-      </div>
+      <SectionHeading
+        title="The platform we wish we had, so we built it for you"
+        description="Crafting user-friendly, cross platform solutions with efficiency"
+      />
       {/* Project 1 - Text left, Images right */}
       <div className="flex flex-col gap-16 py-8">
         <ProjectSection

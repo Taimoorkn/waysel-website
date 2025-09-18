@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import SectionHeading from "../../../components/SectionHeading";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -28,15 +29,10 @@ export default function ContactForm() {
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Left Section */}
         <div className="flex flex-col justify-center space-y-8">
-          <div>
-            <h1 className="text-6xl lg:text-7xl font-light text-white mb-8 leading-tight">
-              Send Us a<br />
-              <span className="text-orange-200">Message</span>
-            </h1>
-            <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-              Crafting user-friendly, cross platform solutions with efficiency
-            </p>
-          </div>
+          <SectionHeading
+            title="Send Us a Message"
+            description="Crafting user-friendly, cross platform solutions with efficiency"
+          />
         </div>
 
         {/* Right Section - Contact Form */}

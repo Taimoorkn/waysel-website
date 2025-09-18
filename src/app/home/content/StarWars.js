@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SectionHeading from "../../../components/SectionHeading";
 
 const StarWars = () => {
   const binaryText = "0110100101001010101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010";
@@ -43,11 +44,10 @@ const StarWars = () => {
 
       {/* Main Content */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="text-center max-w-5xl px-8">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight">
-            We are a team of innovators dedicated to solving complex challenges with elegant digital solutions.
-          </h1>
-        </div>
+        <SectionHeading
+          title="We are a team of innovators dedicated to solving complex challenges with elegant digital solutions."
+          description=""
+        />
       </div>
 
       {/* Bottom Binary Pattern */}

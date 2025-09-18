@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import SectionHeading from "../../../components/SectionHeading";
 
 const FillerSection = () => {
   useEffect(() => {
@@ -116,15 +117,10 @@ const FillerSection = () => {
       `}</style>
 
       <div className="section mx-auto flex w-full flex-col items-center text-primary">
-        <div className="z-10 flex flex-col items-center gap-4 py-16">
-          <h1 className="w-full text-center text-6xl font-normal leading-tight">
-            The platform we wish we had, <br />
-            so we built it for you
-          </h1>
-          <p className="text-center text-xl">
-            Crafting user-friendly, cross platform solutions with efficiency
-          </p>
-        </div>
+        <SectionHeading
+          title="The platform we wish we had, so we built it for you"
+          description="Crafting user-friendly, cross platform solutions with efficiency"
+        />
 
         <div className="z-10 grid w-full grid-cols-2 gap-4 px-10">
           {cards.map((card, index) => (
