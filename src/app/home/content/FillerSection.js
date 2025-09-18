@@ -141,7 +141,7 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`flex h-full flex-col bg-[#0D0D0C] !p-10 font-hurme sm:min-h-[520px] ${
+                className={`flex h-full flex-col !p-10 font-hurme sm:min-h-[520px] ${
                   index % 2 === 0
                     ? "rounded-bl-[32px] rounded-tl-[32px]"
                     : "rounded-br-[32px] rounded-tr-[32px]"
@@ -149,6 +149,12 @@ const FillerSection = () => {
                 style={{
                   backdropFilter: "blur(80px)",
                   transition: "all 300ms ease-in-out",
+                  background: `${
+                    index === 0 ? "linear-gradient(to top right, #1A1A1A 0%, rgba(13, 13, 12, 0.8) 100%)" :
+                    index === 1 ? "linear-gradient(to top left, #1A1A1A 0%, rgba(13, 13, 12, 0.8) 100%)" :
+                    index === 2 ? "linear-gradient(to top right, #1A1A1A 0%, rgba(13, 13, 12, 0.9) 100%)" :
+                    "linear-gradient(to top left, #1A1A1A 0%, rgba(13, 13, 12, 0.9) 100%)"
+                  }, #0D0D0C`
                 }}
               >
                 <h3 className="mb-4 text-base font-semibold leading-[48px] tracking-[-2%] text-[#ffffffcc] sm:text-[32px]">
@@ -174,11 +180,6 @@ const FillerSection = () => {
               <div className="fakeblob"></div>
             </div>
           ))}
-        </div>
-
-        {/* Backdrop blur at bottom edge */}
-        <div className="backdrop-header">
-          <div className="backdrop-blur"></div>
         </div>
       </div>
     </>
