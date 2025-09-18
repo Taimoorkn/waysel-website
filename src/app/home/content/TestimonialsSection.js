@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import { Chrome, ShoppingBag, Smartphone, Layers, Cloud } from 'lucide-react';
-import 'swiper/css';
+import React, { useRef, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import { Chrome, ShoppingBag, Smartphone, Layers, Cloud } from "lucide-react";
+import "swiper/css";
+import SectionHeading from "@/components/SectionHeading";
 
 const TestimonialsSection = () => {
   const swiperRef = useRef(null);
@@ -11,53 +12,58 @@ const TestimonialsSection = () => {
     {
       id: 1,
       projectName: "Project Name",
-      content: "Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency.",
+      content:
+        "Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency.",
       name: "Emily Kristen",
       position: "CEO at Google",
       avatar: "https://via.placeholder.com/48x48?text=EK&bg=374151&color=fff",
       company: "Google",
-      icon: Chrome
+      icon: Chrome,
     },
     {
       id: 2,
       projectName: "E-Commerce Platform",
-      content: "The team delivered an exceptional solution that exceeded our expectations. Their attention to detail and technical expertise made all the difference in our project's success.",
+      content:
+        "The team delivered an exceptional solution that exceeded our expectations. Their attention to detail and technical expertise made all the difference in our project's success.",
       name: "Michael Chen",
       position: "CTO at Amazon",
       avatar: "https://via.placeholder.com/48x48?text=MC&bg=374151&color=fff",
       company: "Amazon",
-      icon: ShoppingBag
+      icon: ShoppingBag,
     },
     {
       id: 3,
       projectName: "Mobile Banking App",
-      content: "Outstanding work on our mobile application. The user experience is seamless and the performance is exceptional. Couldn't have asked for a better development partner.",
+      content:
+        "Outstanding work on our mobile application. The user experience is seamless and the performance is exceptional. Couldn't have asked for a better development partner.",
       name: "Sarah Johnson",
       position: "Product Lead at Apple",
       avatar: "https://via.placeholder.com/48x48?text=SJ&bg=374151&color=fff",
       company: "Apple",
-      icon: Smartphone
+      icon: Smartphone,
     },
     {
       id: 4,
       projectName: "AI Analytics Dashboard",
-      content: "Their innovative approach to solving complex problems helped us streamline our operations. The dashboard they built has become an essential tool for our team.",
+      content:
+        "Their innovative approach to solving complex problems helped us streamline our operations. The dashboard they built has become an essential tool for our team.",
       name: "David Wilson",
       position: "Head of Engineering at Meta",
       avatar: "https://via.placeholder.com/48x48?text=DW&bg=374151&color=fff",
       company: "Meta",
-      icon: Layers
+      icon: Layers,
     },
     {
       id: 5,
       projectName: "Cloud Infrastructure",
-      content: "Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects.",
+      content:
+        "Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects.",
       name: "Lisa Thompson",
       position: "VP of Technology at Microsoft",
       avatar: "https://via.placeholder.com/48x48?text=LT&bg=374151&color=fff",
       company: "Microsoft",
-      icon: Cloud
-    }
+      icon: Cloud,
+    },
   ];
 
   const handleSlideClick = (index) => {
@@ -68,7 +74,7 @@ const TestimonialsSection = () => {
 
   // Add custom styles for Swiper states since Tailwind can't directly target pseudo-classes
   useEffect(() => {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       .testimonials-swiper {
         overflow: hidden !important;
@@ -93,104 +99,93 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-black overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
-            What clients are saying about us
-          </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Crafting user-friendly, cross platform solutions with efficiency
-          </p>
-        </div>
+    <section className="section px-0">
+      <SectionHeading
+        title={"What clients are say"}
+        description={"Crafting user-friendly, cross platform solutions with efficiency"}
+      />
+      <Swiper
+        ref={swiperRef}
+        slidesPerView={2.5}
+        centeredSlides={true}
+        spaceBetween={40}
+        grabCursor={true}
+        loop={true}
+        speed={600}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        // breakpoints={{
+        //   320: {
+        //     slidesPerView: 1.2,
+        //     spaceBetween: 20
+        //   },
+        //   640: {
+        //     slidesPerView: 1.4,
+        //     spaceBetween: 30
+        //   },
+        //   768: {
+        //     slidesPerView: 1.6,
+        //     spaceBetween: 35
+        //   },
+        //   1024: {
+        //     slidesPerView: 1.8,
+        //     spaceBetween: 40
+        //   },
+        //   1280: {
+        //     slidesPerView: 1.8,
+        //     spaceBetween: 50
+        //   }
+        // }}
+        modules={[Autoplay]}
+        className="testimonials-swiper"
+      >
+        {testimonials.map((testimonial, index) => {
+          const IconComponent = testimonial.icon;
+          return (
+            <SwiperSlide
+              key={testimonial.id}
+              onClick={() => handleSlideClick(index)}
+              className="cursor-pointer"
+            >
+              <div className="mx-auto flex h-full min-h-[420px] max-w-2xl flex-col justify-between rounded-2xl border border-gray-800 bg-gray-900 bg-opacity-80 p-10 backdrop-blur-sm transition-all duration-300 hover:border-gray-700 md:min-h-[420px] md:p-10">
+                <div>
+                  <h3 className="mb-6 text-2xl font-medium text-white md:text-3xl">
+                    {testimonial.projectName}
+                  </h3>
+                  <blockquote className="mb-8 text-base leading-relaxed text-gray-300 md:text-lg">
+                    "{testimonial.content}"
+                  </blockquote>
+                </div>
 
-        <div className="relative -mx-4 md:-mx-8 lg:-mx-16 xl:-mx-32">
-          <Swiper
-            ref={swiperRef}
-            slidesPerView={1.8}
-            centeredSlides={true}
-            spaceBetween={40}
-            grabCursor={true}
-            loop={true}
-            speed={600}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true
-            }}
-            breakpoints={{
-              320: {
-                slidesPerView: 1.2,
-                spaceBetween: 20
-              },
-              640: {
-                slidesPerView: 1.4,
-                spaceBetween: 30
-              },
-              768: {
-                slidesPerView: 1.6,
-                spaceBetween: 35
-              },
-              1024: {
-                slidesPerView: 1.8,
-                spaceBetween: 40
-              },
-              1280: {
-                slidesPerView: 1.8,
-                spaceBetween: 50
-              }
-            }}
-            modules={[Autoplay]}
-            className="testimonials-swiper"
-          >
-            {testimonials.map((testimonial, index) => {
-              const IconComponent = testimonial.icon;
-              return (
-                <SwiperSlide 
-                  key={testimonial.id}
-                  onClick={() => handleSlideClick(index)}
-                  className="cursor-pointer"
-                >
-                  <div className="max-w-2xl mx-auto bg-gray-900 bg-opacity-80 border border-gray-800 rounded-2xl p-10 md:p-10 h-full flex flex-col justify-between backdrop-blur-sm transition-all duration-300 min-h-[420px] md:min-h-[420px] hover:border-gray-700">
+                <div className="mt-auto flex items-center justify-between">
+                  <div className="flex items-center">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="mr-4 h-12 w-12 rounded-full object-cover md:h-14 md:w-14"
+                    />
                     <div>
-                      <h3 className="text-white text-2xl md:text-3xl font-medium mb-6">
-                        {testimonial.projectName}
-                      </h3>
-                      <blockquote className="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
-                        "{testimonial.content}"
-                      </blockquote>
-                    </div>
-
-                    <div className="flex items-center justify-between mt-auto">
-                      <div className="flex items-center">
-                        <img
-                          src={testimonial.avatar}
-                          alt={testimonial.name}
-                          className="w-12 h-12 md:w-14 md:h-14 rounded-full mr-4 object-cover"
-                        />
-                        <div>
-                          <h4 className="text-white text-base md:text-lg font-medium">
-                            {testimonial.name}
-                          </h4>
-                          <p className="text-gray-400 text-sm md:text-base">
-                            {testimonial.position}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-2 text-gray-500">
-                        <IconComponent className="w-5 h-5 md:w-6 md:h-6" />
-                        <span className="text-sm md:text-base font-medium hidden sm:inline">
-                          {testimonial.company}
-                        </span>
-                      </div>
+                      <h4 className="text-base font-medium text-white md:text-lg">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-sm text-gray-400 md:text-base">{testimonial.position}</p>
                     </div>
                   </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
-      </div>
+                  <div className="flex items-center space-x-2 text-gray-500">
+                    <IconComponent className="h-5 w-5 md:h-6 md:w-6" />
+                    <span className="hidden text-sm font-medium sm:inline md:text-base">
+                      {testimonial.company}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </section>
   );
 };
