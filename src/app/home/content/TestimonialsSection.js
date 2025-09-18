@@ -11,23 +11,23 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      projectName: "Project Name",
+      projectName: "The Rizzler",
       content:
         "Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency.",
       name: "Emily Kristen",
       position: "CEO at Google",
-      avatar: "https://via.placeholder.com/48x48?text=EK&bg=374151&color=fff",
+      avatar: "/images/gregory.webp",
       company: "Google",
       icon: Chrome,
     },
     {
       id: 2,
-      projectName: "E-Commerce Platform",
+      projectName: "Deez nuts",
       content:
         "The team delivered an exceptional solution that exceeded our expectations. Their attention to detail and technical expertise made all the difference in our project's success.",
       name: "Michael Chen",
       position: "CTO at Amazon",
-      avatar: "https://via.placeholder.com/48x48?text=MC&bg=374151&color=fff",
+      avatar: "/images/gregory.webp",
       company: "Amazon",
       icon: ShoppingBag,
     },
@@ -38,7 +38,7 @@ const TestimonialsSection = () => {
         "Outstanding work on our mobile application. The user experience is seamless and the performance is exceptional. Couldn't have asked for a better development partner.",
       name: "Sarah Johnson",
       position: "Product Lead at Apple",
-      avatar: "https://via.placeholder.com/48x48?text=SJ&bg=374151&color=fff",
+      avatar: "/images/gregory.webp",
       company: "Apple",
       icon: Smartphone,
     },
@@ -49,18 +49,18 @@ const TestimonialsSection = () => {
         "Their innovative approach to solving complex problems helped us streamline our operations. The dashboard they built has become an essential tool for our team.",
       name: "David Wilson",
       position: "Head of Engineering at Meta",
-      avatar: "https://via.placeholder.com/48x48?text=DW&bg=374151&color=fff",
+      avatar: "/images/gregory.webp",
       company: "Meta",
       icon: Layers,
     },
     {
       id: 5,
-      projectName: "Cloud Infrastructure",
+      projectName: "Hastalavista",
       content:
-        "Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects.",
+        "Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects.Exceptional expertise in cloud architecture and deployment.",
       name: "Lisa Thompson",
       position: "VP of Technology at Microsoft",
-      avatar: "https://via.placeholder.com/48x48?text=LT&bg=374151&color=fff",
+      avatar: "/images/gregory.webp",
       company: "Microsoft",
       icon: Cloud,
     },
@@ -101,8 +101,10 @@ const TestimonialsSection = () => {
   return (
     <section className="section px-0">
       <SectionHeading
-        title={"What clients are say"}
-        description={"Crafting user-friendly, cross platform solutions with efficiency"}
+        title={"Our clients be talking shit man"}
+        description={
+          "Crafting user-friendly? nah, cross platform? never solutions? more like preblems with efficiency"
+        }
       />
       <Swiper
         ref={swiperRef}
@@ -117,66 +119,42 @@ const TestimonialsSection = () => {
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
-        // breakpoints={{
-        //   320: {
-        //     slidesPerView: 1.2,
-        //     spaceBetween: 20
-        //   },
-        //   640: {
-        //     slidesPerView: 1.4,
-        //     spaceBetween: 30
-        //   },
-        //   768: {
-        //     slidesPerView: 1.6,
-        //     spaceBetween: 35
-        //   },
-        //   1024: {
-        //     slidesPerView: 1.8,
-        //     spaceBetween: 40
-        //   },
-        //   1280: {
-        //     slidesPerView: 1.8,
-        //     spaceBetween: 50
-        //   }
-        // }}
         modules={[Autoplay]}
         className="testimonials-swiper"
       >
         {testimonials.map((testimonial, index) => {
           const IconComponent = testimonial.icon;
           return (
-            <SwiperSlide
-              key={testimonial.id}
-              onClick={() => handleSlideClick(index)}
-              className="cursor-pointer"
-            >
-              <div className="mx-auto flex h-full min-h-[420px] max-w-2xl flex-col justify-between rounded-2xl border border-gray-800 bg-gray-900 bg-opacity-80 p-10 backdrop-blur-sm transition-all duration-300 hover:border-gray-700 md:min-h-[420px] md:p-10">
-                <div>
-                  <h3 className="mb-6 text-2xl font-medium text-white md:text-3xl">
+            <SwiperSlide key={testimonial.id} onClick={() => handleSlideClick(index)}>
+              <div className="font-hurme flex h-full flex-col gap-8 rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-[#121211] bg-opacity-80 px-10 py-8 backdrop-blur-sm transition-all duration-300 sm:max-h-[460px]">
+                <div className="flex flex-col items-start justify-between gap-4">
+                  <h3 className="text-[32px] font-semibold tracking-[-2%] text-[#ffffffcc] sm:text-3xl">
                     {testimonial.projectName}
                   </h3>
-                  <blockquote className="mb-8 text-base leading-relaxed text-gray-300 md:text-lg">
-                    "{testimonial.content}"
+                  <blockquote className="text-[20px] text-gray-300 sm:text-[20px]">
+                    {testimonial.content}
                   </blockquote>
                 </div>
 
-                <div className="mt-auto flex items-center justify-between">
-                  <div className="flex items-center">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
                     <img
                       src={testimonial.avatar}
                       alt={testimonial.name}
-                      className="mr-4 h-12 w-12 rounded-full object-cover md:h-14 md:w-14"
+                      className="size-8 rounded-full border-2 border-[#ffffff33] object-cover sm:size-12"
                     />
-                    <div>
-                      <h4 className="text-base font-medium text-white md:text-lg">
+                    <div className="flex flex-col items-start justify-start gap-[2px]">
+                      <h4 className="bg-gradient-to-b from-white to-[#F7FEDD] bg-clip-text text-[20px] font-normal tracking-[-2%] text-transparent text-white">
                         {testimonial.name}
                       </h4>
-                      <p className="text-sm text-gray-400 md:text-base">{testimonial.position}</p>
+                      <p className="text-sm text-[#ffffffb3] sm:text-base">
+                        {testimonial.position}
+                      </p>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-2 text-gray-500">
-                    <IconComponent className="h-5 w-5 md:h-6 md:w-6" />
-                    <span className="hidden text-sm font-medium sm:inline md:text-base">
+                  <div className="flex items-center space-x-2 text-[#ffffffb3]">
+                    <IconComponent className="size-5 sm:size-6" />
+                    <span className="hidden text-sm sm:inline sm:text-xl">
                       {testimonial.company}
                     </span>
                   </div>
