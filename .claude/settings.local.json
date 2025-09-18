@@ -21,7 +21,9 @@
       "Bash(npm i:*)",
       "Bash(mv:*)",
       "Read(//c/Users/Taimoor/Downloads/**)",
-      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\images\\portfolio\")"
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\images\\portfolio\")",
+      "Read(//c/Users/Taimoor/Pictures/Screenshots/**)",
+      "WebFetch(domain:www.npmjs.com)"
     ],
     "deny": [],
     "ask": []

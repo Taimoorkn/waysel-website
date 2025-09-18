@@ -162,8 +162,10 @@ const FillerSection = () => {
           ))}
         </div>
 
-        {/* Gradient vector blur at bottom edge */}
-        <div className="gradient-vector-blur bottom-0 left-1/2 z-50 -translate-x-1/2 transform rotate-180" />
+        {/* Backdrop blur at bottom edge */}
+        <div className="backdrop-header">
+          <div className="backdrop-blur"></div>
+        </div>
       </div>
     </>
   );
