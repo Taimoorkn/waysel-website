@@ -7,6 +7,7 @@ import PortfolioSection from "./content/PortfolioSection";
 import FillerSection from "./content/FillerSection";
 import StarWars from "./content/StarWars";
 import Contact from "./content/Contact";
+import TestimonialsSection from "./content/TestimonialsSection";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <HeroSection />
       <PortfolioSection />
       <FillerSection/>
+      <TestimonialsSection/>
       <StarWars/>
       <Contact/>
     </>
