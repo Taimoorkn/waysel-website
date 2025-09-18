@@ -38,6 +38,7 @@ const FillerSection = () => {
   const cards = [
     {
       title: "Strategic Design",
+      image: "/images/filler/filler1.svg",
       content: [
         {
           label: "UX/UI Design:",
@@ -51,6 +52,7 @@ const FillerSection = () => {
     },
     {
       title: "Development",
+      image: "/images/filler/filler2.svg",
       content: [
         {
           label: "Frontend:",
@@ -64,6 +66,7 @@ const FillerSection = () => {
     },
     {
       title: "Consultation",
+      image: "/images/filler/filler3.svg",
       content: [
         {
           label: "Tech Advisory:",
@@ -77,6 +80,7 @@ const FillerSection = () => {
     },
     {
       title: "Support",
+      image: "/images/filler/filler4.svg",
       content: [
         {
           label: "Maintenance:",
@@ -126,7 +130,7 @@ const FillerSection = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`card relative overflow-hidden p-[0.5px] pt-[1px] ${
+              className={`card relative overflow-hidden p-[1px] pr-[0.5px] ${
                 index % 2 === 0
                   ? "rounded-bl-[32px] rounded-tl-[32px]"
                   : "rounded-br-[32px] rounded-tr-[32px]"
@@ -137,7 +141,7 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`h-full max-h-[520px] bg-[#0D0D0C] font-hurme p-10 sm:min-h-[460px] ${
+                className={`flex h-full flex-col bg-[#0D0D0C] !p-10 font-hurme sm:min-h-[520px] ${
                   index % 2 === 0
                     ? "rounded-bl-[32px] rounded-tl-[32px]"
                     : "rounded-br-[32px] rounded-tr-[32px]"
@@ -151,14 +155,20 @@ const FillerSection = () => {
                   {card.title}
                 </h3>
 
-                {card.content.map((item, i) => (
-                  <p
-                    key={i}
-                    className="mb-4 text-base leading-[36px] text-[#ffffffcc] sm:text-[20px]"
-                  >
-                    <span className="font-semibold">{item.label}</span> {item.text}
-                  </p>
-                ))}
+                <div className="flex-1">
+                  {card.content.map((item, i) => (
+                    <p
+                      key={i}
+                      className="mb-4 text-base leading-[36px] text-[#ffffffcc] sm:text-[20px]"
+                    >
+                      <span className="font-semibold">{item.label}</span> {item.text}
+                    </p>
+                  ))}
+                </div>
+
+                <div className="flex justify-end">
+                  <img src={card.image} alt={card.title} className="object-contain opacity-60" />
+                </div>
               </div>
               <div className="blob"></div>
               <div className="fakeblob"></div>
