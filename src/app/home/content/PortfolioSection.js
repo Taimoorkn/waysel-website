@@ -18,7 +18,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const textSection = (
     <div
-      className={`font-hurme flex h-full w-1/2 flex-col items-start justify-center gap-4 bg-[#121211] sm:px-16 ${isReversed ? "rounded-r-[32px]" : "rounded-l-[32px]"}`}
+      className={`font-hurme flex h-full w-1/2 flex-col items-start justify-center gap-4 border border-[#fed7be33] bg-[#121211] sm:px-16 ${isReversed ? "rounded-r-[32px] border-l-0" : "rounded-l-[32px] border-r-0"}`}
     >
       <h2 className="bg-gradient-to-b from-white to-[#F7FEDD] bg-clip-text text-5xl font-semibold leading-[92px] tracking-[-2%] text-transparent">
         {title}
@@ -29,7 +29,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const imageSection = (
     <div
-      className={`relative flex h-full w-1/2 items-center justify-between gap-4 overflow-hidden bg-black ${isReversed ? "rounded-l-[32px]" : "rounded-r-[32px]"}`}
+      className={`relative flex h-full w-1/2 items-center justify-between gap-4 overflow-hidden border border-[#fed7be33] bg-black ${isReversed ? "rounded-l-[32px]" : "rounded-r-[32px]"}`}
     >
       {/* Top gradient */}
       <div
@@ -100,7 +100,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
   );
 
   return (
-    <section className="flex h-[65vh] items-center justify-between border border-[#fed7be33] text-white">
+    <section className="flex h-[65vh] items-center justify-between text-white">
       {isReversed ? (
         <>
           {imageSection}
@@ -119,7 +119,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 function PortfolioSection() {
   return (
     <div className="section">
-      <div className="flex flex-col items-center justify-center space-y-4 py-16 text-center">
+      <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
         <h1 className="font-hurme bg-gradient-to-b from-white to-[#FFBA8F] bg-clip-text text-4xl tracking-[-3%] text-transparent sm:text-[64px] sm:leading-[80px]">
           The platform we wish we had,
           <br />

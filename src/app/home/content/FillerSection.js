@@ -141,7 +141,7 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`h-full bg-[#0d0d0c] p-10 ${
+                className={`h-full bg-[#0D0D0C] p-10 ${
                   index % 2 === 0
                     ? "rounded-bl-[32px] rounded-tl-[32px]"
                     : "rounded-br-[32px] rounded-tr-[32px]"
