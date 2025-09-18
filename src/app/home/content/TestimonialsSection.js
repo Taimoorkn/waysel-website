@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { Chrome, ShoppingBag, Smartphone, Layers, Cloud } from 'lucide-react';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
 
 const TestimonialsSection = () => {
+  const swiperRef = useRef(null);
+
   const testimonials = [
     {
       id: 1,
@@ -61,157 +60,138 @@ const TestimonialsSection = () => {
     }
   ];
 
+  const handleSlideClick = (index) => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideToLoop(index);
+    }
+  };
+
+  // Add custom styles for Swiper states since Tailwind can't directly target pseudo-classes
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      .testimonials-swiper {
+        overflow: hidden !important;
+      }
+      .testimonials-swiper .swiper-slide {
+        transition: all 0.3s ease;
+        opacity: 0.3;
+        transform: scale(0.85);
+      }
+      .testimonials-swiper .swiper-slide-active {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+      }
+      .testimonials-swiper .swiper-slide-prev,
+      .testimonials-swiper .swiper-slide-next {
+        opacity: 0.5;
+        transform: scale(0.92);
+      }
+    `;
+    document.head.appendChild(style);
+    return () => document.head.removeChild(style);
+  }, []);
+
   return (
-    <>
-      <style jsx>{`
-        .swiper {
-          overflow: visible !important;
-        }
-        
-        .swiper-slide {
-          background: transparent;
-          height: auto;
-        }
-        
-        .swiper-3d .swiper-slide-shadow-left,
-        .swiper-3d .swiper-slide-shadow-right {
-          background-image: none;
-        }
-        
-        .swiper-pagination-bullet {
-          width: 8px;
-          height: 8px;
-          background: #4B5563;
-          opacity: 1;
-          transition: all 0.3s;
-        }
-        
-        .swiper-pagination-bullet-active {
-          width: 32px;
-          border-radius: 4px;
-          background: #FFFFFF;
-        }
-        
-        .testimonial-card {
-          background: #0A0A0A;
-          border: 1px solid #1F2937;
-          border-radius: 16px;
-          padding: 32px;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          transition: all 0.3s ease;
-        }
-        
-        .swiper-slide-active .testimonial-card {
-          border-color: #374151;
-        }
-        
-        .swiper-slide:not(.swiper-slide-active) .testimonial-card {
-          opacity: 0.5;
-        }
-      `}</style>
+    <section className="py-20 bg-black overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
+            What clients are saying about us
+          </h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Crafting user-friendly, cross platform solutions with efficiency
+          </p>
+        </div>
 
-      <section className="py-20 bg-black overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
-              What clients are saying about us
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Crafting user-friendly, cross platform solutions with efficiency
-            </p>
-          </div>
+        <div className="relative -mx-4 md:-mx-8 lg:-mx-16 xl:-mx-32">
+          <Swiper
+            ref={swiperRef}
+            slidesPerView={1.8}
+            centeredSlides={true}
+            spaceBetween={40}
+            grabCursor={true}
+            loop={true}
+            speed={600}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1.2,
+                spaceBetween: 20
+              },
+              640: {
+                slidesPerView: 1.4,
+                spaceBetween: 30
+              },
+              768: {
+                slidesPerView: 1.6,
+                spaceBetween: 35
+              },
+              1024: {
+                slidesPerView: 1.8,
+                spaceBetween: 40
+              },
+              1280: {
+                slidesPerView: 1.8,
+                spaceBetween: 50
+              }
+            }}
+            modules={[Autoplay]}
+            className="testimonials-swiper"
+          >
+            {testimonials.map((testimonial, index) => {
+              const IconComponent = testimonial.icon;
+              return (
+                <SwiperSlide 
+                  key={testimonial.id}
+                  onClick={() => handleSlideClick(index)}
+                  className="cursor-pointer"
+                >
+                  <div className="max-w-2xl mx-auto bg-gray-900 bg-opacity-80 border border-gray-800 rounded-2xl p-10 md:p-10 h-full flex flex-col justify-between backdrop-blur-sm transition-all duration-300 min-h-[420px] md:min-h-[420px] hover:border-gray-700">
+                    <div>
+                      <h3 className="text-white text-2xl md:text-3xl font-medium mb-6">
+                        {testimonial.projectName}
+                      </h3>
+                      <blockquote className="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
+                        "{testimonial.content}"
+                      </blockquote>
+                    </div>
 
-          <div className="max-w-7xl mx-auto">
-            <Swiper
-              effect="coverflow"
-              grabCursor={true}
-              centeredSlides={true}
-              slidesPerView="auto"
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 2,
-                slideShadows: false
-              }}
-              spaceBetween={30}
-              loop={true}
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true
-              }}
-              pagination={{
-                clickable: true,
-                dynamicBullets: false
-              }}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                  spaceBetween: 20
-                },
-                640: {
-                  slidesPerView: 1.5,
-                  spaceBetween: 20
-                },
-                768: {
-                  slidesPerView: 2,
-                  spaceBetween: 30
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 30
-                }
-              }}
-              modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
-              className="testimonials-swiper pb-12"
-            >
-              {testimonials.map((testimonial) => {
-                const IconComponent = testimonial.icon;
-                return (
-                  <SwiperSlide key={testimonial.id} style={{ width: '400px', height: 'auto' }}>
-                    <div className="testimonial-card">
-                      <div>
-                        <h3 className="text-white text-xl font-medium mb-6">
-                          {testimonial.projectName}
-                        </h3>
-                        <blockquote className="text-gray-300 text-base leading-relaxed mb-8">
-                          "{testimonial.content}"
-                        </blockquote>
+                    <div className="flex items-center justify-between mt-auto">
+                      <div className="flex items-center">
+                        <img
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          className="w-12 h-12 md:w-14 md:h-14 rounded-full mr-4 object-cover"
+                        />
+                        <div>
+                          <h4 className="text-white text-base md:text-lg font-medium">
+                            {testimonial.name}
+                          </h4>
+                          <p className="text-gray-400 text-sm md:text-base">
+                            {testimonial.position}
+                          </p>
+                        </div>
                       </div>
-
-                      <div className="flex items-center justify-between mt-auto">
-                        <div className="flex items-center">
-                          <img
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                            className="w-12 h-12 rounded-full mr-4 object-cover"
-                          />
-                          <div>
-                            <h4 className="text-white font-medium">
-                              {testimonial.name}
-                            </h4>
-                            <p className="text-gray-400 text-sm">{testimonial.position}</p>
-                          </div>
-                        </div>
-                        {/* Company Icon */}
-                        <div className="flex items-center space-x-2 text-gray-500">
-                          <IconComponent className="w-5 h-5" />
-                          <span className="text-sm font-medium">{testimonial.company}</span>
-                        </div>
+                      <div className="flex items-center space-x-2 text-gray-500">
+                        <IconComponent className="w-5 h-5 md:w-6 md:h-6" />
+                        <span className="text-sm md:text-base font-medium hidden sm:inline">
+                          {testimonial.company}
+                        </span>
                       </div>
                     </div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
