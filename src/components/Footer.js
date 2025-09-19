@@ -1,237 +1,79 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import {
-  MapPinIcon,
-  PhoneIcon,
-  EnvelopeIcon,
-  FacebookLogoIcon,
-  InstagramLogoIcon,
-  LinkedinLogoIcon,
-  TwitterLogoIcon,
-  GithubLogoIcon,
-  CodeIcon,
-  RocketLaunchIcon,
-  LightbulbIcon,
-} from "@phosphor-icons/react";
+import Link from "next/link";
+import SectionHeading from "./SectionHeading";
 
 const Footer = () => {
-  const offices = [
-    {
-      city: "Austin",
-      label: "Headquarters",
-      address: "701 Tillery St, Austin, TX 78702",
-      phone: "+1 (512) 555-0142",
-      email: "austin@techtech.com",
-      timezone: "CST",
-    },
-    {
-      city: "Lahore",
-      label: "Development Hub",
-      address: "33-A Khayaban-e-Iqbal, Sector XX DHA Phase 3, Lahore, Punjab, 54792",
-      phone: "+92 (42) 555-0198",
-      email: "lahore@techtech.com",
-      timezone: "PKT",
-    },
-    {
-      city: "Manchester",
-      label: "European Office",
-      address: "173 Cheetham Hill Rd, Manchester M8 8LG",
-      phone: "+44 (161) 555-0176",
-      email: "manchester@techtech.com",
-      timezone: "GMT",
-    },
-  ];
-
-  const services = [
-    "Custom Software Development",
-    "Mobile App Development",
-    "Cloud Solutions",
-    "AI & Machine Learning",
-    "DevOps & Infrastructure",
-  ];
-
-  const technologies = [
-    "React & Next.js",
-    "Node.js & Python",
-    "AWS & Azure",
-    "Docker & Kubernetes",
-    "PostgreSQL & MongoDB",
-  ];
-
   return (
-    <footer className="relative overflow-hidden bg-secondary_bg">
-      <div className="relative z-10 px-4 pb-8 pt-20 md:px-8 lg:px-16 2xl:px-[9.5rem]">
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Brand Section */}
-          <div className="space-y-6 lg:col-span-4">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/20">
-                <CodeIcon size={24} weight="bold" className="text-accent" />
-              </div>
-              <Image src="/images/TechiTechLogo.svg" alt="TechTech" width={120} height={32} className="h-8" />
-            </div>
-
-            <p className="text-lg text-secondary_text">
-              Transforming ideas into powerful digital solutions. We craft custom software, mobile
-              apps, and cloud platforms that drive business growth.
+    <footer className="bg-[#171717] font-hurme">
+      {/* Top Section */}
+      <div className="relative flex justify-between sm:px-24 sm:py-12">
+        <div className="flex w-full lg:gap-16">
+          {/* Left Section - Brand */}
+          <div className="w-full space-y-8">
+            <Link href="/" aria-label="Waysel home">
+              <img src="/waysellogo.svg" alt="Waysel Logo" className="sm:w-[120px]" />
+            </Link>
+            <p className="max-w-md text-2xl tracking-[-3%] text-[#ffffffcc]">
+              In quiet and in chaos, we build.
+              <br />
+              And then, it speaks for itself.
             </p>
-
-            <div className="flex items-center gap-4 text-sm text-tertiary_text">
-              <div className="flex items-center gap-2">
-                <RocketLaunchIcon size={16} weight="fill" className="text-accent" />
-                <span>50+ Projects Delivered</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <LightbulbIcon size={16} weight="fill" className="text-accent" />
-                <span>Innovation First</span>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-4 pt-4">
-              <span className="text-sm font-medium text-tertiary_text">Follow us:</span>
-              <div className="flex gap-3">
-                {[
-                  {
-                    Icon: LinkedinLogoIcon,
-                    href: "https://linkedin.com",
-                    color: "hover:text-blue-400",
-                  },
-                  {
-                    Icon: GithubLogoIcon,
-                    href: "https://github.com",
-                    color: "hover:text-gray-300",
-                  },
-                  {
-                    Icon: TwitterLogoIcon,
-                    href: "https://twitter.com",
-                    color: "hover:text-blue-400",
-                  },
-                  {
-                    Icon: InstagramLogoIcon,
-                    href: "https://instagram.com",
-                    color: "hover:text-pink-400",
-                  },
-                ].map(({ Icon, href, color }, index) => (
-                  <a
-                    key={index}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`rounded-lg bg-surface_bg/50 p-2 text-text_muted ${color} transition-all duration-300 hover:scale-110 hover:bg-hover_bg/50`}
-                  >
-                    <Icon size={20} weight="fill" />
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
-
-          {/* Services & Technologies */}
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-1">
-            <div>
-              <h3 className="mb-4 flex items-center gap-2 text-lg font-medium text-primary_text">
-                <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent/20">
-                  <div className="h-2 w-2 rounded-full bg-accent"></div>
-                </div>
-                Our Services
-              </h3>
-              <ul className="space-y-3">
-                {services.map((service, index) => (
-                  <li
-                    key={index}
-                    className="cursor-pointer text-sm text-tertiary_text transition-colors hover:text-secondary_text"
-                  >
-                    {service}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="mb-4 flex items-center gap-2 text-lg font-medium text-primary_text">
-                <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent/20">
-                  <div className="h-2 w-2 rounded-full bg-accent"></div>
-                </div>
-                Technologies
-              </h3>
-              <ul className="space-y-3">
-                {technologies.map((tech, index) => (
-                  <li
-                    key={index}
-                    className="cursor-pointer text-sm text-tertiary_text transition-colors hover:text-secondary_text"
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Contact Section */}
-          <div className="lg:col-span-4">
-            <h3 className="mb-6 flex items-center gap-2 text-lg font-medium text-primary_text">
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent/20">
-                <div className="h-2 w-2 rounded-full bg-accent"></div>
+          {/* Right Section - Navigation */}
+          <div className="flex lg:gap-16">
+            {[
+              [
+                { label: "Our Work", href: "/work", isInternal: true },
+                { label: "Our Services", href: "/services", isInternal: true },
+                { label: "About Us", href: "/about", isInternal: true },
+              ],
+              [
+                { label: "LinkedIn", href: "https://linkedin.com", isInternal: false },
+                { label: "Instagram", href: "https://instagram.com", isInternal: false },
+                { label: "Contact Us", href: "/contact", isInternal: true },
+              ],
+            ].map((column, columnIndex) => (
+              <div
+                key={columnIndex}
+                className="flex flex-col items-start gap-6 text-nowrap text-xl leading-[28px] tracking-[-3%] text-[#ffffffcc]"
+              >
+                {column.map(({ label, href, isInternal }) =>
+                  isInternal ? (
+                    <Link key={label} href={href}>
+                      {label}
+                    </Link>
+                  ) : (
+                    <a key={label} href={href} target="_blank" rel="noopener noreferrer">
+                      {label}
+                    </a>
+                  )
+                )}
               </div>
-              Get In Touch
-            </h3>
-
-            <div className="space-y-6">
-              {offices.map(({ city, label, address, phone, email, timezone }, index) => (
-                <div key={index} className="group">
-                  <div className="flex items-start gap-4 rounded-xl border border-border_secondary bg-surface_bg/30 p-4 transition-all duration-300 hover:border-border_primary hover:bg-surface_bg/50">
-                    <div className="mt-1 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-accent/20">
-                      <MapPinIcon size={18} className="text-accent" weight="fill" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="mb-1 flex items-center gap-2">
-                        <h4 className="text-sm font-medium text-primary_text">{city}</h4>
-                        <span className="rounded-full bg-surface_bg/50 px-2 py-0.5 text-xs text-text_muted">
-                          {label}
-                        </span>
-                      </div>
-                      <p className="mb-2 text-xs text-tertiary_text">{address}</p>
-                      <div className="flex flex-col gap-1">
-                        <div className="flex items-center gap-2 text-xs text-text_muted">
-                          <PhoneIcon size={12} />
-                          <span>{phone}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-text_muted">
-                          <EnvelopeIcon size={12} />
-                          <span>{email}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="font-mono text-xs text-text_muted">{timezone}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-16 border-t border-border_secondary pt-8">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div className="flex items-center gap-6 text-sm text-text_muted">
-              <span>© 2025 TechTech. All rights reserved.</span>
-              <div className="hidden items-center gap-2 sm:flex">
-                <div className="h-2 w-2 animate-pulse rounded-full bg-accent"></div>
-                <span>Available for new projects</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 text-xs text-text_muted">
-              <span>Built with ❤️ by our team</span>
-              <span>•</span>
-              <span>Made in Austin, Lahore & Manchester</span>
-            </div>
-          </div>
+      {/* Large WAYSEL Text with Gradient Background */}
+      <div className="relative overflow-hidden">
+        <div
+          className="pointer-events-none select-none bg-gradient-to-b from-[#C84D00] via-[#FF711B] to-transparent bg-clip-text text-[12rem] font-bold leading-none text-transparent opacity-20 sm:text-[16rem] md:text-[20rem] lg:text-[24rem] xl:text-[28rem]"
+          style={{
+            WebkitTextStroke: "2px rgba(255, 255, 255, 0.1)",
+          }}
+        >
+          WAYSEL
         </div>
+
+        {/* Gradient Overlay */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background: "linear-gradient(180deg, transparent 0%, #C84D00 50%, #0D0D0C 100%)",
+          }}
+        />
       </div>
     </footer>
   );
