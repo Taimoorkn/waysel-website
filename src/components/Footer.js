@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#171717] font-hurme">
+    <footer className="relative bg-[#171717] font-hurme overflow-hidden">
       {/* Top Section */}
       <div className="relative flex justify-between sm:px-24 sm:py-12">
         <div className="flex w-full lg:gap-16">
@@ -88,7 +88,7 @@ const Footer = () => {
           }}
         />
       </div>
-      <div className="oval-blur-footer fixed overflow-hidden bottom-[-22%] left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform" /> 
+      <div className="oval-blur-footer   overflow-hidden bottom-[-22%] left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform" /> 
     </footer>
   );
 };

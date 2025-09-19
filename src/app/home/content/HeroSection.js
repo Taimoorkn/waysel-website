@@ -92,7 +92,7 @@ const HeroSection = () => {
 
         {/* Main content */}
         <div className="flex w-full flex-col items-start justify-start lg:w-auto lg:flex-1">
-          <div className="space-y-[8px] text-start font-neueMontreal text-3xl font-medium !leading-[0.9] !tracking-[-1px] text-primary sm:space-y-[10px] sm:text-5xl md:text-6xl lg:text-[94px]">
+          <div className="space-y-[8px] text-start font-neueMontreal text-3xl font-medium text-primary sm:space-y-[10px] sm:text-5xl md:text-6xl lg:text-[64px]">
             <div className="overflow-hidden">
               <motion.h1
                 className="break-words"
@@ -100,7 +100,7 @@ const HeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                Curating the kind of solutions you
+                Curating the kind of solutions
               </motion.h1>
             </div>
             <div className="overflow-hidden">
@@ -110,7 +110,7 @@ const HeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                wish you started with.
+                you wish you started with.
               </motion.h1>
             </div>
           </div>
@@ -124,7 +124,7 @@ const HeroSection = () => {
               Dis a Button
             </Button>
             <Button variant="secondary" href="/get-started" className="w-full sm:w-auto">
-              Work Batton
+              Another Button
             </Button>
           </motion.div>
           <div className="mt-12 max-w-md sm:mt-16 lg:mt-20">

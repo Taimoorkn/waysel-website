@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
 
 @layer components {
   .section {
-    @apply border bg-dark px-4 py-9 sm:px-12 sm:py-20;
+    @apply bg-dark px-4 py-9 sm:px-12 sm:py-20;
   }
 
   .oval-blur {
@@ -68,7 +68,7 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 0;
     left: 0;
-    color: #FFF;
+    color: #fff;
     -webkit-text-stroke: none;
     opacity: 0;
     transform: scale(0.8) translateY(20px);
