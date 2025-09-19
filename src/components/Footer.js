@@ -68,9 +68,11 @@ const Footer = () => {
             <span
               key={index}
               className="waysel-letter text-transparent"
+              data-letter={letter}
               style={{
                 WebkitTextStrokeWidth: "4px",
                 WebkitTextStrokeColor: "#FFF",
+                paintOrder: "stroke fill",
               }}
             >
               {letter}
