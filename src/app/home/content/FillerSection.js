@@ -150,10 +150,13 @@ const FillerSection = () => {
                   backdropFilter: "blur(80px)",
                   transition: "all 300ms ease-in-out",
                   backgroundImage:
-                    index === 0 ? "linear-gradient(45deg, #1A1A1A 0%, transparent 100%)" :
-                    index === 1 ? "linear-gradient(315deg, #1A1A1A 0%, transparent 100%)" :
-                    index === 2 ? "linear-gradient(45deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)" :
-                    "linear-gradient(315deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)"
+                    index === 0
+                      ? "linear-gradient(45deg, #1A1A1A 0%, transparent 100%)"
+                      : index === 1
+                        ? "linear-gradient(315deg, #1A1A1A 0%, transparent 100%)"
+                        : index === 2
+                          ? "linear-gradient(45deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)"
+                          : "linear-gradient(315deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)",
                 }}
               >
                 <h3 className="mb-4 text-base font-semibold leading-[48px] tracking-[-2%] text-[#ffffffcc] sm:text-[32px]">
