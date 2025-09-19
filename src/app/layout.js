@@ -15,6 +15,14 @@ const hurme = localFont({
   display: "swap",
 });
 
+const hurmeOblique = localFont({
+  src: [
+    { path: "../../public/font/hurme/HurmeGeometricSans1-SemiBoldObl.ttf", weight: "600", style: "italic" },
+  ],
+  variable: "--font-hurme-oblique",
+  display: "swap",
+});
+
 const robotoMono = Roboto_Mono({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
@@ -125,7 +133,7 @@ export default function RootLayout({ children }) {
       </head>
       <body
         suppressHydrationWarning
-        className={`bg-black ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} ${hurme.variable} antialiased`}
+        className={`bg-black ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} ${hurme.variable} ${hurmeOblique.variable} antialiased`}
       >
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />

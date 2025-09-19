@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import SectionHeading from "./SectionHeading";
 
 const Footer = () => {
   return (
@@ -59,12 +58,13 @@ const Footer = () => {
       {/* Large WAYSEL Text with Gradient Background */}
       <div className="relative overflow-hidden">
         <div
-          className="pointer-events-none select-none font-hurme text-[364px] font-semibold text-transparent"
+          className="pointer-events-none select-none font-hurme-oblique text-[364px] font-semibold text-transparent flex items-center justify-center"
           style={{
             WebkitTextStrokeWidth: "4px",
             WebkitTextStrokeColor: "#FFF",
             leadingTrim: "both",
             textEdge: "cap",
+            transform: "translateY(40%)",
           }}
         >
           WAYSEL

@@ -8,6 +8,7 @@ module.exports = {
         neueMontreal: ["var(--font-neueMontreal)", "sans-serif"],
         rmMono: ["var(--font-rmMono)", "monospace"],
         hurme: ["var(--font-hurme)", "sans-serif"],
+        "hurme-oblique": ["var(--font-hurme-oblique)", "sans-serif"],
       },
       colors: {
         dark: "#0D0D0C",
