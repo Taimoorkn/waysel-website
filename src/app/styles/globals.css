@@ -32,8 +32,9 @@ body::-webkit-scrollbar {
     filter: blur(300px);
   }
   .oval-blur-footer {
-    @apply absolute h-[150px] w-[60%] rounded-full;
-    background-color: #c84d00; 
+    @apply absolute h-[130px] w-[70%] rounded-full;
+    background-color: #c84d00;
+    filter: blur(100px);
   }
 
   .backdrop-header {

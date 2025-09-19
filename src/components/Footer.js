@@ -77,7 +77,7 @@ const Footer = () => {
           }}
         />
       </div>
-      <div className="oval-blur-footer absolute overflow-hidden bottom-[-30%] left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform" /> 
+      <div className="oval-blur-footer fixed overflow-hidden bottom-[-22%] left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform" /> 
     </footer>
   );
 };
