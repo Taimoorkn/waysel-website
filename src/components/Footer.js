@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#171717] font-hurme">
+    <footer className="relative bg-[#171717] font-hurme">
       {/* Top Section */}
       <div className="relative flex justify-between sm:px-24 sm:py-12">
         <div className="flex w-full lg:gap-16">
@@ -56,28 +56,28 @@ const Footer = () => {
       </div>
 
       {/* Large WAYSEL Text with Gradient Background */}
-      <div className="relative overflow-hidden">
+      <div className="relative h-[250px] overflow-hidden">
         <div
-          className="pointer-events-none select-none font-hurme-oblique text-[364px] font-semibold text-transparent flex items-center justify-center"
+          className="font-hurme-oblique pointer-events-none flex select-none items-center justify-center text-[364px] font-semibold leading-none text-transparent"
           style={{
             WebkitTextStrokeWidth: "4px",
             WebkitTextStrokeColor: "#FFF",
             leadingTrim: "both",
             textEdge: "cap",
-            transform: "translateY(40%)",
           }}
         >
           WAYSEL
         </div>
 
         {/* Gradient Overlay */}
-        {/* <div
-          className="pointer-events-none absolute inset-0"
+        <div
+          className="pointer-events-none absolute inset-0 bottom-0 h-[250px]"
           style={{
-            background: "linear-gradient(180deg, transparent 0%, #C84D00 50%, #0D0D0C 100%)",
+            background: "linear-gradient(180deg, transparent 50%, #532407 100%)",
           }}
-        /> */}
+        />
       </div>
+      <div className="oval-blur-footer absolute overflow-hidden bottom-[-30%] left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform" /> 
     </footer>
   );
 };

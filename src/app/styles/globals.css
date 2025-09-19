@@ -27,9 +27,13 @@ body::-webkit-scrollbar {
   }
 
   .oval-blur {
-    @apply absolute w-[360px] h-[200px] rounded-full;
-    background-color: #C84D00;
+    @apply absolute h-[200px] w-[360px] rounded-full;
+    background-color: #c84d00;
     filter: blur(300px);
+  }
+  .oval-blur-footer {
+    @apply absolute h-[150px] w-[60%] rounded-full;
+    background-color: #c84d00; 
   }
 
   .backdrop-header {
