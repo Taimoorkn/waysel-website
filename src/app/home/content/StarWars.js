@@ -43,7 +43,7 @@ const StarWars = () => {
       </div>
 
       {/* Main Content */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
+      <div className="absolute inset-0 flex items-center justify-center z-10 min-h-[70dvh]">
         <SectionHeading
           title="We are a team of innovators dedicated to solving complex challenges with elegant digital solutions."
           description=""

@@ -25,10 +25,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="section relative h-full bg-[#0D0D0C]">
-      <div className="mx-auto flex h-full items-center gap-12">
-        {/* Left Section */}
-        <div className="flex h-full w-[40%] flex-col justify-start border p-16 font-hurme">
+    <section className="section relative bg-[#0D0D0C]">
+      <div className="mx-auto flex items-stretch gap-12">
+        {/* Left Section - Changed to items-stretch on parent and removed !h-full */}
+        <div className="flex w-[40%] flex-col justify-between p-16 font-hurme">
           <div className="w-full">
             <h1 className="mb-4 bg-gradient-to-b from-white to-[#FFBA8F] bg-clip-text text-4xl tracking-[-3%] text-transparent sm:text-[64px] sm:leading-[80px]">
               Have an Idea?
@@ -37,7 +37,7 @@ export default function ContactForm() {
               Need help finishing what you started?
             </p>
           </div>
-          <div className="justify-start text-xl font-normal leading-loose text-white/80">
+          <div className="text-xl font-normal leading-loose text-white/80">
             We'll ask what you're trying to do.
             <br />
             We'll tell you if it makes sense.
@@ -47,7 +47,7 @@ export default function ContactForm() {
         </div>
 
         {/* Right Section - Contact Form */}
-        <div className="flex w-[60%] items-center justify-center border p-16">
+        <div className="flex w-[60%] items-center justify-center p-16">
           <div className="w-full rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-[#121211] bg-opacity-80 p-8 font-hurme backdrop-blur-sm">
             <div className="space-y-6">
               {/* Name Fields */}
