@@ -21,36 +21,52 @@ const FAQ = ({ faqs = [] }) => {
           Get answers to common questions about our services
         </p>
       </div>
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full space-y-4">
         {faqs.length > 0 ? (
           faqs.map((item, index) => (
-            <Accordion
+            <div
               key={index}
-              open={open === index}
-              className="mb-4 overflow-hidden rounded-2xl border border-[#fed7be33] bg-[#0D0D0C]"
+              className="group overflow-hidden rounded-2xl border border-[#fed7be33] bg-[#0D0D0C] transition-all duration-300 hover:border-[#fed7be55] hover:shadow-lg"
             >
-              <AccordionHeader
-                onClick={() => handleOpen(index)}
-                className={`px-6 py-6 text-left font-hurme transition-all duration-300 ease-in-out sm:px-8 sm:py-8 ${open === index ? "bg-[#1A1A1A]" : "hover:bg-[#181818]"} flex w-full items-center justify-between`}
+              <Accordion
+                open={open === index}
+                className="border-none bg-transparent"
               >
-                <span className="flex-1 text-base font-semibold tracking-[-1%] text-white sm:text-xl">
-                  {item.question}
-                </span>
-                <span className="ml-4">
-                  <ArrowCircleDownIcon
-                    className={`h-6 w-6 text-white transition-transform duration-300 ease-in-out sm:h-8 sm:w-8 ${open === index ? "rotate-180" : ""}`}
-                  />
-                </span>
-              </AccordionHeader>
-              <AccordionBody className="border-t border-[#fed7be33] bg-[#121211] px-6 py-6 sm:px-8 sm:py-8">
-                <p className="font-hurme text-base font-normal leading-relaxed text-[#ffffffe6] sm:text-lg">
-                  {item.answer}
-                </p>
-              </AccordionBody>
-            </Accordion>
+                <AccordionHeader
+                  onClick={() => handleOpen(index)}
+                  className={`px-6 py-5 text-left font-hurme transition-all duration-300 ease-in-out sm:px-8 sm:py-6 ${
+                    open === index
+                      ? "bg-[#1A1A1A] shadow-inner"
+                      : "hover:bg-[#151515] group-hover:bg-[#161616]"
+                  } flex w-full items-center justify-between border-none`}
+                >
+                  <span className="flex-1 text-base font-medium tracking-[-0.5px] text-[#ffffffcc] sm:text-lg sm:leading-relaxed">
+                    {item.question}
+                  </span>
+                  <span className="ml-6 flex-shrink-0">
+                    <ArrowCircleDownIcon
+                      className={`h-7 w-7 text-[#fed7be88] transition-all duration-300 ease-in-out sm:h-9 sm:w-9 ${
+                        open === index
+                          ? "rotate-180 text-[#fed7bebb]"
+                          : "group-hover:text-[#fed7beaa]"
+                      }`}
+                    />
+                  </span>
+                </AccordionHeader>
+                <AccordionBody className="border-t border-[#fed7be22] bg-[#121211] px-6 py-5 sm:px-8 sm:py-6">
+                  <div className="max-w-none">
+                    <p className="font-hurme text-sm font-normal leading-relaxed text-[#ffffffd9] sm:text-base sm:leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </AccordionBody>
+              </Accordion>
+            </div>
           ))
         ) : (
-          <p className="text-center font-hurme text-lg text-[#ffffffe6]">No FAQs available.</p>
+          <div className="flex items-center justify-center py-16">
+            <p className="text-center font-hurme text-xl text-[#ffffff88]">No FAQs available.</p>
+          </div>
         )}
       </div>
     </section>
