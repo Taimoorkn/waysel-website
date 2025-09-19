@@ -57,8 +57,10 @@ body::-webkit-scrollbar {
   }
 
   .waysel-letter {
-    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
+    display: inline-block;
+    transform-origin: center bottom;
   }
 
   .waysel-letter::before {
@@ -69,10 +71,17 @@ body::-webkit-scrollbar {
     color: #FFF;
     -webkit-text-stroke: none;
     opacity: 0;
-    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(0.8) translateY(20px);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .waysel-letter:hover {
+    transform: scale(1.05) translateY(-10px);
+    filter: drop-shadow(0 8px 20px rgba(255, 255, 255, 0.3));
   }
 
   .waysel-letter:hover::before {
     opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }
