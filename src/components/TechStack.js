@@ -61,14 +61,14 @@ const TechStack = ({ techToDisplay }) => {
       />
       {/* Button Bar - Render only if no techToDisplay prop is provided */}
       {!techToDisplay && (
-        <div className="flex justify-center gap-2 sm:gap-4 mb-6 sm:mb-10 flex-wrap">
+        <div className="flex justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 flex-wrap">
           {categories.map((category) => (
             <button
               key={category}
-              className={`px-4 sm:px-6 py-2 sm:py-3 font-semibold text-sm sm:text-[16px] leading-[19.1px] rounded-lg transition-all duration-300
+              className={`px-4 sm:px-6 py-3 sm:py-4 font-hurme font-medium text-sm sm:text-base rounded-xl transition-all duration-300 ease-in-out
                 ${activeCategory === category
-                  ? "bg-[#ffffffcc] text-dark"
-                  : "text-[#ffffffcc] border border-[#fed7be33] hover:bg-[#ffffffcc] hover:text-dark"}`}
+                  ? "bg-[#ffffffcc] text-dark shadow-lg scale-105"
+                  : "text-[#ffffffb3] border border-[#fed7be33] hover:bg-[#ffffffcc] hover:text-dark hover:border-[#fed7be55] hover:scale-105 hover:shadow-md"}`}
               onClick={() => setActiveCategory(category)}
             >
               {category}
@@ -77,14 +77,18 @@ const TechStack = ({ techToDisplay }) => {
         </div>
       )}
       {/* Grid Layout */}
-      <div className="w-full flex flex-wrap justify-center min-w-full gap-2 sm:gap-8 mx-auto">
+      <div className="w-full flex flex-wrap justify-center min-w-full gap-4 sm:gap-8 mx-auto">
         {filteredTech.map((item, index) => (
           <div
             key={index}
-            className="tech_stack_icon sm:max-w-[10.196%] font-manrope gap-[6px] text-[15px]"
+            className="group relative size-24 sm:size-32 bg-[#121211] rounded-2xl flex flex-col items-center justify-center border border-[#fed7be22] transition-all duration-300 ease-in-out hover:bg-[#1A1A1A] hover:border-[#fed7be44] hover:scale-105 hover:shadow-lg font-manrope sm:max-w-[10.196%] gap-[6px] text-[15px]"
           >
-            {item.logo}
-            <p className="text-xs sm:text-base text-[#ffffffcc]">{item.name}</p>
+            <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+              {item.logo}
+            </div>
+            <p className="text-xs sm:text-sm text-[#ffffffb3] font-medium text-center leading-tight mt-1 group-hover:text-[#ffffffcc] transition-colors duration-300">
+              {item.name}
+            </p>
           </div>
         ))}
       </div>
