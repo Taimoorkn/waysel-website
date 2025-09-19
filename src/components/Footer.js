@@ -58,15 +58,24 @@ const Footer = () => {
       {/* Large WAYSEL Text with Gradient Background */}
       <div className="relative h-[250px] overflow-hidden">
         <div
-          className="font-hurme-oblique pointer-events-none flex select-none items-center justify-center text-[364px] font-semibold leading-none text-transparent"
+          className="font-hurme-oblique flex select-none items-center justify-center text-[364px] font-semibold leading-none"
           style={{
-            WebkitTextStrokeWidth: "4px",
-            WebkitTextStrokeColor: "#FFF",
             leadingTrim: "both",
             textEdge: "cap",
           }}
         >
-          WAYSEL
+          {["W", "A", "Y", "S", "E", "L"].map((letter, index) => (
+            <span
+              key={index}
+              className="waysel-letter text-transparent"
+              style={{
+                WebkitTextStrokeWidth: "4px",
+                WebkitTextStrokeColor: "#FFF",
+              }}
+            >
+              {letter}
+            </span>
+          ))}
         </div>
 
         {/* Gradient Overlay */}
