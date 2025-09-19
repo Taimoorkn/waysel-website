@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SectionHeading from "./SectionHeading";
 
 const TechStack = ({ techToDisplay }) => {
   const techStack = [
@@ -53,13 +54,11 @@ const TechStack = ({ techToDisplay }) => {
       : techStack.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="bg-dark px-4 2xl:px-[9.5rem] py-10 text-center">
-      <h1 className="max-sm:hidden section-header">
-        Technologies Our Company Uses
-      </h1>
-      <h1 className="sm:hidden section-header !text-center">
-        Tech Stack
-      </h1>
+    <section className="section">
+      <SectionHeading
+        title="Technologies We Master"
+        description="Cutting-edge tools and frameworks that power our solutions"
+      />
       {/* Button Bar - Render only if no techToDisplay prop is provided */}
       {!techToDisplay && (
         <div className="flex justify-center gap-2 sm:gap-4 mb-6 sm:mb-10 flex-wrap">
@@ -68,8 +67,8 @@ const TechStack = ({ techToDisplay }) => {
               key={category}
               className={`px-4 sm:px-6 py-2 sm:py-3 font-semibold text-sm sm:text-[16px] leading-[19.1px] rounded-lg transition-all duration-300
                 ${activeCategory === category
-                  ? "bg-primary text-dark"
-                  : "text-primary border border-primary hover:bg-primary hover:text-dark"}`}
+                  ? "bg-[#ffffffcc] text-dark"
+                  : "text-[#ffffffcc] border border-[#fed7be33] hover:bg-[#ffffffcc] hover:text-dark"}`}
               onClick={() => setActiveCategory(category)}
             >
               {category}
@@ -85,7 +84,7 @@ const TechStack = ({ techToDisplay }) => {
             className="tech_stack_icon sm:max-w-[10.196%] font-manrope gap-[6px] text-[15px]"
           >
             {item.logo}
-            <p className="text-xs sm:text-base text-primary">{item.name}</p>
+            <p className="text-xs sm:text-base text-[#ffffffcc]">{item.name}</p>
           </div>
         ))}
       </div>

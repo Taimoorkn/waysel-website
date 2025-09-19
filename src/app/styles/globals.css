@@ -86,7 +86,7 @@ body::-webkit-scrollbar {
   }
 
   .section-header {
-    @apply text-3xl font-medium sm:text-[42px] font-hurme sm:font-medium sm:leading-[51.7px] text-primary text-start mb-6;
+    @apply text-3xl font-medium sm:text-[42px] font-hurme sm:font-medium sm:leading-[51.7px] text-[#ffffffcc] text-start mb-6;
   }
 
   .tech_stack_icon_img {

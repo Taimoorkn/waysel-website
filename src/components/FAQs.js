@@ -21,7 +21,7 @@ const FAQ = ({ faqs = [] }) => {
           Get answers to common questions about our services
         </p>
       </div>
-      <div className="relative z-10 w-full max-w-4xl">
+      <div className="relative z-10 w-full">
         {faqs.length > 0 ? (
           faqs.map((item, index) => (
             <Accordion
