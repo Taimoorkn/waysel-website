@@ -59,21 +59,24 @@ const Footer = () => {
       {/* Large WAYSEL Text with Gradient Background */}
       <div className="relative overflow-hidden">
         <div
-          className="pointer-events-none select-none bg-gradient-to-b from-[#C84D00] via-[#FF711B] to-transparent bg-clip-text text-[12rem] font-bold leading-none text-transparent opacity-20 sm:text-[16rem] md:text-[20rem] lg:text-[24rem] xl:text-[28rem]"
+          className="pointer-events-none select-none font-hurme text-[364px] font-semibold text-transparent"
           style={{
-            WebkitTextStroke: "2px rgba(255, 255, 255, 0.1)",
+            WebkitTextStrokeWidth: "4px",
+            WebkitTextStrokeColor: "#FFF",
+            leadingTrim: "both",
+            textEdge: "cap",
           }}
         >
           WAYSEL
         </div>
 
         {/* Gradient Overlay */}
-        <div
+        {/* <div
           className="pointer-events-none absolute inset-0"
           style={{
             background: "linear-gradient(180deg, transparent 0%, #C84D00 50%, #0D0D0C 100%)",
           }}
-        />
+        /> */}
       </div>
     </footer>
   );
