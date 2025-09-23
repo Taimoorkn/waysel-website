@@ -19,7 +19,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const textSection = (
     <div
-      className={`flex h-full w-1/2 flex-col items-start justify-center gap-4 border border-[#fed7be33] bg-[#121211] sm:px-16 ${isReversed ? "rounded-r-[32px] border-l-0" : "rounded-l-[32px] border-r-0"}`}
+      className={`flex h-full w-1/2 flex-col items-start justify-center gap-4 border border-[#fed7be33] bg-[#121211] xl:px-16 ${isReversed ? "rounded-r-[32px] border-l-0" : "rounded-l-[32px] border-r-0"}`}
     >
       <h2 className="bg-gradient-to-b from-white to-[#F7FEDD] bg-clip-text text-5xl font-semibold leading-[92px] tracking-[-2%] text-transparent">
         {title}

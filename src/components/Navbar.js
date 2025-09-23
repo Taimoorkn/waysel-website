@@ -54,7 +54,7 @@ const Navbar = () => {
       onLeaveBack: () => {
         // Return to original responsive margins
         const isMobile = window.innerWidth < 640;
-        const originalMargin = isMobile ? "1rem" : "3rem"; // mx-4 = 1rem, sm:mx-9 = 2.25rem
+        const originalMargin = isMobile ? "1rem" : "3rem"; // mx-4 = 1rem, xl:mx-9 = 2.25rem
 
         gsap.to(navbar, {
           y: 0,
@@ -100,7 +100,7 @@ const Navbar = () => {
       />
       <motion.nav
         ref={navRef}
-        className="BodyTextMedium fixed left-0 right-0 top-0 z-50 mx-4 pt-2 text-white sm:mx-12 sm:pt-[26px]"
+        className="BodyTextMedium fixed left-0 right-0 top-0 z-50 mx-4 pt-2 xl:mx-28 xl:pt-[26px]"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -114,11 +114,11 @@ const Navbar = () => {
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
             <Link href="/" aria-label="Waysel home">
-              <img src="/waysellogo.svg" alt="Waysel Logo" className="h-auto w-16 sm:w-28" />
+              <img src="/waysellogo.svg" alt="Waysel Logo" className="h-auto w-16 xl:w-28" />
             </Link>
           </motion.div>
           <motion.div
-            className="ml-[7%] hidden items-center space-x-8 sm:flex"
+            className="ml-[7%] hidden items-center space-x-8 xl:flex"
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -144,7 +144,7 @@ const Navbar = () => {
           </motion.div>
           {/* Right side - Auth buttons */}
           <motion.div
-            className="hidden items-center gap-7 sm:flex"
+            className="hidden items-center gap-7 xl:flex"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
@@ -155,7 +155,7 @@ const Navbar = () => {
             <Button
               variant="primary"
               href="/get-started"
-              className="flex h-8 items-center justify-center tracking-wide sm:!px-4 sm:!py-2"
+              className="flex h-8 items-center justify-center tracking-wide xl:!px-4 xl:!py-2"
             >
               Get Started
             </Button>
@@ -163,7 +163,7 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <motion.div
-            className="ml-auto flex items-center sm:hidden"
+            className="ml-auto flex items-center xl:hidden"
             initial={{ x: 30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -184,7 +184,7 @@ const Navbar = () => {
           {/* Mobile menu */}
           {isMenuOpen && (
             <motion.div
-              className="absolute left-0 right-0 top-full mt-2 sm:hidden"
+              className="absolute left-0 right-0 top-full mt-2 xl:hidden"
               initial={{ y: -20, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: -20, opacity: 0, scale: 0.95 }}

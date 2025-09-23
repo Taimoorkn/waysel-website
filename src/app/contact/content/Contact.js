@@ -15,13 +15,13 @@ import {
 import { useRouter } from "next/navigation";
 
 const ContactItem = ({ icon: Icon, title, details }) => (
-  <div className="group flex items-center space-x-4 sm:space-x-6">
-    <div className="bg-card_bg group-hover:bg-hover_bg flex size-10 items-center justify-center rounded-full transition-colors duration-200 sm:size-12">
-      <Icon weight="fill" className="text-accent size-5 sm:size-6" />
+  <div className="group flex items-center space-x-4 xl:space-x-6">
+    <div className="bg-card_bg group-hover:bg-hover_bg flex size-10 items-center justify-center rounded-full transition-colors duration-200 xl:size-12">
+      <Icon weight="fill" className="size-5 text-accent xl:size-6" />
     </div>
     <div className="flex-1">
-      {title && <h3 className="text-primary_text text-sm font-medium sm:text-base">{title}</h3>}
-      <p className="text-secondary_text text-sm sm:text-base">{details}</p>
+      {title && <h3 className="text-primary_text text-sm font-medium xl:text-base">{title}</h3>}
+      <p className="text-secondary_text text-sm xl:text-base">{details}</p>
     </div>
   </div>
 );
@@ -204,16 +204,16 @@ const Contact = () => {
   ];
 
   return (
-    <section className="bg-primary_bg px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-12 xl:px-16 2xl:px-[9.5rem]">
+    <section className="bg-primary_bg px-4 py-6 md:px-8 md:py-10 lg:px-12 xl:px-16 xl:px-6 xl:py-8 2xl:px-[9.5rem]">
       <div className="mb-8 text-center">
-        <div className="bg-card_bg hover:bg-hover_bg text-accent mb-4 inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium transition-all sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
+        <div className="bg-card_bg hover:bg-hover_bg mb-4 inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium text-accent transition-all xl:mb-6 xl:px-4 xl:py-2 xl:text-sm">
           <StarFourIcon weight="fill" className="mr-2 h-4 w-4" />
           CONTACT US
         </div>
-        <h2 className="text-primary_text mb-4 text-3xl font-medium sm:mb-6 sm:text-4xl lg:text-5xl">
+        <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">
           Bring that Idea to <span className="text-accent">Life</span>
         </h2>
-        <p className="text-secondary_text mx-auto max-w-3xl text-base sm:text-lg lg:text-xl">
+        <p className="text-secondary_text mx-auto max-w-3xl text-base lg:text-xl xl:text-lg">
           Explore our collection of innovative solutions and success stories that have transformed businesses across
           industries.
         </p>
@@ -224,7 +224,7 @@ const Contact = () => {
           {/* Left Section - Contact Info */}
           <div className="border-border_primary bg-card_bg w-full rounded-2xl border p-8 shadow-sm lg:w-2/6">
             <h3 className="text-primary_text mb-6 text-2xl font-medium">Get in Touch</h3>
-            <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-6 xl:space-y-8">
               {contactItems.map((item, index) => (
                 <ContactItem key={index} {...item} />
               ))}
@@ -254,10 +254,10 @@ const Contact = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-border_secondary bg-surface_bg hover:bg-hover_bg hover:border-accent group relative rounded-full border p-3 shadow-sm transition-all duration-300 hover:shadow-md"
+                  className="border-border_secondary bg-surface_bg hover:bg-hover_bg group relative rounded-full border p-3 shadow-sm transition-all duration-300 hover:border-accent hover:shadow-md"
                   aria-label={`Visit our ${social.name} page`}
                 >
-                  <social.icon weight="fill" className="text-accent size-5 transition-colors duration-300" />
+                  <social.icon weight="fill" className="size-5 text-accent transition-colors duration-300" />
                   <span className="sr-only">{social.name}</span>
                 </a>
               ))}
@@ -272,9 +272,9 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <input type="hidden" name="csrfToken" value={csrfToken} />
 
-                <div className="flex flex-col space-y-6 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <div className="w-full sm:w-1/2">
-                    <label htmlFor="name" className="text-primary_text mb-2 block text-sm font-medium sm:text-base">
+                <div className="flex flex-col space-y-6 xl:flex-row xl:space-x-4 xl:space-y-0">
+                  <div className="w-full xl:w-1/2">
+                    <label htmlFor="name" className="text-primary_text mb-2 block text-sm font-medium xl:text-base">
                       Name
                     </label>
                     <div className="relative">
@@ -305,8 +305,8 @@ const Contact = () => {
                     )}
                   </div>
 
-                  <div className="w-full sm:w-1/2">
-                    <label htmlFor="email" className="text-primary_text mb-2 block text-sm font-medium sm:text-base">
+                  <div className="w-full xl:w-1/2">
+                    <label htmlFor="email" className="text-primary_text mb-2 block text-sm font-medium xl:text-base">
                       Email
                     </label>
                     <div className="relative">
@@ -339,7 +339,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="mb-2 block text-sm font-medium text-gray-900 sm:text-base">
+                  <label htmlFor="subject" className="mb-2 block text-sm font-medium text-gray-900 xl:text-base">
                     Subject
                   </label>
                   <div className="relative">
@@ -371,14 +371,14 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-900 sm:text-base">
+                  <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-900 xl:text-base">
                     Message
                   </label>
                   <div className="relative">
                     <textarea
                       id="message"
                       placeholder="Tell us about your project or question..."
-                      className={`bg-surface_bg text-primary_text h-32 w-full resize-none rounded-xl border-2 px-4 py-3 transition-all duration-200 focus:outline-none sm:h-40 ${
+                      className={`bg-surface_bg text-primary_text h-32 w-full resize-none rounded-xl border-2 px-4 py-3 transition-all duration-200 focus:outline-none xl:h-40 ${
                         errors.message
                           ? "border-red-400 focus:border-red-500"
                           : activeField === "message"
@@ -401,10 +401,10 @@ const Contact = () => {
                   )}
                 </div>
 
-                <div className="flex flex-col items-center gap-4 pt-2 sm:flex-row">
+                <div className="flex flex-col items-center gap-4 pt-2 xl:flex-row">
                   <button
                     type="submit"
-                    className="hover:bg-accent_background bg-accent flex w-full items-center justify-center rounded-xl px-6 py-3.5 font-medium text-white transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-50 sm:flex-1"
+                    className="hover:bg-accent_background flex w-full items-center justify-center rounded-xl bg-accent px-6 py-3.5 font-medium text-white transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-50 xl:flex-1"
                     disabled={isSubmitting}
                     aria-label="Send contact message"
                   >
@@ -421,11 +421,11 @@ const Contact = () => {
                     )}
                   </button>
 
-                  <span className="text-tertiary_text hidden text-sm font-medium sm:block">OR</span>
+                  <span className="text-tertiary_text hidden text-sm font-medium xl:block">OR</span>
 
                   <button
                     type="button"
-                    className="border-border_primary bg-surface_bg text-primary_text hover:bg-hover_bg flex w-full items-center justify-center rounded-xl border px-6 py-3.5 font-medium transition-colors duration-200 sm:flex-1"
+                    className="border-border_primary bg-surface_bg text-primary_text hover:bg-hover_bg flex w-full items-center justify-center rounded-xl border px-6 py-3.5 font-medium transition-colors duration-200 xl:flex-1"
                     //onClick={() => router.push('/appointment')}
                     aria-label="Book a meeting"
                   >

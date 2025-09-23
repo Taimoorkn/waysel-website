@@ -40,41 +40,41 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 2xl:px-[9.5rem]">
+    <section className="relative overflow-hidden bg-white px-4 py-8 lg:px-8 lg:py-16 xl:px-6 xl:py-12 2xl:px-[9.5rem]">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50/30"></div>
 
       <div className="relative z-10 mx-auto">
-        <div className="mb-8 text-center sm:mb-12 lg:mb-16">
-          <h2 className="text-primary_text mb-4 text-3xl font-medium sm:mb-6 sm:text-4xl lg:text-5xl">
+        <div className="mb-8 text-center lg:mb-16 xl:mb-12">
+          <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">
             Why{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Choose</span>{" "}
             Us
           </h2>
-          <p className="text-secondary_text mx-auto max-w-3xl text-base sm:text-lg lg:text-xl">
+          <p className="text-secondary_text mx-auto max-w-3xl text-base lg:text-xl xl:text-lg">
             Our core values shape the way we develop, collaborate, and provide quality services to our clients. These
             principles help us deliver scalable software solutions.
           </p>
-          <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 sm:mt-8 sm:w-24"></div>
+          <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 xl:mt-8 xl:w-24"></div>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 xl:grid-cols-2 xl:gap-6">
           {values.map((value, index) => (
             <div
               key={index}
               data-animate
               id={`value-${index}`}
-              className="animate-fade-in-up group rounded-2xl border border-gray-100 bg-white p-6 shadow-lg transition-all duration-500 hover:border-gray-200 hover:shadow-2xl sm:rounded-3xl sm:p-8"
+              className="animate-fade-in-up group rounded-2xl border border-gray-100 bg-white p-6 shadow-lg transition-all duration-500 hover:border-gray-200 hover:shadow-2xl xl:rounded-3xl xl:p-8"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div
-                className={`h-12 w-12 bg-gradient-to-br sm:h-14 sm:w-14 ${value.color} mb-4 flex items-center justify-center rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-110 sm:mb-6 sm:rounded-2xl`}
+                className={`h-12 w-12 bg-gradient-to-br xl:h-14 xl:w-14 ${value.color} mb-4 flex items-center justify-center rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-110 xl:mb-6 xl:rounded-2xl`}
               >
-                <value.icon className="h-6 w-6 text-white sm:h-7 sm:w-7" />
+                <value.icon className="h-6 w-6 text-white xl:h-7 xl:w-7" />
               </div>
-              <h3 className="text-primary_text mb-3 text-xl font-medium transition-colors group-hover:text-blue-600 sm:mb-4 sm:text-2xl">
+              <h3 className="text-primary_text mb-3 text-xl font-medium transition-colors group-hover:text-blue-600 xl:mb-4 xl:text-2xl">
                 {value.title}
               </h3>
-              <p className="text-secondary_text text-sm sm:text-base lg:text-lg">{value.description}</p>
-              <div className="mt-4 h-1 w-full overflow-hidden rounded-full bg-gray-100 sm:mt-6">
+              <p className="text-secondary_text text-sm lg:text-lg xl:text-base">{value.description}</p>
+              <div className="mt-4 h-1 w-full overflow-hidden rounded-full bg-gray-100 xl:mt-6">
                 <div
                   className={`h-full bg-gradient-to-r ${value.color} origin-left scale-x-0 transform rounded-full transition-transform duration-500 group-hover:scale-x-100`}
                 ></div>

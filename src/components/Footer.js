@@ -7,12 +7,12 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-[#171717]">
       {/* Top Section */}
-      <div className="relative flex justify-between sm:px-24 sm:py-12">
+      <div className="relative flex justify-between xl:px-24 xl:py-12">
         <div className="flex w-full lg:gap-16">
           {/* Left Section - Brand */}
           <div className="w-full space-y-8">
             <Link href="/" aria-label="Waysel home">
-              <img src="/waysellogo.svg" alt="Waysel Logo" className="sm:w-[120px]" />
+              <img src="/waysellogo.svg" alt="Waysel Logo" className="xl:w-[120px]" />
             </Link>
             <p className="max-w-md text-2xl tracking-[-3%] text-[#ffffffcc]">
               In quiet and in chaos, we build.

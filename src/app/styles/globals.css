@@ -4,7 +4,7 @@
 
 @layer components {
   .section {
-    @apply bg-background px-6 py-10 sm:px-28 sm:py-20;
+    @apply bg-background px-6 py-10 xl:px-28 xl:py-20;
   }
 
   .oval-blur {
@@ -67,11 +67,11 @@
   }
 
   .tech_stack_icon_img {
-    @apply w-8 sm:w-16;
+    @apply w-8 xl:w-16;
   }
 
   .tech_stack_icon {
-    @apply shadow-custom-light relative flex size-24 flex-col items-center justify-center rounded-2xl bg-background transition-all duration-300 sm:size-32;
+    @apply shadow-custom-light relative flex size-24 flex-col items-center justify-center rounded-2xl bg-background transition-all duration-300 xl:size-32;
   }
 
   .tech_stack_icon:hover {

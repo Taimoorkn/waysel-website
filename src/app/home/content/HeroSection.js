@@ -58,10 +58,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="section relative min-h-screen overflow-hidden pt-[120px] sm:pt-[200px]">
+    <section className="section relative min-h-screen overflow-hidden pt-[120px] xl:pt-[200px]">
       <div className="mx-auto flex max-w-4xl flex-col items-center justify-between border">
         {/* Main content */}
-        <div className="2xl:text-h1-medium text-primary text-center">
+        <div className="text-center text-primary 2xl:text-h1-medium">
           <div className="overflow-hidden">
             <motion.h1
               className="break-words"
@@ -85,20 +85,20 @@ const HeroSection = () => {
           </div>
         </div>
         <motion.div
-          className="mt-6 flex w-full flex-col items-start gap-3 text-sm font-medium sm:mt-8 sm:flex-row sm:items-center sm:gap-4 sm:text-base lg:mt-12"
+          className="mt-6 flex w-full flex-col items-start gap-3 text-sm font-medium lg:mt-12 xl:mt-8 xl:flex-row xl:items-center xl:gap-4 xl:text-base"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
         >
-          <Button variant="primary" href="/login" className="w-full sm:w-auto">
+          <Button variant="primary" href="/login" className="w-full xl:w-auto">
             Dis a Button
           </Button>
-          <Button variant="secondary" href="/get-started" className="w-full sm:w-auto">
+          <Button variant="secondary" href="/get-started" className="w-full xl:w-auto">
             Another Button
           </Button>
         </motion.div>
-        <div className="mt-12 max-w-md sm:mt-16 lg:mt-20">
-          <p className="text-primary text-sm font-medium leading-relaxed sm:text-base sm:leading-snug">
+        <div className="mt-12 max-w-md lg:mt-20 xl:mt-16">
+          <p className="text-sm font-medium leading-relaxed text-primary xl:text-base xl:leading-snug">
             Waysel came from constantly digging through old projects wondering, &apos;How did I build that again?&apos;
             It is basically our personal toolbox, packed with components, techniques, tricks and tutorials—and it will
             keep growing.

@@ -30,7 +30,7 @@ export default function ContactForm() {
         {/* Left Section - Changed to items-stretch on parent and removed !h-full */}
         <div className="flex w-[40%] flex-col justify-between p-16">
           <div className="w-full">
-            <h1 className="mb-4 bg-gradient-to-b from-white to-[#FFBA8F] bg-clip-text text-4xl tracking-[-3%] text-transparent sm:text-[64px] sm:leading-[80px]">
+            <h1 className="mb-4 bg-gradient-to-b from-white to-[#FFBA8F] bg-clip-text text-4xl tracking-[-3%] text-transparent xl:text-[64px] xl:leading-[80px]">
               Have an Idea?
             </h1>
             <p className="text-[32px] leading-[52px] tracking-[-3%] text-[#ffffffe6]">
@@ -120,7 +120,7 @@ export default function ContactForm() {
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="bg-primary transform rounded-full px-8 py-3 font-medium text-background transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
+                  className="transform rounded-full bg-primary px-8 py-3 font-medium text-background transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
                 >
                   Send Message
                 </button>

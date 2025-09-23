@@ -120,7 +120,7 @@ const FillerSection = () => {
         }
       `}</style>
 
-      <div className="section text-primary relative mx-auto flex w-full flex-col items-center">
+      <div className="section relative mx-auto flex w-full flex-col items-center text-primary">
         <SectionHeading
           title="This is (some of the insane stuff) we actually do."
           description="Crafting user-friendly, cross platform solutions with efficiency"
@@ -139,7 +139,7 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`flex h-full flex-col bg-[#0D0D0C] !p-10 sm:min-h-[520px] ${
+                className={`flex h-full flex-col bg-[#0D0D0C] !p-10 xl:min-h-[520px] ${
                   index % 2 === 0 ? "rounded-bl-[32px] rounded-tl-[32px]" : "rounded-br-[32px] rounded-tr-[32px]"
                 }`}
                 style={{
@@ -155,13 +155,13 @@ const FillerSection = () => {
                           : "linear-gradient(315deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)",
                 }}
               >
-                <h3 className="mb-4 text-base font-semibold leading-[48px] tracking-[-2%] text-[#ffffffcc] sm:text-[32px]">
+                <h3 className="mb-4 text-base font-semibold leading-[48px] tracking-[-2%] text-[#ffffffcc] xl:text-[32px]">
                   {card.title}
                 </h3>
 
                 <div className="flex-1">
                   {card.content.map((item, i) => (
-                    <p key={i} className="mb-4 text-base leading-[36px] text-[#ffffffcc] sm:text-[20px]">
+                    <p key={i} className="mb-4 text-base leading-[36px] text-[#ffffffcc] xl:text-[20px]">
                       <span className="font-semibold">{item.label}</span> {item.text}
                     </p>
                   ))}

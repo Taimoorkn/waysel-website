@@ -44,25 +44,25 @@ const OurTeam = () => {
   ];
 
   return (
-    <section className="bg-primary_bg relative min-h-[calc(100vh-4.5rem)] overflow-hidden px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 2xl:px-[9.5rem]">
+    <section className="bg-primary_bg relative min-h-[calc(100vh-4.5rem)] overflow-hidden px-4 py-8 lg:px-8 lg:py-16 xl:px-6 xl:py-12 2xl:px-[9.5rem]">
       <div className="relative z-10 mx-auto">
-        <div className="mb-8 text-center sm:mb-12 lg:mb-16">
-          <h2 className="text-primary_text mb-4 text-3xl font-medium sm:mb-6 sm:text-4xl lg:text-5xl">
+        <div className="mb-8 text-center lg:mb-16 xl:mb-12">
+          <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Our Team</span>
           </h2>
-          <p className="text-secondary_text mx-auto max-w-3xl text-base sm:text-lg lg:text-xl">
+          <p className="text-secondary_text mx-auto max-w-3xl text-base lg:text-xl xl:text-lg">
             The passionate people behind every project at TechiTech Solutions. Meet the talented individuals who bring
             your ideas to life.
           </p>
-          <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 sm:mt-8 sm:w-24"></div>
+          <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 xl:mt-8 xl:w-24"></div>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 xl:grid-cols-2 xl:gap-6">
           {teamMembers.map((member, index) => (
             <div
               key={index}
               data-animate
               id={`team-${index}`}
-              className="animate-fade-in-up group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg transition-all duration-500 hover:border-blue-200 hover:shadow-2xl sm:rounded-3xl"
+              className="animate-fade-in-up group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg transition-all duration-500 hover:border-blue-200 hover:shadow-2xl xl:rounded-3xl"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="relative overflow-hidden">
@@ -71,13 +71,13 @@ const OurTeam = () => {
                   alt={`${member.name} - ${member.role}`}
                   width={400}
                   height={320}
-                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110 sm:h-64 lg:h-80"
+                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110 lg:h-80 xl:h-64"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
-              <div className="p-4 sm:p-6">
-                <div className="mb-2 text-xs font-medium uppercase text-blue-600 sm:text-sm">{member.role}</div>
-                <h3 className="mb-3 text-lg font-medium text-gray-900 transition-colors group-hover:text-blue-600 sm:mb-4 sm:text-xl lg:text-2xl">
+              <div className="p-4 xl:p-6">
+                <div className="mb-2 text-xs font-medium uppercase text-blue-600 xl:text-sm">{member.role}</div>
+                <h3 className="mb-3 text-lg font-medium text-gray-900 transition-colors group-hover:text-blue-600 lg:text-2xl xl:mb-4 xl:text-xl">
                   {member.name}
                 </h3>
                 <div className="h-1 w-full overflow-hidden rounded-full bg-gray-100">
