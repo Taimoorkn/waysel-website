@@ -8,7 +8,7 @@ import Link from "next/link";
 const Button = ({ children, variant = "primary", className = "", onClick, textVariant = "animated", ...props }) => {
   const router = useRouter();
   const baseStyles =
-    "button text-sm xl:text-base tracking-wide font-medium text-center w-full rounded-[4px] px-4 py-3 xl:w-auto xl:px-[26px] xl:py-[14px]";
+    "button text-sm xl:text-base tracking-wide font-medium text-center w-full rounded-[4px] px-4 py-3 xl:w-auto xl:px-[26px] xl:py-[14px] text-white";
 
   const variants = {
     base: "text-primary !p-0 !w-auto",
