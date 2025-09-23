@@ -17,12 +17,12 @@ const HomePage = () => {
     <>
       <HeroSection />
       <PortfolioSection />
-      <FillerSection/>
+      <FillerSection />
       <TechStack />
       <FAQ faqs={generalFaqs} />
-      <TestimonialsSection/>
-      <StarWars/>
-      <Contact/>
+      <TestimonialsSection />
+      <StarWars />
+      <Contact />
     </>
   );
 };
