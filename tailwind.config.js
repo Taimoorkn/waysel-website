@@ -43,7 +43,14 @@ module.exports = {
         "h4-xl-med": ["48px", { lineHeight: "56px", fontWeight: "500" }],
         "h5-xl-bold": ["32px", { lineHeight: "48px", fontWeight: "700" }],
 
-        // Body Text with all 5 breakpoints
+        // 2xl (1536px+) - Large Desktop / Ultrawide
+        "h1-2xl-med": ["96px", { lineHeight: "96px", fontWeight: "500" }],
+        "h2-2xl-reg": ["72px", { lineHeight: "88px", fontWeight: "400" }],
+        "h3-2xl-med": ["64px", { lineHeight: "72px", fontWeight: "500" }],
+        "h4-2xl-med": ["56px", { lineHeight: "64px", fontWeight: "500" }],
+        "h5-2xl-bold": ["40px", { lineHeight: "56px", fontWeight: "700" }],
+
+        // Body Text with all 6 breakpoints
 
         // Base (0-639px) - Mobile
         "body-base-reg": ["14px", { lineHeight: "18px", fontWeight: "400" }],
@@ -69,6 +76,11 @@ module.exports = {
         "body-xl-reg": ["20px", { lineHeight: "36px", fontWeight: "400" }],
         "body-xl-med": ["20px", { lineHeight: "36px", fontWeight: "500" }],
         "body-xl-bold": ["20px", { lineHeight: "36px", fontWeight: "700" }],
+
+        // 2xl (1536px+) - Large Desktop / Ultrawide
+        "body-2xl-reg": ["22px", { lineHeight: "40px", fontWeight: "400" }],
+        "body-2xl-med": ["22px", { lineHeight: "40px", fontWeight: "500" }],
+        "body-2xl-bold": ["22px", { lineHeight: "40px", fontWeight: "700" }],
       },
       colors: {
         // Background colors

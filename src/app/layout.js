@@ -2,7 +2,7 @@
 import localFont from "next/font/local";
 import "./styles/globals.css";
 import "./styles/animations.css";
-
+import "./styles/typography.css";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 
 const satoshi = localFont({
