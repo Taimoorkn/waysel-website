@@ -1,122 +1,148 @@
 export const generalFaqs = [
   {
     question: "WHAT STEPS DO YOU TAKE TO ENSURE THE QUALITY OF OUR SOFTWARE?",
-    answer: "We follow a rigorous quality assurance process, including code reviews, automated testing, and manual testing to identify and fix bugs, ensuring a high-quality software product.",
+    answer:
+      "We follow a rigorous quality assurance process, including code reviews, automated testing, and manual testing to identify and fix bugs, ensuring a high-quality software product.",
   },
   {
     question: "HOW DO YOU HANDLE PROJECT TIMELINES AND DEADLINES?",
-    answer: "We use Agile methodologies to manage projects, breaking them into sprints with regular updates, ensuring timely delivery while maintaining flexibility to adapt to changes.",
+    answer:
+      "We use Agile methodologies to manage projects, breaking them into sprints with regular updates, ensuring timely delivery while maintaining flexibility to adapt to changes.",
   },
   {
     question: "WHAT TECHNOLOGIES DOES YOUR TEAM SPECIALIZE IN?",
-    answer: "Our team excels in modern technologies like React, Node.js, Python, and cloud platforms such as AWS, tailoring solutions to meet your specific business needs.",
+    answer:
+      "Our team excels in modern technologies like React, Node.js, Python, and cloud platforms such as AWS, tailoring solutions to meet your specific business needs.",
   },
   {
     question: "HOW DO YOU ENSURE DATA SECURITY IN OUR PROJECTS?",
-    answer: "We implement industry-standard security practices, including encryption, secure APIs, and regular security audits to protect your data throughout the development process.",
+    answer:
+      "We implement industry-standard security practices, including encryption, secure APIs, and regular security audits to protect your data throughout the development process.",
   },
   {
     question: "WHAT IS YOUR PROCESS FOR CLIENT COLLABORATION?",
-    answer: "We maintain open communication through regular meetings, detailed progress reports, and a dedicated project manager to ensure alignment with your vision and requirements.",
+    answer:
+      "We maintain open communication through regular meetings, detailed progress reports, and a dedicated project manager to ensure alignment with your vision and requirements.",
   },
 ];
 
 export const webDevFaqs = [
   {
     question: "WHAT FRONTEND TECHNOLOGIES DO YOU USE FOR WEB DEVELOPMENT?",
-    answer: "We specialize in React, Next.js, Angular, and Vue.js, ensuring responsive and high-performance user interfaces.",
+    answer:
+      "We specialize in React, Next.js, Angular, and Vue.js, ensuring responsive and high-performance user interfaces.",
   },
   {
     question: "HOW DO YOU ENSURE WEB APPLICATION PERFORMANCE?",
-    answer: "We optimize performance with techniques like lazy loading, code splitting, and CDN usage, tailored to your project needs.",
+    answer:
+      "We optimize performance with techniques like lazy loading, code splitting, and CDN usage, tailored to your project needs.",
   },
   {
     question: "DO YOU OFFER BACKEND DEVELOPMENT FOR WEB PROJECTS?",
-    answer: "Yes, we provide backend solutions using NestJS, Express, and other frameworks, integrated seamlessly with your frontend.",
+    answer:
+      "Yes, we provide backend solutions using NestJS, Express, and other frameworks, integrated seamlessly with your frontend.",
   },
 ];
 
 export const mobileDevFaqs = [
   {
     question: "WHAT MOBILE PLATFORMS DO YOU DEVELOP FOR?",
-    answer: "We develop for iOS and Android using frameworks like Flutter, Swift and React Native, ensuring cross-platform compatibility and native performance.",
+    answer:
+      "We develop for iOS and Android using frameworks like Flutter, Swift and React Native, ensuring cross-platform compatibility and native performance.",
   },
   {
     question: "HOW DO YOU ENSURE APP SECURITY ON MOBILE DEVICES?",
-    answer: "We implement secure authentication, data encryption, and regular security updates to protect user data on mobile applications.",
+    answer:
+      "We implement secure authentication, data encryption, and regular security updates to protect user data on mobile applications.",
   },
   {
     question: "WHAT IS YOUR APPROACH TO MOBILE APP UI/UX DESIGN?",
-    answer: "We focus on user-centric design, conducting usability testing and iterating based on feedback to create intuitive and engaging mobile experiences.",
+    answer:
+      "We focus on user-centric design, conducting usability testing and iterating based on feedback to create intuitive and engaging mobile experiences.",
   },
   {
     question: "HOW LONG DOES IT TAKE TO DEVELOP A MOBILE APP?",
-    answer: "Timeline varies by complexity, but we typically deliver MVPs in 8-12 weeks using Agile sprints and client feedback loops.",
+    answer:
+      "Timeline varies by complexity, but we typically deliver MVPs in 8-12 weeks using Agile sprints and client feedback loops.",
   },
   {
     question: "DO YOU OFFER POST-LAUNCH SUPPORT FOR MOBILE APPS?",
-    answer: "Yes, we provide ongoing maintenance, updates, and support to ensure your app remains functional and competitive.",
+    answer:
+      "Yes, we provide ongoing maintenance, updates, and support to ensure your app remains functional and competitive.",
   },
 ];
 
 export const cloudIntegrationFaqs = [
   {
     question: "WHAT CLOUD PLATFORMS DO YOU WORK WITH?",
-    answer: "We specialize in AWS, Microsoft Azure, and Google Cloud, offering scalable and secure cloud solutions tailored to your business.",
+    answer:
+      "We specialize in AWS, Microsoft Azure, and Google Cloud, offering scalable and secure cloud solutions tailored to your business.",
   },
   {
     question: "HOW DO YOU ENSURE CLOUD DATA REDUNDANCY?",
-    answer: "We implement multi-region backups and disaster recovery plans to ensure data availability and integrity across cloud environments.",
+    answer:
+      "We implement multi-region backups and disaster recovery plans to ensure data availability and integrity across cloud environments.",
   },
   {
     question: "CAN YOU MIGRATE OUR EXISTING SYSTEMS TO THE CLOUD?",
-    answer: "Yes, we offer comprehensive migration services, minimizing downtime and ensuring a smooth transition to cloud infrastructure.",
+    answer:
+      "Yes, we offer comprehensive migration services, minimizing downtime and ensuring a smooth transition to cloud infrastructure.",
   },
   {
     question: "WHAT SECURITY MEASURES DO YOU APPLY TO CLOUD SOLUTIONS?",
-    answer: "We use encryption, identity access management, and compliance with standards like GDPR and HIPAA to secure your cloud data.",
+    answer:
+      "We use encryption, identity access management, and compliance with standards like GDPR and HIPAA to secure your cloud data.",
   },
   {
     question: "HOW DO YOU OPTIMIZE CLOUD COSTS FOR CLIENTS?",
-    answer: "We analyze usage patterns and recommend cost-effective configurations, leveraging auto-scaling and reserved instances where applicable.",
+    answer:
+      "We analyze usage patterns and recommend cost-effective configurations, leveraging auto-scaling and reserved instances where applicable.",
   },
 ];
 
 export const enterpriseSolutionsFaqs = [
   {
     question: "WHAT TYPES OF ENTERPRISE SOLUTIONS DO YOU PROVIDE?",
-    answer: "We offer ERP, CRM, and custom enterprise software solutions to streamline operations and enhance business efficiency.",
+    answer:
+      "We offer ERP, CRM, and custom enterprise software solutions to streamline operations and enhance business efficiency.",
   },
   {
     question: "HOW DO YOU ENSURE ENTERPRISE SYSTEM INTEGRATION?",
-    answer: "We use APIs and middleware to seamlessly integrate with existing systems, ensuring data flow and compatibility.",
+    answer:
+      "We use APIs and middleware to seamlessly integrate with existing systems, ensuring data flow and compatibility.",
   },
   {
     question: "CAN YOU SCALE ENTERPRISE SOLUTIONS FOR GROWTH?",
-    answer: "Yes, our solutions are designed with scalability in mind, supporting your business as it expands with modular upgrades.",
+    answer:
+      "Yes, our solutions are designed with scalability in mind, supporting your business as it expands with modular upgrades.",
   },
   {
     question: "WHAT SUPPORT DO YOU OFFER FOR ENTERPRISE DEPLOYMENTS?",
-    answer: "We provide 24/7 support, regular updates, and training to ensure your enterprise team maximizes solution value.",
+    answer:
+      "We provide 24/7 support, regular updates, and training to ensure your enterprise team maximizes solution value.",
   },
   {
     question: "HOW DO YOU HANDLE DATA PRIVACY IN ENTERPRISE PROJECTS?",
-    answer: "We adhere to global privacy regulations, implementing encryption and access controls to protect sensitive enterprise data.",
+    answer:
+      "We adhere to global privacy regulations, implementing encryption and access controls to protect sensitive enterprise data.",
   },
 ];
 
 export const customSoftwareDevFaqs = [
   {
     question: "WHAT IS THE PROCESS FOR CUSTOM SOFTWARE DEVELOPMENT?",
-    answer: "We follow a tailored process including requirement analysis, design, development, testing, and deployment to meet your unique needs.",
+    answer:
+      "We follow a tailored process including requirement analysis, design, development, testing, and deployment to meet your unique needs.",
   },
   {
     question: "CAN YOU DEVELOP SOFTWARE FOR SPECIFIC INDUSTRIES?",
-    answer: "Yes, we customize solutions for industries like healthcare, finance, and education, aligning with sector-specific requirements.",
+    answer:
+      "Yes, we customize solutions for industries like healthcare, finance, and education, aligning with sector-specific requirements.",
   },
   {
     question: "HOW DO YOU ENSURE CUSTOM SOFTWARE QUALITY?",
-    answer: "We conduct extensive testing, including unit and integration tests, to deliver reliable and bug-free custom software.",
+    answer:
+      "We conduct extensive testing, including unit and integration tests, to deliver reliable and bug-free custom software.",
   },
   {
     question: "WHAT IS THE TYPICAL TIMELINE FOR CUSTOM PROJECTS?",
@@ -131,11 +157,13 @@ export const customSoftwareDevFaqs = [
 export const chromeExtensionDevFaqs = [
   {
     question: "WHAT TYPES OF CHROME EXTENSIONS DO YOU DEVELOP?",
-    answer: "We create productivity, security, and e-commerce extensions, tailored to enhance user experience on Chrome.",
+    answer:
+      "We create productivity, security, and e-commerce extensions, tailored to enhance user experience on Chrome.",
   },
   {
     question: "HOW DO YOU ENSURE CHROME EXTENSION COMPATIBILITY?",
-    answer: "We test across multiple Chrome versions and adhere to Chrome Web Store guidelines for broad compatibility.",
+    answer:
+      "We test across multiple Chrome versions and adhere to Chrome Web Store guidelines for broad compatibility.",
   },
   {
     question: "WHAT IS THE DEVELOPMENT PROCESS FOR EXTENSIONS?",
@@ -162,7 +190,8 @@ export const ecommerceDevFaqs = [
   },
   {
     question: "WHAT FEATURES CAN YOU ADD TO AN ECOMMERCE SITE?",
-    answer: "We offer product catalogs, shopping carts, user accounts, and analytics dashboards tailored to your needs.",
+    answer:
+      "We offer product catalogs, shopping carts, user accounts, and analytics dashboards tailored to your needs.",
   },
   {
     question: "HOW LONG DOES IT TAKE TO BUILD AN ECOMMERCE SITE?",
@@ -252,4 +281,3 @@ export const eCommerceDevFaqs = [
       "Yes, we provide ongoing support, including updates, security patches, and performance optimization to keep your e-commerce platform thriving.",
   },
 ];
-

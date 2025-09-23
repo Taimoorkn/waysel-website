@@ -63,10 +63,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
       </motion.div>
 
       {/* Second column - scroll down moves up */}
-      <motion.div
-        className="-my-48 flex flex-col items-center justify-center gap-8"
-        style={{ y: column2Y }}
-      >
+      <motion.div className="-my-48 flex flex-col items-center justify-center gap-8" style={{ y: column2Y }}>
         {[...Array(8)].map((_, index) => (
           <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
             <Image

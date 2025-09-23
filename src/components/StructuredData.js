@@ -1,7 +1,5 @@
 export default function StructuredData({ data }) {
-  return (
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
 export const organizationSchema = {
@@ -21,11 +19,7 @@ export const organizationSchema = {
     contactType: "Customer Service",
     availableLanguage: ["English"],
   },
-  sameAs: [
-    "https://linkedin.com/company/waysel",
-    "https://twitter.com/waysel",
-    "https://github.com/waysel",
-  ],
+  sameAs: ["https://linkedin.com/company/waysel", "https://twitter.com/waysel", "https://github.com/waysel"],
   foundingDate: "2024",
   makesOffer: [
     {

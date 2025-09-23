@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import React from "react";
 import HeroSection from "./content/HeroSection";
-import GoalsVision from "./content/GoalsVision"; 
+import GoalsVision from "./content/GoalsVision";
 import WhyChooseUs from "./content/WhyChooseUs";
 import OurTeam from "./content/OurTeam";
 
@@ -42,7 +42,7 @@ const AboutPage = () => {
       <HeroSection />
       <GoalsVision />
       <WhyChooseUs />
-      <OurTeam /> 
+      <OurTeam />
       <Footer />
     </>
   );

@@ -5,14 +5,7 @@ import { useRouter } from "next/navigation";
 import TextField from "./TextField";
 import Link from "next/link";
 
-const Button = ({
-  children,
-  variant = "primary",
-  className = "",
-  onClick,
-  textVariant = "animated",
-  ...props
-}) => {
+const Button = ({ children, variant = "primary", className = "", onClick, textVariant = "animated", ...props }) => {
   const router = useRouter();
   const baseStyles =
     "button text-sm sm:text-base tracking-wide font-medium text-center w-full rounded-[4px] px-4 py-3 sm:w-auto sm:px-[26px] sm:py-[14px]";

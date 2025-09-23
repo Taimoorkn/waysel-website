@@ -45,16 +45,14 @@ const WhyChooseUs = () => {
 
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center sm:mb-12 lg:mb-16">
-          <h2 className="mb-4  text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
+          <h2 className="text-primary_text mb-4 text-3xl font-medium sm:mb-6 sm:text-4xl lg:text-5xl">
             Why{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Choose
-            </span>{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Choose</span>{" "}
             Us
           </h2>
-          <p className="mx-auto max-w-3xl  text-base text-secondary_text sm:text-lg lg:text-xl">
-            Our core values shape the way we develop, collaborate, and provide quality services to
-            our clients. These principles help us deliver scalable software solutions.
+          <p className="text-secondary_text mx-auto max-w-3xl text-base sm:text-lg lg:text-xl">
+            Our core values shape the way we develop, collaborate, and provide quality services to our clients. These
+            principles help us deliver scalable software solutions.
           </p>
           <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 sm:mt-8 sm:w-24"></div>
         </div>
@@ -72,12 +70,10 @@ const WhyChooseUs = () => {
               >
                 <value.icon className="h-6 w-6 text-white sm:h-7 sm:w-7" />
               </div>
-              <h3 className="mb-3  text-xl font-medium text-primary_text transition-colors group-hover:text-blue-600 sm:mb-4 sm:text-2xl">
+              <h3 className="text-primary_text mb-3 text-xl font-medium transition-colors group-hover:text-blue-600 sm:mb-4 sm:text-2xl">
                 {value.title}
               </h3>
-              <p className=" text-sm text-secondary_text sm:text-base lg:text-lg">
-                {value.description}
-              </p>
+              <p className="text-secondary_text text-sm sm:text-base lg:text-lg">{value.description}</p>
               <div className="mt-4 h-1 w-full overflow-hidden rounded-full bg-gray-100 sm:mt-6">
                 <div
                   className={`h-full bg-gradient-to-r ${value.color} origin-left scale-x-0 transform rounded-full transition-transform duration-500 group-hover:scale-x-100`}

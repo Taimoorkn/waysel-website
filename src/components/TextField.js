@@ -43,22 +43,14 @@ const renderAnimatedText = (text, className, props, showUnderline = false) => {
         className="single-letter"
       >
         <span>{char === " " ? "\u00A0" : char}</span>
-        <span style={{ position: "absolute", top: "100%", left: 0 }}>
-          {char === " " ? "\u00A0" : char}
-        </span>
+        <span style={{ position: "absolute", top: "100%", left: 0 }}>{char === " " ? "\u00A0" : char}</span>
       </div>
     );
   });
 
   return (
-    <div
-      data-letters-delay=""
-      data-split="letters"
-      className={className}
-      split-ran="true"
-      {...props}
-    >
-      <div style={{ position: "relative", overflow: "hidden" }}>{letters}</div> 
+    <div data-letters-delay="" data-split="letters" className={className} split-ran="true" {...props}>
+      <div style={{ position: "relative", overflow: "hidden" }}>{letters}</div>
     </div>
   );
 };

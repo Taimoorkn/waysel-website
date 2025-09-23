@@ -44,17 +44,15 @@ const OurTeam = () => {
   ];
 
   return (
-    <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-primary_bg px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 2xl:px-[9.5rem]">
+    <section className="bg-primary_bg relative min-h-[calc(100vh-4.5rem)] overflow-hidden px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 2xl:px-[9.5rem]">
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center sm:mb-12 lg:mb-16">
-          <h2 className="mb-4 text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Our Team
-            </span>
+          <h2 className="text-primary_text mb-4 text-3xl font-medium sm:mb-6 sm:text-4xl lg:text-5xl">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Our Team</span>
           </h2>
-          <p className="mx-auto max-w-3xl text-base text-secondary_text sm:text-lg lg:text-xl">
-            The passionate people behind every project at TechiTech Solutions. Meet the talented
-            individuals who bring your ideas to life.
+          <p className="text-secondary_text mx-auto max-w-3xl text-base sm:text-lg lg:text-xl">
+            The passionate people behind every project at TechiTech Solutions. Meet the talented individuals who bring
+            your ideas to life.
           </p>
           <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 sm:mt-8 sm:w-24"></div>
         </div>
@@ -78,9 +76,7 @@ const OurTeam = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
               <div className="p-4 sm:p-6">
-                <div className="mb-2 text-xs font-medium uppercase text-blue-600 sm:text-sm">
-                  {member.role}
-                </div>
+                <div className="mb-2 text-xs font-medium uppercase text-blue-600 sm:text-sm">{member.role}</div>
                 <h3 className="mb-3 text-lg font-medium text-gray-900 transition-colors group-hover:text-blue-600 sm:mb-4 sm:text-xl lg:text-2xl">
                   {member.name}
                 </h3>

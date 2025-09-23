@@ -19,9 +19,7 @@ const HeroSection = () => {
         <div data-animate id="hero-content" className="animate-fade-in-up">
           <div className="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm sm:mb-8 sm:py-2">
             <LightbulbIcon className="mr-2 h-4 w-4 text-yellow-400" />
-            <span className="text-xs font-medium text-white sm:text-sm">
-              Building Things, One Solution at a Time
-            </span>
+            <span className="text-xs font-medium text-white sm:text-sm">Building Things, One Solution at a Time</span>
           </div>
 
           <h1 className="mb-4 bg-clip-text text-4xl font-medium text-transparent text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-[72px]">
@@ -30,10 +28,9 @@ const HeroSection = () => {
             Win <span className="text-accent">Globally</span>
           </h1>
 
-          <p className="mx-auto mb-8 max-w-3xl text-base text-secondary_bg sm:mb-10 sm:text-lg lg:mb-12 lg:text-xl">
-            TechiTech Solutions was founded by passionate tech enthusiasts in 2014 with a vision to
-            transform businesses through innovative technology. Over the years, we&apos;ve grown into a
-            trusted development agency.
+          <p className="text-secondary_bg mx-auto mb-8 max-w-3xl text-base sm:mb-10 sm:text-lg lg:mb-12 lg:text-xl">
+            TechiTech Solutions was founded by passionate tech enthusiasts in 2014 with a vision to transform businesses
+            through innovative technology. Over the years, we&apos;ve grown into a trusted development agency.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">

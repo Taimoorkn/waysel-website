@@ -61,7 +61,7 @@ const HeroSection = () => {
     <section className="section relative min-h-screen overflow-hidden pt-[120px] sm:pt-[200px]">
       <div className="mx-auto flex max-w-4xl flex-col items-center justify-between border">
         {/* Main content */}
-        <div className="2xl:text-h1-medium text-primary text-center"> 
+        <div className="2xl:text-h1-medium text-primary text-center">
           <div className="overflow-hidden">
             <motion.h1
               className="break-words"
@@ -98,7 +98,7 @@ const HeroSection = () => {
           </Button>
         </motion.div>
         <div className="mt-12 max-w-md sm:mt-16 lg:mt-20">
-          <p className="text-sm font-medium leading-relaxed text-primary sm:text-base sm:leading-snug">
+          <p className="text-primary text-sm font-medium leading-relaxed sm:text-base sm:leading-snug">
             Waysel came from constantly digging through old projects wondering, &apos;How did I build that again?&apos;
             It is basically our personal toolbox, packed with components, techniques, tricks and tutorials—and it will
             keep growing.

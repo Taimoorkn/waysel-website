@@ -38,12 +38,9 @@ export async function POST(req) {
     });
   } catch (error) {
     console.error("Email sending failed:", error);
-    return new Response(
-      JSON.stringify({ success: false, message: error.message || "Failed to send email" }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return new Response(JSON.stringify({ success: false, message: error.message || "Failed to send email" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }

@@ -102,9 +102,7 @@ const TestimonialsSection = () => {
     <section className="section relative px-0">
       <SectionHeading
         title={"Our clients be talking shit man"}
-        description={
-          "Crafting user-friendly? nah, cross platform? never solutions? more like preblems with efficiency"
-        }
+        description={"Crafting user-friendly? nah, cross platform? never solutions? more like preblems with efficiency"}
       />
       <Swiper
         ref={swiperRef}
@@ -131,9 +129,7 @@ const TestimonialsSection = () => {
                   <h3 className="text-base font-semibold tracking-[-2%] text-[#ffffffcc] sm:text-[32px]">
                     {testimonial.projectName}
                   </h3>
-                  <blockquote className="text-[20px] text-gray-300 sm:text-[20px]">
-                    {testimonial.content}
-                  </blockquote>
+                  <blockquote className="text-[20px] text-gray-300 sm:text-[20px]">{testimonial.content}</blockquote>
                 </div>
 
                 <div className="flex items-center justify-between">
@@ -147,16 +143,12 @@ const TestimonialsSection = () => {
                       <h4 className="bg-gradient-to-b from-white to-[#F7FEDD] bg-clip-text text-[20px] font-normal tracking-[-2%] text-transparent text-white">
                         {testimonial.name}
                       </h4>
-                      <p className="text-sm text-[#ffffffb3] sm:text-base">
-                        {testimonial.position}
-                      </p>
+                      <p className="text-sm text-[#ffffffb3] sm:text-base">{testimonial.position}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-2 text-[#ffffffb3]">
                     <IconComponent className="size-5 sm:size-6" />
-                    <span className="hidden text-sm sm:inline sm:text-xl">
-                      {testimonial.company}
-                    </span>
+                    <span className="hidden text-sm sm:inline sm:text-xl">{testimonial.company}</span>
                   </div>
                 </div>
               </div>
