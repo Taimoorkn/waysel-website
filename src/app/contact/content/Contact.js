@@ -16,16 +16,12 @@ import { useRouter } from "next/navigation";
 
 const ContactItem = ({ icon: Icon, title, details }) => (
   <div className="group flex items-center space-x-4 sm:space-x-6">
-    <div className="flex size-10 items-center justify-center rounded-full bg-card_bg transition-colors duration-200 group-hover:bg-hover_bg sm:size-12">
+    <div className="bg-card_bg group-hover:bg-hover_bg flex size-10 items-center justify-center rounded-full transition-colors duration-200 sm:size-12">
       <Icon weight="fill" className="size-5 text-accent sm:size-6" />
     </div>
     <div className="flex-1">
-      {title && (
-        <h3 className="text-sm font-medium text-primary_text sm:text-base">
-          {title}
-        </h3>
-      )}
-      <p className="text-sm text-secondary_text sm:text-base">{details}</p>
+      {title && <h3 className="text-primary_text text-sm font-medium sm:text-base">{title}</h3>}
+      <p className="text-secondary_text text-sm sm:text-base">{details}</p>
     </div>
   </div>
 );
@@ -210,33 +206,31 @@ const Contact = () => {
   return (
     <section className="bg-primary_bg px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-12 xl:px-16 2xl:px-[9.5rem]">
       <div className="mb-8 text-center">
-        <div className="mb-4 inline-flex items-center rounded-full bg-card_bg px-3 py-1.5 text-xs font-medium text-accent transition-all hover:bg-hover_bg sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
+        <div className="bg-card_bg hover:bg-hover_bg mb-4 inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium text-accent transition-all sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
           <StarFourIcon weight="fill" className="mr-2 h-4 w-4" />
           CONTACT US
         </div>
-        <h2 className="mb-4 text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
+        <h2 className="text-primary_text mb-4 text-3xl font-medium sm:mb-6 sm:text-4xl lg:text-5xl">
           Bring that Idea to <span className="text-accent">Life</span>
         </h2>
-        <p className="mx-auto max-w-3xl text-base text-secondary_text sm:text-lg lg:text-xl">
-          Explore our collection of innovative solutions and success stories that have transformed
-          businesses across industries.
+        <p className="text-secondary_text mx-auto max-w-3xl text-base sm:text-lg lg:text-xl">
+          Explore our collection of innovative solutions and success stories that have transformed businesses across
+          industries.
         </p>
       </div>
 
       <div className="mx-auto">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           {/* Left Section - Contact Info */}
-          <div className="w-full rounded-2xl border border-border_primary bg-card_bg p-8 shadow-sm lg:w-2/6">
-            <h3 className="mb-6  text-2xl font-medium text-primary_text">
-              Get in Touch
-            </h3>
+          <div className="border-border_primary bg-card_bg w-full rounded-2xl border p-8 shadow-sm lg:w-2/6">
+            <h3 className="text-primary_text mb-6 text-2xl font-medium">Get in Touch</h3>
             <div className="space-y-6 sm:space-y-8">
               {contactItems.map((item, index) => (
                 <ContactItem key={index} {...item} />
               ))}
             </div>
 
-            <div className="mt-10 flex justify-between border-t border-border_secondary pt-8">
+            <div className="border-border_secondary mt-10 flex justify-between border-t pt-8">
               {[
                 { name: "twitter", icon: TwitterLogoIcon, url: "https://twitter.com/yourusername" },
                 {
@@ -260,13 +254,10 @@ const Contact = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative rounded-full border border-border_secondary bg-surface_bg p-3 shadow-sm transition-all duration-300 hover:border-accent hover:bg-hover_bg hover:shadow-md"
+                  className="border-border_secondary bg-surface_bg hover:bg-hover_bg group relative rounded-full border p-3 shadow-sm transition-all duration-300 hover:border-accent hover:shadow-md"
                   aria-label={`Visit our ${social.name} page`}
                 >
-                  <social.icon
-                    weight="fill"
-                    className="size-5 text-accent transition-colors duration-300"
-                  />
+                  <social.icon weight="fill" className="size-5 text-accent transition-colors duration-300" />
                   <span className="sr-only">{social.name}</span>
                 </a>
               ))}
@@ -275,20 +266,15 @@ const Contact = () => {
 
           {/* Right Section - Contact Form */}
           <div className="w-full lg:w-4/6">
-            <div className="rounded-2xl border border-border_primary bg-card_bg p-8 shadow-sm">
-              <h3 className="mb-6  text-2xl font-medium text-primary_text">
-                Send Us a Message
-              </h3>
+            <div className="border-border_primary bg-card_bg rounded-2xl border p-8 shadow-sm">
+              <h3 className="text-primary_text mb-6 text-2xl font-medium">Send Us a Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <input type="hidden" name="csrfToken" value={csrfToken} />
 
                 <div className="flex flex-col space-y-6 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <div className="w-full sm:w-1/2">
-                    <label
-                      htmlFor="name"
-                      className="mb-2 block text-sm font-medium text-primary_text sm:text-base"
-                    >
+                    <label htmlFor="name" className="text-primary_text mb-2 block text-sm font-medium sm:text-base">
                       Name
                     </label>
                     <div className="relative">
@@ -296,7 +282,7 @@ const Contact = () => {
                         id="name"
                         type="text"
                         placeholder="Your full name"
-                        className={`w-full rounded-xl border-2 bg-surface_bg px-4 py-3 text-primary_text transition-all duration-200 focus:outline-none ${
+                        className={`bg-surface_bg text-primary_text w-full rounded-xl border-2 px-4 py-3 transition-all duration-200 focus:outline-none ${
                           errors.name
                             ? "border-red-400 focus:border-red-500"
                             : activeField === "name"
@@ -320,10 +306,7 @@ const Contact = () => {
                   </div>
 
                   <div className="w-full sm:w-1/2">
-                    <label
-                      htmlFor="email"
-                      className="mb-2 block text-sm font-medium text-primary_text sm:text-base"
-                    >
+                    <label htmlFor="email" className="text-primary_text mb-2 block text-sm font-medium sm:text-base">
                       Email
                     </label>
                     <div className="relative">
@@ -331,7 +314,7 @@ const Contact = () => {
                         id="email"
                         type="email"
                         placeholder="your.email@example.com"
-                        className={`w-full rounded-xl border-2 bg-surface_bg px-4 py-3 text-primary_text transition-all duration-200 focus:outline-none ${
+                        className={`bg-surface_bg text-primary_text w-full rounded-xl border-2 px-4 py-3 transition-all duration-200 focus:outline-none ${
                           errors.email
                             ? "border-red-400 focus:border-red-500"
                             : activeField === "email"
@@ -356,10 +339,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="subject"
-                    className="mb-2 block text-sm font-medium text-gray-900 sm:text-base"
-                  >
+                  <label htmlFor="subject" className="mb-2 block text-sm font-medium text-gray-900 sm:text-base">
                     Subject
                   </label>
                   <div className="relative">
@@ -367,7 +347,7 @@ const Contact = () => {
                       id="subject"
                       type="text"
                       placeholder="What's this about?"
-                      className={`w-full rounded-xl border-2 bg-surface_bg px-4 py-3 text-primary_text transition-all duration-200 focus:outline-none ${
+                      className={`bg-surface_bg text-primary_text w-full rounded-xl border-2 px-4 py-3 transition-all duration-200 focus:outline-none ${
                         errors.subject
                           ? "border-red-400 focus:border-red-500"
                           : activeField === "subject"
@@ -391,17 +371,14 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="mb-2 block text-sm font-medium text-gray-900 sm:text-base"
-                  >
+                  <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-900 sm:text-base">
                     Message
                   </label>
                   <div className="relative">
                     <textarea
                       id="message"
                       placeholder="Tell us about your project or question..."
-                      className={`h-32 w-full resize-none rounded-xl border-2 bg-surface_bg px-4 py-3 text-primary_text transition-all duration-200 focus:outline-none sm:h-40 ${
+                      className={`bg-surface_bg text-primary_text h-32 w-full resize-none rounded-xl border-2 px-4 py-3 transition-all duration-200 focus:outline-none sm:h-40 ${
                         errors.message
                           ? "border-red-400 focus:border-red-500"
                           : activeField === "message"
@@ -427,7 +404,7 @@ const Contact = () => {
                 <div className="flex flex-col items-center gap-4 pt-2 sm:flex-row">
                   <button
                     type="submit"
-                    className="flex w-full items-center justify-center rounded-xl bg-accent px-6 py-3.5 font-medium text-white transition-colors duration-200 hover:bg-accent_dark disabled:cursor-not-allowed disabled:opacity-50 sm:flex-1"
+                    className="hover:bg-accent_background flex w-full items-center justify-center rounded-xl bg-accent px-6 py-3.5 font-medium text-white transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-50 sm:flex-1"
                     disabled={isSubmitting}
                     aria-label="Send contact message"
                   >
@@ -444,11 +421,11 @@ const Contact = () => {
                     )}
                   </button>
 
-                  <span className="hidden text-sm font-medium text-tertiary_text sm:block">OR</span>
+                  <span className="text-tertiary_text hidden text-sm font-medium sm:block">OR</span>
 
                   <button
                     type="button"
-                    className="flex w-full items-center justify-center rounded-xl border border-border_primary bg-surface_bg px-6 py-3.5 font-medium text-primary_text transition-colors duration-200 hover:bg-hover_bg sm:flex-1"
+                    className="border-border_primary bg-surface_bg text-primary_text hover:bg-hover_bg flex w-full items-center justify-center rounded-xl border px-6 py-3.5 font-medium transition-colors duration-200 sm:flex-1"
                     //onClick={() => router.push('/appointment')}
                     aria-label="Book a meeting"
                   >

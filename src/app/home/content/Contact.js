@@ -53,9 +53,7 @@ export default function ContactForm() {
               {/* Name Fields */}
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-[#ffffffb3]">
-                    First name
-                  </label>
+                  <label className="mb-2 block text-sm font-medium text-[#ffffffb3]">First name</label>
                   <input
                     type="text"
                     name="firstName"
@@ -66,9 +64,7 @@ export default function ContactForm() {
                   />
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-[#ffffffb3]">
-                    Last name
-                  </label>
+                  <label className="mb-2 block text-sm font-medium text-[#ffffffb3]">Last name</label>
                   <input
                     type="text"
                     name="lastName"
@@ -94,9 +90,7 @@ export default function ContactForm() {
                   />
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-[#ffffffb3]">
-                    Contact No.
-                  </label>
+                  <label className="mb-2 block text-sm font-medium text-[#ffffffb3]">Contact No.</label>
                   <input
                     type="tel"
                     name="contactNo"
@@ -126,7 +120,7 @@ export default function ContactForm() {
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="transform rounded-full bg-primary px-8 py-3 font-medium text-dark transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
+                  className="transform rounded-full bg-primary px-8 py-3 font-medium text-background transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
                 >
                   Send Message
                 </button>
