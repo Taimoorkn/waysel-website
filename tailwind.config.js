@@ -11,22 +11,33 @@ module.exports = {
         "hurme-oblique": ["var(--font-hurme-oblique)", "sans-serif"],
       },
       fontSize: {
-        // Headings
-        'h1': ['88px', '88px'],
-        'h2': ['64px', '80px'],
-        'h3': ['56px', '64px'],
-        'h4': ['48px', '56px'],
-        'h5': ['32px', '48px'],
-        // Body Text
-        'body-sm': ['14px', '20px'],
-        'body-md': ['20px', '36px'],
-        'body-lg': ['24px', '32px'],
-        'body-xl': ['32px', '52px'],
-      },
-      fontWeight: {
-        regular: '400',
-        medium: '500',
-        bold: '700',
+        // Headings with font weights
+        'h1-medium': ['88px', { lineHeight: '88px', fontWeight: '500' }],
+
+        'h2-regular': ['64px', { lineHeight: '80px', fontWeight: '400' }],
+
+        'h3-medium': ['56px', { lineHeight: '64px', fontWeight: '500' }],
+
+        'h4-medium': ['48px', { lineHeight: '56px', fontWeight: '500' }],
+
+        'h5-bold': ['32px', { lineHeight: '48px', fontWeight: '700' }],
+
+        // Body Text with font weights
+        'body-sm-regular': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+        'body-sm-medium': ['14px', { lineHeight: '20px', fontWeight: '500' }],
+        'body-sm-bold': ['14px', { lineHeight: '20px', fontWeight: '700' }],
+
+        'body-md-regular': ['20px', { lineHeight: '36px', fontWeight: '400' }],
+        'body-md-medium': ['20px', { lineHeight: '36px', fontWeight: '500' }],
+        'body-md-bold': ['20px', { lineHeight: '36px', fontWeight: '700' }],
+
+        'body-lg-regular': ['24px', { lineHeight: '32px', fontWeight: '400' }],
+        'body-lg-medium': ['24px', { lineHeight: '32px', fontWeight: '500' }],
+        'body-lg-bold': ['24px', { lineHeight: '32px', fontWeight: '700' }],
+
+        'body-xl-regular': ['32px', { lineHeight: '52px', fontWeight: '400' }],
+        'body-xl-medium': ['32px', { lineHeight: '52px', fontWeight: '500' }],
+        'body-xl-bold': ['32px', { lineHeight: '52px', fontWeight: '700' }],
       },
       colors: {
         // Background colors
@@ -39,6 +50,7 @@ module.exports = {
         border: "#1f2937",
         divider: "#374151",
         accent: "#FF4C24",
+        
         // Text colors
         text: {
           primary: "#FFFFFF",
@@ -50,23 +62,6 @@ module.exports = {
         // Gradients
         'gradient-primary': 'linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%)',
         'gradient-button-text': 'linear-gradient(90deg, #4227CA 0%, #FB3081 50%, #ED3D0C 100%)',
-      },
-      boxShadow: {
-        // Dark mode shadows
-        navbar: "0 2px 4px rgba(0, 0, 0, 0.3)",
-        stats_bar: "0 0 40px rgba(255, 76, 36, 0.3)",
-
-        "accent-glow": "0 0 20px rgba(255, 76, 36, 0.4)",
-        "accent-glow-lg": "0 0 40px rgba(255, 76, 36, 0.3)",
-        "inner-dark": "inset 0 2px 4px rgba(0, 0, 0, 0.3)",
-        // Legacy shadows updated for dark mode
-        "3xl": "0 4px 16px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2)",
-        "3xl-hover": "0 8px 30px rgba(0, 0, 0, 0.5), 0 16px 40px rgba(0, 0, 0, 0.3)",
-        "custom-blue": "5px 5px 10px rgba(255, 76, 36, 0.4)",
-        "custom-light": "2px 2px 6px rgba(255, 76, 36, 0.2)",
-      },
-      hover: {
-        navbar: "0 4px 8px accent",
       },
       screens: {
         "3xl": "1920px",
