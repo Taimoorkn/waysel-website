@@ -141,7 +141,7 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`flex h-full flex-col bg-[#0D0D0C] !p-10 font-hurme sm:min-h-[520px] ${
+                className={`flex h-full flex-col bg-[#0D0D0C] !p-10 sm:min-h-[520px] ${
                   index % 2 === 0
                     ? "rounded-bl-[32px] rounded-tl-[32px]"
                     : "rounded-br-[32px] rounded-tr-[32px]"

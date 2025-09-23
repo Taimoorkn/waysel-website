@@ -28,7 +28,7 @@ export default function ContactForm() {
     <section className="section relative bg-[#0D0D0C]">
       <div className="mx-auto flex items-stretch gap-12">
         {/* Left Section - Changed to items-stretch on parent and removed !h-full */}
-        <div className="flex w-[40%] flex-col justify-between p-16 font-hurme">
+        <div className="flex w-[40%] flex-col justify-between p-16">
           <div className="w-full">
             <h1 className="mb-4 bg-gradient-to-b from-white to-[#FFBA8F] bg-clip-text text-4xl tracking-[-3%] text-transparent sm:text-[64px] sm:leading-[80px]">
               Have an Idea?
@@ -48,7 +48,7 @@ export default function ContactForm() {
 
         {/* Right Section - Contact Form */}
         <div className="flex w-[60%] items-center justify-center p-16">
-          <div className="w-full rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-[#121211] bg-opacity-80 p-8 font-hurme backdrop-blur-sm">
+          <div className="w-full rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-[#121211] bg-opacity-80 p-8 backdrop-blur-sm">
             <div className="space-y-6">
               {/* Name Fields */}
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -126,7 +126,7 @@ export default function ContactForm() {
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="transform rounded-full bg-primary px-8 py-3 font-hurme font-medium text-dark transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
+                  className="transform rounded-full bg-primary px-8 py-3 font-medium text-dark transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
                 >
                   Send Message
                 </button>

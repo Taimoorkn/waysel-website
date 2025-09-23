@@ -1,52 +1,16 @@
 // src/app/layout.js
-import { Roboto_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./styles/globals.css";
 import "./styles/animations.css";
 
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
-const hurme = localFont({
-  src: [
-    { path: "../../public/font/hurme/HurmeGeometricSans1-Regular.ttf", weight: "400" },
-    { path: "../../public/font/hurme/HurmeGeometricSans1-SemiBold.ttf", weight: "500" },
-    { path: "../../public/font/hurme/HurmeGeometricSans1-Bold.ttf", weight: "700" },
-  ],
-  variable: "--font-hurme",
-  display: "swap",
-});
 
-const hurmeOblique = localFont({
+const satoshi = localFont({
   src: [
-    { path: "../../public/font/hurme/HurmeGeometricSans1-SemiBoldObl.ttf", weight: "600", style: "italic" },
+    { path: "../../public/font/satoshi/Satoshi-Variable.woff2", weight: "300 900", style: "normal" },
+    { path: "../../public/font/satoshi/Satoshi-VariableItalic.woff2", weight: "300 900", style: "italic" },
   ],
-  variable: "--font-hurme-oblique",
-  display: "swap",
-});
-
-const robotoMono = Roboto_Mono({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-roboto-mono",
-  display: "swap",
-});
-
-const neueMontreal = localFont({
-  src: [
-    { path: "../../public/font/neue-montreal/ppneuemontreal-book.otf", weight: "400" },
-    { path: "../../public/font/neue-montreal/ppneuemontreal-medium.otf", weight: "500" },
-    { path: "../../public/font/neue-montreal/NeueMontreal-Bold.otf", weight: "700" },
-  ],
-  variable: "--font-neueMontreal",
-  display: "swap",
-});
-
-const rmMono = localFont({
-  src: [
-    { path: "../../public/font/rm-mono/RMMono-Regular.woff2", weight: "400" },
-    { path: "../../public/font/rm-mono/RMMono-SemiBold.woff2", weight: "600" },
-    { path: "../../public/font/rm-mono/RMMono-Black.woff2", weight: "900" },
-  ],
-  variable: "--font-rmMono",
+  variable: "--font-satoshi",
   display: "swap",
 });
 
@@ -133,7 +97,7 @@ export default function RootLayout({ children }) {
       </head>
       <body
         suppressHydrationWarning
-        className={`bg-black ${robotoMono.variable} ${neueMontreal.variable} ${rmMono.variable} ${hurme.variable} ${hurmeOblique.variable} antialiased`}
+        className={`bg-black ${satoshi.variable} font-satoshi antialiased`}
       >
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />

@@ -4,11 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        roboto_mono: ["var(--font-roboto-mono)", "monospace"],
-        neueMontreal: ["var(--font-neueMontreal)", "sans-serif"],
-        rmMono: ["var(--font-rmMono)", "monospace"],
-        hurme: ["var(--font-hurme)", "sans-serif"],
-        "hurme-oblique": ["var(--font-hurme-oblique)", "sans-serif"],
+        satoshi: ["Satoshi", "sans-serif"],
       },
       fontSize: {
         // Headings with font weights

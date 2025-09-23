@@ -73,7 +73,7 @@ const HeroSection = () => {
 
       {/* Left sidebar text */}
       <div className="flex w-full items-start justify-between gap-4 lg:gap-24">
-        <div className="hidden items-center justify-between pr-8 pt-6 font-neueMontreal text-sm font-medium text-muted lg:flex lg:pr-20 lg:text-lg">
+        <div className="hidden items-center justify-between pr-8 pt-6 text-sm font-medium text-muted lg:flex lg:pr-20 lg:text-lg">
           <div className="flex gap-4 md:gap-8 lg:gap-12">
             <div className="flex flex-col space-y-1">
               {["Buttons", "Components", "Transitions", "Animations", "Loaders"].map(
@@ -92,7 +92,7 @@ const HeroSection = () => {
 
         {/* Main content */}
         <div className="flex w-full flex-col items-start justify-start lg:w-auto lg:flex-1">
-          <div className="space-y-[8px] text-start font-neueMontreal text-3xl font-medium text-primary sm:space-y-[10px] sm:text-5xl md:text-6xl lg:text-[64px]">
+          <div className="space-y-[8px] text-start text-3xl font-medium text-primary sm:space-y-[10px] sm:text-5xl md:text-6xl lg:text-[64px]">
             <div className="overflow-hidden">
               <motion.h1
                 className="break-words"
@@ -115,7 +115,7 @@ const HeroSection = () => {
             </div>
           </div>
           <motion.div
-            className="mt-6 flex w-full flex-col items-start gap-3 font-neueMontreal text-sm font-medium sm:mt-8 sm:flex-row sm:items-center sm:gap-4 sm:text-base lg:mt-12"
+            className="mt-6 flex w-full flex-col items-start gap-3 text-sm font-medium sm:mt-8 sm:flex-row sm:items-center sm:gap-4 sm:text-base lg:mt-12"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
@@ -128,7 +128,7 @@ const HeroSection = () => {
             </Button>
           </motion.div>
           <div className="mt-12 max-w-md sm:mt-16 lg:mt-20">
-            <p className="font-neueMontreal text-sm font-medium leading-relaxed text-primary sm:text-base sm:leading-snug">
+            <p className="text-sm font-medium leading-relaxed text-primary sm:text-base sm:leading-snug">
               Waysel came from constantly digging through old projects wondering, &apos;How did I
               build that again?&apos; It is basically our personal toolbox, packed with components,
               techniques, tricks and tutorials—and it will keep growing.

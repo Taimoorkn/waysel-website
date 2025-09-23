@@ -23,7 +23,13 @@
       "Read(//c/Users/Taimoor/Downloads/**)",
       "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\images\\portfolio\")",
       "Read(//c/Users/Taimoor/Pictures/Screenshots/**)",
-      "WebFetch(domain:www.npmjs.com)"
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\WEB\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\TTF\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\OTF\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\WEB\\fonts\")"
     ],
     "deny": [],
     "ask": []

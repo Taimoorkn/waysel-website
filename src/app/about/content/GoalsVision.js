@@ -13,7 +13,7 @@ const GoalsVision = () => {
 
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center sm:mb-12 lg:mb-16">
-          <h2 className="mb-4 font-neueMontreal text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
+          <h2 className="mb-4  text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
             Our{" "}
             <span className="bg-gradient-to-r from-accent to-accent_light bg-clip-text text-transparent">
               Mission
@@ -30,21 +30,21 @@ const GoalsVision = () => {
                 <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent_purple sm:mr-4 sm:h-12 sm:w-12">
                   <TargetIcon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="font-neueMontreal text-xl font-medium text-accent sm:text-2xl">
+                <h3 className=" text-xl font-medium text-accent sm:text-2xl">
                   Our Goals
                 </h3>
               </div>
-              <h4 className="mb-4 font-neueMontreal text-xl font-medium text-primary_text sm:mb-6 sm:text-2xl lg:text-[32px]">
+              <h4 className="mb-4  text-xl font-medium text-primary_text sm:mb-6 sm:text-2xl lg:text-[32px]">
                 To upscale your business to a higher level
               </h4>
-              <p className="font-neueMontreal text-sm text-secondary_text sm:text-base lg:text-lg">
+              <p className=" text-sm text-secondary_text sm:text-base lg:text-lg">
                 We build fast, scalable, and secure web-based solutions tailored to your goals. From
                 intuitive interfaces to powerful backend systems, our team ensures seamless
                 performance and user satisfaction.
               </p>
               <Link
                 href={"/contact"}
-                className="mt-4 flex items-center font-neueMontreal text-sm font-medium text-accent transition-transform group-hover:translate-x-2 sm:mt-6 sm:text-base"
+                className="mt-4 flex items-center  text-sm font-medium text-accent transition-transform group-hover:translate-x-2 sm:mt-6 sm:text-base"
               >
                 Get Started <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>
@@ -57,21 +57,21 @@ const GoalsVision = () => {
                 <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent_purple sm:mr-4 sm:h-12 sm:w-12">
                   <EyeIcon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="font-neueMontreal text-xl font-medium text-accent sm:text-2xl">
+                <h3 className=" text-xl font-medium text-accent sm:text-2xl">
                   Our Vision
                 </h3>
               </div>
-              <h4 className="mb-4 font-neueMontreal text-xl font-medium text-primary_text sm:mb-6 sm:text-2xl lg:text-[32px]">
+              <h4 className="mb-4  text-xl font-medium text-primary_text sm:mb-6 sm:text-2xl lg:text-[32px]">
                 To provide solutions for growing companies
               </h4>
-              <p className="font-neueMontreal text-sm text-secondary_text sm:text-base lg:text-lg">
+              <p className=" text-sm text-secondary_text sm:text-base lg:text-lg">
                 We create scalable web solutions for growing businesses. Our team delivers custom
                 applications, seamless user experiences, and robust systems that empower companies
                 with cutting-edge technology.
               </p>
               <Link
                 href={"/contact"}
-                className="mt-4 flex items-center font-neueMontreal text-sm font-medium text-accent transition-transform group-hover:translate-x-2 sm:mt-6 sm:text-base"
+                className="mt-4 flex items-center  text-sm font-medium text-accent transition-transform group-hover:translate-x-2 sm:mt-6 sm:text-base"
               >
                 Get Started <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>

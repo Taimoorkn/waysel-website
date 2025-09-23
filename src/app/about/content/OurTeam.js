@@ -47,12 +47,12 @@ const OurTeam = () => {
     <section className="relative min-h-[calc(100vh-4.5rem)] overflow-hidden bg-primary_bg px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 2xl:px-[9.5rem]">
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center sm:mb-12 lg:mb-16">
-          <h2 className="mb-4 font-neueMontreal text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
+          <h2 className="mb-4 text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Our Team
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl font-neueMontreal text-base text-secondary_text sm:text-lg lg:text-xl">
+          <p className="mx-auto max-w-3xl text-base text-secondary_text sm:text-lg lg:text-xl">
             The passionate people behind every project at TechiTech Solutions. Meet the talented
             individuals who bring your ideas to life.
           </p>
@@ -77,7 +77,7 @@ const OurTeam = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
-              <div className="p-4 font-neueMontreal sm:p-6">
+              <div className="p-4 sm:p-6">
                 <div className="mb-2 text-xs font-medium uppercase text-blue-600 sm:text-sm">
                   {member.role}
                 </div>

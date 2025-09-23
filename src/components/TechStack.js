@@ -65,7 +65,7 @@ const TechStack = ({ techToDisplay }) => {
           {categories.map((category) => (
             <button
               key={category}
-              className={`px-4 sm:px-6 py-3 sm:py-4 font-hurme font-medium text-sm sm:text-base rounded-xl transition-all duration-300 ease-in-out
+              className={`px-4 sm:px-6 py-3 sm:py-4 font-medium text-sm sm:text-base rounded-xl transition-all duration-300 ease-in-out
                 ${activeCategory === category
                   ? "bg-[#ffffffcc] text-dark shadow-lg scale-105"
                   : "text-[#ffffffb3] border border-[#fed7be33] hover:bg-[#ffffffcc] hover:text-dark hover:border-[#fed7be55] hover:scale-105 hover:shadow-md"}`}

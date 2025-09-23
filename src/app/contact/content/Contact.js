@@ -21,11 +21,11 @@ const ContactItem = ({ icon: Icon, title, details }) => (
     </div>
     <div className="flex-1">
       {title && (
-        <h3 className="font-neueMontreal text-sm font-medium text-primary_text sm:text-base">
+        <h3 className="text-sm font-medium text-primary_text sm:text-base">
           {title}
         </h3>
       )}
-      <p className="font-neueMontreal text-sm text-secondary_text sm:text-base">{details}</p>
+      <p className="text-sm text-secondary_text sm:text-base">{details}</p>
     </div>
   </div>
 );
@@ -210,14 +210,14 @@ const Contact = () => {
   return (
     <section className="bg-primary_bg px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-12 xl:px-16 2xl:px-[9.5rem]">
       <div className="mb-8 text-center">
-        <div className="mb-4 inline-flex items-center rounded-full bg-card_bg px-3 py-1.5 font-neueMontreal text-xs font-medium text-accent transition-all hover:bg-hover_bg sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
+        <div className="mb-4 inline-flex items-center rounded-full bg-card_bg px-3 py-1.5 text-xs font-medium text-accent transition-all hover:bg-hover_bg sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
           <StarFourIcon weight="fill" className="mr-2 h-4 w-4" />
           CONTACT US
         </div>
-        <h2 className="mb-4 font-neueMontreal text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
+        <h2 className="mb-4 text-3xl font-medium text-primary_text sm:mb-6 sm:text-4xl lg:text-5xl">
           Bring that Idea to <span className="text-accent">Life</span>
         </h2>
-        <p className="mx-auto max-w-3xl font-neueMontreal text-base text-secondary_text sm:text-lg lg:text-xl">
+        <p className="mx-auto max-w-3xl text-base text-secondary_text sm:text-lg lg:text-xl">
           Explore our collection of innovative solutions and success stories that have transformed
           businesses across industries.
         </p>
@@ -227,7 +227,7 @@ const Contact = () => {
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           {/* Left Section - Contact Info */}
           <div className="w-full rounded-2xl border border-border_primary bg-card_bg p-8 shadow-sm lg:w-2/6">
-            <h3 className="mb-6 font-neueMontreal text-2xl font-medium text-primary_text">
+            <h3 className="mb-6  text-2xl font-medium text-primary_text">
               Get in Touch
             </h3>
             <div className="space-y-6 sm:space-y-8">
@@ -276,7 +276,7 @@ const Contact = () => {
           {/* Right Section - Contact Form */}
           <div className="w-full lg:w-4/6">
             <div className="rounded-2xl border border-border_primary bg-card_bg p-8 shadow-sm">
-              <h3 className="mb-6 font-neueMontreal text-2xl font-medium text-primary_text">
+              <h3 className="mb-6  text-2xl font-medium text-primary_text">
                 Send Us a Message
               </h3>
 

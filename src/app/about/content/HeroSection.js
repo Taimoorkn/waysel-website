@@ -19,24 +19,24 @@ const HeroSection = () => {
         <div data-animate id="hero-content" className="animate-fade-in-up">
           <div className="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm sm:mb-8 sm:py-2">
             <LightbulbIcon className="mr-2 h-4 w-4 text-yellow-400" />
-            <span className="font-neueMontreal text-xs font-medium text-white sm:text-sm">
+            <span className="text-xs font-medium text-white sm:text-sm">
               Building Things, One Solution at a Time
             </span>
           </div>
 
-          <h1 className="mb-4 bg-clip-text font-neueMontreal text-4xl font-medium text-transparent text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-[72px]">
+          <h1 className="mb-4 bg-clip-text text-4xl font-medium text-transparent text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-[72px]">
             Build <span className="text-accent">Smart</span>,<br />
             Scale <span className="text-accent">Fast</span>,<br />
             Win <span className="text-accent">Globally</span>
           </h1>
 
-          <p className="mx-auto mb-8 max-w-3xl font-neueMontreal text-base text-secondary_bg sm:mb-10 sm:text-lg lg:mb-12 lg:text-xl">
+          <p className="mx-auto mb-8 max-w-3xl text-base text-secondary_bg sm:mb-10 sm:text-lg lg:mb-12 lg:text-xl">
             TechiTech Solutions was founded by passionate tech enthusiasts in 2014 with a vision to
             transform businesses through innovative technology. Over the years, we&apos;ve grown into a
             trusted development agency.
           </p>
 
-          <div className="flex flex-col items-center justify-center gap-3 font-neueMontreal sm:flex-row sm:gap-4">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <button className="group flex transform items-center rounded-full bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-blue-700 hover:shadow-2xl sm:px-8 sm:py-4 sm:text-base">
               Start Your Journey
               <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />

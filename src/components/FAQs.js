@@ -13,7 +13,7 @@ const FAQ = ({ faqs = [] }) => {
   return (
     <section className="section relative mx-auto flex w-full flex-col items-center text-primary">
       <div className="oval-blur left-1/2 top-[-10%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 py-16 text-center font-hurme">
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 py-16 text-center">
         <h1 className="bg-gradient-to-b from-white to-[#FFBA8F] bg-clip-text text-4xl tracking-[-3%] text-transparent sm:text-[64px] sm:leading-[80px]">
           Frequently Asked Questions
         </h1>
@@ -34,7 +34,7 @@ const FAQ = ({ faqs = [] }) => {
               >
                 <AccordionHeader
                   onClick={() => handleOpen(index)}
-                  className={`px-6 py-5 text-left font-hurme transition-all duration-300 ease-in-out sm:px-8 sm:py-6 ${
+                  className={`px-6 py-5 text-left transition-all duration-300 ease-in-out sm:px-8 sm:py-6 ${
                     open === index
                       ? "bg-[#1A1A1A] shadow-inner"
                       : "hover:bg-[#151515] group-hover:bg-[#161616]"
@@ -55,7 +55,7 @@ const FAQ = ({ faqs = [] }) => {
                 </AccordionHeader>
                 <AccordionBody className="border-t border-[#fed7be22] bg-[#121211] px-6 py-5 sm:px-8 sm:py-6">
                   <div className="max-w-none">
-                    <p className="font-hurme text-sm font-normal leading-relaxed text-[#ffffffd9] sm:text-base sm:leading-relaxed">
+                    <p className="text-sm font-normal leading-relaxed text-[#ffffffd9] sm:text-base sm:leading-relaxed">
                       {item.answer}
                     </p>
                   </div>
@@ -65,7 +65,7 @@ const FAQ = ({ faqs = [] }) => {
           ))
         ) : (
           <div className="flex items-center justify-center py-16">
-            <p className="text-center font-hurme text-xl text-[#ffffff88]">No FAQs available.</p>
+            <p className="text-center text-xl text-[#ffffff88]">No FAQs available.</p>
           </div>
         )}
       </div>
