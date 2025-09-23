@@ -10,14 +10,46 @@ module.exports = {
         hurme: ["var(--font-hurme)", "sans-serif"],
         "hurme-oblique": ["var(--font-hurme-oblique)", "sans-serif"],
       },
+      fontSize: {
+        // Headings
+        'h1': ['88px', '88px'],
+        'h2': ['64px', '80px'],
+        'h3': ['56px', '64px'],
+        'h4': ['48px', '56px'],
+        'h5': ['32px', '48px'],
+        // Body Text
+        'body-sm': ['14px', '20px'],
+        'body-md': ['20px', '36px'],
+        'body-lg': ['24px', '32px'],
+        'body-xl': ['32px', '52px'],
+      },
+      fontWeight: {
+        regular: '400',
+        medium: '500',
+        bold: '700',
+      },
       colors: {
+        // Background colors
         dark: "#0D0D0C",
+        background: "#0D0D0C",
+        card: "#121211",
         secondary: "#131313",
         primary: "#EFEEEC",
         muted: "#9c9b9a",
         border: "#1f2937",
         divider: "#374151",
         accent: "#FF4C24",
+        // Text colors
+        text: {
+          primary: "#FFFFFF",
+          secondary: "#FFFFFFE5",
+          tertiary: "#FFFFFFB2",
+        },
+      },
+      backgroundImage: {
+        // Gradients
+        'gradient-primary': 'linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%)',
+        'gradient-button-text': 'linear-gradient(90deg, #4227CA 0%, #FB3081 50%, #ED3D0C 100%)',
       },
       boxShadow: {
         // Dark mode shadows
