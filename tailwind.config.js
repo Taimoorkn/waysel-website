@@ -57,7 +57,7 @@ module.exports = {
       backgroundImage: {
         // Gradients
         'gradient-primary': 'linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%)',
-        'gradient-button-text': 'linear-gradient(90deg, #4227CA 0%, #FB3081 50%, #ED3D0C 100%)',
+        'gradient-btn': 'linear-gradient(90deg, #4227CA 0%, #FB3081 50%, #ED3D0C 100%)',
       },
       screens: {
         "3xl": "1920px",
