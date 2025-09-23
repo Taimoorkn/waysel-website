@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const GoalsVision = () => {
   return (
-    <section className="bg-secondary_bg relative overflow-hidden px-4 py-8 lg:py-16 xl:py-12 2xl:px-[9.5rem]">
+    <section className="bg-secondary_bg relative overflow-hidden px-4 py-8 lg:py-16 xl:py-12  ">
       <div className="absolute inset-0">
         <div className="bg-grid-white30 absolute left-0 top-0 h-full w-full"></div>
       </div>

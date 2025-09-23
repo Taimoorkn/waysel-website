@@ -2,64 +2,64 @@
 
 /* Heading Styles */
 .HeadingH1 {
-  @apply text-h1-base-med sm:text-h1-sm-med md:text-h1-md-med lg:text-h1-lg-med xl:text-h1-xl-med 2xl:text-h1-2xl-med text-text-primary;
+  @apply text-h1-base-med sm:text-h1-sm-med md:text-h1-md-med lg:text-h1-lg-med xl:text-h1-xl-med text-text-primary;
 }
 
 .HeadingH2 {
-  @apply text-h2-base-reg sm:text-h2-sm-reg md:text-h2-md-reg lg:text-h2-lg-reg xl:text-h2-xl-reg 2xl:text-h2-2xl-reg text-text-primary;
+  @apply text-h2-base-reg sm:text-h2-sm-reg md:text-h2-md-reg lg:text-h2-lg-reg xl:text-h2-xl-reg text-text-primary;
 }
 
 .HeadingH3 {
-  @apply text-h3-base-med sm:text-h3-sm-med md:text-h3-md-med lg:text-h3-lg-med xl:text-h3-xl-med 2xl:text-h3-2xl-med text-text-primary;
+  @apply text-h3-base-med sm:text-h3-sm-med md:text-h3-md-med lg:text-h3-lg-med xl:text-h3-xl-med text-text-primary;
 }
 
 .HeadingH4 {
-  @apply text-h4-base-med sm:text-h4-sm-med md:text-h4-md-med lg:text-h4-lg-med xl:text-h4-xl-med 2xl:text-h4-2xl-med text-text-primary;
+  @apply text-h4-base-med sm:text-h4-sm-med md:text-h4-md-med lg:text-h4-lg-med xl:text-h4-xl-med text-text-primary;
 }
 
 .HeadingH5 {
-  @apply text-h5-base-bold sm:text-h5-sm-bold md:text-h5-md-bold lg:text-h5-lg-bold xl:text-h5-xl-bold 2xl:text-h5-2xl-bold text-text-primary;
+  @apply text-h5-base-bold sm:text-h5-sm-bold md:text-h5-md-bold lg:text-h5-lg-bold xl:text-h5-xl-bold text-text-primary;
 }
 
 /* Body Text Styles */
 .BodyText {
-  @apply text-body-base-reg sm:text-body-sm-reg md:text-body-md-reg lg:text-body-lg-reg xl:text-body-xl-reg 2xl:text-body-2xl-reg text-text-secondary;
+  @apply text-body-base-reg sm:text-body-sm-reg md:text-body-md-reg lg:text-body-lg-reg xl:text-body-xl-reg text-text-secondary;
 }
 
 .BodyTextMedium {
-  @apply text-body-base-med sm:text-body-sm-med md:text-body-md-med lg:text-body-lg-med xl:text-body-xl-med 2xl:text-body-2xl-med text-text-secondary;
+  @apply text-body-base-med sm:text-body-sm-med md:text-body-md-med lg:text-body-lg-med xl:text-body-xl-med text-text-secondary;
 }
 
 .BodyTextBold {
-  @apply text-body-base-bold 2xl:text-body-2xl-bold text-text-secondary sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
+  @apply text-body-base-bold text-text-secondary sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
 }
 
 /* Section Title */
 .SectionTitle {
-  @apply text-h2-base-reg sm:text-h2-sm-reg md:text-h2-md-reg lg:text-h2-lg-reg xl:text-h2-xl-reg 2xl:text-h2-2xl-reg text-text-primary;
+  @apply text-h2-base-reg sm:text-h2-sm-reg md:text-h2-md-reg lg:text-h2-lg-reg xl:text-h2-xl-reg text-text-primary;
 }
 
 /* Card Title */
 .CardTitle {
-  @apply text-h3-base-med sm:text-h3-sm-med md:text-h3-md-med lg:text-h3-lg-med xl:text-h3-xl-med 2xl:text-h3-2xl-med text-text-primary;
+  @apply text-h3-base-med sm:text-h3-sm-med md:text-h3-md-med lg:text-h3-lg-med xl:text-h3-xl-med text-text-primary;
 }
 
 /* Subtitle */
 .Subtitle {
-  @apply text-h4-base-med sm:text-h4-sm-med md:text-h4-md-med lg:text-h4-lg-med xl:text-h4-xl-med 2xl:text-h4-2xl-med text-text-secondary;
+  @apply text-h4-base-med sm:text-h4-sm-med md:text-h4-md-med lg:text-h4-lg-med xl:text-h4-xl-med text-text-secondary;
 }
 
 /* Caption */
 .Caption {
-  @apply text-h5-base-bold sm:text-h5-sm-bold md:text-h5-md-bold lg:text-h5-lg-bold xl:text-h5-xl-bold 2xl:text-h5-2xl-bold text-text-tertiary;
+  @apply text-h5-base-bold sm:text-h5-sm-bold md:text-h5-md-bold lg:text-h5-lg-bold xl:text-h5-xl-bold text-text-tertiary;
 }
 
 /* Lead Text */
 .LeadText {
-  @apply text-body-base-med sm:text-body-sm-med md:text-body-md-med lg:text-body-lg-med xl:text-body-xl-med 2xl:text-body-2xl-med text-text-primary;
+  @apply text-body-base-med sm:text-body-sm-med md:text-body-md-med lg:text-body-lg-med xl:text-body-xl-med text-text-primary;
 }
 
 /* Small Text */
 .SmallText {
-  @apply text-body-base-reg sm:text-body-sm-reg md:text-body-md-reg lg:text-body-lg-reg xl:text-body-xl-reg 2xl:text-body-2xl-reg text-text-tertiary;
+  @apply text-body-base-reg sm:text-body-sm-reg md:text-body-md-reg lg:text-body-lg-reg xl:text-body-xl-reg text-text-tertiary;
 }

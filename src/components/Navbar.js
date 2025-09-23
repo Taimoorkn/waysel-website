@@ -104,7 +104,7 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
-        <div className="fixed left-0 right-0 top-0 z-50 mx-4 flex h-12 items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-28 xl:pt-8 2xl:mx-32 2xl:pt-10">
+        <div className="fixed left-0 right-0 top-0 z-50 mx-4 flex h-12 items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-28 xl:pt-8">
           {/* Left side - Brand, Logo, Nav Links */}
           <motion.div
             className="flex items-center"

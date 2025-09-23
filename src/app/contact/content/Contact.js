@@ -204,7 +204,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="bg-primary_bg px-4 py-6 md:px-8 md:py-10 lg:px-12 xl:px-16 xl:px-6 xl:py-8 2xl:px-[9.5rem]">
+    <section className="bg-primary_bg px-4 py-6 md:px-8 md:py-10 lg:px-12 xl:px-16 xl:py-8">
       <div className="mb-8 text-center">
         <div className="bg-card_bg hover:bg-hover_bg mb-4 inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium text-accent transition-all xl:mb-6 xl:px-4 xl:py-2 xl:text-sm">
           <StarFourIcon weight="fill" className="mr-2 h-4 w-4" />

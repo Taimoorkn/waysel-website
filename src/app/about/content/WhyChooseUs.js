@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-8 lg:px-8 lg:py-16 xl:px-6 xl:py-12 2xl:px-[9.5rem]">
+    <section className="relative overflow-hidden bg-white px-4 py-8 lg:px-8 lg:py-16 xl:px-6 xl:py-12">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50/30"></div>
 
       <div className="relative z-10 mx-auto">

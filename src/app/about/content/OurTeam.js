@@ -44,7 +44,7 @@ const OurTeam = () => {
   ];
 
   return (
-    <section className="bg-primary_bg relative min-h-[calc(100vh-4.5rem)] overflow-hidden px-4 py-8 lg:px-8 lg:py-16 xl:px-6 xl:py-12 2xl:px-[9.5rem]">
+    <section className="bg-primary_bg relative min-h-[calc(100vh-4.5rem)] overflow-hidden px-4 py-8 lg:px-8 lg:py-16 xl:px-6 xl:py-12">
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center lg:mb-16 xl:mb-12">
           <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">

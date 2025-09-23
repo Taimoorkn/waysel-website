@@ -5,7 +5,7 @@ import { LightbulbIcon, ArrowRightIcon, PlayCircleIcon } from "@phosphor-icons/r
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-[calc(100vh-3.5rem)] items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 to-blue-900 px-4 xl:min-h-[calc(100vh-4.5rem)] 2xl:px-[9.5rem]">
+    <section className="relative flex min-h-[calc(100vh-3.5rem)] items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 to-blue-900 px-4 xl:min-h-[calc(100vh-4.5rem)]">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute left-10 top-10 h-48 w-48 animate-pulse rounded-full bg-blue-400/20 blur-2xl lg:h-72 lg:w-72 xl:left-20 xl:top-20 xl:h-64 xl:w-64 xl:blur-3xl"></div>

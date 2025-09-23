@@ -76,11 +76,6 @@ module.exports = {
         "body-xl-reg": ["20px", { lineHeight: "36px", fontWeight: "400" }],
         "body-xl-med": ["20px", { lineHeight: "36px", fontWeight: "500" }],
         "body-xl-bold": ["20px", { lineHeight: "36px", fontWeight: "700" }],
-
-        // 2xl (1536px+) - Large Desktop / Ultrawide
-        "body-2xl-reg": ["22px", { lineHeight: "40px", fontWeight: "400" }],
-        "body-2xl-med": ["22px", { lineHeight: "40px", fontWeight: "500" }],
-        "body-2xl-bold": ["22px", { lineHeight: "40px", fontWeight: "700" }],
       },
       colors: {
         // Background colors

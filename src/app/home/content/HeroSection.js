@@ -61,7 +61,7 @@ const HeroSection = () => {
     <section className="section relative min-h-screen overflow-hidden pt-[120px] xl:pt-[200px]">
       <div className="mx-auto flex max-w-4xl flex-col items-center justify-between border">
         {/* Main content */}
-        <div className="text-center text-primary 2xl:text-h1-medium">
+        <div className="text-center text-primary xl:HeadingH1">
           <div className="overflow-hidden">
             <motion.h1
               className="break-words"
