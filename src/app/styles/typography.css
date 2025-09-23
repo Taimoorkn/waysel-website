@@ -2,7 +2,7 @@
 
 /* Heading Styles */
 .HeadingH1 {
-  @apply text-h1-base-med sm:text-h1-sm-med md:text-h1-md-med lg:text-h1-lg-med xl:text-h1-xl-med text-text-primary;
+  @apply text-h1-base-med sm:text-h1-sm-med md:text-h1-md-med lg:text-h1-lg-med xl:text-h1-xl-med text-center text-text-primary;
 }
 
 .HeadingH2 {
