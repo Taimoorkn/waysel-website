@@ -76,12 +76,6 @@ const Navbar = () => {
     { href: "/portfolio", label: "Portfolio" },
     { href: "/services", label: "Services" },
     { href: "/aboutus", label: "About Us" },
-    { href: "/contact", label: "Contact Us" },
-  ];
-
-  const authLinks = [
-    { href: "/login", label: "Log in", isButton: false },
-    { href: "/get-started", label: "Get Started", isButton: true },
   ];
 
   return (
@@ -142,22 +136,19 @@ const Navbar = () => {
               </motion.div>
             ))}
           </motion.div>
-          {/* Right side - Auth buttons */}
+          {/* Right side - Contact Us button */}
           <motion.div
             className="hidden items-center gap-7 xl:flex"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            <Button variant="base" href="/login" className="flex h-8 items-center justify-center">
-              Log In
-            </Button>
             <Button
               variant="primary"
-              href="/get-started"
+              href="/contact"
               className="flex h-8 items-center justify-center tracking-wide xl:!px-4 xl:!py-2"
             >
-              Get Started
+              Contact Us
             </Button>
           </motion.div>
 
@@ -214,14 +205,9 @@ const Navbar = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
                 >
-                  <div className="space-y-3">
-                    <Button variant="base" href="/login" className="w-full">
-                      Log In
-                    </Button>
-                    <Button variant="primary" href="/get-started" className="w-full">
-                      Get Started
-                    </Button>
-                  </div>
+                  <Button variant="primary" href="/contact" className="w-full">
+                    Contact Us
+                  </Button>
                 </motion.div>
               </div>
             </motion.div>
