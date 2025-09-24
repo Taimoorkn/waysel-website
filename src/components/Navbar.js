@@ -73,9 +73,10 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/resources", label: "Resources" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "/faq", label: "FAQ" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/services", label: "Services" },
+    { href: "/aboutus", label: "About Us" },
+    { href: "/contact", label: "Contact Us" },
   ];
 
   const authLinks = [
