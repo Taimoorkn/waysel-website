@@ -3,8 +3,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import TextField from "./TextField";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"; 
 import Button from "./Button";
 
 const Navbar = () => {
