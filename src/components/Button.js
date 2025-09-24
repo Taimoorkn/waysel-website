@@ -7,12 +7,12 @@ import Link from "next/link";
 
 const Button = ({ children, variant = "primary", className = "", onClick, textVariant = "animated", ...props }) => {
   const router = useRouter();
-  const baseStyles = "button BodyText rounded-[4px] px-4 py-3 xl:px-7 xl:py-4 border";
+  const baseStyles = "button BodyText rounded-[4px] px-4 py-3 xl:px-7 xl:py-4";
 
   const variants = {
-    base: "text-primary !p-0 !w-auto",
-    primary: "btn-scale btn-primary text-secondary",
-    secondary: "btn-scale btn-secondary text-primary",
+    base: "!p-0",
+    primary: "btn-scale btn-primary",
+    secondary: "btn-scale btn-secondary",
   };
 
   const classes = `${baseStyles} ${variants[variant]} ${className}`;
