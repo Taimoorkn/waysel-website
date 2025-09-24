@@ -33,7 +33,6 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
   if (variant === "primary") {
     // For gradient primary buttons, use calculated gradient positions for continuous effect
     const letters = children.split("");
-    const textWidth = `${letters.length * 1.2}ch`; // Approximate width calculation
 
     return (
       <Link
@@ -43,7 +42,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
         onMouseLeave={() => setIsHovered(false)}
         {...props}
       >
-        <div style={{ position: "relative", overflow: "hidden", display: "inline-block" }}>
+        <div style={{ position: "relative", overflow: "hidden", display: "inline-flex", alignItems: "baseline" }}>
           {letters.map((char, index) => {
             return (
               <motion.span
@@ -64,7 +63,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
                 transition={{
                   duration: 0.8,
                   delay: index * 0.01,
-                  ease: [0.625, 0.05, 0, 1]
+                  ease: [0.625, 0.05, 0, 1],
                 }}
               >
                 {char === " " ? "\u00A0" : char}
@@ -119,9 +118,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
   return (
     <Link className={classes} onClick={handleClick} {...props}>
       <>
-        <div style={{ position: "relative", overflow: "hidden" }}>
-          {letters}
-        </div>
+        <div style={{ position: "relative", overflow: "hidden" }}>{letters}</div>
       </>
     </Link>
   );
