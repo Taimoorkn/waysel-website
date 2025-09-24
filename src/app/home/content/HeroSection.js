@@ -66,7 +66,7 @@ const HeroSection = () => {
       <div className="mx-auto flex max-w-4xl flex-col items-center justify-between border">
         {/* Main content */}
         <div className="HeadingH1">
-          <div style={{ clipPath: "inset(0 0 -0.15rem 0)" }}>
+          <div style={{ clipPath: 'inset(0 0 -0.7rem 0)' }}>
             <motion.h1
               className="break-words"
               initial={{ y: "100%" }}
@@ -76,7 +76,7 @@ const HeroSection = () => {
               Curating the kind of
             </motion.h1>
           </div>
-          <div style={{ clipPath: "inset(0 0 -0.15rem 0)" }}>
+          <div style={{ clipPath: 'inset(0 0 -0.7rem 0)' }}>
             <motion.h1
               className="break-words"
               initial={{ y: "100%" }}
