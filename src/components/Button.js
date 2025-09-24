@@ -7,11 +7,11 @@ import Link from "next/link";
 
 const Button = ({ children, variant = "primary", className = "", onClick, textVariant = "animated", ...props }) => {
   const router = useRouter();
-  const baseStyles = "button BodyText rounded-[4px] px-4 py-[11px] xl:px-7";
+  const baseStyles = "button rounded-[4px] px-4 py-[11px] xl:px-7";
 
   const variants = {
     base: "!p-0",
-    primary: "btn-scale btn-primary gradient-primary",
+    primary: "btn-scale btn-primary",
     secondary: "btn-scale btn-secondary",
   };
 
@@ -20,9 +20,14 @@ const Button = ({ children, variant = "primary", className = "", onClick, textVa
   // Default onClick handler to navigate to "/contact" if no onClick is provided
   const handleClick = onClick || (() => router.push("/contact"));
 
+  // Apply gradient to text for primary variant
+  const textClass = variant === "primary" ? "gradient-primary" : "";
+
   return (
     <Link className={classes} onClick={handleClick} {...props}>
-      <TextField variant={textVariant}>{children}</TextField>
+      <TextField variant={textVariant} className={textClass}>
+        {children}
+      </TextField>
     </Link>
   );
 };
