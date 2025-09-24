@@ -56,14 +56,17 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
                   backgroundPosition: `${(index / (letters.length - 1)) * 100}% 0`,
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
-                  WebkitTextFillColor: "transparent"
+                  WebkitTextFillColor: "transparent",
+                  willChange: "transform",
+                  backfaceVisibility: "hidden",
+                  WebkitFontSmoothing: "antialiased"
                 }}
                 initial={{ y: "100%" }}
                 animate={{ y: isHovered ? "-100%" : "0%" }}
                 transition={{
-                  duration: 0.8,
-                  delay: index * 0.01,
-                  ease: [0.625, 0.05, 0, 1],
+                  duration: 0.6,
+                  delay: index * 0.012,
+                  ease: [0.625, 0.05, 0.1, 0.9],
                 }}
               >
                 {char === " " ? "\u00A0" : char}
@@ -79,7 +82,10 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
                     backgroundPosition: `${(index / (letters.length - 1)) * 100}% 0`,
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
-                    WebkitTextFillColor: "transparent"
+                    WebkitTextFillColor: "transparent",
+                    willChange: "transform",
+                    backfaceVisibility: "hidden",
+                    WebkitFontSmoothing: "antialiased"
                   }}
                 >
                   {char === " " ? "\u00A0" : char}
