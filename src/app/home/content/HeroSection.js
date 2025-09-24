@@ -66,7 +66,7 @@ const HeroSection = () => {
       <div className="mx-auto flex max-w-4xl flex-col items-center justify-between border">
         {/* Main content */}
         <div className="HeadingH1">
-          <div style={{ clipPath: 'inset(0 0 -0.7rem 0)' }}>
+          <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="break-words"
               initial={{ y: "100%" }}
@@ -76,7 +76,7 @@ const HeroSection = () => {
               Curating the kind of
             </motion.h1>
           </div>
-          <div style={{ clipPath: 'inset(0 0 -0.7rem 0)' }}>
+          <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="break-words"
               initial={{ y: "100%" }}
@@ -84,7 +84,16 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               solutions you wish <br />
-              <span className="gradient-primary">you started with.</span>
+            </motion.h1>
+          </div>
+          <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
+            <motion.h1
+              className="break-words gradient-primary"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              you started with.
             </motion.h1>
           </div>
         </div>
