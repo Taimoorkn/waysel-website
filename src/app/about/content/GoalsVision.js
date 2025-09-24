@@ -14,21 +14,21 @@ const GoalsVision = () => {
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center lg:mb-16 xl:mb-12">
           <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">
-            Our{" "}
-            <span className="to-accent_light from-accent bg-gradient-to-r bg-clip-text text-transparent">Mission</span>{" "}
+            <span className="gradient-primary">Our</span>{" "}
+            Mission{" "}
             Ahead
           </h2>
-          <div className="to-accent_light from-accent mx-auto h-1 w-20 rounded-full bg-gradient-to-r xl:w-24"></div>
+          <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 xl:w-24"></div>
         </div>
 
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 lg:gap-16 xl:gap-8">
           <div className="group">
             <div className="border-border_primary bg-card_bg group-hover:border-accent rounded-2xl border p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl xl:rounded-3xl xl:p-8">
               <div className="mb-4 flex items-center xl:mb-6">
-                <div className="to-accent_purple from-accent mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br xl:mr-4 xl:h-12 xl:w-12">
+                <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 xl:mr-4 xl:h-12 xl:w-12">
                   <TargetIcon className="h-5 w-5 text-white xl:h-6 xl:w-6" />
                 </div>
-                <h3 className="text-accent text-xl font-medium xl:text-2xl">Our Goals</h3>
+                <h3 className="gradient-primary text-xl font-medium xl:text-2xl">Our Goals</h3>
               </div>
               <h4 className="text-primary_text mb-4 text-xl font-medium lg:text-[32px] xl:mb-6 xl:text-2xl">
                 To upscale your business to a higher level
@@ -49,10 +49,10 @@ const GoalsVision = () => {
           <div className="group">
             <div className="border-border_primary bg-card_bg group-hover:border-accent rounded-2xl border p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl xl:rounded-3xl xl:p-8">
               <div className="mb-4 flex items-center xl:mb-6">
-                <div className="to-accent_purple from-accent mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br xl:mr-4 xl:h-12 xl:w-12">
+                <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 xl:mr-4 xl:h-12 xl:w-12">
                   <EyeIcon className="h-5 w-5 text-white xl:h-6 xl:w-6" />
                 </div>
-                <h3 className="text-accent text-xl font-medium xl:text-2xl">Our Vision</h3>
+                <h3 className="gradient-primary text-xl font-medium xl:text-2xl">Our Vision</h3>
               </div>
               <h4 className="text-primary_text mb-4 text-xl font-medium lg:text-[32px] xl:mb-6 xl:text-2xl">
                 To provide solutions for growing companies

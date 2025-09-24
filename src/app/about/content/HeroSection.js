@@ -5,7 +5,7 @@ import { LightbulbIcon, ArrowRightIcon, PlayCircleIcon } from "@phosphor-icons/r
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-[calc(100vh-3.5rem)] items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 to-blue-900 px-4 xl:min-h-[calc(100vh-4.5rem)]">
+    <section className="relative flex min-h-[calc(100vh-3.5rem)] items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 to-pink-900 px-4 xl:min-h-[calc(100vh-4.5rem)]">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute left-10 top-10 h-48 w-48 animate-pulse rounded-full bg-blue-400/20 blur-2xl lg:h-72 lg:w-72 xl:left-20 xl:top-20 xl:h-64 xl:w-64 xl:blur-3xl"></div>
@@ -22,8 +22,8 @@ const HeroSection = () => {
             <span className="text-xs font-medium text-white xl:text-sm">Building Things, One Solution at a Time</span>
           </div>
 
-          <h1 className="mb-4 bg-clip-text text-4xl font-medium text-transparent text-white md:text-6xl lg:text-[72px] xl:mb-6 xl:text-5xl">
-            Build <span className="text-accent">Smart</span>,<br />
+          <h1 className="mb-4 text-4xl font-medium text-white md:text-6xl lg:text-[72px] xl:mb-6 xl:text-5xl">
+            <span className="gradient-primary">Build</span> <span className="text-accent">Smart</span>,<br />
             Scale <span className="text-accent">Fast</span>,<br />
             Win <span className="text-accent">Globally</span>
           </h1>

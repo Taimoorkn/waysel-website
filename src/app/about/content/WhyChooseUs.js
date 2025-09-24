@@ -41,20 +41,20 @@ const WhyChooseUs = () => {
 
   return (
     <section className="relative overflow-hidden bg-white px-4 py-8 lg:px-8 lg:py-16 xl:px-6 xl:py-12">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 to-pink-50/30"></div>
 
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center lg:mb-16 xl:mb-12">
           <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">
-            Why{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Choose</span>{" "}
+            <span className="gradient-primary">Why</span>{" "}
+            Choose{" "}
             Us
           </h2>
           <p className="text-secondary_text mx-auto max-w-3xl text-base lg:text-xl xl:text-lg">
             Our core values shape the way we develop, collaborate, and provide quality services to our clients. These
             principles help us deliver scalable software solutions.
           </p>
-          <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 xl:mt-8 xl:w-24"></div>
+          <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 xl:mt-8 xl:w-24"></div>
         </div>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 xl:grid-cols-2 xl:gap-6">
           {values.map((value, index) => (
@@ -76,7 +76,7 @@ const WhyChooseUs = () => {
               <p className="text-secondary_text text-sm lg:text-lg xl:text-base">{value.description}</p>
               <div className="mt-4 h-1 w-full overflow-hidden rounded-full bg-gray-100 xl:mt-6">
                 <div
-                  className={`h-full bg-gradient-to-r ${value.color} origin-left scale-x-0 transform rounded-full transition-transform duration-500 group-hover:scale-x-100`}
+                  className="h-full bg-gradient-to-r from-purple-500 to-pink-500 origin-left scale-x-0 transform rounded-full transition-transform duration-500 group-hover:scale-x-100"
                 ></div>
               </div>
             </div>

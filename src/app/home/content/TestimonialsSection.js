@@ -140,7 +140,7 @@ const TestimonialsSection = () => {
                       className="size-8 rounded-full border-2 border-[#ffffff33] object-cover xl:size-12"
                     />
                     <div className="flex flex-col items-start justify-start gap-[2px]">
-                      <h4 className="bg-gradient-to-b from-white to-[#F7FEDD] bg-clip-text text-[20px] font-normal tracking-[-2%] text-transparent text-white">
+                      <h4 className="gradient-primary text-[20px] font-normal tracking-[-2%]">
                         {testimonial.name}
                       </h4>
                       <p className="text-sm text-[#ffffffb3] xl:text-base">{testimonial.position}</p>

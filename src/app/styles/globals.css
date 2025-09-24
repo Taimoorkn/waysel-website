@@ -9,12 +9,12 @@
 
   .oval-blur {
     @apply absolute h-[200px] w-[360px] rounded-full;
-    background-color: #c84d00;
+    background: linear-gradient(135deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%);
     filter: blur(300px);
   }
   .oval-blur-footer {
     @apply absolute h-[130px] w-[70%] rounded-full;
-    background-color: #c84d00;
+    background: linear-gradient(135deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%);
     filter: blur(100px);
   }
 
@@ -25,7 +25,7 @@
     right: 0;
     height: 128px;
     z-index: 2;
-    background: linear-gradient(0deg, rgba(255, 113, 27, 0.8) 0%, rgba(255, 113, 27, 0) 100%);
+    background: linear-gradient(0deg, rgba(122, 102, 225, 0.8) 0%, rgba(122, 102, 225, 0) 100%);
     clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
   }
 

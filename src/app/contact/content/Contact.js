@@ -211,7 +211,7 @@ const Contact = () => {
           CONTACT US
         </div>
         <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">
-          Bring that Idea to <span className="text-accent">Life</span>
+          <span className="gradient-primary">Bring</span> that Idea to <span className="text-accent">Life</span>
         </h2>
         <p className="text-secondary_text mx-auto max-w-3xl text-base lg:text-xl xl:text-lg">
           Explore our collection of innovative solutions and success stories that have transformed businesses across
@@ -223,7 +223,7 @@ const Contact = () => {
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           {/* Left Section - Contact Info */}
           <div className="border-border_primary bg-card_bg w-full rounded-2xl border p-8 shadow-sm lg:w-2/6">
-            <h3 className="text-primary_text mb-6 text-2xl font-medium">Get in Touch</h3>
+            <h3 className="gradient-primary mb-6 text-2xl font-medium">Get in Touch</h3>
             <div className="space-y-6 xl:space-y-8">
               {contactItems.map((item, index) => (
                 <ContactItem key={index} {...item} />
@@ -267,7 +267,7 @@ const Contact = () => {
           {/* Right Section - Contact Form */}
           <div className="w-full lg:w-4/6">
             <div className="border-border_primary bg-card_bg rounded-2xl border p-8 shadow-sm">
-              <h3 className="text-primary_text mb-6 text-2xl font-medium">Send Us a Message</h3>
+              <h3 className="gradient-primary mb-6 text-2xl font-medium">Send Us a Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <input type="hidden" name="csrfToken" value={csrfToken} />

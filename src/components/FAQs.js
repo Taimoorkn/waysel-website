@@ -14,8 +14,8 @@ const FAQ = ({ faqs = [] }) => {
     <section className="section text-primary relative mx-auto flex w-full flex-col items-center">
       <div className="oval-blur left-1/2 top-[-10%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 py-16 text-center">
-        <h1 className="bg-gradient-to-b from-white to-[#FFBA8F] bg-clip-text text-4xl tracking-[-3%] text-transparent xl:text-[64px] xl:leading-[80px]">
-          Frequently Asked Questions
+        <h1 className="text-4xl tracking-[-3%] text-white xl:text-[64px] xl:leading-[80px]">
+          <span className="gradient-primary">Frequently</span> Asked Questions
         </h1>
         <p className="text-xl leading-[32px] text-[#ffffffe6]">Get answers to common questions about our services</p>
       </div>

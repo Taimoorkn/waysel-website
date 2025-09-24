@@ -84,7 +84,7 @@ const Footer = () => {
         <div
           className="pointer-events-none absolute inset-0 bottom-0 h-[250px]"
           style={{
-            background: "linear-gradient(180deg, transparent 50%, #532407 100%)",
+            background: "linear-gradient(180deg, transparent 50%, rgba(122, 102, 225, 0.3) 100%)",
           }}
         />
       </div>
