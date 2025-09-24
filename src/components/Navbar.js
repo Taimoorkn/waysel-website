@@ -143,11 +143,7 @@ const Navbar = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            <Button
-              variant="primary"
-              href="/contact"
-              className="flex h-8 items-center justify-center tracking-wide xl:!px-4 xl:!py-2"
-            >
+            <Button variant="primary" href="/contact">
               Contact Us
             </Button>
           </motion.div>
