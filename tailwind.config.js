@@ -81,7 +81,7 @@ module.exports = {
         // Background colors
         background: "#0D0D0C",
         card: "#121211",
-        secondary: "#131313",
+        dark: "#131313",
         border: "#1f2937",
         divider: "#374151",
 

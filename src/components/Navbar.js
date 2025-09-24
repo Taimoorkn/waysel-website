@@ -143,7 +143,7 @@ const Navbar = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            <Button variant="primary" href="/contact">
+            <Button variant="primary" href="/contact" className="">
               Contact Us
             </Button>
           </motion.div>
