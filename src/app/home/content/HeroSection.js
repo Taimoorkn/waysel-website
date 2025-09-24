@@ -88,7 +88,7 @@ const HeroSection = () => {
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="break-words gradient-primary"
+              className="gradient-primary break-words"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
