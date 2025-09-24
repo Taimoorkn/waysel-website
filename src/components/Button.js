@@ -11,7 +11,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, textVa
 
   const variants = {
     base: "!p-0",
-    primary: "btn-scale btn-primary !text-dark",
+    primary: "btn-scale btn-primary gradient-primary",
     secondary: "btn-scale btn-secondary",
   };
 

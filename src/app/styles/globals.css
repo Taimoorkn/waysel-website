@@ -4,7 +4,7 @@
 
 @layer components {
   .section {
-    @apply bg-background px-6 py-10 xl:px-28 xl:py-20;
+    @apply px-6 py-10 xl:px-28 xl:py-20;
   }
 
   .oval-blur {
@@ -76,5 +76,9 @@
 
   .tech_stack_icon:hover {
     @apply shadow-custom-blue scale-105;
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
   }
 }
