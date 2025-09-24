@@ -38,11 +38,28 @@ const Navbar = () => {
       start: "top -50px",
       end: "bottom bottom",
       onEnter: () => {
-        // Check if mobile or desktop
-        const isMobile = window.innerWidth < 640; // sm breakpoint
-        const expandedMargin = isMobile ? "0.5rem" : "1.5rem"; // Slight expansion
+        // Get current screen width and match Tailwind breakpoints
+        const width = window.innerWidth;
+        let expandedMargin, originalMargin;
 
-        gsap.to(navbar, {
+        if (width >= 1280) { // xl breakpoint
+          originalMargin = "7rem"; // xl:mx-28
+          expandedMargin = "6rem"; // Slight contraction
+        } else if (width >= 1024) { // lg breakpoint
+          originalMargin = "4rem"; // lg:mx-16
+          expandedMargin = "3rem";
+        } else if (width >= 768) { // md breakpoint
+          originalMargin = "2rem"; // md:mx-8
+          expandedMargin = "1.5rem";
+        } else if (width >= 640) { // sm breakpoint
+          originalMargin = "1.5rem"; // sm:mx-6
+          expandedMargin = "1rem";
+        } else { // mobile
+          originalMargin = "1rem"; // mx-4
+          expandedMargin = "0.5rem";
+        }
+
+        gsap.to(navbar.querySelector('.navbar-content'), {
           y: -10,
           marginLeft: expandedMargin,
           marginRight: expandedMargin,
@@ -52,10 +69,22 @@ const Navbar = () => {
       },
       onLeaveBack: () => {
         // Return to original responsive margins
-        const isMobile = window.innerWidth < 640;
-        const originalMargin = isMobile ? "1rem" : "3rem"; // mx-4 = 1rem, xl:mx-9 = 2.25rem
+        const width = window.innerWidth;
+        let originalMargin;
 
-        gsap.to(navbar, {
+        if (width >= 1280) { // xl breakpoint
+          originalMargin = "7rem"; // xl:mx-28
+        } else if (width >= 1024) { // lg breakpoint
+          originalMargin = "4rem"; // lg:mx-16
+        } else if (width >= 768) { // md breakpoint
+          originalMargin = "2rem"; // md:mx-8
+        } else if (width >= 640) { // sm breakpoint
+          originalMargin = "1.5rem"; // sm:mx-6
+        } else { // mobile
+          originalMargin = "1rem"; // mx-4
+        }
+
+        gsap.to(navbar.querySelector('.navbar-content'), {
           y: 0,
           marginLeft: originalMargin,
           marginRight: originalMargin,
@@ -80,10 +109,10 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="pointer-events-none fixed left-0 right-0 top-0 z-40"
+        className="pointer-events-none fixed inset-x-0 top-0 z-40"
         style={{
           height: "200px",
-          backgroundImage: `linear-gradient(
+          background: `linear-gradient(180deg,
             rgba(0, 0, 0, 1) 0%,
             rgba(0, 0, 0, 0.3) 50%,
             rgba(0, 0, 0, 0.15) 65%,
@@ -98,7 +127,7 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
-        <div className="fixed left-0 right-0 top-0 z-50 mx-4 flex h-12 items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-28 xl:pt-8">
+        <div className="navbar-content fixed left-0 right-0 top-0 z-50 mx-4 flex h-12 items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-28 xl:pt-8">
           {/* Left side - Brand, Logo, Nav Links */}
           <motion.div
             className="flex items-center"
