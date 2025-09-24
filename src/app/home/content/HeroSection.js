@@ -101,10 +101,10 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
         >
-          <Button variant="primary" href="/login">
+          <Button variant="primary" href="/contact">
             Dis a Button
           </Button>
-          <Button variant="secondary" href="/get-started">
+          <Button variant="secondary" href="/contact">
             Another Button
           </Button>
         </motion.div>

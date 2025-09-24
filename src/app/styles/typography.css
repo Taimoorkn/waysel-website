@@ -31,7 +31,7 @@
 }
 
 .BodyTextBold {
-  @apply text-body-base-bold text-text-secondary sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
+  @apply text-body-base-bold sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
 }
 
 /* Section Title */

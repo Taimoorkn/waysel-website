@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"; 
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Button from "./Button";
 
 const Navbar = () => {
@@ -127,7 +127,7 @@ const Navbar = () => {
                 <Button
                   variant="base"
                   href={link.href}
-                  textVariant="animated_underlined"
+                  textvariant="animated_underlined"
                   className="flex h-8 items-center justify-center"
                 >
                   {link.label}
