@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Button = ({ children, variant = "primary", className = "", onClick, textVariant = "animated", ...props }) => {
   const router = useRouter();
-  const baseStyles = "button BodyText rounded-[4px] px-4 py-3 xl:px-[26px] xl:py-[14px]";
+  const baseStyles = "button BodyText rounded-[4px] px-4 py-3 xl:px-7 xl:py-4 border";
 
   const variants = {
     base: "text-primary !p-0 !w-auto",

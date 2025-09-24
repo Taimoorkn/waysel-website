@@ -68,14 +68,14 @@ module.exports = {
         "body-md-bold": ["16px", { lineHeight: "24px", fontWeight: "700" }],
 
         // lg (1024px+) - Tablet Landscape / Small Desktop
-        "body-lg-reg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-        "body-lg-med": ["18px", { lineHeight: "28px", fontWeight: "500" }],
-        "body-lg-bold": ["18px", { lineHeight: "28px", fontWeight: "700" }],
+        "body-lg-reg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "body-lg-med": ["16px", { lineHeight: "24px", fontWeight: "500" }],
+        "body-lg-bold": ["16px", { lineHeight: "24px", fontWeight: "700" }],
 
         // xl (1280px+) - Desktop (Your current body design)
-        "body-xl-reg": ["20px", { lineHeight: "36px", fontWeight: "400" }],
-        "body-xl-med": ["20px", { lineHeight: "36px", fontWeight: "500" }],
-        "body-xl-bold": ["20px", { lineHeight: "36px", fontWeight: "700" }],
+        "body-xl-reg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "body-xl-med": ["18px", { lineHeight: "28px", fontWeight: "500" }],
+        "body-xl-bold": ["18px", { lineHeight: "28px", fontWeight: "700" }],
       },
       colors: {
         // Background colors
