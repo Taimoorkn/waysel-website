@@ -1,11 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Button = ({ children, variant = "primary", className = "", onClick, ...props }) => {
   const router = useRouter();
+  const [isHovered, setIsHovered] = useState(false);
 
   const variants = {
     base: "!p-0 animated-underlined",
@@ -20,7 +22,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
   const getTextClasses = () => {
     switch (variant) {
       case "primary":
-        return "gradient-primary BodyTextBold nav-link-text";
+        return "gradient-btn BodyTextBold nav-link-text gradient-animated-text";
       case "secondary":
         return "BodyTextBold BodyText nav-link-text";
       default:
@@ -28,7 +30,70 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
     }
   };
 
-  // Create animated text
+  if (variant === "primary") {
+    // For gradient primary buttons, use calculated gradient positions for continuous effect
+    const letters = children.split("");
+    const textWidth = `${letters.length * 1.2}ch`; // Approximate width calculation
+
+    return (
+      <Link
+        className={classes}
+        onClick={handleClick}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        {...props}
+      >
+        <div style={{ position: "relative", overflow: "hidden", display: "inline-block" }}>
+          {letters.map((char, index) => {
+            return (
+              <motion.span
+                key={index}
+                className="BodyTextBold nav-link-text"
+                style={{
+                  display: "inline-block",
+                  position: "relative",
+                  background: "linear-gradient(90deg, #4227CA 0%, #FB3081 50%, #ED3D0C 100%)",
+                  backgroundSize: `${letters.length}00%`,
+                  backgroundPosition: `${(index / (letters.length - 1)) * 100}% 0`,
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  WebkitTextFillColor: "transparent"
+                }}
+                initial={{ y: "100%" }}
+                animate={{ y: isHovered ? "-100%" : "0%" }}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.01,
+                  ease: [0.625, 0.05, 0, 1]
+                }}
+              >
+                {char === " " ? "\u00A0" : char}
+                <span
+                  className="BodyTextBold nav-link-text"
+                  style={{
+                    position: "absolute",
+                    top: "100%",
+                    left: 0,
+                    display: "inline-block",
+                    background: "linear-gradient(90deg, #4227CA 0%, #FB3081 50%, #ED3D0C 100%)",
+                    backgroundSize: `${letters.length}00%`,
+                    backgroundPosition: `${(index / (letters.length - 1)) * 100}% 0`,
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    WebkitTextFillColor: "transparent"
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              </motion.span>
+            );
+          })}
+        </div>
+      </Link>
+    );
+  }
+
+  // Create animated text for non-gradient buttons
   const letters = children.split("").map((char, index) => {
     const delay = (index * 0.01).toFixed(8);
 
@@ -53,7 +118,11 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
 
   return (
     <Link className={classes} onClick={handleClick} {...props}>
-      <div style={{ position: "relative", overflow: "hidden" }}>{letters}</div>
+      <>
+        <div style={{ position: "relative", overflow: "hidden" }}>
+          {letters}
+        </div>
+      </>
     </Link>
   );
 };

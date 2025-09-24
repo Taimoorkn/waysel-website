@@ -81,4 +81,7 @@
   .gradient-primary {
     @apply bg-gradient-primary bg-clip-text text-transparent;
   }
+  .gradient-btn {
+    @apply bg-gradient-btn bg-clip-text text-transparent;
+  }
 }

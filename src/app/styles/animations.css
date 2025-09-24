@@ -19,6 +19,8 @@
   100% { transform: translateY(0); }
 }
 
+
+
 .button .single-letter,
 .nav-link-text .single-letter {
   animation: letterLoopReverse var(--animation-default);
@@ -84,4 +86,16 @@
 a:hover .animated-underlined::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.gradient-rolling-text {
+  position: relative;
+  display: inline-block;
+  animation: letterLoopReverse var(--animation-default);
+  animation-fill-mode: both;
+}
+
+.button:hover .gradient-rolling-text {
+  animation: letterLoop var(--animation-default);
+  animation-fill-mode: both;
 }

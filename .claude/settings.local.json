@@ -29,7 +29,9 @@
       "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\WEB\")",
       "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\TTF\")",
       "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\OTF\")",
-      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\WEB\\fonts\")"
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\WEB\\fonts\")",
+      "WebFetch(domain:www.framer.com)",
+      "WebFetch(domain:motion.dev)"
     ],
     "deny": [],
     "ask": []
