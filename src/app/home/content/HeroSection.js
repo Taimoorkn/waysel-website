@@ -71,7 +71,7 @@ const HeroSection = () => {
               className="break-words"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0.8, 0.2, 1] }}
             >
               Curating the kind of
             </motion.h1>
@@ -81,7 +81,7 @@ const HeroSection = () => {
               className="break-words"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.1, 0.8, 0.2, 1] }}
             >
               solutions you wish <br />
             </motion.h1>
@@ -91,7 +91,7 @@ const HeroSection = () => {
               className="gradient-primary break-words"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
             >
               you started with.
             </motion.h1>
@@ -99,10 +99,26 @@ const HeroSection = () => {
         </div>
 
         <div className="xl:mt-8">
-          <p className="BodyText text-center">
-            We design, build, and ship product-grade web systems,
-            <br /> for founders, teams, and anyone trying to make something work.
-          </p>
+          <div className="BodyText text-center">
+            <div className="overflow-hidden">
+              <motion.p
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9, ease: [0.1, 0.8, 0.2, 1] }}
+              >
+                We design, build, and ship product-grade web systems,
+              </motion.p>
+            </div>
+            <div className="overflow-hidden">
+              <motion.p
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.6, delay: 1.1, ease: [0.1, 0.8, 0.2, 1] }}
+              >
+                for founders, teams, and anyone trying to make something work.
+              </motion.p>
+            </div>
+          </div>
         </div>
         <motion.div
           className="mt-6 flex items-center gap-8 xl:mt-12"

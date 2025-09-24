@@ -8,7 +8,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
   const router = useRouter();
 
   const variants = {
-    base: "!p-0",
+    base: "!p-0 animated-underlined",
     primary: "btn-scale btn-primary rounded-[4px] px-4 py-[11px] xl:px-7",
     secondary: "btn-scale btn-secondary rounded-[4px] px-4 py-[11px] xl:px-7",
   };
