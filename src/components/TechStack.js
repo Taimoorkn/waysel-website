@@ -310,8 +310,8 @@ const TechStack = ({ techToDisplay }) => {
               key={category}
               className={`rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 ease-in-out xl:px-6 xl:py-4 xl:text-base ${
                 activeCategory === category
-                  ? "scale-105 bg-[#ffffffcc] text-dark shadow-lg"
-                  : "border border-[#fed7be33] text-[#ffffffb3] hover:scale-105 hover:border-[#fed7be55] hover:bg-[#ffffffcc] hover:text-dark hover:shadow-md"
+                  ? "text-dark scale-105 bg-[#ffffffcc] shadow-lg"
+                  : "hover:text-dark border border-[#fed7be33] text-[#ffffffb3] hover:scale-105 hover:border-[#fed7be55] hover:bg-[#ffffffcc] hover:shadow-md"
               }`}
               onClick={() => setActiveCategory(category)}
             >

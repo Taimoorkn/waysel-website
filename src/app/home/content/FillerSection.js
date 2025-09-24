@@ -120,7 +120,7 @@ const FillerSection = () => {
         }
       `}</style>
 
-      <div className="section relative mx-auto flex w-full flex-col items-center text-primary">
+      <div className="section text-primary relative mx-auto flex w-full flex-col items-center">
         <SectionHeading
           title="This is (some of the insane stuff) we actually do."
           description="Crafting user-friendly, cross platform solutions with efficiency"

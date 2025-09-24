@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 const ContactItem = ({ icon: Icon, title, details }) => (
   <div className="group flex items-center space-x-4 xl:space-x-6">
     <div className="bg-card_bg group-hover:bg-hover_bg flex size-10 items-center justify-center rounded-full transition-colors duration-200 xl:size-12">
-      <Icon weight="fill" className="size-5 text-accent xl:size-6" />
+      <Icon weight="fill" className="text-accent size-5 xl:size-6" />
     </div>
     <div className="flex-1">
       {title && <h3 className="text-primary_text text-sm font-medium xl:text-base">{title}</h3>}
@@ -206,7 +206,7 @@ const Contact = () => {
   return (
     <section className="bg-primary_bg px-4 py-6 md:px-8 md:py-10 lg:px-12 xl:px-16 xl:py-8">
       <div className="mb-8 text-center">
-        <div className="bg-card_bg hover:bg-hover_bg mb-4 inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium text-accent transition-all xl:mb-6 xl:px-4 xl:py-2 xl:text-sm">
+        <div className="bg-card_bg hover:bg-hover_bg text-accent mb-4 inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium transition-all xl:mb-6 xl:px-4 xl:py-2 xl:text-sm">
           <StarFourIcon weight="fill" className="mr-2 h-4 w-4" />
           CONTACT US
         </div>
@@ -254,10 +254,10 @@ const Contact = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-border_secondary bg-surface_bg hover:bg-hover_bg group relative rounded-full border p-3 shadow-sm transition-all duration-300 hover:border-accent hover:shadow-md"
+                  className="border-border_secondary bg-surface_bg hover:bg-hover_bg hover:border-accent group relative rounded-full border p-3 shadow-sm transition-all duration-300 hover:shadow-md"
                   aria-label={`Visit our ${social.name} page`}
                 >
-                  <social.icon weight="fill" className="size-5 text-accent transition-colors duration-300" />
+                  <social.icon weight="fill" className="text-accent size-5 transition-colors duration-300" />
                   <span className="sr-only">{social.name}</span>
                 </a>
               ))}
@@ -404,7 +404,7 @@ const Contact = () => {
                 <div className="flex flex-col items-center gap-4 pt-2 xl:flex-row">
                   <button
                     type="submit"
-                    className="hover:bg-accent_background flex w-full items-center justify-center rounded-xl bg-accent px-6 py-3.5 font-medium text-white transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-50 xl:flex-1"
+                    className="hover:bg-accent_background bg-accent flex w-full items-center justify-center rounded-xl px-6 py-3.5 font-medium text-white transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-50 xl:flex-1"
                     disabled={isSubmitting}
                     aria-label="Send contact message"
                   >

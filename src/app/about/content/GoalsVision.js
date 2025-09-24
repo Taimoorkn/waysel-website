@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const GoalsVision = () => {
   return (
-    <section className="bg-secondary_bg relative overflow-hidden px-4 py-8 lg:py-16 xl:py-12  ">
+    <section className="bg-secondary_bg relative overflow-hidden px-4 py-8 lg:py-16 xl:py-12">
       <div className="absolute inset-0">
         <div className="bg-grid-white30 absolute left-0 top-0 h-full w-full"></div>
       </div>
@@ -15,20 +15,20 @@ const GoalsVision = () => {
         <div className="mb-8 text-center lg:mb-16 xl:mb-12">
           <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">
             Our{" "}
-            <span className="to-accent_light bg-gradient-to-r from-accent bg-clip-text text-transparent">Mission</span>{" "}
+            <span className="to-accent_light from-accent bg-gradient-to-r bg-clip-text text-transparent">Mission</span>{" "}
             Ahead
           </h2>
-          <div className="to-accent_light mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-accent xl:w-24"></div>
+          <div className="to-accent_light from-accent mx-auto h-1 w-20 rounded-full bg-gradient-to-r xl:w-24"></div>
         </div>
 
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 lg:gap-16 xl:gap-8">
           <div className="group">
-            <div className="border-border_primary bg-card_bg rounded-2xl border p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl group-hover:border-accent xl:rounded-3xl xl:p-8">
+            <div className="border-border_primary bg-card_bg group-hover:border-accent rounded-2xl border p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl xl:rounded-3xl xl:p-8">
               <div className="mb-4 flex items-center xl:mb-6">
-                <div className="to-accent_purple mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent xl:mr-4 xl:h-12 xl:w-12">
+                <div className="to-accent_purple from-accent mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br xl:mr-4 xl:h-12 xl:w-12">
                   <TargetIcon className="h-5 w-5 text-white xl:h-6 xl:w-6" />
                 </div>
-                <h3 className="text-xl font-medium text-accent xl:text-2xl">Our Goals</h3>
+                <h3 className="text-accent text-xl font-medium xl:text-2xl">Our Goals</h3>
               </div>
               <h4 className="text-primary_text mb-4 text-xl font-medium lg:text-[32px] xl:mb-6 xl:text-2xl">
                 To upscale your business to a higher level
@@ -39,7 +39,7 @@ const GoalsVision = () => {
               </p>
               <Link
                 href={"/contact"}
-                className="mt-4 flex items-center text-sm font-medium text-accent transition-transform group-hover:translate-x-2 xl:mt-6 xl:text-base"
+                className="text-accent mt-4 flex items-center text-sm font-medium transition-transform group-hover:translate-x-2 xl:mt-6 xl:text-base"
               >
                 Get Started <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>
@@ -47,12 +47,12 @@ const GoalsVision = () => {
           </div>
 
           <div className="group">
-            <div className="border-border_primary bg-card_bg rounded-2xl border p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl group-hover:border-accent xl:rounded-3xl xl:p-8">
+            <div className="border-border_primary bg-card_bg group-hover:border-accent rounded-2xl border p-6 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl xl:rounded-3xl xl:p-8">
               <div className="mb-4 flex items-center xl:mb-6">
-                <div className="to-accent_purple mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent xl:mr-4 xl:h-12 xl:w-12">
+                <div className="to-accent_purple from-accent mr-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br xl:mr-4 xl:h-12 xl:w-12">
                   <EyeIcon className="h-5 w-5 text-white xl:h-6 xl:w-6" />
                 </div>
-                <h3 className="text-xl font-medium text-accent xl:text-2xl">Our Vision</h3>
+                <h3 className="text-accent text-xl font-medium xl:text-2xl">Our Vision</h3>
               </div>
               <h4 className="text-primary_text mb-4 text-xl font-medium lg:text-[32px] xl:mb-6 xl:text-2xl">
                 To provide solutions for growing companies
@@ -63,7 +63,7 @@ const GoalsVision = () => {
               </p>
               <Link
                 href={"/contact"}
-                className="mt-4 flex items-center text-sm font-medium text-accent transition-transform group-hover:translate-x-2 xl:mt-6 xl:text-base"
+                className="text-accent mt-4 flex items-center text-sm font-medium transition-transform group-hover:translate-x-2 xl:mt-6 xl:text-base"
               >
                 Get Started <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>

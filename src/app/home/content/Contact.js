@@ -120,7 +120,7 @@ export default function ContactForm() {
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="transform rounded-full bg-primary px-8 py-3 font-medium text-background transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
+                  className="bg-primary transform rounded-full px-8 py-3 font-medium text-background transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
                 >
                   Send Message
                 </button>
