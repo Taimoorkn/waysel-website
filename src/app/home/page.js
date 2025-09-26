@@ -11,6 +11,7 @@ import TestimonialsSection from "./content/TestimonialsSection";
 import FAQ from "../../components/FAQs";
 import TechStack from "../../components/TechStack";
 import { generalFaqs } from "../../constants/FaqConstants";
+import MagicBento from "./content/MagicBento";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       <HeroSection />
       <PortfolioSection />
       <FillerSection />
+      <MagicBento enableBorderGlow={true} disableAnimations={false} glowColor="255, 76, 36" />
       <TechStack />
       <FAQ faqs={generalFaqs} />
       <TestimonialsSection />
