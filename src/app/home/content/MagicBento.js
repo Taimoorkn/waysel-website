@@ -1,127 +1,120 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from "react";
 
-const DEFAULT_GLOW_COLOR = '255, 76, 36'; // Matches #ff4c24
+const DEFAULT_GLOW_COLOR = "255, 76, 36"; // Matches #ff4c24
 const MOBILE_BREAKPOINT = 768;
 
 const cardData = [
   {
-    title: 'Strategic Design',
-    image: '/images/filler/filler1.svg',
+    title: "Strategic Design",
+    image: "/images/filler/filler1.svg",
     content: [
       {
-        label: 'UX/UI Design:',
-        text: 'We craft seamless user experiences and modern interfaces that users love.',
+        label: "UX/UI Design:",
+        text: "We craft seamless user experiences and modern interfaces that users love.",
       },
       {
-        label: 'Brand Strategy:',
-        text: 'We define your brand’s digital identity to stand out in the market.',
+        label: "Brand Strategy:",
+        text: "We define your brand’s digital identity to stand out in the market.",
       },
     ],
   },
   {
-    title: 'Development',
-    image: '/images/filler/filler2.svg',
+    title: "Development",
+    image: "/images/filler/filler2.svg",
     content: [
       {
-        label: 'Frontend:',
-        text: 'Modern web applications built with cutting-edge technologies and frameworks.',
+        label: "Frontend:",
+        text: "Modern web applications built with cutting-edge technologies and frameworks.",
       },
       {
-        label: 'Backend:',
-        text: 'Scalable server solutions and robust API development for your business needs.',
+        label: "Backend:",
+        text: "Scalable server solutions and robust API development for your business needs.",
       },
     ],
   },
   {
-    title: 'Consultation',
-    image: '/images/filler/filler3.svg',
+    title: "Consultation",
+    image: "/images/filler/filler3.svg",
     content: [
       {
-        label: 'Tech Advisory:',
-        text: 'Expert guidance on technology stack selection and architecture decisions.',
+        label: "Tech Advisory:",
+        text: "Expert guidance on technology stack selection and architecture decisions.",
       },
       {
-        label: 'Digital Strategy:',
-        text: 'Comprehensive roadmaps for your digital transformation journey.',
+        label: "Digital Strategy:",
+        text: "Comprehensive roadmaps for your digital transformation journey.",
       },
     ],
   },
   {
-    title: 'Support',
-    image: '/images/filler/filler4.svg',
+    title: "Support",
+    image: "/images/filler/filler4.svg",
     content: [
       {
-        label: 'Maintenance:',
-        text: 'Ongoing support and updates to keep your systems running smoothly.',
+        label: "Maintenance:",
+        text: "Ongoing support and updates to keep your systems running smoothly.",
       },
       {
-        label: 'Optimization:',
-        text: 'Performance improvements and feature enhancements for existing solutions.',
+        label: "Optimization:",
+        text: "Performance improvements and feature enhancements for existing solutions.",
       },
     ],
   },
 ];
 
 const BentoCardGrid = ({ children, gridRef }) => (
-  <div
-    className="section text-primary relative mx-auto flex w-full flex-col items-center"
-    ref={gridRef}
-  >
+  <div className="section text-primary relative mx-auto flex w-full flex-col items-center" ref={gridRef}>
     {children}
   </div>
 );
 
-const MagicBento = ({
-  enableBorderGlow = true,
-  disableAnimations = false,
-  glowColor = DEFAULT_GLOW_COLOR,
-}) => {
+const MagicBento = ({ enableBorderGlow = true, disableAnimations = false, glowColor = DEFAULT_GLOW_COLOR }) => {
   const gridRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
   const shouldDisableAnimations = disableAnimations || isMobile;
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
 
       const handleResize = () => {
         setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
       };
 
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
 
   useEffect(() => {
     if (shouldDisableAnimations || !gridRef.current || !enableBorderGlow) return;
 
-    const cards = gridRef.current.querySelectorAll('.card');
+    const cards = gridRef.current.querySelectorAll(".card");
     const handleMouseMove = (e) => {
       cards.forEach((card) => {
         const rect = card.getBoundingClientRect();
         const relativeX = ((e.clientX - rect.left) / rect.width) * 100;
         const relativeY = ((e.clientY - rect.top) / rect.height) * 100;
 
-        card.style.setProperty('--glow-x', `${relativeX}%`);
-        card.style.setProperty('--glow-y', `${relativeY}%`);
-        card.style.setProperty('--glow-intensity', '1');
+        card.style.setProperty("--glow-x", `${relativeX}%`);
+        card.style.setProperty("--glow-y", `${relativeY}%`);
+        card.style.setProperty("--glow-intensity", "1");
       });
     };
 
     const handleMouseLeave = () => {
       cards.forEach((card) => {
-        card.style.setProperty('--glow-intensity', '0');
+        card.style.setProperty("--glow-intensity", "0");
       });
     };
 
     const section = gridRef.current;
-    section.addEventListener('mousemove', handleMouseMove);
-    section.addEventListener('mouseleave', handleMouseLeave);
+    section.addEventListener("mousemove", handleMouseMove);
+    section.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      section.removeEventListener('mousemove', handleMouseMove);
-      section.removeEventListener('mouseleave', handleMouseLeave);
+      section.removeEventListener("mousemove", handleMouseMove);
+      section.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [shouldDisableAnimations, enableBorderGlow]);
 
@@ -148,8 +141,7 @@ const MagicBento = ({
           .card {
             position: relative;
             overflow: hidden;
-            padding: 1px;
-            padding-right: 0.5px;
+            padding: 1px; 
             transition: all 300ms ease-in-out;
             background: rgba(128, 128, 128, 0.1); 
           }
@@ -168,7 +160,7 @@ const MagicBento = ({
             content: '';
             position: absolute;
             inset: 0;
-            padding: 6px;
+            padding: 1px; /* Adjusted to 1px for a thinner glow */
             background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
                 rgba(${glowColor}, calc(var(--glow-intensity) * 0.8)) 0%,
                 rgba(${glowColor}, calc(var(--glow-intensity) * 0.4)) 30%,
@@ -307,11 +299,8 @@ const MagicBento = ({
       <BentoCardGrid gridRef={gridRef}>
         <div className="card-grid">
           {cardData.map((card, index) => (
-            <div
-              key={index}
-              className={`card ${enableBorderGlow ? 'card--border-glow' : ''}`}
-            >
-              <div className="card-content">
+            <div key={index} className={`card ${enableBorderGlow ? "card--border-glow" : ""}`}>
+              <div className="card-content h-full">
                 <h3 className="card-title">{card.title}</h3>
                 <div className="flex-1">
                   {card.content.map((item, i) => (
