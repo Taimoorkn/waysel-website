@@ -20,7 +20,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const textSection = (
     <div
-      className={`flex h-full w-1/2 flex-col items-start justify-center gap-4 border border-[#fed7be33] bg-card xl:px-16 ${isReversed ? "rounded-r-[32px] border-l-0" : "rounded-l-[32px] border-r-0"}`}
+      className={`flex h-full w-1/2 flex-col items-start justify-center gap-4 bg-card xl:px-16 ${isReversed ? "rounded-r-[32px]" : "rounded-l-[32px]"}`}
     >
       <h2 className="HeadingH4">
         <GradientText>{title}</GradientText>
@@ -31,7 +31,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const imageSection = (
     <div
-      className={`relative flex h-full w-1/2 items-center justify-between gap-4 overflow-hidden border border-[#fed7be33] bg-black ${isReversed ? "rounded-l-[32px]" : "rounded-r-[32px]"}`}
+      className={`relative flex h-full w-1/2 items-center justify-between gap-4 overflow-hidden bg-black ${isReversed ? "rounded-l-[32px]" : "rounded-r-[32px]"}`}
     >
       {/* Top gradient */}
       <div
@@ -52,13 +52,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
       >
         {[...Array(8)].map((_, index) => (
           <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
-            <Image
-              src={imageSrc}
-              alt={`${title} mockup ${index + 1}`}
-              width={450}
-              height={280}
-              className="rounded-xl border-2 border-[#1F3547]"
-            />
+            <Image src={imageSrc} alt={`${title} mockup ${index + 1}`} width={450} height={280} />
           </div>
         ))}
       </motion.div>
@@ -67,13 +61,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
       <motion.div className="-my-48 flex flex-col items-center justify-center gap-8" style={{ y: column2Y }}>
         {[...Array(8)].map((_, index) => (
           <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
-            <Image
-              src={imageSrc}
-              alt={`${title} mockup ${index + 1}`}
-              width={450}
-              height={280}
-              className="rounded-xl border-2 border-[#1F3547]"
-            />
+            <Image src={imageSrc} alt={`${title} mockup ${index + 1}`} width={450} height={280} />
           </div>
         ))}
       </motion.div>
@@ -85,13 +73,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
       >
         {[...Array(8)].map((_, index) => (
           <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
-            <Image
-              src={imageSrc}
-              alt={`${title} mockup ${index + 1}`}
-              width={450}
-              height={280}
-              className="rounded-xl border-2 border-[#1F3547]"
-            />
+            <Image src={imageSrc} alt={`${title} mockup ${index + 1}`} width={450} height={280} />
           </div>
         ))}
       </motion.div>
@@ -101,20 +83,21 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
   return (
     <div className="relative">
       <div className="oval-blur left-1/2 top-[-10%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
-
-      <section className="relative z-10 flex h-[65vh] items-center justify-between text-white">
-        {isReversed ? (
-          <>
-            {imageSection}
-            {textSection}
-          </>
-        ) : (
-          <>
-            {textSection}
-            {imageSection}
-          </>
-        )}
-      </section>
+      <div className="rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px pb-[0.8px]">
+        <section className="relative z-10 flex h-[65vh] items-center justify-between rounded-[32px] bg-card text-white">
+          {isReversed ? (
+            <>
+              {imageSection}
+              {textSection}
+            </>
+          ) : (
+            <>
+              {textSection}
+              {imageSection}
+            </>
+          )}
+        </section>
+      </div>
     </div>
   );
 }
