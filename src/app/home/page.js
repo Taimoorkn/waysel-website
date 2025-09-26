@@ -19,7 +19,7 @@ const HomePage = () => {
       <HeroSection />
       <PortfolioSection />
       <FillerSection />
-      <MagicBento enableBorderGlow={true} disableAnimations={false} glowColor="255, 76, 36" />
+      {/* <MagicBento enableBorderGlow={true} disableAnimations={false} glowColor="255, 76, 36" /> */}
       <TechStack />
       <FAQ faqs={generalFaqs} />
       <TestimonialsSection />

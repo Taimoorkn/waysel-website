@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import SectionHeading from "../../../components/SectionHeading";
+import GradientText from "@/components/GradientText";
 
 const FillerSection = () => {
   useEffect(() => {
@@ -104,9 +105,9 @@ const FillerSection = () => {
           top: 0;
           opacity: 0;
           left: 0;
-          width: 500px;
-          height: 500px;
-          background: #ff4c24;
+          width: 350px;
+          height: 350px;
+          background: linear-gradient(to bottom, rgba(251, 48, 129), rgba(251, 48, 129, 0.2));
           transition: all 300ms ease-in-out;
         }
         .fakeblob {
@@ -122,15 +123,19 @@ const FillerSection = () => {
 
       <div className="section text-primary relative mx-auto flex w-full flex-col items-center">
         <SectionHeading
-          title="This is (some of the insane stuff) we actually do."
-          description="Crafting user-friendly, cross platform solutions with efficiency"
+          title={
+            <>
+              This is <GradientText>(some of the insane stuff)</GradientText>
+              <br /> we actually do.
+            </>
+          }
         />
 
         <div className="z-10 grid w-full grid-cols-2 gap-4">
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`card relative overflow-hidden p-[1px] pr-[0.5px] ${
+              className={`card relative overflow-hidden p-[1px] pb-[0.5px] pr-[0.5px] ${
                 index % 2 === 0 ? "rounded-bl-[32px] rounded-tl-[32px]" : "rounded-br-[32px] rounded-tr-[32px]"
               }`}
               style={{
@@ -155,20 +160,18 @@ const FillerSection = () => {
                           : "linear-gradient(315deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)",
                 }}
               >
-                <h3 className="mb-4 text-base font-semibold leading-[48px] tracking-[-2%] text-[#ffffffcc] xl:text-[32px]">
-                  {card.title}
-                </h3>
+                <h3 className="HeadingH5 mb-4">{card.title}</h3>
 
                 <div className="flex-1">
                   {card.content.map((item, i) => (
-                    <p key={i} className="mb-4 text-base leading-[36px] text-[#ffffffcc] xl:text-[20px]">
-                      <span className="font-semibold">{item.label}</span> {item.text}
+                    <p key={i} className="BodyText">
+                      <span className="BodyTextBold">{item.label}</span> {item.text}
                     </p>
                   ))}
                 </div>
 
                 <div className="flex justify-end">
-                  <img src={card.image} alt={card.title} className="object-contain opacity-60" />
+                  <img src={card.image} alt={card.title} className="w-[280px] object-contain" />
                 </div>
               </div>
               <div className="blob"></div>
