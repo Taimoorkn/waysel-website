@@ -46,9 +46,7 @@ const WhyChooseUs = () => {
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center lg:mb-16 xl:mb-12">
           <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">
-            <span className="gradient-primary">Why</span>{" "}
-            Choose{" "}
-            Us
+            Why Choose Us
           </h2>
           <p className="text-secondary_text mx-auto max-w-3xl text-base lg:text-xl xl:text-lg">
             Our core values shape the way we develop, collaborate, and provide quality services to our clients. These

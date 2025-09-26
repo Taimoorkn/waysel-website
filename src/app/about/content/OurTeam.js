@@ -48,7 +48,7 @@ const OurTeam = () => {
       <div className="relative z-10 mx-auto">
         <div className="mb-8 text-center lg:mb-16 xl:mb-12">
           <h2 className="text-primary_text mb-4 text-3xl font-medium lg:text-5xl xl:mb-6 xl:text-4xl">
-            <span className="gradient-primary">Our</span> Team
+            Our Team
           </h2>
           <p className="text-secondary_text mx-auto max-w-3xl text-base lg:text-xl xl:text-lg">
             The passionate people behind every project at TechiTech Solutions. Meet the talented individuals who bring

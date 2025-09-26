@@ -4,6 +4,7 @@
 import React from "react";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
 import { ArrowCircleDownIcon } from "@phosphor-icons/react";
+import GradientText from "./GradientText";
 
 const FAQ = ({ faqs = [] }) => {
   const [open, setOpen] = React.useState(0); // Default to first FAQ (index 0)
@@ -15,7 +16,7 @@ const FAQ = ({ faqs = [] }) => {
       <div className="oval-blur left-1/2 top-[-10%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 py-16 text-center">
         <h1 className="text-4xl tracking-[-3%] text-white xl:text-[64px] xl:leading-[80px]">
-          <span className="gradient-primary">Frequently</span> Asked Questions
+          <GradientText>Frequently</GradientText> Asked Questions
         </h1>
         <p className="text-xl leading-[32px] text-[#ffffffe6]">Get answers to common questions about our services</p>
       </div>

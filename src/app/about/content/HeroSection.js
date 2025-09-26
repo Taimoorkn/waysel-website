@@ -23,7 +23,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="mb-4 text-4xl font-medium text-white md:text-6xl lg:text-[72px] xl:mb-6 xl:text-5xl">
-            <span className="gradient-primary">Build</span> <span className="text-accent">Smart</span>,<br />
+            Build <span className="text-accent">Smart</span>,<br />
             Scale <span className="text-accent">Fast</span>,<br />
             Win <span className="text-accent">Globally</span>
           </h1>

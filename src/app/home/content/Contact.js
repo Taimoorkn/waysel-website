@@ -31,7 +31,7 @@ export default function ContactForm() {
         <div className="flex w-[40%] flex-col justify-between p-16">
           <div className="w-full">
             <h1 className="mb-4 text-4xl tracking-[-3%] text-white xl:text-[64px] xl:leading-[80px]">
-              <span className="gradient-primary">Have</span> an Idea?
+              Have an Idea?
             </h1>
             <p className="text-[32px] leading-[52px] tracking-[-3%] text-[#ffffffe6]">
               Need help finishing what you started?

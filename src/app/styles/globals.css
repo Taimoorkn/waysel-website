@@ -4,7 +4,7 @@
 
 @layer components {
   .section {
-    @apply px-6 py-10 xl:px-28 xl:py-20;
+    @apply px-6 py-10 xl:px-[120px] xl:py-20;
   }
 
   .oval-blur {
