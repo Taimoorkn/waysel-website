@@ -14,7 +14,7 @@ const StarWars = () => {
           className="relative h-full w-full font-mono text-gray-300/80"
           style={{
             transform: "perspective(200px) rotateX(-25deg)",
-            transformOrigin: "center top", 
+            transformOrigin: "center top",
           }}
         >
           {Array.from({ length: 20 }, (_, i) => (
@@ -27,7 +27,7 @@ const StarWars = () => {
                 letterSpacing: "0.1rem",
               }}
               animate={{
-                y: [600, -200],
+                y: [-200, 600],
               }}
               transition={{
                 duration: 12,
