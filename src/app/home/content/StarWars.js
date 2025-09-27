@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "../../../components/SectionHeading";
 
 const StarWars = () => {
-  const binaryText =
-    "01101001010010101010011010010100101010100110100101001010101001010011010010100101010100101001101001";
+  const [binaryText, setBinaryText] = useState("");
+
+  useEffect(() => {
+    const generateBinaryText = () => {
+      const screenWidth = window.innerWidth;
+      // Estimate characters that fit based on screen width and letter spacing
+      const charactersNeeded = Math.floor(screenWidth / 20.5); // Adjust 20 based on font size and spacing
+      let text = "";
+      for (let i = 0; i < charactersNeeded; i++) {
+        text += Math.random() > 0.5 ? "1" : "0";
+      }
+      setBinaryText(text);
+    };
+
+    generateBinaryText();
+    window.addEventListener("resize", generateBinaryText);
+
+    return () => window.removeEventListener("resize", generateBinaryText);
+  }, []);
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black text-white">
