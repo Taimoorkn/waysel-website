@@ -79,13 +79,15 @@ const Footer = () => {
 
         {/* Gradient Overlay */}
         <div
-          className="pointer-events-none absolute bottom-0 left-0 right-0 h-[100px] border"
+          className="pointer-events-none absolute bottom-0 left-0 right-0 h-[150px] border"
           style={{
             background: "linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
-            maskImage: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,1) 100%)",
-            WebkitMaskImage: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,1) 100%)",
+            maskImage:
+              "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.02) 10%, rgba(0,0,0,0.05) 20%, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0.18) 50%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.7) 90%, rgba(0,0,0,1) 100%)",
+            WebkitMaskImage:
+              "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.02) 10%, rgba(0,0,0,0.05) 20%, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0.18) 50%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.7) 90%, rgba(0,0,0,1) 100%)",
           }}
         />
       </div>
