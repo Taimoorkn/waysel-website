@@ -45,7 +45,7 @@ export default function ContactForm() {
         </div>
 
         {/* Right Section - Contact Form */}
-        <div className="flex w-[60%] items-center justify-center p-16">
+        <div className="flex w-[60%] items-center justify-center p-16 z-10">
           <div className="w-full rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-[#121211] bg-opacity-80 p-8 backdrop-blur-sm">
             <div className="space-y-6">
               {/* Name Fields */}

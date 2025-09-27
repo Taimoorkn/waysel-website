@@ -13,7 +13,7 @@ const FAQ = ({ faqs = [] }) => {
 
   return (
     <section className="section text-primary relative mx-auto flex w-full flex-col items-center">
-      <div className="oval-blur left-1/2 top-[-10%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
+      <div className="oval-blur left-1/2 top-[25%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 py-16 text-center">
         <h1 className="text-4xl tracking-[-3%] text-white xl:text-[64px] xl:leading-[80px]">
           <GradientText>Frequently</GradientText> Asked Questions
