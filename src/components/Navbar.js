@@ -103,7 +103,7 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/services", label: "Services" },
-    { href: "/aboutus", label: "About Us" },
+    { href: "/about", label: "About Us" },
   ];
 
   return (
