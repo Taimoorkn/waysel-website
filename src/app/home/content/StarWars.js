@@ -30,17 +30,14 @@ const StarWars = () => {
         <div
           className="relative h-full w-full font-mono text-gray-300/80"
           style={{
-            transform: "perspective(200px) rotateX(-25deg)",
+            transform: "perspective(170px) rotateX(-25deg)",
             transformOrigin: "center top",
           }}
         >
           {Array.from({ length: 120 }, (_, i) => (
             <motion.div
               key={i}
-              className="absolute w-full text-center"
-              style={{
-                opacity: 0.3 + i * 0.05,
-              }}
+              className="absolute w-full text-center opacity-65"
               animate={{
                 y: [-100, 700],
                 letterSpacing: ["0.8rem", "0.02rem"],
@@ -75,10 +72,7 @@ const StarWars = () => {
           {Array.from({ length: 120 }, (_, i) => (
             <motion.div
               key={i}
-              className="absolute w-full text-center"
-              style={{
-                opacity: 0.3 + i * 0.05,
-              }}
+              className="absolute w-full text-center opacity-65"
               animate={{
                 y: [700, -100],
                 letterSpacing: ["0.8rem", "0.02rem"],
@@ -87,7 +81,7 @@ const StarWars = () => {
                 duration: 12,
                 repeat: Infinity,
                 ease: "linear",
-                delay: i * 0.6,
+                delay: (112 - i) * 0.6,
               }}
             >
               {binaryText}
