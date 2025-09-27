@@ -22,7 +22,7 @@ const StarWars = () => {
               key={i}
               className="absolute w-full text-center"
               style={{
-                opacity: 0.8 - i * 0.05,
+                opacity: 0.3 + i * 0.05,
               }}
               animate={{
                 y: [-100, 700],
@@ -60,7 +60,7 @@ const StarWars = () => {
               key={i}
               className="absolute w-full text-center"
               style={{
-                opacity: 0.8 - i * 0.05,
+                opacity: 0.3 + i * 0.05,
               }}
               animate={{
                 y: [700, -100],
