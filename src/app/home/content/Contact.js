@@ -126,7 +126,7 @@ ${formData.message}
                       placeholder="First name"
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="w-full rounded-2xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
+                      className="contact-input text-text-secondary placeholder-text-tertiary"
                     />
                   </div>
                   <div>
@@ -137,7 +137,7 @@ ${formData.message}
                       placeholder="Last name"
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="w-full rounded-2xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
+                      className="contact-input text-text-secondary placeholder-text-tertiary"
                     />
                   </div>
                 </div>
@@ -152,7 +152,7 @@ ${formData.message}
                       placeholder="E.g abc@gmail.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full rounded-2xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
+                      className="contact-input text-text-secondary placeholder-text-tertiary"
                     />
                   </div>
                   <div>
@@ -163,7 +163,7 @@ ${formData.message}
                       placeholder="e.g +1 254 364 5251"
                       value={formData.contactNo}
                       onChange={handleChange}
-                      className="w-full rounded-2xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
+                      className="contact-input text-text-secondary placeholder-text-tertiary"
                     />
                   </div>
                 </div>
@@ -177,7 +177,7 @@ ${formData.message}
                     rows="6"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full resize-none rounded-xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
+                    className="contact-input contact-textarea text-text-secondary placeholder-text-tertiary"
                   />
                 </div>
 

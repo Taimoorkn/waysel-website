@@ -84,6 +84,70 @@
   .gradient-btn {
     @apply bg-gradient-btn bg-clip-text text-transparent;
   }
+
+  /* Contact Form Input Styling - Fix flickering and browser defaults */
+  .contact-input {
+    /* Base styles - matching original Tailwind classes */
+    width: 100%;
+    border-radius: 1rem; /* rounded-2xl */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
+    padding: 1rem 1.5rem; /* px-6 py-4 */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 400; /* font-normal */
+    transition: all 0.3s ease; /* transition-all duration-300 */
+
+    /* Background and text colors from Tailwind classes */
+    @apply bg-primary_bg text-text-primary;
+
+    /* Eliminate browser defaults immediately */
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Prevent autofill styling */
+    -webkit-box-shadow: 0 0 0 1000px var(--color-primary-bg, #0D0D0C) inset !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+
+    /* Focus state - instant orange styling with thinner ring */
+    &:focus {
+      border-color: #F8805F !important;
+      box-shadow: 0 0 0 0px #F8805F !important; /* Reduced from 1px to 0px */
+      outline: none !important;
+    }
+
+    /* Active state */
+    &:active {
+      border-color: #F8805F !important;
+      box-shadow: 0 0 0 0px #F8805F !important; /* Reduced from 1px to 0px */
+    }
+
+    /* Autofill state overrides */
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px var(--color-primary-bg, #0D0D0C) inset !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+      background-color: var(--color-primary-bg, #0D0D0C) !important;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    /* Firefox autofill override */
+    &:-moz-autofill {
+      background-color: var(--color-primary-bg, #0D0D0C) !important;
+      color: #FFFFFF !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+
+  /* Textarea specific styling */
+  .contact-textarea {
+    resize: none;
+    border-radius: 0.75rem;
+  }
 }
 
 /* 
