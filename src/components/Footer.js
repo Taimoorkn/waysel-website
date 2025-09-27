@@ -79,7 +79,7 @@ const Footer = () => {
 
         {/* Gradient Overlay */}
         <div
-          className="pointer-events-none absolute inset-0 bottom-0 h-[150px] border"
+          className="pointer-events-none absolute bottom-0 left-0 right-0 h-[100px] border"
           style={{
             background: "linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%)",
             backdropFilter: "blur(20px)",
