@@ -33,33 +33,3 @@
 .BodyTextBold {
   @apply text-body-base-bold sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
 }
-
-/* Section Title */
-.SectionTitle {
-  @apply text-h2-base-reg text-text-primary sm:text-h2-sm-reg md:text-h2-md-reg lg:text-h2-lg-reg xl:text-h2-xl-reg;
-}
-
-/* Card Title */
-.CardTitle {
-  @apply text-h3-base-med text-text-primary sm:text-h3-sm-med md:text-h3-md-med lg:text-h3-lg-med xl:text-h3-xl-med;
-}
-
-/* Subtitle */
-.Subtitle {
-  @apply text-h4-base-med text-text-secondary sm:text-h4-sm-med md:text-h4-md-med lg:text-h4-lg-med xl:text-h4-xl-med;
-}
-
-/* Caption */
-.Caption {
-  @apply text-h5-base-bold text-text-tertiary sm:text-h5-sm-bold md:text-h5-md-bold lg:text-h5-lg-bold xl:text-h5-xl-bold;
-}
-
-/* Lead Text */
-.LeadText {
-  @apply text-body-base-med text-text-primary sm:text-body-sm-med md:text-body-md-med lg:text-body-lg-med xl:text-body-xl-med;
-}
-
-/* Small Text */
-.SmallText {
-  @apply text-body-base-reg text-text-tertiary sm:text-body-sm-reg md:text-body-md-reg lg:text-body-lg-reg xl:text-body-xl-reg;
-}
