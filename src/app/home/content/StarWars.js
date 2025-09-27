@@ -4,7 +4,7 @@ import SectionHeading from "../../../components/SectionHeading";
 
 const StarWars = () => {
   const binaryText =
-    "0110100101001010101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010100101010010101001010";
+    "01101001010010101010011010010100101010100110100101001010101001010011010010100101010100101001101001";
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black text-white">
@@ -17,17 +17,16 @@ const StarWars = () => {
             transformOrigin: "center top",
           }}
         >
-          {Array.from({ length: 20 }, (_, i) => (
+          {Array.from({ length: 12 }, (_, i) => (
             <motion.div
               key={i}
               className="absolute w-full text-center"
               style={{
-                fontSize: "1rem",
-                opacity: 0.6,
-                letterSpacing: "0.1rem",
+                opacity: 0.8 - i * 0.05,
               }}
               animate={{
-                y: [-200, 600],
+                y: [-100, 700],
+                letterSpacing: ["0.8rem", "0.02rem"],
               }}
               transition={{
                 duration: 12,
@@ -53,20 +52,19 @@ const StarWars = () => {
           className="relative h-full w-full font-mono text-gray-300/80"
           style={{
             transform: "perspective(170px) rotateX(25deg)",
-            transformOrigin: "center bottom", 
+            transformOrigin: "center bottom",
           }}
         >
-          {Array.from({ length: 20 }, (_, i) => (
+          {Array.from({ length: 12 }, (_, i) => (
             <motion.div
               key={i}
               className="absolute w-full text-center"
               style={{
-                fontSize: "1rem",
-                opacity: 0.6,
-                letterSpacing: "0.1rem",
+                opacity: 0.8 - i * 0.05,
               }}
               animate={{
-                y: [600, -200],
+                y: [700, -100],
+                letterSpacing: ["0.8rem", "0.02rem"],
               }}
               transition={{
                 duration: 12,
