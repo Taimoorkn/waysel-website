@@ -50,10 +50,10 @@ export default function ContactForm() {
         {/* Right Section - Contact Form */}
         <div className="z-10 flex w-[60%] items-center justify-center p-16">
           <div className="from-border-primary to-border-secondary w-full rounded-2xl bg-opacity-80 bg-gradient-to-br p-px backdrop-blur-sm">
-            <div className="w-full rounded-2xl bg-card p-8">
-              <div className="space-y-6">
+            <div className="w-full rounded-2xl bg-card px-10 py-8">
+              <div className="space-y-8">
                 {/* Name Fields */}
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-sm font-medium text-text-primary">First name</label>
                     <input
@@ -62,7 +62,7 @@ export default function ContactForm() {
                       placeholder="First name"
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#fed7be33] bg-primary_bg px-4 py-3 text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                      className="w-full rounded-2xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
                     />
                   </div>
                   <div>
@@ -73,13 +73,13 @@ export default function ContactForm() {
                       placeholder="Last name"
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#fed7be33] bg-primary_bg px-4 py-3 text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                      className="w-full rounded-2xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
                     />
                   </div>
                 </div>
 
                 {/* Email and Contact */}
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-sm font-medium text-text-primary">Email</label>
                     <input
@@ -88,7 +88,7 @@ export default function ContactForm() {
                       placeholder="E.g abc@gmail.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#fed7be33] bg-primary_bg px-4 py-3 text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                      className="w-full rounded-2xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
                     />
                   </div>
                   <div>
@@ -99,7 +99,7 @@ export default function ContactForm() {
                       placeholder="e.g +1 254 364 5251"
                       value={formData.contactNo}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-[#fed7be33] bg-primary_bg px-4 py-3 text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                      className="w-full rounded-2xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
                     />
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function ContactForm() {
                     rows="6"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full resize-none rounded-xl border border-[#fed7be33] bg-primary_bg px-4 py-3 text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                    className="w-full resize-none rounded-xl border border-white/10 bg-primary_bg px-6 py-4 text-sm font-normal text-text-primary text-text-secondary placeholder-text-tertiary transition-all duration-300 focus:border-[#F8805F] focus:outline-none focus:ring-1"
                   />
                 </div>
 
