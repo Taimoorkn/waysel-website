@@ -9,7 +9,7 @@ const StarWars = () => {
     const generateBinaryText = () => {
       const screenWidth = window.innerWidth;
       // Estimate characters that fit based on screen width and letter spacing
-      const charactersNeeded = Math.floor(screenWidth / 30); // Adjust 20 based on font size and spacing
+      const charactersNeeded = Math.floor(screenWidth / 32); // Adjust 20 based on font size and spacing
       let text = "";
       for (let i = 0; i < charactersNeeded; i++) {
         text += Math.random() > 0.5 ? "1" : "0";
@@ -47,7 +47,7 @@ const StarWars = () => {
                 duration: 30,
                 repeat: Infinity,
                 ease: "linear",
-                delay: i * 1.5,
+                delay: i * 2,
               }}
             >
               {binaryText}
@@ -83,7 +83,7 @@ const StarWars = () => {
                 duration: 30,
                 repeat: Infinity,
                 ease: "linear",
-                delay: (103 - i) * 1,
+                delay: (103 - i) * 1.5,
               }}
             >
               {binaryText}
