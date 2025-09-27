@@ -17,7 +17,7 @@ const StarWars = () => {
             transformOrigin: "center top",
           }}
         >
-          {Array.from({ length: 12 }, (_, i) => (
+          {Array.from({ length: 120 }, (_, i) => (
             <motion.div
               key={i}
               className="absolute w-full text-center"
@@ -55,7 +55,7 @@ const StarWars = () => {
             transformOrigin: "center bottom",
           }}
         >
-          {Array.from({ length: 12 }, (_, i) => (
+          {Array.from({ length: 120 }, (_, i) => (
             <motion.div
               key={i}
               className="absolute w-full text-center"
