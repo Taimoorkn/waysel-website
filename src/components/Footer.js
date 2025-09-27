@@ -14,7 +14,7 @@ const Footer = () => {
             <Link href="/" aria-label="Waysel home">
               <img src="/waysellogo.svg" alt="Waysel Logo" className="xl:w-[120px]" />
             </Link>
-            <p className="max-w-md text-2xl tracking-[-3%] text-[#ffffffcc]">
+            <p className="max-w-md text-2xl tracking-[-3%] text-text-secondary">
               In quiet and in chaos, we build.
               <br />
               And then, it speaks for itself.
@@ -34,10 +34,7 @@ const Footer = () => {
                 { label: "Contact Us", href: "/contact", isInternal: true },
               ],
             ].map((column, columnIndex) => (
-              <div
-                key={columnIndex}
-                className="flex flex-col items-start gap-6 text-nowrap text-xl leading-[28px] tracking-[-3%] text-[#ffffffcc]"
-              >
+              <div key={columnIndex} className="BodyText flex flex-col items-start gap-4 text-nowrap">
                 {column.map(({ label, href, isInternal }) =>
                   isInternal ? (
                     <Link key={label} href={href}>
@@ -82,7 +79,7 @@ const Footer = () => {
 
         {/* Gradient Overlay */}
         <div
-          className="pointer-events-none absolute inset-0 bottom-0 h-[250px]"
+          className="pointer-events-none absolute inset-0 bottom-0 h-[250px] gradient-primary"
           style={{
             background: "linear-gradient(180deg, transparent 50%, rgba(122, 102, 225, 0.3) 100%)",
           }}
