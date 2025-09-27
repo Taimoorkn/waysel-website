@@ -304,11 +304,11 @@ const TechStack = ({ techToDisplay }) => {
       />
       {/* Button Bar - Render only if no techToDisplay prop is provided */}
       {!techToDisplay && (
-        <div className="mb-8 flex flex-wrap justify-center gap-3 xl:mb-12 xl:gap-4">
+        <div className="mb-6 flex flex-wrap justify-center gap-2 xl:mb-12 xl:gap-4">
           {categories.map((category) => (
             <button
               key={category}
-              className={`rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 ease-in-out xl:px-6 xl:py-4 xl:text-base ${
+              className={`rounded-lg px-3 py-2 text-xs font-medium transition-all duration-300 ease-in-out xl:rounded-xl xl:px-6 xl:py-4 xl:text-base ${
                 activeCategory === category
                   ? "text-dark scale-105 bg-[#ffffffcc] shadow-lg"
                   : "hover:text-dark border border-[#fed7be33] text-[#ffffffb3] hover:scale-105 hover:border-[#fed7be55] hover:bg-[#ffffffcc] hover:shadow-md"
@@ -321,16 +321,16 @@ const TechStack = ({ techToDisplay }) => {
         </div>
       )}
       {/* Grid Layout */}
-      <div className="mx-auto flex w-full min-w-full flex-wrap justify-center gap-4 xl:gap-8">
+      <div className="mx-auto flex w-full min-w-full flex-wrap justify-center gap-3 xl:gap-8">
         {filteredTech.map((item, index) => (
           <div
             key={index}
-            className="font-manrope group relative flex size-24 flex-col items-center justify-center gap-[6px] rounded-2xl border border-[#fed7be22] bg-[#121211] text-[15px] transition-all duration-300 ease-in-out hover:scale-105 hover:border-[#fed7be44] hover:bg-[#1A1A1A] hover:shadow-lg xl:size-32 xl:max-w-[10.196%]"
+            className="font-manrope group relative flex size-20 flex-col items-center justify-center gap-[4px] rounded-xl border border-[#fed7be22] bg-[#121211] text-[13px] transition-all duration-300 ease-in-out hover:scale-105 hover:border-[#fed7be44] hover:bg-[#1A1A1A] hover:shadow-lg xl:size-32 xl:gap-[6px] xl:rounded-2xl xl:text-[15px] xl:max-w-[10.196%]"
           >
             <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
               {item.logo}
             </div>
-            <p className="mt-1 text-center text-xs font-medium leading-tight text-[#ffffffb3] transition-colors duration-300 group-hover:text-[#ffffffcc] xl:text-sm">
+            <p className="mt-1 text-center text-[10px] font-medium leading-tight text-[#ffffffb3] transition-colors duration-300 group-hover:text-[#ffffffcc] xl:text-sm">
               {item.name}
             </p>
           </div>

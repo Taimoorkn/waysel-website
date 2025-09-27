@@ -131,12 +131,12 @@ const FillerSection = () => {
           }
         />
 
-        <div className="z-10 grid w-full grid-cols-2 gap-4">
+        <div className="z-10 grid w-full grid-cols-1 gap-4 xl:grid-cols-2">
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`card relative overflow-hidden p-[1px] pb-[0.5px] pr-[0.5px] ${
-                index % 2 === 0 ? "rounded-bl-[32px] rounded-tl-[32px]" : "rounded-br-[32px] rounded-tr-[32px]"
+              className={`card relative overflow-hidden p-[1px] pb-[0.5px] pr-[0.5px] rounded-[32px] ${
+                index % 2 === 0 ? "xl:rounded-bl-[32px] xl:rounded-tl-[32px] xl:rounded-br-none xl:rounded-tr-none" : "xl:rounded-br-[32px] xl:rounded-tr-[32px] xl:rounded-bl-none xl:rounded-tl-none"
               }`}
               style={{
                 background: "rgba(128, 128, 128, 0.1)",
@@ -144,8 +144,8 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`flex h-full flex-col !p-10 xl:min-h-[520px] ${
-                  index % 2 === 0 ? "rounded-bl-[32px] rounded-tl-[32px]" : "rounded-br-[32px] rounded-tr-[32px]"
+                className={`flex h-full flex-col !p-6 xl:!p-10 xl:min-h-[520px] rounded-[32px] ${
+                  index % 2 === 0 ? "xl:rounded-bl-[32px] xl:rounded-tl-[32px] xl:rounded-br-none xl:rounded-tr-none" : "xl:rounded-br-[32px] xl:rounded-tr-[32px] xl:rounded-bl-none xl:rounded-tl-none"
                 } ${index >= 2 ? "bg-black/50 backdrop-blur-md" : "bg-[#0D0D0C]"} `}
                 style={{
                   transition: "all 300ms ease-in-out",
@@ -167,8 +167,8 @@ const FillerSection = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-end">
-                  <img src={card.image} alt={card.title} className="w-[280px] object-contain" />
+                <div className="flex justify-center xl:justify-end">
+                  <img src={card.image} alt={card.title} className="w-[200px] object-contain xl:w-[280px]" />
                 </div>
               </div>
               <div className="blob"></div>

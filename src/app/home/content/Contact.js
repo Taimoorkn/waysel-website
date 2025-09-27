@@ -91,14 +91,14 @@ ${formData.message}
 
   return (
     <section className="section relative bg-primary_bg">
-      <div className="mx-auto flex items-stretch gap-12">
+      <div className="mx-auto flex flex-col items-stretch gap-8 xl:flex-row xl:gap-12">
         {/* Left Section - Changed to items-stretch on parent and removed !h-full */}
-        <div className="flex w-[40%] flex-col gap-12 p-16">
+        <div className="flex w-full flex-col gap-8 p-6 xl:w-[40%] xl:gap-12 xl:p-16">
           <div className="w-full">
             <h1 className="HeadingH3 mb-4">
               <GradientText>Have an Idea?</GradientText>
             </h1>
-            <p className="tracking-[-3%] text-text-secondary xl:text-[32px] xl:leading-[52px]">
+            <p className="text-lg tracking-[-3%] text-text-secondary xl:text-[32px] xl:leading-[52px]">
               Need help finishing what you started?
             </p>
           </div>
@@ -112,12 +112,12 @@ ${formData.message}
         </div>
 
         {/* Right Section - Contact Form */}
-        <div className="z-10 flex w-[60%] items-center justify-center p-16">
+        <div className="z-10 flex w-full items-center justify-center p-6 xl:w-[60%] xl:p-16">
           <div className="from-border-primary to-border-secondary w-full rounded-2xl bg-opacity-80 bg-gradient-to-br p-px backdrop-blur-sm">
-            <div className="w-full rounded-2xl bg-card px-10 py-8">
-              <div className="space-y-8">
+            <div className="w-full rounded-2xl bg-card px-6 py-6 xl:px-10 xl:py-8">
+              <div className="space-y-6 xl:space-y-8">
                 {/* Name Fields */}
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-6">
                   <div>
                     <label className="mb-2 block text-sm font-medium text-text-primary">First name</label>
                     <input
@@ -143,7 +143,7 @@ ${formData.message}
                 </div>
 
                 {/* Email and Contact */}
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-6">
                   <div>
                     <label className="mb-2 block text-sm font-medium text-text-primary">Email</label>
                     <input
