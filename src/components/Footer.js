@@ -53,9 +53,9 @@ const Footer = () => {
       </div>
 
       {/* Large WAYSEL Text with Gradient Background */}
-      <div className="relative h-[250px] overflow-hidden border">
+      <div className="relative h-[250px] overflow-hidden">
         <div
-          className="flex select-none items-center justify-center text-[364px] font-semibold leading-none"
+          className="flex select-none items-center justify-center text-[364px] font-semibold italic leading-none"
           style={{
             leadingTrim: "both",
             textEdge: "cap",
