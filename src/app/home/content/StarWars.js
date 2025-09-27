@@ -14,8 +14,7 @@ const StarWars = () => {
           className="relative h-full w-full font-mono text-gray-300/80"
           style={{
             transform: "perspective(200px) rotateX(-25deg)",
-            transformOrigin: "center top",
-            clipPath: "polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%)",
+            transformOrigin: "center top", 
           }}
         >
           {Array.from({ length: 20 }, (_, i) => (
@@ -54,8 +53,7 @@ const StarWars = () => {
           className="relative h-full w-full font-mono text-gray-300/80"
           style={{
             transform: "perspective(170px) rotateX(25deg)",
-            transformOrigin: "center bottom",
-            clipPath: "polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%)",
+            transformOrigin: "center bottom", 
           }}
         >
           {Array.from({ length: 20 }, (_, i) => (
