@@ -45,10 +45,7 @@ const StarWars = () => {
 
       {/* Main Content */}
       <div className="absolute inset-0 z-10 flex min-h-[70dvh] items-center justify-center">
-        <SectionHeading
-          title="We are a team of innovators dedicated to solving complex challenges with elegant digital solutions."
-          description=""
-        />
+        <SectionHeading title="We are a team of innovators dedicated to solving complex challenges with elegant digital solutions." />
       </div>
 
       {/* Bottom Binary Pattern */}

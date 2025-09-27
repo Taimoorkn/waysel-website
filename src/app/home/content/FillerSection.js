@@ -96,7 +96,7 @@ const FillerSection = () => {
   ];
 
   return (
-    <>
+    <div className="relative">
       <style jsx>{`
         .blob {
           filter: blur(40px);
@@ -179,8 +179,12 @@ const FillerSection = () => {
             </div>
           ))}
         </div>
+        {/* Gradient vector blur at top edge */}
       </div>
-    </>
+      <div className="absolute bottom-0 left-[49.12%] -z-10 -translate-x-1/2 scale-y-[-1] transform">
+        <img src="/images/filler/spotlight.png" alt="spotlight" className=" " />
+      </div>
+    </div>
   );
 };
 

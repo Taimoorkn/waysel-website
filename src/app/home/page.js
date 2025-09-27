@@ -19,10 +19,11 @@ const HomePage = () => {
       <HeroSection />
       <PortfolioSection />
       <FillerSection />
+      <TestimonialsSection />
       {/* <MagicBento enableBorderGlow={true} disableAnimations={false} glowColor="255, 76, 36" /> */}
       <TechStack />
       <FAQ faqs={generalFaqs} />
-      <TestimonialsSection />
+
       <StarWars />
       <Contact />
     </>

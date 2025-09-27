@@ -101,8 +101,13 @@ const TestimonialsSection = () => {
   return (
     <section className="section relative px-0">
       <SectionHeading
-        title={"Our clients be talking shit man"}
-        description={"Crafting user-friendly? nah, cross platform? never solutions? more like preblems with efficiency"}
+        title={
+          <>
+            Most of the good feedback is private.
+            <br />
+            Here's what we're allowed to post.
+          </>
+        }
       />
       <Swiper
         ref={swiperRef}
@@ -124,12 +129,10 @@ const TestimonialsSection = () => {
           const IconComponent = testimonial.icon;
           return (
             <SwiperSlide key={testimonial.id} onClick={() => handleSlideClick(index)}>
-              <div className="flex h-full flex-col gap-8 rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-[#121211] bg-opacity-80 px-10 py-8 backdrop-blur-sm transition-all duration-300 xl:max-h-[460px]">
+              <div className="flex h-full flex-col gap-8 rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-card bg-opacity-80 backdrop-blur-sm transition-all duration-300 xl:max-h-[460px] xl:px-10 xl:py-8">
                 <div className="flex flex-col items-start justify-between gap-4">
-                  <h3 className="text-base font-semibold tracking-[-2%] text-[#ffffffcc] xl:text-[32px]">
-                    {testimonial.projectName}
-                  </h3>
-                  <blockquote className="text-[20px] text-gray-300 xl:text-[20px]">{testimonial.content}</blockquote>
+                  <h3 className="HeadingH5">{testimonial.projectName}</h3>
+                  <blockquote className="BodyText">{testimonial.content}</blockquote>
                 </div>
 
                 <div className="flex items-center justify-between">
@@ -140,13 +143,11 @@ const TestimonialsSection = () => {
                       className="size-8 rounded-full border-2 border-[#ffffff33] object-cover xl:size-12"
                     />
                     <div className="flex flex-col items-start justify-start gap-[2px]">
-                      <h4 className="text-[20px] font-normal tracking-[-2%] text-white">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-sm text-[#ffffffb3] xl:text-base">{testimonial.position}</p>
+                      <h4 className="BodyText">{testimonial.name}</h4>
+                      <p className="text-body-sm-reg text-text-tertiary">{testimonial.position}</p>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-2 text-[#ffffffb3]">
+                  <div className="flex items-center space-x-2 text-text-secondary">
                     <IconComponent className="size-5 xl:size-6" />
                     <span className="hidden text-sm xl:inline xl:text-xl">{testimonial.company}</span>
                   </div>
@@ -156,8 +157,10 @@ const TestimonialsSection = () => {
           );
         })}
       </Swiper>
-      {/* Gradient vector blur at bottom edge */}
-      <div className="gradient-vector-blur bottom-0 left-1/2 z-50 -translate-x-1/2 transform" />
+      {/* Gradient vector blur at top edge */}
+      <div className="absolute left-[49.12%] top-0 -z-10 -translate-x-1/2 transform">
+        <img src="/images/filler/spotlight.png" alt="spotlight" />
+      </div>
     </section>
   );
 };
