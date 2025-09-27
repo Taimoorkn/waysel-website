@@ -11,8 +11,8 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
 
   const variants = {
     base: "!p-0 animated-underlined",
-    primary: "btn-scale btn-primary rounded-[4px] px-4 py-[11px] xl:px-7",
-    secondary: "btn-scale btn-secondary rounded-[4px] px-4 py-[11px] xl:px-7",
+    primary: "btn-scale btn-primary rounded-[4px] px-4 py-[8px] xl:px-7",
+    secondary: "btn-scale btn-secondary rounded-[4px] px-4 py-[8px] xl:px-7",
   };
 
   const classes = `button ${variants[variant]} ${className}`;
@@ -22,9 +22,9 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
   const getTextClasses = () => {
     switch (variant) {
       case "primary":
-        return "gradient-btn BodyTextBold nav-link-text gradient-animated-text";
+        return "gradient-btn BodyTextMedium nav-link-text gradient-animated-text";
       case "secondary":
-        return "BodyTextBold BodyText nav-link-text";
+        return "BodyTextMedium BodyText nav-link-text";
       default:
         return "BodyText nav-link-text";
     }
@@ -47,7 +47,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
             return (
               <motion.span
                 key={index}
-                className="BodyTextBold nav-link-text"
+                className="BodyTextMedium nav-link-text"
                 style={{
                   display: "inline-block",
                   position: "relative",
@@ -59,7 +59,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
                   WebkitTextFillColor: "transparent",
                   willChange: "transform",
                   backfaceVisibility: "hidden",
-                  WebkitFontSmoothing: "antialiased"
+                  WebkitFontSmoothing: "antialiased",
                 }}
                 initial={{ y: "100%" }}
                 animate={{ y: isHovered ? "-100%" : "0%" }}
@@ -71,7 +71,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
               >
                 {char === " " ? "\u00A0" : char}
                 <span
-                  className="BodyTextBold nav-link-text"
+                  className="BodyTextMedium nav-link-text"
                   style={{
                     position: "absolute",
                     top: "100%",
@@ -85,7 +85,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
                     WebkitTextFillColor: "transparent",
                     willChange: "transform",
                     backfaceVisibility: "hidden",
-                    WebkitFontSmoothing: "antialiased"
+                    WebkitFontSmoothing: "antialiased",
                   }}
                 >
                   {char === " " ? "\u00A0" : char}
