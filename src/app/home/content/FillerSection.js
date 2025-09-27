@@ -121,7 +121,7 @@ const FillerSection = () => {
         }
       `}</style>
 
-      <div className="section text-primary relative mx-auto flex w-full flex-col items-center border xl:pb-[160px]">
+      <div className="section text-primary relative mx-auto flex w-full flex-col items-center xl:pb-[160px]">
         <SectionHeading
           title={
             <>
