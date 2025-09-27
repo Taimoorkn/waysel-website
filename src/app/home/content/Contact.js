@@ -184,22 +184,21 @@ ${formData.message}
                 {/* Submit Button */}
                 <div className="flex flex-col items-end pt-4">
                   {submitStatus === "success" && (
-                    <div className="mb-4 text-green-500 text-sm">
+                    <div className="mb-4 text-sm text-green-500">
                       Message sent successfully! We'll get back to you soon.
                     </div>
                   )}
                   {submitStatus === "error" && (
-                    <div className="mb-4 text-red-500 text-sm">
-                      Failed to send message. Please try again.
-                    </div>
+                    <div className="mb-4 text-sm text-red-500">Failed to send message. Please try again.</div>
                   )}
-                  <Button
-                    variant="primary"
+                  <button
+                    type="button"
                     onClick={handleSubmit}
                     disabled={isSubmitting || !formData.firstName || !formData.email || !formData.message}
+                    className="BodyTextMedium transform rounded-full bg-[#e5e4e2] px-6 py-2 transition-all duration-300"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
+                    <GradientText>{isSubmitting ? "Sending..." : "Send Message"}</GradientText>
+                  </button>
                 </div>
               </div>
             </div>
