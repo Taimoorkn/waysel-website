@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SectionHeading from "../../../components/SectionHeading";
 import GradientText from "@/components/GradientText";
+import Button from "@/components/Button";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,23 @@ export default function ContactForm() {
     contactNo: "",
     message: "",
   });
+  const [csrfToken, setCsrfToken] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("");
+
+  useEffect(() => {
+    // Get CSRF token on component mount
+    const fetchCsrfToken = async () => {
+      try {
+        const response = await fetch("/api/csrf");
+        const data = await response.json();
+        setCsrfToken(data.csrfToken);
+      } catch (error) {
+        console.error("Error fetching CSRF token:", error);
+      }
+    };
+    fetchCsrfToken();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -19,10 +37,56 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
+    setIsSubmitting(true);
+    setSubmitStatus("");
+
+    try {
+      const emailContent = `
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Contact No: ${formData.contactNo}
+
+Message:
+${formData.message}
+      `;
+
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-csrf-token": csrfToken,
+        },
+        body: JSON.stringify({
+          to: "taimoorkn2221@gmail.com",
+          subject: `Contact Form Submission from ${formData.firstName} ${formData.lastName}`,
+          message: emailContent,
+          from: formData.email,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          contactNo: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus("error");
+        console.error("Email sending failed:", result.message);
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -118,14 +182,24 @@ export default function ContactForm() {
                 </div>
 
                 {/* Submit Button */}
-                <div className="flex justify-end pt-4">
-                  <button
-                    type="button"
+                <div className="flex flex-col items-end pt-4">
+                  {submitStatus === "success" && (
+                    <div className="mb-4 text-green-500 text-sm">
+                      Message sent successfully! We'll get back to you soon.
+                    </div>
+                  )}
+                  {submitStatus === "error" && (
+                    <div className="mb-4 text-red-500 text-sm">
+                      Failed to send message. Please try again.
+                    </div>
+                  )}
+                  <Button
+                    variant="primary"
                     onClick={handleSubmit}
-                    className="bg-primary transform rounded-full px-8 py-3 font-medium text-text-primary transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
+                    disabled={isSubmitting || !formData.firstName || !formData.email || !formData.message}
                   >
-                    Send Message
-                  </button>
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
                 </div>
               </div>
             </div>
