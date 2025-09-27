@@ -78,7 +78,6 @@ module.exports = {
         "body-xl-bold": ["20px", { lineHeight: "36px", fontWeight: "700" }],
       },
       colors: {
-        // Background colors
         primary_bg: "#0D0D0C",
         card: "#121211",
         dark: "#131313",
@@ -90,6 +89,12 @@ module.exports = {
           primary: "#FFFFFF",
           secondary: "#FFFFFFE5",
           tertiary: "#FFFFFFB2",
+        },
+
+        // Background colors
+        border: {
+          primary: "#fb308133",
+          secondary: "#99999933",
         },
       },
       backgroundImage: {
