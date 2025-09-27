@@ -82,7 +82,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   return (
     <div className="relative">
-      <div className="oval-blur left-1/2 top-[-10%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
+      <div className="oval-blur left-1/2 top-[15%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
       <div className="rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px pb-[0.8px]">
         <section className="relative z-10 flex h-[65vh] items-center justify-between rounded-[32px] bg-card text-white">
           {isReversed ? (
