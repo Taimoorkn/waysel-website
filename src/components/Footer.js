@@ -53,7 +53,7 @@ const Footer = () => {
       </div>
 
       {/* Large WAYSEL Text with Gradient Background */}
-      <div className="relative h-[250px] overflow-hidden">
+      <div className="relative h-[250px] overflow-hidden border">
         <div
           className="flex select-none items-center justify-center text-[364px] font-semibold leading-none"
           style={{
@@ -79,9 +79,13 @@ const Footer = () => {
 
         {/* Gradient Overlay */}
         <div
-          className="pointer-events-none absolute inset-0 bottom-0 h-[250px] gradient-primary"
+          className="pointer-events-none absolute inset-0 bottom-0 h-[150px] border"
           style={{
-            background: "linear-gradient(180deg, transparent 50%, rgba(122, 102, 225, 0.3) 100%)",
+            background: "linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            maskImage: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)",
+            WebkitMaskImage: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)",
           }}
         />
       </div>
