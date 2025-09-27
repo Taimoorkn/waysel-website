@@ -79,7 +79,7 @@ module.exports = {
       },
       colors: {
         // Background colors
-        background: "#0D0D0C",
+        primary_bg: "#0D0D0C",
         card: "#121211",
         dark: "#131313",
         border: "#1f2937",

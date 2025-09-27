@@ -25,14 +25,12 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="section relative bg-[#0D0D0C]">
+    <section className="section bg-primary_bg relative">
       <div className="mx-auto flex items-stretch gap-12">
         {/* Left Section - Changed to items-stretch on parent and removed !h-full */}
         <div className="flex w-[40%] flex-col justify-between p-16">
           <div className="w-full">
-            <h1 className="mb-4 text-4xl tracking-[-3%] text-white xl:text-[64px] xl:leading-[80px]">
-              Have an Idea?
-            </h1>
+            <h1 className="mb-4 text-4xl tracking-[-3%] text-white xl:text-[64px] xl:leading-[80px]">Have an Idea?</h1>
             <p className="text-[32px] leading-[52px] tracking-[-3%] text-[#ffffffe6]">
               Need help finishing what you started?
             </p>
@@ -60,7 +58,7 @@ export default function ContactForm() {
                     placeholder="First name"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#fed7be33] bg-[#0D0D0C] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                    className="bg-primary_bg w-full rounded-xl border border-[#fed7be33] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
                   />
                 </div>
                 <div>
@@ -71,7 +69,7 @@ export default function ContactForm() {
                     placeholder="Last name"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#fed7be33] bg-[#0D0D0C] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                    className="bg-primary_bg w-full rounded-xl border border-[#fed7be33] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
                   />
                 </div>
               </div>
@@ -86,7 +84,7 @@ export default function ContactForm() {
                     placeholder="E.g abc@gmail.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#fed7be33] bg-[#0D0D0C] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                    className="bg-primary_bg w-full rounded-xl border border-[#fed7be33] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
                   />
                 </div>
                 <div>
@@ -97,7 +95,7 @@ export default function ContactForm() {
                     placeholder="e.g +1 254 364 5251"
                     value={formData.contactNo}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-[#fed7be33] bg-[#0D0D0C] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                    className="bg-primary_bg w-full rounded-xl border border-[#fed7be33] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
                   />
                 </div>
               </div>
@@ -111,7 +109,7 @@ export default function ContactForm() {
                   rows="6"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full resize-none rounded-xl border border-[#fed7be33] bg-[#0D0D0C] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
+                  className="bg-primary_bg w-full resize-none rounded-xl border border-[#fed7be33] px-4 py-3 text-[#ffffffcc] placeholder-[#ffffff66] transition-all duration-300 focus:border-[#FFBA8F] focus:outline-none focus:ring-1 focus:ring-[#FFBA8F]/20"
                 />
               </div>
 
@@ -120,7 +118,7 @@ export default function ContactForm() {
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="bg-primary transform rounded-full px-8 py-3 font-medium text-background transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
+                  className="bg-primary transform rounded-full px-8 py-3 font-medium text-text-primary transition-all duration-300 hover:scale-105 hover:bg-[#e5e4e2] active:scale-95"
                 >
                   Send Message
                 </button>

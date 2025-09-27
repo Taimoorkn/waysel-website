@@ -95,7 +95,7 @@ export default function RootLayout({ children }) {
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
       </head>
-      <body suppressHydrationWarning className={` ${satoshi.variable} bg-background font-satoshi antialiased`}>
+      <body suppressHydrationWarning className={` ${satoshi.variable} bg-primary_bg font-satoshi antialiased`}>
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
 

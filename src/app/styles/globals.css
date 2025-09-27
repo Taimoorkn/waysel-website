@@ -71,7 +71,7 @@
   }
 
   .tech_stack_icon {
-    @apply shadow-custom-light relative flex size-24 flex-col items-center justify-center rounded-2xl bg-background transition-all duration-300 xl:size-32;
+    @apply shadow-custom-light relative flex size-24 flex-col items-center justify-center rounded-2xl bg-primary_bg transition-all duration-300 xl:size-32;
   }
 
   .tech_stack_icon:hover {

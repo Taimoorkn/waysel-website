@@ -25,7 +25,7 @@ const FAQ = ({ faqs = [] }) => {
           faqs.map((item, index) => (
             <div
               key={index}
-              className="group overflow-hidden rounded-2xl border  border-[#fed7be33] bg-[#0D0D0C] transition-all duration-300 hover:border-[#fed7be55] hover:shadow-lg"
+              className="bg-primary_bg group overflow-hidden rounded-2xl border border-[#fed7be33] transition-all duration-300 hover:border-[#fed7be55] hover:shadow-lg"
             >
               <Accordion open={open === index} className="border-none bg-transparent">
                 <AccordionHeader

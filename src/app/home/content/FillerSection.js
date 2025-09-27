@@ -121,7 +121,7 @@ const FillerSection = () => {
         }
       `}</style>
 
-      <div className="section text-primary relative mx-auto flex w-full flex-col items-center">
+      <div className="section text-primary relative mx-auto flex w-full flex-col items-center border xl:pb-[160px]">
         <SectionHeading
           title={
             <>
@@ -144,20 +144,17 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`flex h-full flex-col bg-[#0D0D0C] !p-10 xl:min-h-[520px] ${
+                className={`flex h-full flex-col !p-10 xl:min-h-[520px] ${
                   index % 2 === 0 ? "rounded-bl-[32px] rounded-tl-[32px]" : "rounded-br-[32px] rounded-tr-[32px]"
-                }`}
+                } ${index >= 2 ? "bg-black/50 backdrop-blur-md" : "bg-[#0D0D0C]"} `}
                 style={{
-                  backdropFilter: "blur(80px)",
                   transition: "all 300ms ease-in-out",
                   backgroundImage:
-                    index === 0
-                      ? "linear-gradient(45deg, #1A1A1A 0%, transparent 100%)"
-                      : index === 1
-                        ? "linear-gradient(315deg, #1A1A1A 0%, transparent 100%)"
-                        : index === 2
-                          ? "linear-gradient(45deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)"
-                          : "linear-gradient(315deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)",
+                    index < 2
+                      ? index === 0
+                        ? "linear-gradient(45deg, #1A1A1A 0%, transparent 100%)"
+                        : "linear-gradient(315deg, #1A1A1A 0%, transparent 100%)"
+                      : "none", // remove extra gradient for last two
                 }}
               >
                 <h3 className="HeadingH5 mb-4">{card.title}</h3>
@@ -179,6 +176,7 @@ const FillerSection = () => {
             </div>
           ))}
         </div>
+
         {/* Gradient vector blur at top edge */}
       </div>
       <div className="absolute bottom-0 left-[49.12%] -z-10 -translate-x-1/2 scale-y-[-1] transform">
@@ -189,3 +187,52 @@ const FillerSection = () => {
 };
 
 export default FillerSection;
+
+// <div className="z-10 grid w-full grid-cols-2 gap-4">
+//   {cards.map((card, index) => (
+//     <div
+//       key={index}
+//       className={`card relative overflow-hidden p-[1px] pb-[0.5px] pr-[0.5px] ${
+//         index % 2 === 0 ? "rounded-bl-[32px] rounded-tl-[32px]" : "rounded-br-[32px] rounded-tr-[32px]"
+//       }`}
+//       style={{
+//         background: "rgba(128, 128, 128, 0.1)",
+//         transition: "all 300ms ease-in-out",
+//       }}
+//     >
+//       <div
+//         className={`bg-primary_bg flex h-full flex-col !p-10 xl:min-h-[520px] ${
+//           index % 2 === 0 ? "rounded-bl-[32px] rounded-tl-[32px]" : "rounded-br-[32px] rounded-tr-[32px]"
+//         } ${index >= 2 ? "bg-primary_bg/10" : "bg-primary_bg"} `}
+//         style={{
+//           backdropFilter: "blur(80px)",
+//           transition: "all 300ms ease-in-out",
+//           backgroundImage:
+//             index === 0
+//               ? "linear-gradient(45deg, #1A1A1A 0%, transparent 100%)"
+//               : index === 1
+//                 ? "linear-gradient(315deg, #1A1A1A 0%, transparent 100%)"
+//                 : index === 2
+//                   ? "linear-gradient(45deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)"
+//                   : "linear-gradient(315deg, #1A1A1A 0%, rgba(26, 26, 26, 0.6) 100%)",
+//         }}
+//       >
+//         <h3 className="HeadingH5 mb-4">{card.title}</h3>
+
+//         <div className="flex-1">
+//           {card.content.map((item, i) => (
+//             <p key={i} className="BodyText">
+//               <span className="BodyTextBold">{item.label}</span> {item.text}
+//             </p>
+//           ))}
+//         </div>
+
+//         <div className="flex justify-end">
+//           <img src={card.image} alt={card.title} className="w-[280px] object-contain" />
+//         </div>
+//       </div>
+//       <div className="blob"></div>
+//       <div className="fakeblob"></div>
+//     </div>
+//   ))}
+// </div>
