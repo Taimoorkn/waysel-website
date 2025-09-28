@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import SectionHeading from "../../../components/SectionHeading";
+import SectionHeading from "./SectionHeading";
 import GradientText from "@/components/GradientText";
 import Button from "@/components/Button";
 
-export default function ContactForm() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -103,16 +103,16 @@ ${formData.message}
             </p>
           </div>
           <div className="BodyText">
-            We'll ask what you're trying to do.
+            We&apos;ll ask what you&apos;re trying to do.
             <br />
-            We'll tell you if it makes sense.
+            We&apos;ll tell you if it makes sense.
             <br />
-            If it does, we'll build it like it was ours.
+            If it does, we&apos;ll build it like it was ours.
           </div>
         </div>
 
         {/* Right Section - Contact Form */}
-        <div className="z-10 flex w-full items-center justify-center p-6 xl:w-[60%] xl:p-16">
+        <div className="z-10 flex w-full items-center justify-center xl:w-[60%] xl:p-16">
           <div className="w-full rounded-2xl bg-opacity-80 bg-gradient-to-br from-border-primary to-border-secondary p-px backdrop-blur-sm">
             <div className="w-full rounded-2xl bg-card px-6 py-6 xl:px-10 xl:py-8">
               <div className="space-y-6 xl:space-y-8">
@@ -185,7 +185,7 @@ ${formData.message}
                 <div className="flex flex-col items-end pt-4">
                   {submitStatus === "success" && (
                     <div className="mb-4 text-sm text-green-500">
-                      Message sent successfully! We'll get back to you soon.
+                      Message sent successfully! We&apos;ll get back to you soon.
                     </div>
                   )}
                   {submitStatus === "error" && (

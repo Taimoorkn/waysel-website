@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const PhilosophySection = () => {
@@ -8,7 +9,7 @@ const PhilosophySection = () => {
     <section className="section relative bg-transparent">
       {/* Gradient spotlight effect at top */}
       <div className="absolute left-[49.12%] top-0 -z-10 -translate-x-1/2 transform">
-        <img src="/images/filler/spotlight.png" alt="spotlight" className=" " />
+        <Image src="/images/filler/spotlight.png" alt="spotlight" width={800} height={600} className=" " />
       </div>
 
       <div className="flex flex-col">
@@ -51,12 +52,12 @@ const PhilosophySection = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                We don't just follow standards—we establish new ones for your market.
+                We don&apos;t just follow standards—we establish new ones for your market.
               </motion.p>
             </div>
 
             {/* Second Section - Mobile: Full width, XL: Right half */}
-            <div className="flex h-full w-full flex-col items-start justify-center gap-4 rounded-b-[32px] bg-card px-6 py-8 xl:w-1/2 xl:rounded-b-none xl:rounded-r-[32px] xl:px-16"></div>
+            <div className="flex h-[300px] w-full flex-col items-start justify-center gap-4 rounded-b-[32px] bg-card px-6 py-8 xl:w-1/2 xl:rounded-b-none xl:rounded-r-[32px] xl:px-16"></div>
           </div>
         </motion.div>
       </div>

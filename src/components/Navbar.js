@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
@@ -133,8 +134,7 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
-        <div className="navbar-content mx-4 flex items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-[120px] xl:pt-8">
-          {/* <div className="navbar-content fixed left-0 right-0 top-0 z-50 mx-4 flex items-center justify-between border pt-4 sm:mx-6 sm:pt-5 md:mx-8 md:pt-6 lg:mx-16 lg:pt-8 xl:mx-28 xl:pt-10">*/}
+        <div className="navbar-content mx-4 flex items-center justify-between pt-4 md:mx-8 lg:mx-16 lg:pt-6 xl:mx-[120px] xl:pt-8">
           {/* Left side - Brand, Logo, Nav Links */}
           <motion.div
             className="flex items-center"
@@ -143,7 +143,7 @@ const Navbar = () => {
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
             <Link href="/" aria-label="Waysel home">
-              <img src="/waysellogo.svg" alt="Waysel Logo" className="h-auto w-16 xl:w-28" />
+              <Image src="/waysellogo.svg" alt="Waysel Logo" width={112} height={40} className="h-auto w-16 xl:w-28" />
             </Link>
           </motion.div>
           <motion.div
@@ -236,9 +236,9 @@ const Navbar = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
                 >
-                  <Button variant="primary" href="/contact" className="w-full">
+                  <button href="/contact" className="w-full bg-slate-50 text-black">
                     Contact Us
-                  </Button>
+                  </button>
                 </motion.div>
               </div>
             </motion.div>

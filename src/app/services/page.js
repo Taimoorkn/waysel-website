@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServicesHeroSection from "./content/ServicesHeroSection";
 import ServicesListSection from "./content/ServicesListSection";
-import Contact from "../home/content/Contact";
+import Contact from "@/components/Contact";
 
 const ServicesPage = () => {
   return (

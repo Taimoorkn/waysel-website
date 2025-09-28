@@ -7,7 +7,7 @@ import { RetroGrid } from "@/components/ui/shadcn-io/retro-grid/index";
 
 const AboutHeroSection = () => {
   return (
-    <section className="section relative min-h-screen overflow-hidden bg-transparent pt-[80px] xl:pt-[150px] 2xl:flex 2xl:items-center 2xl:pt-0">
+    <section className="section relative flex min-h-screen items-center overflow-hidden bg-transparent">
       {/* Retro Grid Background */}
       <RetroGrid
         angle={65}
@@ -53,7 +53,7 @@ const AboutHeroSection = () => {
           </div>
         </div>
 
-        <div className="xl:mt-8">
+        <div className="mt-4 xl:mt-8">
           <div className="BodyText text-center">
             <div className="overflow-hidden">
               <motion.p

@@ -12,11 +12,18 @@ const FloatingThreeDSphere = () => {
   const [scrollY, setScrollY] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     // Set initial window dimensions
     setWindowHeight(window.innerHeight);
     setWindowWidth(window.innerWidth);
+    checkMobile();
 
     // Handle scroll events
     const handleScroll = () => {
@@ -27,6 +34,7 @@ const FloatingThreeDSphere = () => {
     const handleResize = () => {
       setWindowHeight(window.innerHeight);
       setWindowWidth(window.innerWidth);
+      checkMobile();
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -168,6 +176,19 @@ const FloatingThreeDSphere = () => {
   const calculatePosition = () => {
     const isInHeroSection = scrollY < 200;
 
+    // On mobile, keep sphere centered in hero section and hide when scrolled out
+    if (isMobile) {
+      return {
+        left: "50%",
+        top: "50%",
+        transform: "translate(-50%, -50%) scale(1)",
+        transition: "all 0.8s ease-out",
+        width: "300px",
+        height: "300px", 
+        pointerEvents: isInHeroSection ? "auto" : "none",
+      };
+    }
+
     if (isInHeroSection) {
       // Center position - full size
       return {
@@ -194,7 +215,7 @@ const FloatingThreeDSphere = () => {
   return (
     <div
       ref={mountRef}
-      className="pointer-events-none fixed z-0"
+      className={`pointer-events-none z-0 ${isMobile ? 'absolute' : 'fixed'}`}
       style={{
         ...calculatePosition(),
       }}

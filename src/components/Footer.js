@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -12,7 +13,7 @@ const Footer = () => {
           {/* Left Section - Brand */}
           <div className="w-full space-y-6 xl:space-y-8">
             <Link href="/" aria-label="Waysel home">
-              <img src="/waysellogo.svg" alt="Waysel Logo" className="w-[80px] xl:w-[120px]" />
+              <Image src="/waysellogo.svg" alt="Waysel Logo" width={120} height={40} className="w-[80px] xl:w-[120px]" />
             </Link>
             <p className="max-w-md text-lg tracking-[-3%] text-text-secondary xl:text-2xl">
               In quiet and in chaos, we build.

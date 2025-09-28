@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 
 const DEFAULT_GLOW_COLOR = "255, 76, 36"; // Matches #ff4c24
 const MOBILE_BREAKPOINT = 768;
@@ -310,7 +311,7 @@ const MagicBento = ({ enableBorderGlow = true, disableAnimations = false, glowCo
                   ))}
                 </div>
                 <div className="card-image">
-                  <img src={card.image} alt={card.title} />
+                  <Image src={card.image} alt={card.title} width={280} height={200} />
                 </div>
               </div>
             </div>

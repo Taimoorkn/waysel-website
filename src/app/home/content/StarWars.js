@@ -30,7 +30,7 @@ const StarWars = () => {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black text-white">
+    <div className="relative h-[80vh] xl:h-screen w-full overflow-hidden bg-black text-white">
       {/* Top Binary Pattern */}
       <div className="absolute left-0 top-0 h-1/2 w-full overflow-hidden">
         <div

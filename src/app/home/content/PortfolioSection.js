@@ -20,7 +20,9 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const textSection = (
     <div
-      className={`flex h-full w-1/2 flex-col items-start justify-center gap-4 bg-card xl:px-16 ${isReversed ? "rounded-r-[32px]" : "rounded-l-[32px]"}`}
+      className={`flex w-full flex-col justify-center gap-6 bg-card p-8 xl:h-full xl:w-1/2 xl:px-16 ${
+        isReversed ? "xl:rounded-r-[32px]" : "xl:rounded-l-[32px]"
+      }`}
     >
       <h2 className="HeadingH4">
         <GradientText>{title}</GradientText>
@@ -31,7 +33,9 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const imageSection = (
     <div
-      className={`relative flex h-full w-1/2 items-center justify-between gap-4 overflow-hidden bg-black ${isReversed ? "rounded-l-[32px]" : "rounded-r-[32px]"}`}
+      className={`relative flex h-80 w-full items-center justify-between gap-4 overflow-hidden bg-black xl:h-full xl:w-1/2 ${
+        isReversed ? "xl:rounded-l-[32px]" : "xl:rounded-r-[32px]"
+      }`}
     >
       {/* Top gradient */}
       <div
@@ -47,7 +51,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
       {/* First column - scroll down moves down */}
       <motion.div
-        className="-my-48 -ml-32 flex flex-col items-center justify-center gap-8 overflow-hidden"
+        className="hidden -my-48 -ml-32 flex-col items-center justify-center gap-8 overflow-hidden xl:flex"
         style={{ y: column1Y }}
       >
         {[...Array(8)].map((_, index) => (
@@ -58,17 +62,26 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
       </motion.div>
 
       {/* Second column - scroll down moves up */}
-      <motion.div className="-my-48 flex flex-col items-center justify-center gap-8" style={{ y: column2Y }}>
-        {[...Array(8)].map((_, index) => (
+      <motion.div
+        className="flex -my-32 flex-col items-center justify-center gap-6 xl:-my-48 xl:gap-8"
+        style={{ y: column2Y }}
+      >
+        {[...Array(6)].map((_, index) => (
           <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
-            <Image src={imageSrc} alt={`${title} mockup ${index + 1}`} width={450} height={280} />
+            <Image
+              src={imageSrc}
+              alt={`${title} mockup ${index + 1}`}
+              width={300}
+              height={188}
+              className="xl:h-[280px] xl:w-[450px]"
+            />
           </div>
         ))}
       </motion.div>
 
       {/* Third column - scroll down moves down */}
       <motion.div
-        className="-my-48 -mr-32 flex flex-col items-center justify-center gap-8 overflow-hidden"
+        className="hidden -my-48 -mr-32 flex-col items-center justify-center gap-8 overflow-hidden xl:flex"
         style={{ y: column3Y }}
       >
         {[...Array(8)].map((_, index) => (
@@ -84,17 +97,24 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
     <div className="relative">
       <div className="oval-blur left-1/2 top-[15%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
       <div className="rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px pb-[0.8px]">
-        <section className="relative z-10 flex h-[65vh] items-center justify-between rounded-[32px] bg-card text-white">
+        <section className="relative z-10 flex min-h-[500px] flex-col items-center justify-between rounded-[32px] bg-card text-white xl:h-[65vh] xl:flex-row">
+          {/* Mobile: Always text first, then images */}
+          <div className="xl:hidden">
+            {textSection}
+            {imageSection}
+          </div>
+
+          {/* Desktop: Respect isReversed prop */}
           {isReversed ? (
-            <>
+            <div className="hidden xl:contents">
               {imageSection}
               {textSection}
-            </>
+            </div>
           ) : (
-            <>
+            <div className="hidden xl:contents">
               {textSection}
               {imageSection}
-            </>
+            </div>
           )}
         </section>
       </div>
@@ -108,13 +128,13 @@ function PortfolioSection() {
       <SectionHeading
         title={
           <>
-            <GradientText>Work</GradientText> we've built,
+            <GradientText>Work</GradientText> we&apos;ve built,
             <br /> fixed & rescued
           </>
         }
         description="Real builds that launched and worked. Not case studies with fake testimonials."
       />
-      {/* Project 1 - Text left, Images right */}
+
       <div className="flex flex-col gap-16 py-8">
         <ProjectSection
           title="Hospice Care Web"
@@ -124,7 +144,6 @@ function PortfolioSection() {
           scrollOffset={0}
         />
 
-        {/* Project 2 - Images left, Text right */}
         <ProjectSection
           title="E-Commerce Platform"
           description="Building modern, scalable online shopping experiences with seamless user journeys. Optimized for performance and conversion across all devices and platforms."
@@ -133,7 +152,6 @@ function PortfolioSection() {
           scrollOffset={1000}
         />
 
-        {/* Project 3 - Text left, Images right */}
         <ProjectSection
           title="Mobile Banking App"
           description="Secure, intuitive financial management at your fingertips. Streamlined interface design focused on user trust and accessibility for modern banking needs."
