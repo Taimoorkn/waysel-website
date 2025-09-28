@@ -10,7 +10,7 @@ const DifferenceSection = () => {
       <div className="flex gap-24">
         {/* First Section - Left - Independent content area */}
         <motion.div
-          className="flex w-1/2 flex-col items-start justify-between bg-primary_bg pl-12 xl:py-8"
+          className="flex w-1/2 flex-col items-start gap-[88px] bg-primary_bg pl-12 xl:py-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -53,18 +53,16 @@ const DifferenceSection = () => {
         </motion.div>
         {/* Second Section - Right - Independent gradient border box */}
         <motion.div
-          className="h-[500px] w-1/2 rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px"
+          className="relative h-[500px] w-1/2 rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="h-full rounded-[32px] bg-card"></div>
+          <div className="h-full w-full rounded-[32px] bg-card"></div>
+          <div className="oval-blur absolute left-1/2 top-[60%] -z-10 -translate-x-1/2 -translate-y-1/2 transform" />
         </motion.div>
       </div>
-
-      {/* Gradient vector blur at bottom edge */}
-      <div className="oval-blur bottom-[-10%] right-0 z-0 -translate-x-1/2 -translate-y-1/2 transform" />
     </section>
   );
 };
