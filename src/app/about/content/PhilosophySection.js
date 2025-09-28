@@ -7,14 +7,9 @@ const PhilosophySection = () => {
   return (
     <section className="section relative bg-transparent">
       {/* Gradient spotlight effect at top */}
-      <div
-        className="absolute left-1/2 top-0 -z-10 h-[400px] w-[800px] -translate-x-1/2 transform"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(251, 48, 129, 0.3) 0%, rgba(186, 85, 211, 0.2) 50%, rgba(0, 0, 0, 0) 100%)",
-          filter: "blur(60px)",
-        }}
-      />
+      <div className="absolute left-[49.12%] top-0 -z-10 -translate-x-1/2 transform">
+        <img src="/images/filler/spotlight.png" alt="spotlight" className=" " />
+      </div>
 
       <div className="mx-auto max-w-6xl">
         {/* Section Title */}
