@@ -41,6 +41,12 @@ const Navbar = () => {
       onEnter: () => {
         // Get current screen width and match Tailwind breakpoints
         const width = window.innerWidth;
+
+        // Skip animation for mobile screens to prevent overflow
+        if (width < 768) {
+          return;
+        }
+
         let expandedMargin;
 
         if (width >= 1280) {
@@ -49,15 +55,9 @@ const Navbar = () => {
         } else if (width >= 1024) {
           // lg breakpoint (mx-16 = 4rem)
           expandedMargin = "2.5rem";
-        } else if (width >= 768) {
+        } else {
           // md breakpoint (mx-8 = 2rem)
           expandedMargin = "1rem";
-        } else if (width >= 640) {
-          // sm breakpoint (mx-6 = 1.5rem)
-          expandedMargin = "0.75rem";
-        } else {
-          // mobile (mx-4 = 1rem)
-          expandedMargin = "0.25rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
@@ -71,6 +71,12 @@ const Navbar = () => {
       onLeaveBack: () => {
         // Return to original responsive margins
         const width = window.innerWidth;
+
+        // Skip animation for mobile screens to prevent overflow
+        if (width < 768) {
+          return;
+        }
+
         let originalMargin;
 
         if (width >= 1280) {
@@ -79,15 +85,9 @@ const Navbar = () => {
         } else if (width >= 1024) {
           // lg breakpoint (mx-16 = 4rem)
           originalMargin = "4rem";
-        } else if (width >= 768) {
+        } else {
           // md breakpoint (mx-8 = 2rem)
           originalMargin = "2rem";
-        } else if (width >= 640) {
-          // sm breakpoint (mx-6 = 1.5rem)
-          originalMargin = "1.5rem";
-        } else {
-          // mobile (mx-4 = 1rem)
-          originalMargin = "1rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
@@ -237,9 +237,13 @@ const Navbar = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
                 >
-                  <Button variant="primary" href="/contact" className="w-full">
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-white to-gray-50 px-6 py-3 font-medium text-black shadow-sm transition-all duration-200 hover:from-gray-50 hover:to-gray-100 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black active:scale-95"
+                  >
                     Contact Us
-                  </Button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>
