@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 
 const TechStack = ({ techToDisplay }) => {
@@ -9,8 +10,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "React",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+          alt="React"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -19,8 +23,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Next.js",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+          alt="Next.js"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -29,8 +36,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Angular",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg"
+          alt="Angular"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -39,8 +49,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Vue.js",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
+          alt="Vue.js"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -49,8 +62,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Tailwind CSS",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+          alt="Tailwind CSS"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -61,8 +77,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "NestJS",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
+          alt="NestJS"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -71,8 +90,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Rails",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-plain.svg"
+          alt="Rails"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -81,8 +103,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Ruby",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg"
+          alt="Ruby"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -91,8 +116,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Django",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
+          alt="Django"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -101,8 +129,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "C#",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+          alt="C#"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -111,8 +142,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Express",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+          alt="Express"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -121,8 +155,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Laravel",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+          alt="Laravel"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -133,8 +170,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "MySQL",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+          alt="MySQL"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -143,8 +183,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "SQLite",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
+          alt="SQLite"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -153,8 +196,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "MongoDB",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+          alt="MongoDB"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -165,8 +211,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "TypeScript",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+          alt="TypeScript"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -175,8 +224,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Python",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+          alt="Python"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -185,8 +237,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Docker",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+          alt="Docker"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -195,8 +250,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Kubernetes",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg"
+          alt="Kubernetes"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -205,8 +263,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "GraphQL",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg"
+          alt="GraphQL"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -215,8 +276,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Flutter",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
+          alt="Flutter"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -225,8 +289,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Webpack",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg"
+          alt="Webpack"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -235,8 +302,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Canva",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg"
+          alt="Canva"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -245,8 +315,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Figma",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+          alt="Figma"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -257,8 +330,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "AWS",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+          alt="AWS"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -267,8 +343,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Microsoft Azure",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg"
+          alt="Microsoft Azure"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),
@@ -277,8 +356,11 @@ const TechStack = ({ techToDisplay }) => {
     {
       name: "Google Cloud",
       logo: (
-        <img
+        <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg"
+          alt="Google Cloud"
+          width={40}
+          height={40}
           className="tech_stack_icon_img"
         />
       ),

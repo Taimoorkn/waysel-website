@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Image from "next/image";
 import SectionHeading from "../../../components/SectionHeading";
 import GradientText from "@/components/GradientText";
 
@@ -172,7 +173,7 @@ const FillerSection = () => {
                 </div>
 
                 <div className="flex justify-center xl:justify-end">
-                  <img src={card.image} alt={card.title} className="w-[200px] object-contain xl:w-[280px]" />
+                  <Image src={card.image} alt={card.title} width={280} height={200} className="w-[200px] object-contain xl:w-[280px]" />
                 </div>
               </div>
               <div className="blob"></div>
@@ -184,7 +185,7 @@ const FillerSection = () => {
         {/* Gradient vector blur at top edge */}
       </div>
       <div className="absolute bottom-0 left-[49.12%] -z-10 -translate-x-1/2 scale-y-[-1] transform">
-        <img src="/images/filler/spotlight.png" alt="spotlight" className=" " />
+        <Image src="/images/filler/spotlight.png" alt="spotlight" width={800} height={600} className=" " />
       </div>
     </div>
   );

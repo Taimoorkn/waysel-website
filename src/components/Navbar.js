@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
@@ -143,7 +144,7 @@ const Navbar = () => {
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
             <Link href="/" aria-label="Waysel home">
-              <img src="/waysellogo.svg" alt="Waysel Logo" className="h-auto w-16 xl:w-28" />
+              <Image src="/waysellogo.svg" alt="Waysel Logo" width={112} height={40} className="h-auto w-16 xl:w-28" />
             </Link>
           </motion.div>
           <motion.div

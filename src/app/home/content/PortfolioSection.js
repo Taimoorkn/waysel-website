@@ -108,7 +108,7 @@ function PortfolioSection() {
       <SectionHeading
         title={
           <>
-            <GradientText>Work</GradientText> we've built,
+            <GradientText>Work</GradientText> we&apos;ve built,
             <br /> fixed & rescued
           </>
         }

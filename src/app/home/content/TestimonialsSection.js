@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { Chrome, ShoppingBag, Smartphone, Layers, Cloud } from "lucide-react";
@@ -105,7 +106,7 @@ const TestimonialsSection = () => {
           <>
             Most of the good feedback is private.
             <br />
-            Here's what we're allowed to post.
+            Here&apos;s what we&apos;re allowed to post.
           </>
         }
       />
@@ -143,9 +144,11 @@ const TestimonialsSection = () => {
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
+                      width={48}
+                      height={48}
                       className="size-8 rounded-full border-2 border-[#ffffff33] object-cover xl:size-12"
                     />
                     <div className="flex flex-col items-start justify-start gap-[2px]">
@@ -165,7 +168,7 @@ const TestimonialsSection = () => {
       </Swiper>
       {/* Gradient vector blur at top edge */}
       <div className="absolute left-[49.12%] top-0 -z-10 -translate-x-1/2 transform">
-        <img src="/images/filler/spotlight.png" alt="spotlight" />
+        <Image src="/images/filler/spotlight.png" alt="spotlight" width={800} height={600} />
       </div>
     </section>
   );

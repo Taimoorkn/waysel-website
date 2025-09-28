@@ -5,7 +5,7 @@ import GradientText from "@/components/GradientText";
 import { BackgroundRippleEffect } from "@/components/ui/aceternity-ui/background-ripple-effect";
 const ServicesHeroSection = () => {
   return (
-    <section className="section relative min-h-screen overflow-hidden bg-transparent pt-[80px] xl:pt-[150px] 2xl:flex 2xl:items-center 2xl:pt-0">
+    <section className="section relative flex min-h-screen items-center overflow-hidden bg-transparent">
       <BackgroundRippleEffect />
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-center">
         {/* Main content */}

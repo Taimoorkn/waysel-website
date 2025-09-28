@@ -103,11 +103,11 @@ ${formData.message}
             </p>
           </div>
           <div className="BodyText">
-            We'll ask what you're trying to do.
+            We&apos;ll ask what you&apos;re trying to do.
             <br />
-            We'll tell you if it makes sense.
+            We&apos;ll tell you if it makes sense.
             <br />
-            If it does, we'll build it like it was ours.
+            If it does, we&apos;ll build it like it was ours.
           </div>
         </div>
 
@@ -185,7 +185,7 @@ ${formData.message}
                 <div className="flex flex-col items-end pt-4">
                   {submitStatus === "success" && (
                     <div className="mb-4 text-sm text-green-500">
-                      Message sent successfully! We'll get back to you soon.
+                      Message sent successfully! We&apos;ll get back to you soon.
                     </div>
                   )}
                   {submitStatus === "error" && (

@@ -38,7 +38,7 @@ const DifferenceSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              We spend more time figuring out what you're trying to do than most teams spend designing.
+              We spend more time figuring out what you&apos;re trying to do than most teams spend designing.
             </motion.p>
             <motion.p
               className="font-medium text-text-secondary"
@@ -47,7 +47,7 @@ const DifferenceSection = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              That's because good output comes from clarity not just vibes.
+              That&apos;s because good output comes from clarity not just vibes.
             </motion.p>
           </div>
         </motion.div>
