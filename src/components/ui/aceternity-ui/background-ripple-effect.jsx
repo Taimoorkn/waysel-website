@@ -1,28 +1,39 @@
 "use client";;
-import React, { useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 export const BackgroundRippleEffect = ({
-  rows = 8,
-  cols = 27,
   cellSize = 56
 }) => {
   const [clickedCell, setClickedCell] = useState(null);
   const [rippleKey, setRippleKey] = useState(0);
+  const [dimensions, setDimensions] = useState({ rows: 20, cols: 35 });
   const ref = useRef(null);
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      const cols = Math.ceil(window.innerWidth / cellSize) + 2;
+      const rows = Math.ceil(window.innerHeight / cellSize) + 2;
+      setDimensions({ rows, cols });
+    };
+
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, [cellSize]);
 
   return (
     <div
       ref={ref}
-      className="absolute inset-0 h-full w-full z-0 border">
+      className="absolute inset-0 h-full w-full z-0">
       <div className="relative h-auto w-auto overflow-hidden">
         <div
           className="pointer-events-none absolute inset-0 z-[2] h-full w-full overflow-hidden" />
         <DivGrid
           key={`base-${rippleKey}`}
           className="mask-radial-from-20% mask-radial-at-top opacity-30"
-          rows={rows}
-          cols={cols}
+          rows={dimensions.rows}
+          cols={dimensions.cols}
           cellSize={cellSize}
           borderColor="#d4d4d8"
           fillColor="rgba(245, 245, 245, 0.1)"
@@ -40,8 +51,8 @@ export const BackgroundRippleEffect = ({
 
 const DivGrid = ({
   className,
-  rows = 7,
-  cols = 30,
+  rows = 20,
+  cols = 35,
   cellSize = 56,
   borderColor = "#d4d4d8",
   fillColor = "rgba(245, 245, 245, 0.1)",
@@ -56,9 +67,9 @@ const DivGrid = ({
     display: "grid",
     gridTemplateColumns: `repeat(${cols}, ${cellSize}px)`,
     gridTemplateRows: `repeat(${rows}, ${cellSize}px)`,
-    width: cols * cellSize,
-    height: rows * cellSize,
-    marginInline: "auto",
+    width: "100vw",
+    height: "100vh",
+    transform: "translate(-50px, -50px)",
   };
 
   return (
