@@ -50,8 +50,8 @@ const DivGrid = ({
   // borderColor = "#d4d4d8",
   // fillColor = "rgba(245, 245, 245, 0.1)",
   // shadowColor = "#737373",
-  borderColor = "#000000",
-  fillColor = "rgba(245, 245, 245, 0.2)",
+  borderColor = "#d4d4d8",
+  fillColor = "#000000",
   shadowColor = "rgba(255, 255, 255, 0.3)",
   clickedCell = null,
   onCellClick = () => {},
@@ -95,7 +95,7 @@ const DivGrid = ({
             style={{
               backgroundColor: fillColor,
               borderColor: borderColor,
-              boxShadow: `0px 0px 40px 1px ${shadowColor} inset`,
+              boxShadow: `0px 0px 10px 1px ${shadowColor} inset`,
               ...style,
             }}
             onClick={interactive ? () => onCellClick?.(rowIdx, colIdx) : undefined}

@@ -50,7 +50,7 @@ const ServicesHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                From strategic design to cloud-native development, we deliver end-to-end solutions
+                Not fluff. Not theory. Just the kind of work that
               </motion.p>
             </div>
             <div className="overflow-hidden">
@@ -59,7 +59,7 @@ const ServicesHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                that transform your ideas into scalable digital realities.
+                ships, scales, and stays alive in the wild.
               </motion.p>
             </div>
           </div>

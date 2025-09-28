@@ -44,6 +44,11 @@ const FloatingThreeDSphere = () => {
   useEffect(() => {
     if (!mountRef.current) return;
 
+    // Clear any existing content first
+    if (mountRef.current.firstChild) {
+      mountRef.current.removeChild(mountRef.current.firstChild);
+    }
+
     // Scene setup
     const scene = new THREE.Scene();
     sceneRef.current = scene;
@@ -137,18 +142,24 @@ const FloatingThreeDSphere = () => {
     return () => {
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
-      }
-
-      if (mountRef.current && rendererRef.current) {
-        mountRef.current.removeChild(rendererRef.current.domElement);
+        animationIdRef.current = null;
       }
 
       if (rendererRef.current) {
+        if (mountRef.current && mountRef.current.contains(rendererRef.current.domElement)) {
+          mountRef.current.removeChild(rendererRef.current.domElement);
+        }
         rendererRef.current.dispose();
+        rendererRef.current = null;
       }
 
       if (sceneRef.current) {
         sceneRef.current.clear();
+        sceneRef.current = null;
+      }
+
+      if (sphereRef.current) {
+        sphereRef.current = null;
       }
     };
   }, []);
