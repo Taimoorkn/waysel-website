@@ -32,7 +32,8 @@
       "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\WEB\\fonts\")",
       "WebFetch(domain:www.framer.com)",
       "WebFetch(domain:motion.dev)",
-      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\about us\")"
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\about us\")",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []
