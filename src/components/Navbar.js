@@ -108,8 +108,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div
-        className="pointer-events-none fixed inset-x-0 top-0 z-40"
+      {/* <div
+        className="pointer-events-none fixed inset-x-0 top-0 z-30"
         style={{
           height: "200px",
           background: `linear-gradient(180deg,
@@ -120,7 +120,7 @@ const Navbar = () => {
             rgba(0, 0, 0, 0) 100%
           )`,
         }}
-      />
+      /> */}
       <motion.nav
         ref={navRef}
         initial={{ y: -100, opacity: 0 }}
