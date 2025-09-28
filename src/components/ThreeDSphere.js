@@ -42,9 +42,8 @@ const ThreeDSphere = () => {
     // Create simple material with linear gradient
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        color1: { value: new THREE.Color(0x7A66E1) }, // #7A66E1
-        color2: { value: new THREE.Color(0xFB3081) }, // #FB3081
-        color3: { value: new THREE.Color(0xF8805F) }  // #F8805F
+        color1: { value: new THREE.Color(0x7A66E1) }, // #7A66E1 (purple)
+        color2: { value: new THREE.Color(0xFB3081) }  // #FB3081 (pink)
       },
       vertexShader: `
         varying vec2 vUv;
@@ -59,34 +58,19 @@ const ThreeDSphere = () => {
       fragmentShader: `
         uniform vec3 color1;
         uniform vec3 color2;
-        uniform vec3 color3;
         varying vec2 vUv;
         varying vec3 vNormal;
 
         void main() {
-          // Create a truly seamless circular gradient
+          // Create a smooth two-color gradient
           // Map UV to angle for smooth circular interpolation
           float angle = vUv.x * 6.28318530718; // 2 * PI
 
-          // Use sine wave shifted to create smooth 0-1 range that loops seamlessly
-          float t = (sin(angle - 1.57079632679) + 1.0) * 0.5; // sin(x - π/2) = -cos(x), shifted to 0-1
+          // Use sine wave to create smooth 0-1 range that loops seamlessly
+          float t = (sin(angle) + 1.0) * 0.5; // Convert from -1,1 to 0,1
 
-          // Create three zones that blend smoothly in a circle
-          vec3 color;
-
-          if (t < 0.333) {
-            // Zone 1: color1 to color2
-            float localT = t * 3.0;
-            color = mix(color1, color2, smoothstep(0.0, 1.0, localT));
-          } else if (t < 0.666) {
-            // Zone 2: color2 to color3
-            float localT = (t - 0.333) * 3.0;
-            color = mix(color2, color3, smoothstep(0.0, 1.0, localT));
-          } else {
-            // Zone 3: color3 back to color1 (seamless loop)
-            float localT = (t - 0.666) * 3.0;
-            color = mix(color3, color1, smoothstep(0.0, 1.0, localT));
-          }
+          // Simple two-color gradient: purple to pink and back
+          vec3 color = mix(color1, color2, t);
 
           // Simple lighting for 3D effect
           vec3 lightDir = normalize(vec3(1.0, 1.0, 1.0));
