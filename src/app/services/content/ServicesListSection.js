@@ -12,7 +12,7 @@ const ServicesListSection = () => {
       title: "Strategic Design &\nMarketing",
       description: "We spend more time figuring out what you're trying to do than most teams spend designing.",
       additionalText: "That's because good output comes from clarity not just vibes.",
-      image: "/about us/dashboard-mockup.png",
+      image: "/images/portfolio/project1.png",
       hasImage: true,
     },
     {
@@ -36,10 +36,10 @@ const ServicesListSection = () => {
   ];
 
   return (
-    <section className="section">
+    <section className="py-8 xl:py-20">
       {/* Section Title */}
       <motion.div
-        className="relative mb-16 text-start xl:mb-24"
+        className="relative mb-16 text-start xl:mb-24 xl:px-[120px]"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -57,14 +57,14 @@ const ServicesListSection = () => {
       </motion.div>
 
       {/* Services List */}
-      <div className="space-y-32 xl:space-y-40">
+      <div>
         {services.map((service, index) => {
           const isActive = activeService === index;
           return (
             <motion.div
               key={index}
-              className={`grid grid-cols-1 gap-8 xl:grid-cols-3 xl:gap-16 ${
-                isActive ? "bg-card py-20" : "bg-primary_bg py-16"
+              className={`grid grid-cols-1 gap-12 border px-4 xl:grid-cols-3 xl:gap-12 xl:px-[120px] ${
+                isActive ? "bg-card py-20" : "bg-primary_bg"
               }`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{
@@ -83,16 +83,11 @@ const ServicesListSection = () => {
               {/* Column 2 - Image Div */}
               <div className="flex items-center justify-center">
                 {service.hasImage ? (
-                  <div className="relative h-[250px] w-full overflow-hidden rounded-2xl bg-card xl:h-[300px]">
-                    {/* Placeholder for dashboard mockup - you can replace with actual image */}
-                    <div className="flex h-full items-center justify-center border-2 border-dashed border-[#FFFFFF29] text-text-tertiary">
-                      Dashboard Mockup
-                      <br />
-                      (Add image at: /about us/dashboard-mockup.png)
-                    </div>
+                  <div className="relative h-[250px] w-full overflow-hidden rounded-2xl bg-card xl:h-[400px]">
+                    <Image src={service.image} alt={service.title} fill className="object-cover" />
                   </div>
                 ) : (
-                  <div className="h-[250px] w-full xl:h-[300px]" />
+                  <div className="h-[250px] w-full xl:h-[400px]" />
                 )}
               </div>
 
