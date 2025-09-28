@@ -7,8 +7,8 @@ import StructuredData, { organizationSchema, websiteSchema } from "../components
 
 const satoshi = localFont({
   src: [
-    { path: "../../public/font/satoshi/Satoshi-Variable.woff2", weight: "300 900", style: "normal" },
-    { path: "../../public/font/satoshi/Satoshi-VariableItalic.woff2", weight: "300 900", style: "italic" },
+    { path: "../../public/font/Satoshi/Satoshi-Variable.woff2", weight: "300 900", style: "normal" },
+    { path: "../../public/font/Satoshi/Satoshi-VariableItalic.woff2", weight: "300 900", style: "italic" },
   ],
   variable: "--font-satoshi",
   display: "swap",
