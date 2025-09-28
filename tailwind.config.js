@@ -109,7 +109,7 @@ module.exports = {
 
       animation: {
         "cell-ripple": "cell-ripple var(--duration, 200ms) ease-out var(--delay, 0ms)",
-        grid: "grid 15s linear infinite",
+        grid: "grid 22.5s linear infinite",
       },
       keyframes: {
         "cell-ripple": {

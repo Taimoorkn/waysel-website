@@ -162,7 +162,7 @@
   100% { transform: translateY(0); }
 }
 .animate-grid {
-  animation: grid 15s linear infinite;
+  animation: grid 22.5s linear infinite;
 }
 /* 
 .fade {

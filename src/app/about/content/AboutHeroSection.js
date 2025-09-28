@@ -13,8 +13,8 @@ const AboutHeroSection = () => {
         angle={65}
         cellSize={60}
         opacity={0.3}
-        lightLineColor="#00ff41"
-        darkLineColor="#00ff41"
+        lightLineColor="#7A66E1"
+        darkLineColor="#7A66E1"
         className="absolute inset-0 z-0"
       />
 
