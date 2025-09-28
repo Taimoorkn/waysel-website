@@ -8,6 +8,7 @@ import AboutHeroSection from "./content/AboutHeroSection";
 import PhilosophySection from "./content/PhilosophySection";
 import DifferenceSection from "./content/DifferenceSection";
 import Contact from "../home/content/Contact";
+import FloatingThreeDSphere from "@/components/FloatingThreeDSphere";
 
 const AboutPage = () => {
   return (
@@ -18,6 +19,7 @@ const AboutPage = () => {
       <DifferenceSection />
       <Contact />
       <Footer />
+      <FloatingThreeDSphere />
     </>
   );
 };

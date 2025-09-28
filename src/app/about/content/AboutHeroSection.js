@@ -19,7 +19,6 @@ const AboutHeroSection = () => {
       />
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
-
         {/* Main content */}
         <div className="HeadingH1">
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>

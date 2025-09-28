@@ -113,7 +113,7 @@ ${formData.message}
 
         {/* Right Section - Contact Form */}
         <div className="z-10 flex w-full items-center justify-center p-6 xl:w-[60%] xl:p-16">
-          <div className="from-border-primary to-border-secondary w-full rounded-2xl bg-opacity-80 bg-gradient-to-br p-px backdrop-blur-sm">
+          <div className="w-full rounded-2xl bg-opacity-80 bg-gradient-to-br from-border-primary to-border-secondary p-px backdrop-blur-sm">
             <div className="w-full rounded-2xl bg-card px-6 py-6 xl:px-10 xl:py-8">
               <div className="space-y-6 xl:space-y-8">
                 {/* Name Fields */}

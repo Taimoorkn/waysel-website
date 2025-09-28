@@ -135,8 +135,10 @@ const FillerSection = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className={`card relative overflow-hidden p-[1px] pb-[0.5px] pr-[0.5px] rounded-[32px] ${
-                index % 2 === 0 ? "xl:rounded-bl-[32px] xl:rounded-tl-[32px] xl:rounded-br-none xl:rounded-tr-none" : "xl:rounded-br-[32px] xl:rounded-tr-[32px] xl:rounded-bl-none xl:rounded-tl-none"
+              className={`card relative overflow-hidden rounded-[32px] p-[1px] pb-[0.5px] pr-[0.5px] ${
+                index % 2 === 0
+                  ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
+                  : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
               }`}
               style={{
                 background: "rgba(128, 128, 128, 0.1)",
@@ -144,8 +146,10 @@ const FillerSection = () => {
               }}
             >
               <div
-                className={`flex h-full flex-col !p-6 xl:!p-10 xl:min-h-[520px] rounded-[32px] ${
-                  index % 2 === 0 ? "xl:rounded-bl-[32px] xl:rounded-tl-[32px] xl:rounded-br-none xl:rounded-tr-none" : "xl:rounded-br-[32px] xl:rounded-tr-[32px] xl:rounded-bl-none xl:rounded-tl-none"
+                className={`flex h-full flex-col rounded-[32px] !p-6 xl:min-h-[520px] xl:!p-10 ${
+                  index % 2 === 0
+                    ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
+                    : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
                 } ${index >= 2 ? "bg-black/50 backdrop-blur-md" : "bg-[#0D0D0C]"} `}
                 style={{
                   transition: "all 300ms ease-in-out",

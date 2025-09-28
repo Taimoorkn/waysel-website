@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 const ThreeDSphere = () => {
   const mountRef = useRef(null);
@@ -29,7 +29,7 @@ const ThreeDSphere = () => {
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialias: true
+      antialias: true,
     });
     renderer.setSize(300, 300);
     renderer.setClearColor(0x000000, 0);
@@ -42,8 +42,8 @@ const ThreeDSphere = () => {
     // Create simple material with linear gradient
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        color1: { value: new THREE.Color(0x7A66E1) }, // #7A66E1 (purple)
-        color2: { value: new THREE.Color(0xFB3081) }  // #FB3081 (pink)
+        color1: { value: new THREE.Color(0x7a66e1) }, // #7A66E1 (purple)
+        color2: { value: new THREE.Color(0xfb3081) }, // #FB3081 (pink)
       },
       vertexShader: `
         varying vec2 vUv;
@@ -80,7 +80,7 @@ const ThreeDSphere = () => {
 
           gl_FragColor = vec4(color, 1.0);
         }
-      `
+      `,
     });
 
     // Create sphere mesh
@@ -110,12 +110,12 @@ const ThreeDSphere = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize();
 
     // Cleanup
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
 
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
@@ -138,11 +138,11 @@ const ThreeDSphere = () => {
   return (
     <div
       ref={mountRef}
-      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"
+      className="z-5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
       style={{
-        width: '300px',
-        height: '300px',
-        pointerEvents: 'none'
+        width: "300px",
+        height: "300px",
+        pointerEvents: "none",
       }}
     />
   );

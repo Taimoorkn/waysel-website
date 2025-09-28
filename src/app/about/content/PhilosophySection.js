@@ -10,7 +10,8 @@ const PhilosophySection = () => {
       <div
         className="absolute left-1/2 top-0 -z-10 h-[400px] w-[800px] -translate-x-1/2 transform"
         style={{
-          background: "linear-gradient(180deg, rgba(251, 48, 129, 0.3) 0%, rgba(186, 85, 211, 0.2) 50%, rgba(0, 0, 0, 0) 100%)",
+          background:
+            "linear-gradient(180deg, rgba(251, 48, 129, 0.3) 0%, rgba(186, 85, 211, 0.2) 50%, rgba(0, 0, 0, 0) 100%)",
           filter: "blur(60px)",
         }}
       />
@@ -46,7 +47,8 @@ const PhilosophySection = () => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  Our mission is to build products that are powered by smart automation & deployed on secure, infinitely scalable infrastructure.
+                  Our mission is to build products that are powered by smart automation & deployed on secure, infinitely
+                  scalable infrastructure.
                 </motion.p>
 
                 <motion.p

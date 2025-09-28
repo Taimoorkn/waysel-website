@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
-import * as THREE from 'three';
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
 
 const FloatingThreeDSphere = () => {
   const mountRef = useRef(null);
@@ -29,18 +29,17 @@ const FloatingThreeDSphere = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
 
     // Initial scroll position
     setScrollY(window.scrollY);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
-
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -61,7 +60,7 @@ const FloatingThreeDSphere = () => {
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialias: true
+      antialias: true,
     });
     renderer.setSize(300, 300); // Original size
     renderer.setClearColor(0x000000, 0);
@@ -74,8 +73,8 @@ const FloatingThreeDSphere = () => {
     // Create simple material with linear gradient
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        color1: { value: new THREE.Color(0x7A66E1) }, // #7A66E1 (purple)
-        color2: { value: new THREE.Color(0xFB3081) }  // #FB3081 (pink)
+        color1: { value: new THREE.Color(0x7a66e1) }, // #7A66E1 (purple)
+        color2: { value: new THREE.Color(0xfb3081) }, // #FB3081 (pink)
       },
       vertexShader: `
         varying vec2 vUv;
@@ -112,7 +111,7 @@ const FloatingThreeDSphere = () => {
 
           gl_FragColor = vec4(color, 1.0);
         }
-      `
+      `,
     });
 
     // Create sphere mesh
@@ -161,22 +160,22 @@ const FloatingThreeDSphere = () => {
     if (isInHeroSection) {
       // Center position - full size
       return {
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, -50%) scale(1)',
-        transition: 'all 0.8s ease-out',
-        width: '300px',
-        height: '300px'
+        left: "50%",
+        top: "50%",
+        transform: "translate(-50%, -50%) scale(1)",
+        transition: "all 0.8s ease-out",
+        width: "300px",
+        height: "300px",
       };
     } else {
       // Left position - smaller size and more to the left
       return {
-        left: '-40px', // Very close to left edge
-        top: '200px',
-        transform: 'scale(0.6)', // 60% of original size
-        transition: 'all 0.8s ease-out',
-        width: '300px',
-        height: '300px'
+        left: "-40px", // Very close to left edge
+        top: "200px",
+        transform: "scale(0.6)", // 60% of original size
+        transition: "all 0.8s ease-out",
+        width: "300px",
+        height: "300px",
       };
     }
   };
@@ -184,9 +183,9 @@ const FloatingThreeDSphere = () => {
   return (
     <div
       ref={mountRef}
-      className="fixed z-10 pointer-events-none"
+      className="pointer-events-none fixed z-0"
       style={{
-        ...calculatePosition()
+        ...calculatePosition(),
       }}
     />
   );

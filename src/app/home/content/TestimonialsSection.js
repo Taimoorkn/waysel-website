@@ -135,7 +135,7 @@ const TestimonialsSection = () => {
           const IconComponent = testimonial.icon;
           return (
             <SwiperSlide key={testimonial.id} onClick={() => handleSlideClick(index)}>
-              <div className="flex h-full flex-col gap-6 rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-card bg-opacity-80 backdrop-blur-sm transition-all duration-300 px-6 py-6 xl:gap-8 xl:max-h-[460px] xl:px-10 xl:py-8">
+              <div className="flex h-full flex-col gap-6 rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-card bg-opacity-80 px-6 py-6 backdrop-blur-sm transition-all duration-300 xl:max-h-[460px] xl:gap-8 xl:px-10 xl:py-8">
                 <div className="flex flex-col items-start justify-between gap-4">
                   <h3 className="HeadingH5">{testimonial.projectName}</h3>
                   <blockquote className="BodyText">{testimonial.content}</blockquote>

@@ -62,7 +62,8 @@ const DifferenceSection = () => {
           <div
             className="absolute bottom-0 left-1/2 -z-10 h-[300px] w-[600px] -translate-x-1/2 translate-y-1/2 transform"
             style={{
-              background: "linear-gradient(0deg, rgba(251, 48, 129, 0.2) 0%, rgba(186, 85, 211, 0.1) 50%, rgba(0, 0, 0, 0) 100%)",
+              background:
+                "linear-gradient(0deg, rgba(251, 48, 129, 0.2) 0%, rgba(186, 85, 211, 0.1) 50%, rgba(0, 0, 0, 0) 100%)",
               filter: "blur(80px)",
             }}
           />

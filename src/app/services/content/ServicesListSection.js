@@ -22,7 +22,8 @@ const ServicesListSection = () => {
     {
       title: "Web & App Development",
       description: "We build modern, scalable applications that perform exceptionally across all platforms.",
-      additionalText: "From responsive websites to complex web applications, we deliver solutions that grow with your business.",
+      additionalText:
+        "From responsive websites to complex web applications, we deliver solutions that grow with your business.",
       features: [
         "React & Next.js Development",
         "Mobile App Development",
@@ -46,7 +47,8 @@ const ServicesListSection = () => {
     {
       title: "Healthcare & Compliance Products",
       description: "Specialized solutions for healthcare and highly regulated industries.",
-      additionalText: "We understand compliance requirements and build products that meet the highest security standards.",
+      additionalText:
+        "We understand compliance requirements and build products that meet the highest security standards.",
       features: [
         "HIPAA Compliant Development",
         "Healthcare Data Management",
