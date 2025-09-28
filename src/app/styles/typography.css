@@ -1,0 +1,35 @@
+/* Typography Utility Classes */
+
+/* Heading Styles */
+.HeadingH1 {
+  @apply text-center text-h1-md-med tracking-[-0.03em] text-text-primary lg:text-h1-lg-med xl:text-h1-xl-med;
+}
+
+.HeadingH2 {
+  @apply text-h2-md-reg tracking-[-0.03em] text-text-primary lg:text-h2-lg-reg xl:text-h2-xl-reg;
+}
+
+.HeadingH3 {
+  @apply text-h3-md-med !tracking-[-0.03em] text-text-primary lg:text-h3-lg-med xl:text-h3-xl-med;
+}
+
+.HeadingH4 {
+  @apply text-h4-md-med tracking-[-0.02em] text-text-primary lg:text-h4-lg-med xl:text-h4-xl-med;
+}
+
+.HeadingH5 {
+  @apply text-h5-md-bold tracking-[-0.02em] text-text-primary lg:text-h5-lg-bold xl:text-h5-xl-bold;
+}
+
+/* Body Text Styles */
+.BodyText {
+  @apply text-body-base-reg text-text-secondary sm:text-body-sm-reg md:text-body-md-reg lg:text-body-lg-reg xl:text-body-xl-reg;
+}
+
+.BodyTextMedium {
+  @apply text-body-base-med text-text-secondary sm:text-body-sm-med md:text-body-md-med lg:text-body-lg-med xl:text-body-xl-med;
+}
+
+.BodyTextBold {
+  @apply text-body-base-bold sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
+}

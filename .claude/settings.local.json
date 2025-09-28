@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npm install:*)",
+      "Bash(npm run lint)",
+      "Bash(where:*)",
+      "Bash(tree:*)",
+      "Bash(npx eslint:*)",
+      "Bash(node:*)",
+      "Bash(find:*)",
+      "Bash(curl:*)",
+      "Bash(rm:*)",
+      "Bash(sed:*)",
+      "Bash(taskkill:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm run format:*)",
+      "Read(//c/Users/Taimoor/Downloads/screenshots/**)",
+      "Bash(claude doctor)",
+      "Bash(npm i:*)",
+      "Bash(mv:*)",
+      "Read(//c/Users/Taimoor/Downloads/**)",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\images\\portfolio\")",
+      "Read(//c/Users/Taimoor/Pictures/Screenshots/**)",
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\WEB\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\TTF\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\OTF\")",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\font\\satoshi\\WEB\\fonts\")",
+      "WebFetch(domain:www.framer.com)",
+      "WebFetch(domain:motion.dev)",
+      "Bash(dir \"C:\\Users\\Taimoor\\Documents\\GitHub\\waysel-website\\public\\about us\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

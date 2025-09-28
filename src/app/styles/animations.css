@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cubic-default: cubic-bezier(0.625, 0.05, 0, 1);
+  --duration-default: 0.8s;
+  --duration-fast: 0.2s;
+  --animation-default: var(--duration-default) var(--cubic-default);
+}
+
+@keyframes letterLoop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes letterLoopReverse {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.button .single-letter,
+.nav-link-text .single-letter {
+  animation: letterLoopReverse var(--animation-default);
+  animation-fill-mode: both;
+}
+
+.button:hover .single-letter,
+.nav-link-text:hover .single-letter {
+  animation: letterLoop var(--animation-default);
+  animation-fill-mode: both;
+}
+
+.btn-scale {
+  position: relative;
+  transition: background-color var(--duration-fast) ease-in-out;
+}
+
+.btn-scale::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(24px);
+  border-radius: inherit;
+  transition: transform var(--animation-default);
+  z-index: -1;
+  background: var(--btn-bg);
+}
+
+.btn-scale:hover::before {
+  transform: scale(0.92);
+}
+
+.btn-primary {
+  --btn-bg: #efeeec;
+}
+
+.btn-secondary {
+  --btn-bg: #efeeec26;
+}
+
+/* Underline animation using scaleX - grows left to right, shrinks right to left */
+.animated-underlined {
+  display: inline-block;
+  position: relative;
+}
+
+.animated-underlined::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #efeeec;
+  transform-origin: bottom right;
+  transition: transform var(--duration-fast) ease-out;
+  will-change: transform;
+}
+
+.animated-underlined:hover::after,
+.button:hover .animated-underlined::after,
+a:hover .animated-underlined::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.gradient-rolling-text {
+  position: relative;
+  display: inline-block;
+  animation: letterLoopReverse var(--animation-default);
+  animation-fill-mode: both;
+}
+
+.button:hover .gradient-rolling-text {
+  animation: letterLoop var(--animation-default);
+  animation-fill-mode: both;
+}
