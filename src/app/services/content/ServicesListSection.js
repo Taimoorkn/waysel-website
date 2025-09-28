@@ -1,60 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ServicesListSection = () => {
+  const [activeService, setActiveService] = useState(0);
+
   const services = [
     {
-      title: "Strategic Design & Marketing",
+      title: "Strategic Design &\nMarketing",
       description: "We spend more time figuring out what you're trying to do than most teams spend designing.",
       additionalText: "That's because good output comes from clarity not just vibes.",
-      features: [
-        "UX/UI Design & Prototyping",
-        "Brand Strategy & Identity",
-        "User Research & Testing",
-        "Design Systems",
-      ],
       image: "/about us/dashboard-mockup.png",
       hasImage: true,
     },
     {
-      title: "Web & App Development",
-      description: "We build modern, scalable applications that perform exceptionally across all platforms.",
-      additionalText:
-        "From responsive websites to complex web applications, we deliver solutions that grow with your business.",
-      features: [
-        "React & Next.js Development",
-        "Mobile App Development",
-        "Progressive Web Apps",
-        "API Development & Integration",
-      ],
+      title: "Web & App\nDevelopment",
+      description: "We spend more time figuring out what you're trying to do than most teams spend designing.",
+      additionalText: "That's because good output comes from clarity not just vibes.",
       hasImage: false,
     },
     {
-      title: "Product-Driven Marketing",
-      description: "Marketing strategies that are deeply integrated with your product development cycle.",
-      additionalText: "We create campaigns that highlight your product's unique value and drive meaningful engagement.",
-      features: [
-        "Product Marketing Strategy",
-        "Content Creation & SEO",
-        "Performance Analytics",
-        "Conversion Optimization",
-      ],
+      title: "Product-Driven\nMarketing",
+      description: "We spend more time figuring out what you're trying to do than most teams spend designing.",
+      additionalText: "That's because good output comes from clarity not just vibes.",
       hasImage: false,
     },
     {
-      title: "Healthcare & Compliance Products",
-      description: "Specialized solutions for healthcare and highly regulated industries.",
-      additionalText:
-        "We understand compliance requirements and build products that meet the highest security standards.",
-      features: [
-        "HIPAA Compliant Development",
-        "Healthcare Data Management",
-        "Regulatory Compliance",
-        "Security Auditing",
-      ],
+      title: "Healthcare & Compliance\nProducts",
+      description: "We spend more time figuring out what you're trying to do than most teams spend designing.",
+      additionalText: "That's because good output comes from clarity not just vibes.",
       hasImage: false,
     },
   ];
@@ -80,55 +56,54 @@ const ServicesListSection = () => {
         />
       </motion.div>
 
-      {/* Services Grid */}
-      <div className="space-y-16 xl:space-y-24">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            className="flex flex-col items-start gap-8 xl:flex-row xl:gap-16"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            viewport={{ once: true }}
-          >
-            {/* Left content */}
-            <div className="w-full xl:w-1/2">
-              <div className="space-y-6 xl:space-y-8">
-                <h3 className="HeadingH3">{service.title}</h3>
-                <div className="space-y-4">
-                  <p className="BodyText text-text-secondary">{service.description}</p>
-                  <p className="BodyText text-text-secondary">{service.additionalText}</p>
-                </div>
-
-                {/* Features list */}
-                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-gradient-primary" />
-                      <span className="BodyText text-text-tertiary">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+      {/* Services List */}
+      <div className="space-y-32 xl:space-y-40">
+        {services.map((service, index) => {
+          const isActive = activeService === index;
+          return (
+            <motion.div
+              key={index}
+              className={`grid grid-cols-1 gap-8 xl:grid-cols-3 xl:gap-16 ${
+                isActive ? "bg-card py-20" : "bg-primary_bg py-16"
+              }`}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                onComplete: () => setActiveService(index),
+              }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {/* Column 1 - Service Title */}
+              <div className="flex items-center">
+                <h3 className="HeadingH3 whitespace-pre-line">{service.title}</h3>
               </div>
-            </div>
 
-            {/* Right content */}
-            <div className="w-full xl:w-1/2">
-              {service.hasImage ? (
-                <div className="relative h-[300px] w-full overflow-hidden rounded-2xl bg-card xl:h-[400px]">
-                  {/* Placeholder for dashboard mockup - you can replace with actual image */}
-                  <div className="flex h-full items-center justify-center border-2 border-dashed border-[#FFFFFF29] text-text-tertiary">
-                    Dashboard Mockup
-                    <br />
-                    (Add image at: /about us/dashboard-mockup.png)
+              {/* Column 2 - Image Div */}
+              <div className="flex items-center justify-center">
+                {service.hasImage ? (
+                  <div className="relative h-[250px] w-full overflow-hidden rounded-2xl bg-card xl:h-[300px]">
+                    {/* Placeholder for dashboard mockup - you can replace with actual image */}
+                    <div className="flex h-full items-center justify-center border-2 border-dashed border-[#FFFFFF29] text-text-tertiary">
+                      Dashboard Mockup
+                      <br />
+                      (Add image at: /about us/dashboard-mockup.png)
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <div className="h-[300px] xl:h-[400px]" />
-              )}
-            </div>
-          </motion.div>
-        ))}
+                ) : (
+                  <div className="h-[250px] w-full xl:h-[300px]" />
+                )}
+              </div>
+
+              {/* Column 3 - Description */}
+              <div className="flex flex-col justify-center space-y-6">
+                <p className="BodyText text-text-secondary">{service.description}</p>
+                <p className="BodyText text-text-secondary">{service.additionalText}</p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
