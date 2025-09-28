@@ -33,6 +33,18 @@ const ServicesListSection = () => {
       additionalText: "That's because good output comes from clarity not just vibes.",
       hasImage: false,
     },
+    {
+      title: "Healthcare & Compliance\nProducts",
+      description: "We spend more time figuring out what you're trying to do than most teams spend designing.",
+      additionalText: "That's because good output comes from clarity not just vibes.",
+      hasImage: false,
+    },
+    {
+      title: "Healthcare & Compliance\nProducts",
+      description: "We spend more time figuring out what you're trying to do than most teams spend designing.",
+      additionalText: "That's because good output comes from clarity not just vibes.",
+      hasImage: false,
+    },
   ];
 
   return (
@@ -60,43 +72,49 @@ const ServicesListSection = () => {
       <div>
         {services.map((service, index) => {
           const isActive = activeService === index;
+          const isLast = index === services.length - 1;
           return (
-            <motion.div
-              key={index}
-              className={`grid grid-cols-1 gap-12 border px-4 xl:grid-cols-3 xl:gap-12 xl:px-[120px] ${
-                isActive ? "bg-card py-20" : "bg-primary_bg"
-              }`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                onComplete: () => setActiveService(index),
-              }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              {/* Column 1 - Service Title */}
-              <div className="flex items-center">
-                <h3 className="HeadingH3 whitespace-pre-line">{service.title}</h3>
-              </div>
+            <>
+              <motion.div
+                key={index}
+                className={`grid grid-cols-1 gap-12 px-4 xl:grid-cols-3 xl:gap-12 xl:px-[120px] ${
+                  isActive ? "bg-card py-20" : "bg-primary_bg"
+                }`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  onComplete: () => setActiveService(index),
+                }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                {/* Column 1 - Service Title */}
+                <div className="flex items-center">
+                  <h3 className="HeadingH3 whitespace-pre-line">{service.title}</h3>
+                </div>
 
-              {/* Column 2 - Image Div */}
-              <div className="flex items-center justify-center">
-                {service.hasImage ? (
-                  <div className="relative h-[250px] w-full overflow-hidden rounded-2xl bg-card xl:h-[400px]">
-                    <Image src={service.image} alt={service.title} fill className="object-cover" />
-                  </div>
-                ) : (
-                  <div className="h-[250px] w-full xl:h-[400px]" />
-                )}
-              </div>
+                {/* Column 2 - Image Div */}
+                <div className="flex items-center justify-center">
+                  {service.hasImage ? (
+                    <div className="relative h-[250px] w-full overflow-hidden rounded-2xl bg-card xl:h-[400px]">
+                      <Image src={service.image} alt={service.title} fill className="object-cover" />
+                    </div>
+                  ) : (
+                    <div className="h-[250px] w-full xl:h-[400px]" />
+                  )}
+                </div>
 
-              {/* Column 3 - Description */}
-              <div className="flex flex-col justify-center space-y-6">
-                <p className="BodyText text-text-secondary">{service.description}</p>
-                <p className="BodyText text-text-secondary">{service.additionalText}</p>
-              </div>
-            </motion.div>
+                {/* Column 3 - Description */}
+                <div className="flex flex-col justify-center space-y-6">
+                  <p className="BodyText text-text-secondary">{service.description}</p>
+                  <p className="BodyText text-text-secondary">{service.additionalText}</p>
+                </div>
+              </motion.div>
+
+              {/* Line divider between services - except after the last one */}
+              {!isLast && <div className="h-px bg-gradient-primary" />}
+            </>
           );
         })}
       </div>
