@@ -18,7 +18,7 @@ const AboutHeroSection = () => {
         className="absolute inset-0 z-0"
       />
 
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center">
         {/* Main content */}
         <div className="HeadingH1">
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
@@ -28,7 +28,7 @@ const AboutHeroSection = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              The integrated
+              The integrated powerhouse
             </motion.h1>
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
@@ -38,7 +38,7 @@ const AboutHeroSection = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              powerhouse for
+              for
             </motion.h1>
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
