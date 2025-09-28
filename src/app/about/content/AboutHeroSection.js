@@ -19,6 +19,21 @@ const AboutHeroSection = () => {
       />
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
+        {/* 3D Wireframe Sphere */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="sphere">
+            {Array.from({ length: 18 }, (_, i) => (
+              <div
+                key={i}
+                className="meridian"
+                style={{
+                  transform: `rotateX(${(i + 1) * 10}deg)`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* Main content */}
         <div className="HeadingH1">
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
