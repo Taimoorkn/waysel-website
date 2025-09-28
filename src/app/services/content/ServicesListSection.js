@@ -47,7 +47,7 @@ const ServicesListSection = () => {
   return (
     <section className="py-8 xl:py-20">
       {/* Section Title */}
-      <div className="relative mb-16 text-start xl:mb-24 xl:px-[120px]">
+      <div className="relative mb-12 px-4 text-start xl:mb-24 xl:px-[120px]">
         <h2 className="HeadingH2 text-text-primary">Our Services</h2>
         <div
           className="absolute left-[10%] top-0 -z-10 h-[75px] w-[200px] -translate-x-1/2 -translate-y-1/2 transform"
@@ -67,8 +67,8 @@ const ServicesListSection = () => {
           return (
             <>
               <div
-                className={`grid grid-cols-1 gap-12 px-4 xl:grid-cols-3 xl:gap-12 xl:px-[120px] ${
-                  isFirst ? "bg-card py-20" : "bg-primary_bg"
+                className={`grid grid-cols-1 gap-8 px-4 py-12 xl:grid-cols-3 xl:gap-12 xl:px-[120px] xl:py-20 ${
+                  isFirst ? "bg-card" : "bg-primary_bg"
                 }`}
               >
                 {/* Column 1 - Service Title */}
@@ -79,16 +79,16 @@ const ServicesListSection = () => {
                 {/* Column 2 - Image Div */}
                 <div className="flex items-center justify-center">
                   {service.hasImage ? (
-                    <div className="relative h-[250px] w-full overflow-hidden rounded-2xl bg-card xl:h-[400px]">
+                    <div className="relative h-[200px] w-full overflow-hidden rounded-2xl bg-card xl:h-[400px]">
                       <Image src={service.image} alt={service.title} fill className="object-cover" />
                     </div>
                   ) : (
-                    <div className="h-[250px] w-full xl:h-[400px]" />
+                    <div className="h-[200px] w-full xl:h-[400px]" />
                   )}
                 </div>
 
                 {/* Column 3 - Description */}
-                <div className="flex flex-col justify-center space-y-6">
+                <div className="flex flex-col justify-center space-y-4 xl:space-y-6">
                   <p className="BodyText text-text-secondary">{service.description}</p>
                   <p className="BodyText text-text-secondary">{service.additionalText}</p>
                 </div>

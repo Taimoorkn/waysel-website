@@ -7,10 +7,10 @@ import GradientText from "@/components/GradientText";
 const DifferenceSection = () => {
   return (
     <section className="section relative bg-transparent">
-      <div className="flex gap-24">
-        {/* First Section - Left - Independent content area */}
+      <div className="flex flex-col gap-12 xl:flex-row xl:gap-24">
+        {/* First Section - Mobile: Full width, XL: Left half */}
         <motion.div
-          className="flex w-1/2 flex-col items-start gap-[88px] bg-primary_bg pl-12 xl:py-8"
+          className="flex w-full flex-col items-start gap-12 bg-primary_bg px-6 py-8 xl:w-1/2 xl:gap-[88px] xl:pl-12 xl:py-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -30,7 +30,7 @@ const DifferenceSection = () => {
               difference
             </h2>
           </motion.div>
-          <div className="flex flex-col gap-12 font-satoshi text-[32px] leading-[52px] tracking-[-0.03em]">
+          <div className="flex flex-col gap-6 font-satoshi text-lg leading-8 tracking-[-0.03em] xl:gap-12 xl:text-[32px] xl:leading-[52px]">
             <motion.p
               className="text-text-tertiary"
               initial={{ opacity: 0 }}
@@ -51,9 +51,9 @@ const DifferenceSection = () => {
             </motion.p>
           </div>
         </motion.div>
-        {/* Second Section - Right - Independent gradient border box */}
+        {/* Second Section - Mobile: Full width, XL: Right half */}
         <motion.div
-          className="relative h-[500px] w-1/2 rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px"
+          className="relative h-[300px] w-full rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px xl:h-[500px] xl:w-1/2"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

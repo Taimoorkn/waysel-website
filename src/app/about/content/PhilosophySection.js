@@ -31,9 +31,9 @@ const PhilosophySection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="flex h-full rounded-[32px] bg-card">
-            {/* First Section - Left */}
-            <div className="flex h-full w-1/2 flex-col items-start justify-center gap-12 rounded-l-[32px] bg-primary_bg px-8 font-satoshi text-[32px] leading-[52px] tracking-[-0.03em] xl:px-12 xl:py-20">
+          <div className="flex h-full flex-col rounded-[32px] bg-card xl:flex-row">
+            {/* First Section - Mobile: Full width, XL: Left half */}
+            <div className="flex h-full w-full flex-col items-start justify-center gap-6 rounded-t-[32px] bg-primary_bg px-6 py-12 font-satoshi text-lg leading-8 tracking-[-0.03em] xl:w-1/2 xl:gap-12 xl:rounded-l-[32px] xl:rounded-t-none xl:px-12 xl:py-20 xl:text-[32px] xl:leading-[52px]">
               <motion.p
                 className="text-text-tertiary"
                 initial={{ opacity: 0 }}
@@ -55,8 +55,8 @@ const PhilosophySection = () => {
               </motion.p>
             </div>
 
-            {/* Second Section - Right */}
-            <div className="flex h-full w-1/2 flex-col items-start justify-center gap-4 rounded-r-[32px] bg-card px-8 xl:px-16"></div>
+            {/* Second Section - Mobile: Full width, XL: Right half */}
+            <div className="flex h-full w-full flex-col items-start justify-center gap-4 rounded-b-[32px] bg-card px-6 py-8 xl:w-1/2 xl:rounded-b-none xl:rounded-r-[32px] xl:px-16"></div>
           </div>
         </motion.div>
       </div>
