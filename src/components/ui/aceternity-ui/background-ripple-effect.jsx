@@ -35,9 +35,6 @@ export const BackgroundRippleEffect = ({
           rows={dimensions.rows}
           cols={dimensions.cols}
           cellSize={cellSize}
-          borderColor="#d4d4d8"
-          fillColor="rgba(245, 245, 245, 0.1)"
-          shadowColor="#737373"
           clickedCell={clickedCell}
           onCellClick={(row, col) => {
             setClickedCell({ row, col });
@@ -54,9 +51,12 @@ const DivGrid = ({
   rows = 20,
   cols = 35,
   cellSize = 56,
-  borderColor = "#d4d4d8",
-  fillColor = "rgba(245, 245, 245, 0.1)",
-  shadowColor = "#737373",
+  // borderColor = "#d4d4d8",
+  // fillColor = "rgba(245, 245, 245, 0.1)",
+  // shadowColor = "#737373",
+  borderColor = "#000000",
+  fillColor = "rgba(245, 245, 245, 0.2)",
+  shadowColor = "rgba(255, 255, 255, 0.3)",
   clickedCell = null,
   onCellClick = () => { },
   interactive = true

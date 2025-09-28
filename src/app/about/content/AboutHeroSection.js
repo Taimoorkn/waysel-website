@@ -11,8 +11,8 @@ const AboutHeroSection = () => {
       {/* Retro Grid Background */}
       <RetroGrid
         angle={65}
-        cellSize={60}
-        opacity={0.3}
+        cellSize={30}
+        opacity={0.4}
         lightLineColor="#7A66E1"
         darkLineColor="#7A66E1"
         className="absolute inset-0 z-0"
