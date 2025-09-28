@@ -18,16 +18,9 @@ const FloatingThreeDSphere = () => {
     setWindowHeight(window.innerHeight);
     setWindowWidth(window.innerWidth);
 
-    // Handle scroll with throttling for smoother performance
-    let ticking = false;
+    // Handle scroll events
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
+      setScrollY(window.scrollY);
     };
 
     // Handle resize
@@ -39,11 +32,15 @@ const FloatingThreeDSphere = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleResize);
 
+    // Initial scroll position
+    setScrollY(window.scrollY);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -66,13 +63,13 @@ const FloatingThreeDSphere = () => {
       alpha: true,
       antialias: true
     });
-    renderer.setSize(200, 200); // Smaller for floating effect
+    renderer.setSize(300, 300); // Original size
     renderer.setClearColor(0x000000, 0);
     rendererRef.current = renderer;
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create sphere geometry (smaller for floating)
-    const geometry = new THREE.SphereGeometry(1.5, 32, 32);
+    // Create sphere geometry (original size)
+    const geometry = new THREE.SphereGeometry(2.4, 32, 32);
 
     // Create simple material with linear gradient
     const material = new THREE.ShaderMaterial({
@@ -157,59 +154,29 @@ const FloatingThreeDSphere = () => {
     };
   }, []);
 
-  // Calculate position based on scroll
+  // Calculate position and size based on scroll
   const calculatePosition = () => {
-    // Define hero section height - accounting for the hero section's actual height
-    // The hero section has min-h-screen and padding, so let's use a more accurate calculation
-    const heroSectionHeight = windowHeight;
-
-    // Check if we're in the hero section
-    const isInHeroSection = scrollY < heroSectionHeight * 0.7; // Reduced buffer for better detection
+    const isInHeroSection = scrollY < 200;
 
     if (isInHeroSection) {
-      // Position sphere in the center of the hero section's visible area
-      // Account for hero section padding: pt-[80px] xl:pt-[150px]
-      const heroPaddingTop = windowWidth >= 1280 ? 150 : 80; // xl breakpoint is 1280px
-
-      // Center of the hero section's content area
-      const heroContentHeight = windowHeight - heroPaddingTop;
-      const centerY = heroPaddingTop + (heroContentHeight / 2);
-
-      // Add gentle floating animation
-      const floatOffset = Math.sin(Date.now() * 0.002) * 15;
-
+      // Center position - full size
       return {
         left: '50%',
-        top: `${centerY + floatOffset}px`,
-        transform: 'translate(-50%, -50%)',
-        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+        top: '50%',
+        transform: 'translate(-50%, -50%) scale(1)',
+        transition: 'all 0.8s ease-out',
+        width: '300px',
+        height: '300px'
       };
     } else {
-      // Floating mode when scrolled past hero
-      const maxTop = windowHeight - 250; // Keep 250px from bottom
-      const minTop = 50; // Keep 50px from top
-
-      // Calculate how far we've scrolled past the hero
-      const scrollPastHero = scrollY - heroSectionHeight * 0.7;
-
-      // Very gentle movement - only move 15% of scroll distance past hero
-      const scrollMovement = scrollPastHero * 0.15;
-
-      // Start floating from a good position
-      const basePosition = windowHeight * 0.3;
-      let topPosition = basePosition + scrollMovement;
-
-      // Clamp to stay within viewport
-      topPosition = Math.max(minTop, Math.min(topPosition, maxTop));
-
-      // Add gentle floating animation
-      const floatOffset = Math.sin(Date.now() * 0.002) * 15;
-
+      // Left position - smaller size and more to the left
       return {
-        left: '50px',
-        top: `${topPosition + floatOffset}px`,
-        transform: 'translate(-50%, -50%)',
-        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+        left: '-40px', // Very close to left edge
+        top: '200px',
+        transform: 'scale(0.6)', // 60% of original size
+        transition: 'all 0.8s ease-out',
+        width: '300px',
+        height: '300px'
       };
     }
   };
@@ -219,8 +186,6 @@ const FloatingThreeDSphere = () => {
       ref={mountRef}
       className="fixed z-10 pointer-events-none"
       style={{
-        width: '200px',
-        height: '200px',
         ...calculatePosition()
       }}
     />
