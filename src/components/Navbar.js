@@ -43,32 +43,32 @@ const Navbar = () => {
         let expandedMargin, originalMargin;
 
         if (width >= 1280) {
-          // xl breakpoint
-          originalMargin = "7rem"; // xl:mx-28
-          expandedMargin = "6rem"; // Slight contraction
+          // xl breakpoint (mx-28 = 7rem)
+          originalMargin = "7rem";
+          expandedMargin = "5rem";
         } else if (width >= 1024) {
-          // lg breakpoint
-          originalMargin = "4rem"; // lg:mx-16
-          expandedMargin = "3rem";
+          // lg breakpoint (mx-16 = 4rem)
+          originalMargin = "4rem";
+          expandedMargin = "2.5rem";
         } else if (width >= 768) {
-          // md breakpoint
-          originalMargin = "2rem"; // md:mx-8
-          expandedMargin = "1.5rem";
-        } else if (width >= 640) {
-          // sm breakpoint
-          originalMargin = "1.5rem"; // sm:mx-6
+          // md breakpoint (mx-8 = 2rem)
+          originalMargin = "2rem";
           expandedMargin = "1rem";
+        } else if (width >= 640) {
+          // sm breakpoint (mx-6 = 1.5rem)
+          originalMargin = "1.5rem";
+          expandedMargin = "0.75rem";
         } else {
-          // mobile
-          originalMargin = "1rem"; // mx-4
-          expandedMargin = "0.5rem";
+          // mobile (mx-4 = 1rem)
+          originalMargin = "1rem";
+          expandedMargin = "0.25rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
-          y: -10,
+          y: -20,
           marginLeft: expandedMargin,
           marginRight: expandedMargin,
-          duration: 0.3,
+          duration: 0.4,
           ease: "power2.out",
         });
       },
@@ -78,27 +78,27 @@ const Navbar = () => {
         let originalMargin;
 
         if (width >= 1280) {
-          // xl breakpoint
-          originalMargin = "7rem";  
+          // xl breakpoint (mx-28 = 7rem)
+          originalMargin = "7rem";
         } else if (width >= 1024) {
-          // lg breakpoint
-          originalMargin = "4rem";  
+          // lg breakpoint (mx-16 = 4rem)
+          originalMargin = "4rem";
         } else if (width >= 768) {
-          // md breakpoint
-          originalMargin = "2rem";  
+          // md breakpoint (mx-8 = 2rem)
+          originalMargin = "2rem";
         } else if (width >= 640) {
-          // sm breakpoint
-          originalMargin = "1.5rem";  
+          // sm breakpoint (mx-6 = 1.5rem)
+          originalMargin = "1.5rem";
         } else {
-          // mobile
-          originalMargin = "1rem";  
+          // mobile (mx-4 = 1rem)
+          originalMargin = "1rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
           y: 0,
           marginLeft: originalMargin,
           marginRight: originalMargin,
-          duration: 0.3,
+          duration: 0.4,
           ease: "power2.out",
         });
       },
@@ -137,7 +137,8 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
-        <div className="navbar-content fixed left-0 right-0 top-0 z-50 mx-4 flex h-12 items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-28 xl:pt-8">
+        <div className="navbar-content fixed left-0 right-0 top-0 z-50 mx-4 flex items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-[120px] xl:pt-8">
+          {/* <div className="navbar-content fixed left-0 right-0 top-0 z-50 mx-4 flex items-center justify-between border pt-4 sm:mx-6 sm:pt-5 md:mx-8 md:pt-6 lg:mx-16 lg:pt-8 xl:mx-28 xl:pt-10">*/}
           {/* Left side - Brand, Logo, Nav Links */}
           <motion.div
             className="flex items-center"
