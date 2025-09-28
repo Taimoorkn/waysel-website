@@ -1,12 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import Image from "next/image";
 
 const ServicesListSection = () => {
-  const [activeService, setActiveService] = useState(0);
-
   const services = [
     {
       title: "Strategic Design &\nMarketing",
@@ -50,13 +47,7 @@ const ServicesListSection = () => {
   return (
     <section className="py-8 xl:py-20">
       {/* Section Title */}
-      <motion.div
-        className="relative mb-16 text-start xl:mb-24 xl:px-[120px]"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
+      <div className="relative mb-16 text-start xl:mb-24 xl:px-[120px]">
         <h2 className="HeadingH2 text-text-primary">Our Services</h2>
         <div
           className="absolute left-[10%] top-0 -z-10 h-[75px] w-[200px] -translate-x-1/2 -translate-y-1/2 transform"
@@ -66,28 +57,19 @@ const ServicesListSection = () => {
             borderRadius: "50%",
           }}
         />
-      </motion.div>
+      </div>
 
       {/* Services List */}
       <div>
         {services.map((service, index) => {
-          const isActive = activeService === index;
+          const isFirst = index === 0;
           const isLast = index === services.length - 1;
           return (
             <>
-              <motion.div
-                key={index}
+              <div
                 className={`grid grid-cols-1 gap-12 px-4 xl:grid-cols-3 xl:gap-12 xl:px-[120px] ${
-                  isActive ? "bg-card py-20" : "bg-primary_bg"
+                  isFirst ? "bg-card py-20" : "bg-primary_bg"
                 }`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  onComplete: () => setActiveService(index),
-                }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true, amount: 0.3 }}
               >
                 {/* Column 1 - Service Title */}
                 <div className="flex items-center">
@@ -110,10 +92,22 @@ const ServicesListSection = () => {
                   <p className="BodyText text-text-secondary">{service.description}</p>
                   <p className="BodyText text-text-secondary">{service.additionalText}</p>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Line divider between services - except after the last one */}
-              {!isLast && <div className="h-px bg-gradient-primary" />}
+              {!isLast && (
+                <div
+                  className="w-full"
+                  style={{
+                    height: '0px',
+                    borderTop: '1px solid transparent',
+                    borderImage: 'linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%) 1',
+                    minHeight: '0px',
+                    maxHeight: '0px'
+                  }}
+                  data-divider={`line-${index}-${index + 1}`}
+                />
+              )}
             </>
           );
         })}
