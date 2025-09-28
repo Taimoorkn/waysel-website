@@ -11,7 +11,7 @@ const PhilosophySection = () => {
         <img src="/images/filler/spotlight.png" alt="spotlight" className=" " />
       </div>
 
-      <div className="mx-auto max-w-6xl">
+      <div className="flex flex-col">
         {/* Section Title */}
         <motion.div
           className="mb-16 text-center xl:mb-24"
@@ -20,43 +20,43 @@ const PhilosophySection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="HeadingH2 text-text-primary">Our philosophy</h2>
+          <h2 className="HeadingH2">Our philosophy</h2>
         </motion.div>
 
-        {/* Philosophy Card */}
+        {/* Main Philosophy Container */}
         <motion.div
-          className="relative"
+          className="relative rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          {/* Card with gradient border */}
-          <div className="rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px">
-            <div className="h-full rounded-[32px] bg-card px-8 py-12 xl:px-16 xl:py-20">
-              <div className="space-y-8 xl:space-y-12">
-                <motion.p
-                  className="HeadingH4 leading-relaxed text-text-secondary"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  Our mission is to build products that are powered by smart automation & deployed on secure, infinitely
-                  scalable infrastructure.
-                </motion.p>
-
-                <motion.p
-                  className="HeadingH4 leading-relaxed text-text-primary"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  We don't just follow standards—we establish new ones for your market.
-                </motion.p>
-              </div>
+          <div className="flex h-full rounded-[32px] bg-card">
+            {/* First Section - Left */}
+            <div className="flex h-full w-1/2 flex-col items-start justify-center gap-12 rounded-l-[32px] bg-primary_bg px-8 font-satoshi text-[32px] leading-[52px] tracking-[-0.03em] xl:px-12 xl:py-20">
+              <motion.p
+                className="text-text-tertiary"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                Our mission is to build products that are powered by smart automation & deployed on secure, infinitely
+                scalable infrastructure.
+              </motion.p>
+              <motion.p
+                className="font-medium text-text-secondary"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                We don't just follow standards—we establish new ones for your market.
+              </motion.p>
             </div>
+
+            {/* Second Section - Right */}
+            <div className="flex h-full w-1/2 flex-col items-start justify-center gap-4 rounded-r-[32px] bg-card px-8 xl:px-16"></div>
           </div>
         </motion.div>
       </div>
