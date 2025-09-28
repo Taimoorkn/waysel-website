@@ -58,7 +58,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="section relative min-h-screen overflow-hidden bg-transparent pt-[80px] xl:pt-[150px]">
+    <section className="section relative min-h-screen overflow-hidden bg-transparent pt-[80px] xl:pt-[150px] 2xl:flex 2xl:items-center 2xl:pt-0">
       {/* Unicorn Studio WebGL mesh background */}
       {/* {showWebGL && <div data-us-project="u8G0keiRdDw7PbxSpQ3N" className="absolute inset-0 -z-20 h-full w-full" />} */}
       {/* Overlay to cover watermark - adjust position as needed */}

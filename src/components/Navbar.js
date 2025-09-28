@@ -42,24 +42,29 @@ const Navbar = () => {
         const width = window.innerWidth;
         let expandedMargin, originalMargin;
 
-        if (width >= 1280) { // xl breakpoint
+        if (width >= 1280) {
+          // xl breakpoint
           originalMargin = "7rem"; // xl:mx-28
           expandedMargin = "6rem"; // Slight contraction
-        } else if (width >= 1024) { // lg breakpoint
+        } else if (width >= 1024) {
+          // lg breakpoint
           originalMargin = "4rem"; // lg:mx-16
           expandedMargin = "3rem";
-        } else if (width >= 768) { // md breakpoint
+        } else if (width >= 768) {
+          // md breakpoint
           originalMargin = "2rem"; // md:mx-8
           expandedMargin = "1.5rem";
-        } else if (width >= 640) { // sm breakpoint
+        } else if (width >= 640) {
+          // sm breakpoint
           originalMargin = "1.5rem"; // sm:mx-6
           expandedMargin = "1rem";
-        } else { // mobile
+        } else {
+          // mobile
           originalMargin = "1rem"; // mx-4
           expandedMargin = "0.5rem";
         }
 
-        gsap.to(navbar.querySelector('.navbar-content'), {
+        gsap.to(navbar.querySelector(".navbar-content"), {
           y: -10,
           marginLeft: expandedMargin,
           marginRight: expandedMargin,
@@ -72,19 +77,24 @@ const Navbar = () => {
         const width = window.innerWidth;
         let originalMargin;
 
-        if (width >= 1280) { // xl breakpoint
-          originalMargin = "7rem"; // xl:mx-28
-        } else if (width >= 1024) { // lg breakpoint
-          originalMargin = "4rem"; // lg:mx-16
-        } else if (width >= 768) { // md breakpoint
-          originalMargin = "2rem"; // md:mx-8
-        } else if (width >= 640) { // sm breakpoint
-          originalMargin = "1.5rem"; // sm:mx-6
-        } else { // mobile
-          originalMargin = "1rem"; // mx-4
+        if (width >= 1280) {
+          // xl breakpoint
+          originalMargin = "7rem";  
+        } else if (width >= 1024) {
+          // lg breakpoint
+          originalMargin = "4rem";  
+        } else if (width >= 768) {
+          // md breakpoint
+          originalMargin = "2rem";  
+        } else if (width >= 640) {
+          // sm breakpoint
+          originalMargin = "1.5rem";  
+        } else {
+          // mobile
+          originalMargin = "1rem";  
         }
 
-        gsap.to(navbar.querySelector('.navbar-content'), {
+        gsap.to(navbar.querySelector(".navbar-content"), {
           y: 0,
           marginLeft: originalMargin,
           marginRight: originalMargin,
@@ -140,7 +150,7 @@ const Navbar = () => {
             </Link>
           </motion.div>
           <motion.div
-            className="ml-[7%] hidden items-center space-x-8 xl:flex"
+            className="ml-[6%] hidden items-center space-x-8 xl:flex"
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -166,12 +176,12 @@ const Navbar = () => {
           </motion.div>
           {/* Right side - Contact Us button */}
           <motion.div
-            className="hidden items-center gap-7 xl:flex"
+            className="hidden items-center xl:flex"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            <Button variant="primary" href="/contact" className="">
+            <Button variant="primary" href="/contact">
               Contact Us
             </Button>
           </motion.div>
