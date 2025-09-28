@@ -40,27 +40,22 @@ const Navbar = () => {
       onEnter: () => {
         // Get current screen width and match Tailwind breakpoints
         const width = window.innerWidth;
-        let expandedMargin, originalMargin;
+        let expandedMargin;
 
         if (width >= 1280) {
           // xl breakpoint (mx-28 = 7rem)
-          originalMargin = "7rem";
           expandedMargin = "5rem";
         } else if (width >= 1024) {
           // lg breakpoint (mx-16 = 4rem)
-          originalMargin = "4rem";
           expandedMargin = "2.5rem";
         } else if (width >= 768) {
           // md breakpoint (mx-8 = 2rem)
-          originalMargin = "2rem";
           expandedMargin = "1rem";
         } else if (width >= 640) {
           // sm breakpoint (mx-6 = 1.5rem)
-          originalMargin = "1.5rem";
           expandedMargin = "0.75rem";
         } else {
           // mobile (mx-4 = 1rem)
-          originalMargin = "1rem";
           expandedMargin = "0.25rem";
         }
 
@@ -133,11 +128,12 @@ const Navbar = () => {
       /> */}
       <motion.nav
         ref={navRef}
+        className="fixed left-0 right-0 top-0 z-50 bg-primary_bg/80 backdrop-blur-md"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
-        <div className="navbar-content fixed left-0 right-0 top-0 z-50 mx-4 flex items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-[120px] xl:pt-8">
+        <div className="navbar-content mx-4 flex items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-[120px] xl:pt-8">
           {/* <div className="navbar-content fixed left-0 right-0 top-0 z-50 mx-4 flex items-center justify-between border pt-4 sm:mx-6 sm:pt-5 md:mx-8 md:pt-6 lg:mx-16 lg:pt-8 xl:mx-28 xl:pt-10">*/}
           {/* Left side - Brand, Logo, Nav Links */}
           <motion.div
