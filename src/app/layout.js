@@ -4,6 +4,7 @@ import "./styles/globals.css";
 import "./styles/animations.css";
 import "./styles/typography.css";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
+import FloatingThreeDSphere from "../components/FloatingThreeDSphere";
 
 const satoshi = localFont({
   src: [
@@ -99,6 +100,7 @@ export default function RootLayout({ children }) {
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
 
+        <FloatingThreeDSphere />
         <div id="root">{children}</div>
       </body>
     </html>

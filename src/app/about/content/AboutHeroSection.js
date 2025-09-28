@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import GradientText from "@/components/GradientText";
 import { RetroGrid } from "@/components/ui/shadcn-io/retro-grid/index";
-import ThreeDSphere from "@/components/ThreeDSphere";
 
 const AboutHeroSection = () => {
   return (
@@ -18,9 +17,6 @@ const AboutHeroSection = () => {
         darkLineColor="#7A66E1"
         className="absolute inset-0 z-0"
       />
-
-      {/* 3D Sphere */}
-      <ThreeDSphere />
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
 
