@@ -64,16 +64,14 @@ const ServicesListSection = () => {
       <div className="mx-auto max-w-7xl">
         {/* Section Title */}
         <motion.div
-          className="mb-16 text-center xl:mb-24"
+          className="relative mb-16 text-center xl:mb-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <h2 className="HeadingH2 text-text-primary">Our Services</h2>
-          <p className="BodyText mt-4 text-text-secondary">
-            End-to-end solutions tailored to your specific needs and challenges
-          </p>
+          <div className="oval-blur absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 transform" />
         </motion.div>
 
         {/* Services Grid */}
