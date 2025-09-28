@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-neutral-100: rgb(245 245 245);
+  --color-neutral-300: rgb(212 212 212);
+  --color-neutral-500: rgb(115 115 115);
+  --color-neutral-700: rgb(64 64 64);
+  --color-neutral-800: rgb(38 38 38);
+  --color-neutral-900: rgb(23 23 23);
+}
+
 @layer components {
   .section {
     @apply px-4 py-8 xl:px-[120px] xl:py-20;
@@ -131,6 +140,30 @@
   }
 }
 
+@theme inline {
+  --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out none 1
+    var(--delay, 0ms);
+
+  @keyframes cell-ripple {
+    0% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.4;
+    }
+  }
+}
+
+@keyframes grid {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+.animate-grid {
+  animation: grid 15s linear infinite;
+}
 /* 
 .fade {
   position: relative;

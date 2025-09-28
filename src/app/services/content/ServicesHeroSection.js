@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import GradientText from "@/components/GradientText";
-
+import { BackgroundRippleEffect } from "@/components/ui/aceternity-ui/background-ripple-effect";
 const ServicesHeroSection = () => {
   return (
     <section className="section relative min-h-screen overflow-hidden bg-transparent pt-[80px] xl:pt-[150px]">
+      <BackgroundRippleEffect />
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-center">
         {/* Main content */}
         <div className="HeadingH1">

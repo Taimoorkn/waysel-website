@@ -113,7 +113,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* <div
+      <div
         className="pointer-events-none fixed inset-x-0 top-0 z-30"
         style={{
           height: "200px",
@@ -125,10 +125,10 @@ const Navbar = () => {
             rgba(0, 0, 0, 0) 100%
           )`,
         }}
-      /> */}
+      />
       <motion.nav
         ref={navRef}
-        className="fixed left-0 right-0 top-0 z-50 bg-primary_bg/80 backdrop-blur-md"
+        className="fixed left-0 right-0 top-0 z-50"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}

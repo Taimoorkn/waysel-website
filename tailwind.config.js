@@ -106,6 +106,18 @@ module.exports = {
         "3xl": "1920px",
         "4xl": "2000px",
       },
+
+      animation: {
+        "cell-ripple": "cell-ripple var(--duration, 200ms) ease-out var(--delay, 0ms)",
+        grid: "grid 15s linear infinite",
+      },
+      keyframes: {
+        "cell-ripple": {
+          "0%": { opacity: "0.4" },
+          "50%": { opacity: "0.8" },
+          "100%": { opacity: "0.4" },
+        },
+      },
     },
   },
   plugins: [],

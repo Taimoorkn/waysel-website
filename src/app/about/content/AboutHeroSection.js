@@ -3,11 +3,22 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import GradientText from "@/components/GradientText";
+import { RetroGrid } from "@/components/ui/shadcn-io/retro-grid/index";
 
 const AboutHeroSection = () => {
   return (
     <section className="section relative min-h-screen overflow-hidden bg-transparent pt-[80px] xl:pt-[150px]">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center">
+      {/* Retro Grid Background */}
+      <RetroGrid
+        angle={65}
+        cellSize={60}
+        opacity={0.3}
+        lightLineColor="#00ff41"
+        darkLineColor="#00ff41"
+        className="absolute inset-0 z-0"
+      />
+
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center">
         {/* Main content */}
         <div className="HeadingH1">
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>

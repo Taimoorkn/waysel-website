@@ -19,8 +19,6 @@
   100% { transform: translateY(0); }
 }
 
-
-
 .button .single-letter,
 .nav-link-text .single-letter {
   animation: letterLoopReverse var(--animation-default);
