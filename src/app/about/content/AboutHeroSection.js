@@ -7,7 +7,7 @@ import { RetroGrid } from "@/components/ui/shadcn-io/retro-grid/index";
 
 const AboutHeroSection = () => {
   return (
-    <section className="section relative min-h-screen overflow-hidden bg-transparent pt-[80px] xl:pt-[150px]">
+    <section className="section relative min-h-screen overflow-hidden bg-transparent pt-[80px] xl:pt-[150px] 2xl:flex 2xl:items-center 2xl:pt-0">
       {/* Retro Grid Background */}
       <RetroGrid
         angle={65}
