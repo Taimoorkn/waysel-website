@@ -11,10 +11,12 @@ const FloatingThreeDSphere = () => {
   const animationIdRef = useRef(null);
   const [scrollY, setScrollY] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    // Set initial window height
+    // Set initial window dimensions
     setWindowHeight(window.innerHeight);
+    setWindowWidth(window.innerWidth);
 
     // Handle scroll with throttling for smoother performance
     let ticking = false;
@@ -31,6 +33,7 @@ const FloatingThreeDSphere = () => {
     // Handle resize
     const handleResize = () => {
       setWindowHeight(window.innerHeight);
+      setWindowWidth(window.innerWidth);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -156,39 +159,68 @@ const FloatingThreeDSphere = () => {
 
   // Calculate position based on scroll
   const calculatePosition = () => {
-    // Keep sphere visible within the viewport
-    const maxTop = windowHeight - 250; // Keep 250px from bottom
-    const minTop = 50; // Keep 50px from top
+    // Define hero section height - accounting for the hero section's actual height
+    // The hero section has min-h-screen and padding, so let's use a more accurate calculation
+    const heroSectionHeight = windowHeight;
 
-    // Very gentle movement - only move 20% of scroll distance
-    const scrollMovement = scrollY * 0.2;
+    // Check if we're in the hero section
+    const isInHeroSection = scrollY < heroSectionHeight * 0.7; // Reduced buffer for better detection
 
-    // Calculate base position (start at 30% of screen height)
-    const basePosition = windowHeight * 0.3;
+    if (isInHeroSection) {
+      // Position sphere in the center of the hero section's visible area
+      // Account for hero section padding: pt-[80px] xl:pt-[150px]
+      const heroPaddingTop = windowWidth >= 1280 ? 150 : 80; // xl breakpoint is 1280px
 
-    // Final position with movement constraint
-    let topPosition = basePosition + scrollMovement;
+      // Center of the hero section's content area
+      const heroContentHeight = windowHeight - heroPaddingTop;
+      const centerY = heroPaddingTop + (heroContentHeight / 2);
 
-    // Clamp to stay within viewport
-    topPosition = Math.max(minTop, Math.min(topPosition, maxTop));
+      // Add gentle floating animation
+      const floatOffset = Math.sin(Date.now() * 0.002) * 15;
 
-    // Add gentle floating animation
-    const floatOffset = Math.sin(Date.now() * 0.002) * 15;
+      return {
+        left: '50%',
+        top: `${centerY + floatOffset}px`,
+        transform: 'translate(-50%, -50%)',
+        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+      };
+    } else {
+      // Floating mode when scrolled past hero
+      const maxTop = windowHeight - 250; // Keep 250px from bottom
+      const minTop = 50; // Keep 50px from top
 
-    return {
-      left: '50px',
-      top: `${topPosition + floatOffset}px`
-    };
+      // Calculate how far we've scrolled past the hero
+      const scrollPastHero = scrollY - heroSectionHeight * 0.7;
+
+      // Very gentle movement - only move 15% of scroll distance past hero
+      const scrollMovement = scrollPastHero * 0.15;
+
+      // Start floating from a good position
+      const basePosition = windowHeight * 0.3;
+      let topPosition = basePosition + scrollMovement;
+
+      // Clamp to stay within viewport
+      topPosition = Math.max(minTop, Math.min(topPosition, maxTop));
+
+      // Add gentle floating animation
+      const floatOffset = Math.sin(Date.now() * 0.002) * 15;
+
+      return {
+        left: '50px',
+        top: `${topPosition + floatOffset}px`,
+        transform: 'translate(-50%, -50%)',
+        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+      };
+    }
   };
 
   return (
     <div
       ref={mountRef}
-      className="fixed z-50 pointer-events-none"
+      className="fixed z-10 pointer-events-none"
       style={{
         width: '200px',
         height: '200px',
-        transition: 'top 0.1s ease-out, left 0.1s ease-out',
         ...calculatePosition()
       }}
     />
