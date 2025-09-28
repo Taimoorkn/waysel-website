@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import SectionHeading from "../../../components/SectionHeading";
+import SectionHeading from "./SectionHeading";
 import GradientText from "@/components/GradientText";
 import Button from "@/components/Button";
 
-export default function ContactForm() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -112,7 +112,7 @@ ${formData.message}
         </div>
 
         {/* Right Section - Contact Form */}
-        <div className="z-10 flex w-full items-center justify-center p-6 xl:w-[60%] xl:p-16">
+        <div className="z-10 flex w-full items-center justify-center xl:w-[60%] xl:p-16">
           <div className="w-full rounded-2xl bg-opacity-80 bg-gradient-to-br from-border-primary to-border-secondary p-px backdrop-blur-sm">
             <div className="w-full rounded-2xl bg-card px-6 py-6 xl:px-10 xl:py-8">
               <div className="space-y-6 xl:space-y-8">

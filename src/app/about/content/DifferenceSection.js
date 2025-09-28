@@ -6,11 +6,11 @@ import GradientText from "@/components/GradientText";
 
 const DifferenceSection = () => {
   return (
-    <section className="section relative bg-transparent">
+    <section className="section relative bg-primary_bg">
       <div className="flex flex-col gap-12 xl:flex-row xl:gap-24">
         {/* First Section - Mobile: Full width, XL: Left half */}
         <motion.div
-          className="flex w-full flex-col items-start gap-12 bg-primary_bg px-6 py-8 xl:w-1/2 xl:gap-[88px] xl:pl-12 xl:py-8"
+          className="flex w-full flex-col items-start gap-12 px-6 py-8 xl:w-1/2 xl:gap-[88px] xl:py-8 xl:pl-12"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -59,8 +59,8 @@ const DifferenceSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="h-full w-full rounded-[32px] bg-card"></div>
-          <div className="oval-blur absolute left-1/2 top-[60%] -z-10 -translate-x-1/2 -translate-y-1/2 transform" />
+          <div className="oval-blur absolute left-1/2 top-[60%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
+          <div className="relative z-10 h-full w-full rounded-[31px] bg-card"></div>
         </motion.div>
       </div>
     </section>

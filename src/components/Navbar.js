@@ -41,12 +41,6 @@ const Navbar = () => {
       onEnter: () => {
         // Get current screen width and match Tailwind breakpoints
         const width = window.innerWidth;
-
-        // Skip animation for mobile screens to prevent overflow
-        if (width < 768) {
-          return;
-        }
-
         let expandedMargin;
 
         if (width >= 1280) {
@@ -55,9 +49,15 @@ const Navbar = () => {
         } else if (width >= 1024) {
           // lg breakpoint (mx-16 = 4rem)
           expandedMargin = "2.5rem";
-        } else {
+        } else if (width >= 768) {
           // md breakpoint (mx-8 = 2rem)
           expandedMargin = "1rem";
+        } else if (width >= 640) {
+          // sm breakpoint (mx-6 = 1.5rem)
+          expandedMargin = "0.75rem";
+        } else {
+          // mobile (mx-4 = 1rem)
+          expandedMargin = "0.25rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
@@ -71,12 +71,6 @@ const Navbar = () => {
       onLeaveBack: () => {
         // Return to original responsive margins
         const width = window.innerWidth;
-
-        // Skip animation for mobile screens to prevent overflow
-        if (width < 768) {
-          return;
-        }
-
         let originalMargin;
 
         if (width >= 1280) {
@@ -85,9 +79,15 @@ const Navbar = () => {
         } else if (width >= 1024) {
           // lg breakpoint (mx-16 = 4rem)
           originalMargin = "4rem";
-        } else {
+        } else if (width >= 768) {
           // md breakpoint (mx-8 = 2rem)
           originalMargin = "2rem";
+        } else if (width >= 640) {
+          // sm breakpoint (mx-6 = 1.5rem)
+          originalMargin = "1.5rem";
+        } else {
+          // mobile (mx-4 = 1rem)
+          originalMargin = "1rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
@@ -134,8 +134,7 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
-        <div className="navbar-content mx-4 flex items-center justify-between pt-2 sm:mx-6 sm:pt-3 md:mx-8 md:pt-4 lg:mx-16 lg:pt-6 xl:mx-[120px] xl:pt-8">
-          {/* <div className="navbar-content fixed left-0 right-0 top-0 z-50 mx-4 flex items-center justify-between border pt-4 sm:mx-6 sm:pt-5 md:mx-8 md:pt-6 lg:mx-16 lg:pt-8 xl:mx-28 xl:pt-10">*/}
+        <div className="navbar-content mx-4 flex items-center justify-between pt-4 md:mx-8 lg:mx-16 lg:pt-6 xl:mx-[120px] xl:pt-8">
           {/* Left side - Brand, Logo, Nav Links */}
           <motion.div
             className="flex items-center"
@@ -237,13 +236,9 @@ const Navbar = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
                 >
-                  <Link
-                    href="/contact"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-white to-gray-50 px-6 py-3 font-medium text-black shadow-sm transition-all duration-200 hover:from-gray-50 hover:to-gray-100 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black active:scale-95"
-                  >
+                  <button href="/contact" className="w-full bg-slate-50 text-black">
                     Contact Us
-                  </Link>
+                  </button>
                 </motion.div>
               </div>
             </motion.div>

@@ -98,7 +98,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="xl:mt-8">
+        <div className="mt-4 xl:mt-8">
           <div className="BodyText text-center">
             <div className="overflow-hidden">
               <motion.p
@@ -121,7 +121,7 @@ const HeroSection = () => {
           </div>
         </div>
         <motion.div
-          className="mt-6 flex flex-col items-center gap-4 xl:mt-12 xl:flex-row xl:gap-8"
+          className="mt-6 flex items-center gap-4 xl:mt-12 xl:gap-8"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}

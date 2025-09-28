@@ -42,7 +42,7 @@ const ServicesHeroSection = () => {
           </div>
         </div>
 
-        <div className="xl:mt-8">
+        <div className="mt-4 xl:mt-8">
           <div className="BodyText text-center">
             <div className="overflow-hidden">
               <motion.p
