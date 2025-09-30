@@ -101,7 +101,7 @@ a:hover .animated-underlined::after {
 }
 
 /* Disable hover animations on active buttons */
-.button.active:hover .single-letter {
+.button.active .single-letter {
   animation: none !important;
 }
 
