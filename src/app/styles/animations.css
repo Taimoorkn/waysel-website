@@ -94,6 +94,17 @@ a:hover .animated-underlined::after {
   transform-origin: bottom left;
 }
 
+/* Active state - underline always visible */
+.button.active.animated-underlined::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Disable hover animations on active buttons */
+.button.active:hover .single-letter {
+  animation: none !important;
+}
+
 .gradient-rolling-text {
   position: relative;
   display: inline-block;

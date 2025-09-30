@@ -1,11 +1,16 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 
-const Button = ({ children, variant = "primary", className = "", onClick, ...props }) => {
+const Button = ({ children, variant = "primary", className = "", onClick, isActive = false, ...props }) => {
   const router = useRouter();
+  const pathname = usePathname();
+
+  // Check if this button's href matches current path
+  const isCurrentPage = props.href && pathname === props.href;
+  const shouldBeActive = isActive || isCurrentPage;
 
   const variants = {
     base: "!p-0 animated-underlined BodyText",
@@ -13,7 +18,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, ...pro
     secondary: "btn-scale btn-secondary BodyTextMedium",
   };
 
-  const classes = `button rounded-[4px] px-4 py-[11px] xl:px-7 ${variants[variant]} ${className}`;
+  const classes = `button rounded-[4px] px-4 py-[11px] xl:px-7 ${variants[variant]} ${shouldBeActive ? 'active' : ''} ${className}`;
   const handleClick = onClick || (() => router.push("/contact"));
 
   // Create animated text
