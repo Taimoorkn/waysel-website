@@ -174,23 +174,26 @@ const FloatingThreeDSphere = () => {
 
   // Calculate position and size based on scroll
   const calculatePosition = () => {
-    const isInHeroSection = scrollY < 200;
+    const heroEnd = 50; // End of hero section
+    const shrinkingPhaseEnd = 600; // End of shrinking phase (sphere finishes shrinking and moves left)
 
     // On mobile, keep sphere centered in hero section and hide when scrolled out
     if (isMobile) {
+      const isInHeroSection = scrollY < heroEnd;
       return {
         left: "50%",
         top: "50%",
         transform: "translate(-50%, -50%) scale(1)",
         transition: "all 0.8s ease-out",
         width: "300px",
-        height: "300px", 
+        height: "300px",
         pointerEvents: isInHeroSection ? "auto" : "none",
       };
     }
 
-    if (isInHeroSection) {
-      // Center position - full size
+    // Desktop behavior - multi-stage transition
+    if (scrollY < heroEnd) {
+      // Stage 1: In hero section - full size, centered
       return {
         left: "50%",
         top: "50%",
@@ -199,13 +202,27 @@ const FloatingThreeDSphere = () => {
         width: "300px",
         height: "300px",
       };
-    } else {
-      // Left position - smaller size and more to the left
+    } else if (scrollY < shrinkingPhaseEnd) {
+      // Stage 2-3: Shrinking phase - gradually shrink while staying centered
+      // Calculate scale: gradually shrink from 1.0 to 0.6
+      const progress = (scrollY - heroEnd) / (shrinkingPhaseEnd - heroEnd);
+      const scale = 1 - progress * 0.4; // Scale from 1.0 to 0.6
+
       return {
-        left: "-40px", // Very close to left edge
-        top: "200px",
-        transform: "scale(0.6)", // 60% of original size
-        transition: "all 0.8s ease-out",
+        left: "50%",
+        top: "50%",
+        transform: `translate(-50%, -50%) scale(${scale})`,
+        transition: "all 1s ease-out",
+        width: "300px",
+        height: "300px",
+      };
+    } else {
+      // Stage 4: After philosophy section - move to left edge at small size
+      return {
+        left: "-40px",
+        top: "300px",
+        transform: "scale(0.6)",
+        transition: "all 1s ease-out",
         width: "300px",
         height: "300px",
       };
@@ -215,7 +232,7 @@ const FloatingThreeDSphere = () => {
   return (
     <div
       ref={mountRef}
-      className={`pointer-events-none z-0 ${isMobile ? 'absolute' : 'fixed'}`}
+      className={`pointer-events-none z-0 ${isMobile ? "absolute" : "fixed"}`}
       style={{
         ...calculatePosition(),
       }}
