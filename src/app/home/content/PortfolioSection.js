@@ -20,8 +20,8 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const textSection = (
     <div
-      className={`flex w-full flex-col justify-center gap-6 bg-card p-8 xl:h-full xl:w-1/2 xl:px-16 ${
-        isReversed ? "xl:rounded-r-[32px]" : "xl:rounded-l-[32px]"
+      className={`flex w-full flex-col justify-center gap-6 rounded-t-[32px] bg-card p-8 xl:h-full xl:w-1/2 xl:rounded-none xl:px-16 ${
+        isReversed ? "rounded-l-[32px] xl:rounded-r-[32px]" : "xl:rounded-l-[32px]"
       }`}
     >
       <h2 className="HeadingH4">
@@ -33,7 +33,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
   const imageSection = (
     <div
-      className={`relative flex h-80 w-full items-center justify-between gap-4 overflow-hidden bg-black xl:h-full xl:w-1/2 ${
+      className={`relative flex h-80 w-full items-center justify-between gap-4 overflow-hidden rounded-b-[32px] bg-black xl:h-full xl:w-1/2 xl:rounded-none ${
         isReversed ? "xl:rounded-l-[32px]" : "xl:rounded-r-[32px]"
       }`}
     >
@@ -51,7 +51,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
       {/* First column - scroll down moves down */}
       <motion.div
-        className="hidden -my-48 -ml-32 flex-col items-center justify-center gap-8 overflow-hidden xl:flex"
+        className="-my-48 -ml-32 hidden flex-col items-center justify-center gap-8 overflow-hidden xl:flex"
         style={{ y: column1Y }}
       >
         {[...Array(8)].map((_, index) => (
@@ -63,7 +63,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
       {/* Second column - scroll down moves up */}
       <motion.div
-        className="flex -my-32 flex-col items-center justify-center gap-6 xl:-my-48 xl:gap-8"
+        className="-my-32 flex flex-col items-center justify-center gap-6 xl:-my-48 xl:gap-8"
         style={{ y: column2Y }}
       >
         {[...Array(6)].map((_, index) => (
@@ -73,7 +73,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
               alt={`${title} mockup ${index + 1}`}
               width={300}
               height={188}
-              className="xl:h-[280px] xl:w-[450px]"
+              className="xl:h-[280px] xl:w-[450px] w-full"
             />
           </div>
         ))}
@@ -81,7 +81,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
 
       {/* Third column - scroll down moves down */}
       <motion.div
-        className="hidden -my-48 -mr-32 flex-col items-center justify-center gap-8 overflow-hidden xl:flex"
+        className="-my-48 -mr-32 hidden flex-col items-center justify-center gap-8 overflow-hidden xl:flex"
         style={{ y: column3Y }}
       >
         {[...Array(8)].map((_, index) => (
