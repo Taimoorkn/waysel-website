@@ -7,7 +7,9 @@ const ServicesHeroSection = () => {
     <section className="section relative flex min-h-screen items-center overflow-hidden">
       <BackgroundRippleEffect />
       {/* Circular radial fade overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,transparent_25%,rgba(13,13,12,0.4)_50%,rgba(13,13,12,0.9)_75%,rgb(13,13,12)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,transparent_25%,rgba(13,13,12,0.8)_75%,rgb(13,13,12)_100%)]" />
+      {/* Bottom fade overlay */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[200px] bg-gradient-to-t from-[rgb(13,13,12)] to-transparent" />
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between">
         {/* Main content */}
         <div className="HeadingH1">
