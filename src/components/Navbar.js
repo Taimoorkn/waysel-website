@@ -170,7 +170,7 @@ const Navbar = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            <Button variant="primary" href="/contact" className="">
+            <Button variant="primary" href="/contact">
               Contact Us
             </Button>
           </motion.div>
@@ -230,7 +230,7 @@ const Navbar = () => {
                 >
                   <Link
                     href="/contact"
-                    className="BodyTextMedium block w-full rounded-[4px] bg-slate-50 px-4 py-[10px] text-center text-black transition-all duration-200 hover:bg-slate-200"
+                    className="BodyTextMedium block w-full rounded-[4px] bg-slate-50 px-4 py-[10px] text-center !text-black"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Contact Us
