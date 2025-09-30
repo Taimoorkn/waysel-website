@@ -31,6 +31,20 @@ const StarWars = () => {
 
   return (
     <div className="relative h-[80vh] xl:h-screen w-full overflow-hidden bg-black text-white">
+      {/* Gradient Overlays */}
+      <div
+        className="absolute left-0 top-0 w-full h-1/2 z-0"
+        style={{
+          background: "linear-gradient(to bottom, #0d0d0c 0%, transparent 100%)"
+        }}
+      />
+      <div
+        className="absolute left-0 bottom-0 w-full h-1/2 z-0"
+        style={{
+          background: "linear-gradient(to top, #0d0d0c 0%, transparent 100%)"
+        }}
+      />
+
       {/* Top Binary Pattern */}
       <div className="absolute left-0 top-0 h-1/2 w-full overflow-hidden">
         <div
