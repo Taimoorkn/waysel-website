@@ -73,7 +73,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
               alt={`${title} mockup ${index + 1}`}
               width={300}
               height={188}
-              className="xl:h-[280px] xl:w-[450px] w-full"
+              className="w-full xl:h-[280px] xl:w-[450px]"
             />
           </div>
         ))}

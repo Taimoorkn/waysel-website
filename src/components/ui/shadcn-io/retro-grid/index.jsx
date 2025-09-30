@@ -35,7 +35,7 @@ export function RetroGrid({
             backgroundSize: `${cellSize}px ${cellSize}px`,
           }}
         />
-      </div> 
+      </div>
     </div>
   );
 }
