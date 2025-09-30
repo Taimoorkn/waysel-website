@@ -122,7 +122,7 @@ const FillerSection = () => {
         }
       `}</style>
 
-      <div className="section text-primary relative mx-auto flex w-full flex-col items-center xl:pb-[160px]">
+      <div className="section text-primary relative mx-auto flex w-full flex-col items-center pb-[80px] xl:pb-[160px]">
         <SectionHeading
           title={
             <>
@@ -173,7 +173,13 @@ const FillerSection = () => {
                 </div>
 
                 <div className="flex justify-center xl:justify-end">
-                  <Image src={card.image} alt={card.title} width={280} height={200} className="w-[200px] object-contain xl:w-[280px]" />
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    width={280}
+                    height={200}
+                    className="w-[200px] object-contain xl:w-[280px]"
+                  />
                 </div>
               </div>
               <div className="blob"></div>
@@ -184,8 +190,15 @@ const FillerSection = () => {
 
         {/* Gradient vector blur at top edge */}
       </div>
-      <div className="absolute bottom-0 left-[49.12%] -z-10 -translate-x-1/2 scale-y-[-1] transform">
-        <Image src="/images/filler/spotlight.png" alt="spotlight" width={800} height={600} className=" " />
+      <div className="absolute bottom-0 left-[49.12%] -z-10 w-full -translate-x-1/2 scale-y-[-1] transform">
+        <Image
+          src="/images/filler/spotlight.png"
+          width={0}
+          height={0}
+          alt="spotlight"
+          unoptimized
+          className="mx-auto h-auto w-auto"
+        />
       </div>
     </div>
   );
