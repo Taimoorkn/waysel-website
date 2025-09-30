@@ -60,7 +60,7 @@ const Footer = () => {
       </div>
 
       {/* Large WAYSEL Text with Gradient Background */}
-      <div className="relative h-[80px] overflow-hidden xl:h-[250px]">
+      <div className="relative -mb-[2px] h-[70px] overflow-hidden xl:h-[250px]">
         <div
           className="flex select-none items-center justify-center text-[100px] font-semibold italic leading-none xl:text-[364px]"
           style={{
