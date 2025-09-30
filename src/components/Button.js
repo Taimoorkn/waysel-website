@@ -18,7 +18,7 @@ const Button = ({ children, variant = "primary", className = "", onClick, isActi
     secondary: "btn-scale btn-secondary BodyTextMedium",
   };
 
-  const classes = `button rounded-[4px] px-4 py-[11px] xl:px-7 ${variants[variant]} ${shouldBeActive ? 'active' : ''} ${className}`;
+  const classes = `button rounded-[4px] px-4 py-[10px] xl:px-7 ${variants[variant]} ${shouldBeActive ? "active" : ""} ${className}`;
   const handleClick = onClick || (() => router.push("/contact"));
 
   // Create animated text

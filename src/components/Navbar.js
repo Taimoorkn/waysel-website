@@ -33,21 +33,27 @@ const Navbar = () => {
       }
     );
 
-    // Scroll trigger animation (disabled on mobile)
+    // Scroll trigger animation (disabled on mobile phones only)
     ScrollTrigger.create({
       trigger: "body",
       start: "top -50px",
       end: "bottom bottom",
       onEnter: () => {
-        // Only apply scroll animation on desktop (xl breakpoint and above)
+        // Only apply scroll animation on tablets and above (md breakpoint: 768px+)
         const width = window.innerWidth;
-        if (width < 1280) return;
+        if (width < 768) return;
 
         let expandedMargin;
 
         if (width >= 1280) {
           // xl breakpoint (mx-28 = 7rem)
           expandedMargin = "5rem";
+        } else if (width >= 1024) {
+          // lg breakpoint (mx-16 = 4rem)
+          expandedMargin = "2.5rem";
+        } else if (width >= 768) {
+          // md breakpoint (mx-8 = 2rem)
+          expandedMargin = "1rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
@@ -59,15 +65,21 @@ const Navbar = () => {
         });
       },
       onLeaveBack: () => {
-        // Only apply scroll animation on desktop (xl breakpoint and above)
+        // Only apply scroll animation on tablets and above (md breakpoint: 768px+)
         const width = window.innerWidth;
-        if (width < 1280) return;
+        if (width < 768) return;
 
         let originalMargin;
 
         if (width >= 1280) {
           // xl breakpoint (mx-28 = 7rem)
           originalMargin = "7rem";
+        } else if (width >= 1024) {
+          // lg breakpoint (mx-16 = 4rem)
+          originalMargin = "4rem";
+        } else if (width >= 768) {
+          // md breakpoint (mx-8 = 2rem)
+          originalMargin = "2rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
@@ -158,7 +170,7 @@ const Navbar = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            <Button variant="primary" href="/contact">
+            <Button variant="primary" href="/contact" className="">
               Contact Us
             </Button>
           </motion.div>
