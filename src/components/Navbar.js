@@ -33,31 +33,21 @@ const Navbar = () => {
       }
     );
 
-    // Scroll trigger animation
+    // Scroll trigger animation (disabled on mobile)
     ScrollTrigger.create({
       trigger: "body",
       start: "top -50px",
       end: "bottom bottom",
       onEnter: () => {
-        // Get current screen width and match Tailwind breakpoints
+        // Only apply scroll animation on desktop (xl breakpoint and above)
         const width = window.innerWidth;
+        if (width < 1280) return;
+
         let expandedMargin;
 
         if (width >= 1280) {
           // xl breakpoint (mx-28 = 7rem)
           expandedMargin = "5rem";
-        } else if (width >= 1024) {
-          // lg breakpoint (mx-16 = 4rem)
-          expandedMargin = "2.5rem";
-        } else if (width >= 768) {
-          // md breakpoint (mx-8 = 2rem)
-          expandedMargin = "1rem";
-        } else if (width >= 640) {
-          // sm breakpoint (mx-6 = 1.5rem)
-          expandedMargin = "0.75rem";
-        } else {
-          // mobile (mx-4 = 1rem)
-          expandedMargin = "0.25rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
@@ -69,25 +59,15 @@ const Navbar = () => {
         });
       },
       onLeaveBack: () => {
-        // Return to original responsive margins
+        // Only apply scroll animation on desktop (xl breakpoint and above)
         const width = window.innerWidth;
+        if (width < 1280) return;
+
         let originalMargin;
 
         if (width >= 1280) {
           // xl breakpoint (mx-28 = 7rem)
           originalMargin = "7rem";
-        } else if (width >= 1024) {
-          // lg breakpoint (mx-16 = 4rem)
-          originalMargin = "4rem";
-        } else if (width >= 768) {
-          // md breakpoint (mx-8 = 2rem)
-          originalMargin = "2rem";
-        } else if (width >= 640) {
-          // sm breakpoint (mx-6 = 1.5rem)
-          originalMargin = "1.5rem";
-        } else {
-          // mobile (mx-4 = 1rem)
-          originalMargin = "1rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
