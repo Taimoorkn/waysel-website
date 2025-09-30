@@ -45,15 +45,15 @@ const ServicesListSection = () => {
   ];
 
   return (
-    <section className="py-8 xl:py-20">
+    <section className="bg-primary_bg py-8 xl:py-20">
       {/* Section Title */}
       <div className="relative mb-12 px-4 text-start xl:mb-24 xl:px-[120px]">
         <h2 className="HeadingH2 text-text-primary">Our Services</h2>
         <div
-          className="absolute left-[10%] top-0 -z-10 h-[75px] w-[200px] -translate-x-1/2 -translate-y-1/2 transform"
+          className="absolute left-[10%] top-0 z-0 h-[45px] w-[200px] -translate-x-1/2 -translate-y-1/2 transform"
           style={{
             background: "linear-gradient(90deg, #7a66e1 0%, #fb3081 50%, #f8805f 100%)",
-            filter: "blur(60px)",
+            filter: "blur(50px)",
             borderRadius: "50%",
           }}
         />
@@ -99,11 +99,11 @@ const ServicesListSection = () => {
                 <div
                   className="w-full"
                   style={{
-                    height: '0px',
-                    borderTop: '1px solid transparent',
-                    borderImage: 'linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%) 1',
-                    minHeight: '0px',
-                    maxHeight: '0px'
+                    height: "0px",
+                    borderTop: "1px solid transparent",
+                    borderImage: "linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%) 1",
+                    minHeight: "0px",
+                    maxHeight: "0px",
                   }}
                   data-divider={`line-${index}-${index + 1}`}
                 />
