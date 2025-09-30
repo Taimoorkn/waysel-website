@@ -206,7 +206,7 @@ ${formData.message}
         </div>
       </div>
       {/* Gradient vector blur at bottom edge */}
-      <div className="oval-blur bottom-[-10%] right-0 z-0 -translate-x-1/2 -translate-y-1/2 transform" />
+      <div className="oval-blur bottom-20 right-0 z-0 -translate-x-1/2 -translate-y-1/2 transform" />
     </section>
   );
 }
