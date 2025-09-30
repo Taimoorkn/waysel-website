@@ -112,7 +112,7 @@ const TestimonialsSection = () => {
       />
       <Swiper
         ref={swiperRef}
-        slidesPerView={1.5}
+        slidesPerView={1.1}
         centeredSlides={true}
         spaceBetween={20}
         grabCursor={true}
@@ -167,8 +167,16 @@ const TestimonialsSection = () => {
         })}
       </Swiper>
       {/* Gradient vector blur at top edge */}
-      <div className="absolute left-[49.12%] top-0 -z-10 -translate-x-1/2 transform">
-        <Image src="/images/filler/spotlight.png" alt="spotlight" width={800} height={600} />
+      <div className="absolute left-[49.12%] top-0 -z-10 w-full -translate-x-1/2 transform">
+        <Image
+          src="/images/filler/spotlight.png"
+          width={0}
+          height={0}
+          style={{ width: "auto", height: "auto" }}
+          alt="spotlight"
+          unoptimized
+          className="mx-auto"
+        />
       </div>
     </section>
   );

@@ -52,9 +52,12 @@ const FloatingThreeDSphere = () => {
   useEffect(() => {
     if (!mountRef.current) return;
 
+    // Capture the ref value at the start of the effect
+    const currentMount = mountRef.current;
+
     // Clear any existing content first
-    if (mountRef.current.firstChild) {
-      mountRef.current.removeChild(mountRef.current.firstChild);
+    if (currentMount.firstChild) {
+      currentMount.removeChild(currentMount.firstChild);
     }
 
     // Scene setup
@@ -78,10 +81,10 @@ const FloatingThreeDSphere = () => {
     renderer.setSize(300, 300); // Original size
     renderer.setClearColor(0x000000, 0);
     rendererRef.current = renderer;
-    mountRef.current.appendChild(renderer.domElement);
+    currentMount.appendChild(renderer.domElement);
 
-    // Create sphere geometry (original size)
-    const geometry = new THREE.SphereGeometry(2.4, 32, 32);
+    // Create sphere geometry (smaller size)
+    const geometry = new THREE.SphereGeometry(2.0, 32, 32);
 
     // Create simple material with linear gradient
     const material = new THREE.ShaderMaterial({
@@ -154,8 +157,8 @@ const FloatingThreeDSphere = () => {
       }
 
       if (rendererRef.current) {
-        if (mountRef.current && mountRef.current.contains(rendererRef.current.domElement)) {
-          mountRef.current.removeChild(rendererRef.current.domElement);
+        if (currentMount && currentMount.contains(rendererRef.current.domElement)) {
+          currentMount.removeChild(rendererRef.current.domElement);
         }
         rendererRef.current.dispose();
         rendererRef.current = null;
@@ -174,23 +177,26 @@ const FloatingThreeDSphere = () => {
 
   // Calculate position and size based on scroll
   const calculatePosition = () => {
-    const isInHeroSection = scrollY < 200;
+    const heroEnd = 50; // End of hero section
+    const shrinkingPhaseEnd = 600; // End of shrinking phase (sphere finishes shrinking and moves left)
 
     // On mobile, keep sphere centered in hero section and hide when scrolled out
     if (isMobile) {
+      const isInHeroSection = scrollY < heroEnd;
       return {
         left: "50%",
         top: "50%",
         transform: "translate(-50%, -50%) scale(1)",
         transition: "all 0.8s ease-out",
         width: "300px",
-        height: "300px", 
+        height: "300px",
         pointerEvents: isInHeroSection ? "auto" : "none",
       };
     }
 
-    if (isInHeroSection) {
-      // Center position - full size
+    // Desktop behavior - multi-stage transition
+    if (scrollY < heroEnd) {
+      // Stage 1: In hero section - full size, centered
       return {
         left: "50%",
         top: "50%",
@@ -199,13 +205,27 @@ const FloatingThreeDSphere = () => {
         width: "300px",
         height: "300px",
       };
-    } else {
-      // Left position - smaller size and more to the left
+    } else if (scrollY < shrinkingPhaseEnd) {
+      // Stage 2-3: Shrinking phase - gradually shrink while staying centered
+      // Calculate scale: gradually shrink from 1.0 to 0.6
+      const progress = (scrollY - heroEnd) / (shrinkingPhaseEnd - heroEnd);
+      const scale = 1 - progress * 0.4; // Scale from 1.0 to 0.6
+
       return {
-        left: "-40px", // Very close to left edge
-        top: "200px",
-        transform: "scale(0.6)", // 60% of original size
-        transition: "all 0.8s ease-out",
+        left: "50%",
+        top: "50%",
+        transform: `translate(-50%, -50%) scale(${scale})`,
+        transition: "all 1s ease-out",
+        width: "300px",
+        height: "300px",
+      };
+    } else {
+      // Stage 4: After philosophy section - move to left edge at small size
+      return {
+        left: "-40px",
+        top: "300px",
+        transform: "scale(0.6)",
+        transition: "all 1s ease-out",
         width: "300px",
         height: "300px",
       };
@@ -215,7 +235,7 @@ const FloatingThreeDSphere = () => {
   return (
     <div
       ref={mountRef}
-      className={`pointer-events-none z-0 ${isMobile ? 'absolute' : 'fixed'}`}
+      className={`pointer-events-none z-0 ${isMobile ? "absolute" : "fixed"}`}
       style={{
         ...calculatePosition(),
       }}

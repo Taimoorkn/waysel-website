@@ -1,19 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import GradientText from "@/components/GradientText";
 import { BackgroundRippleEffect } from "@/components/ui/aceternity-ui/background-ripple-effect";
 const ServicesHeroSection = () => {
   return (
-    <section className="section relative flex min-h-screen items-center overflow-hidden bg-transparent">
+    <section className="section relative flex min-h-screen items-center overflow-hidden">
       <BackgroundRippleEffect />
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center">
+      {/* Circular radial fade overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,transparent_25%,rgba(13,13,12,0.8)_75%,rgb(13,13,12)_100%)]" />
+      {/* Bottom fade overlay */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[300px] bg-gradient-to-t from-[rgb(13,13,12)] from-10% to-transparent" />
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between">
         {/* Main content */}
         <div className="HeadingH1">
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="break-words text-center"
-              initial={{ y: "100%" }}
+              className="break-words"
+              initial={{ y: "112%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0.8, 0.2, 1] }}
             >
@@ -22,8 +25,8 @@ const ServicesHeroSection = () => {
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="break-words text-center"
-              initial={{ y: "100%" }}
+              className="break-words"
+              initial={{ y: "112%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.1, 0.8, 0.2, 1] }}
             >
@@ -32,8 +35,8 @@ const ServicesHeroSection = () => {
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="gradient-primary break-words text-center"
-              initial={{ y: "100%" }}
+              className="gradient-primary break-words pb-3"
+              initial={{ y: "112%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
             >
@@ -42,7 +45,7 @@ const ServicesHeroSection = () => {
           </div>
         </div>
 
-        <div className="mt-4 xl:mt-8">
+        <div className="mt-4 xl:mt-5">
           <div className="BodyText text-center">
             <div className="overflow-hidden">
               <motion.p

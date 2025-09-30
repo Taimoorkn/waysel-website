@@ -24,27 +24,18 @@ const AboutHeroSection = () => {
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="break-words text-center"
-              initial={{ y: "100%" }}
+              initial={{ y: "112%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              The integrated powerhouse
+              The integrated powerhouse for
             </motion.h1>
           </div>
-          <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
-            <motion.h1
-              className="break-words text-center"
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.1, 0.8, 0.2, 1] }}
-            >
-              for
-            </motion.h1>
-          </div>
+
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="gradient-primary break-words text-center"
-              initial={{ y: "100%" }}
+              initial={{ y: "112%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
             >
@@ -76,6 +67,7 @@ const AboutHeroSection = () => {
           </div>
         </div>
       </div>
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-[300px] bg-gradient-to-b from-transparent via-[rgba(13,13,12,0.5)] to-[rgb(13,13,12)]" />
     </section>
   );
 };

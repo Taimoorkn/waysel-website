@@ -8,8 +8,15 @@ const PhilosophySection = () => {
   return (
     <section className="section relative bg-transparent">
       {/* Gradient spotlight effect at top */}
-      <div className="absolute left-[49.12%] top-0 -z-10 -translate-x-1/2 transform">
-        <Image src="/images/filler/spotlight.png" alt="spotlight" width={800} height={600} className=" " />
+      <div className="absolute left-[49.12%] top-0 -z-10 w-full -translate-x-1/2 transform">
+        <Image
+          src="/images/filler/spotlight.png"
+          width={0}
+          height={0}
+          alt="spotlight"
+          unoptimized
+          className="mx-auto h-[80%] w-[80%] xl:h-auto xl:w-auto"
+        />
       </div>
 
       <div className="flex flex-col">

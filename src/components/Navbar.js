@@ -33,14 +33,16 @@ const Navbar = () => {
       }
     );
 
-    // Scroll trigger animation
+    // Scroll trigger animation (disabled on mobile phones only)
     ScrollTrigger.create({
       trigger: "body",
       start: "top -50px",
       end: "bottom bottom",
       onEnter: () => {
-        // Get current screen width and match Tailwind breakpoints
+        // Only apply scroll animation on tablets and above (md breakpoint: 768px+)
         const width = window.innerWidth;
+        if (width < 768) return;
+
         let expandedMargin;
 
         if (width >= 1280) {
@@ -52,12 +54,6 @@ const Navbar = () => {
         } else if (width >= 768) {
           // md breakpoint (mx-8 = 2rem)
           expandedMargin = "1rem";
-        } else if (width >= 640) {
-          // sm breakpoint (mx-6 = 1.5rem)
-          expandedMargin = "0.75rem";
-        } else {
-          // mobile (mx-4 = 1rem)
-          expandedMargin = "0.25rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
@@ -69,8 +65,10 @@ const Navbar = () => {
         });
       },
       onLeaveBack: () => {
-        // Return to original responsive margins
+        // Only apply scroll animation on tablets and above (md breakpoint: 768px+)
         const width = window.innerWidth;
+        if (width < 768) return;
+
         let originalMargin;
 
         if (width >= 1280) {
@@ -82,12 +80,6 @@ const Navbar = () => {
         } else if (width >= 768) {
           // md breakpoint (mx-8 = 2rem)
           originalMargin = "2rem";
-        } else if (width >= 640) {
-          // sm breakpoint (mx-6 = 1.5rem)
-          originalMargin = "1.5rem";
-        } else {
-          // mobile (mx-4 = 1rem)
-          originalMargin = "1rem";
         }
 
         gsap.to(navbar.querySelector(".navbar-content"), {
@@ -236,9 +228,13 @@ const Navbar = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
                 >
-                  <button href="/contact" className="w-full bg-slate-50 text-black">
+                  <Link
+                    href="/contact"
+                    className="BodyTextMedium block w-full rounded-[4px] bg-slate-50 px-4 py-[10px] text-center !text-black"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     Contact Us
-                  </button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>

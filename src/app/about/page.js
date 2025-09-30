@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AboutHeroSection from "./content/AboutHeroSection";
 import PhilosophySection from "./content/PhilosophySection";
-import DifferenceSection from "./content/DifferenceSection"; 
+import DifferenceSection from "./content/DifferenceSection";
 import FloatingThreeDSphere from "@/components/FloatingThreeDSphere";
 import Contact from "@/components/Contact";
 

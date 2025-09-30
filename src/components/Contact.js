@@ -195,9 +195,9 @@ ${formData.message}
                     type="button"
                     onClick={handleSubmit}
                     disabled={isSubmitting || !formData.firstName || !formData.email || !formData.message}
-                    className="BodyTextMedium transform rounded-full bg-[#e5e4e2] px-6 py-2 transition-all duration-300"
+                    className="BodyTextMedium transform rounded-full bg-white px-8 py-3 !text-black transition-all duration-300 hover:bg-opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    <GradientText>{isSubmitting ? "Sending..." : "Send Message"}</GradientText>
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </button>
                 </div>
               </div>
@@ -206,7 +206,7 @@ ${formData.message}
         </div>
       </div>
       {/* Gradient vector blur at bottom edge */}
-      <div className="oval-blur bottom-[-10%] right-0 z-0 -translate-x-1/2 -translate-y-1/2 transform" />
+      <div className="oval-blur bottom-20 right-0 z-0 -translate-x-1/2 -translate-y-1/2 transform" />
     </section>
   );
 }

@@ -4,6 +4,7 @@ import SectionHeading from "../../../components/SectionHeading";
 
 const StarWars = () => {
   const [binaryText, setBinaryText] = useState("");
+  const [mounted, setMounted] = useState(false);
 
   const generateBinaryText = () => {
     if (typeof window === "undefined") return "";
@@ -18,6 +19,7 @@ const StarWars = () => {
   };
 
   useEffect(() => {
+    setMounted(true);
     setBinaryText(generateBinaryText());
 
     const handleResize = () => {
@@ -30,7 +32,21 @@ const StarWars = () => {
   }, []);
 
   return (
-    <div className="relative h-[80vh] xl:h-screen w-full overflow-hidden bg-black text-white">
+    <div className="relative h-[60vh] w-full overflow-hidden bg-black text-white xl:h-[90vh]">
+      {/* Gradient Overlays */}
+      <div
+        className="absolute left-0 top-0 z-0 h-1/2 w-full"
+        style={{
+          background: "linear-gradient(to bottom, #0d0d0c 0%, transparent 100%)",
+        }}
+      />
+      <div
+        className="absolute bottom-0 left-0 z-0 h-1/2 w-full"
+        style={{
+          background: "linear-gradient(to top, #0d0d0c 0%, transparent 100%)",
+        }}
+      />
+
       {/* Top Binary Pattern */}
       <div className="absolute left-0 top-0 h-1/2 w-full overflow-hidden">
         <div
@@ -40,30 +56,31 @@ const StarWars = () => {
             transformOrigin: "center top",
           }}
         >
-          {Array.from({ length: 120 }, (_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-full text-center"
-              animate={{
-                y: [-100, 700],
-                letterSpacing: ["0.8rem", "0.2rem"],
-                fontSize: ["2rem", "1rem"],
-              }}
-              transition={{
-                duration: 30,
-                repeat: Infinity,
-                ease: "linear",
-                delay: i * 2,
-              }}
-            >
-              {generateBinaryText()}
-            </motion.div>
-          ))}
+          {mounted &&
+            Array.from({ length: 120 }, (_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-full text-center"
+                animate={{
+                  y: [-100, 700],
+                  letterSpacing: ["0.8rem", "0.2rem"],
+                  fontSize: ["2rem", "1rem"],
+                }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: i * 2,
+                }}
+              >
+                {binaryText}
+              </motion.div>
+            ))}
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="absolute inset-0 z-10 flex min-h-[70dvh] items-center justify-center">
+      <div className="absolute inset-0 z-10 mt-[10%] flex items-center justify-center xl:mt-[2%]">
         <SectionHeading title="We are a team of innovators dedicated to solving complex challenges with elegant digital solutions." />
       </div>
 
@@ -76,25 +93,26 @@ const StarWars = () => {
             transformOrigin: "center bottom",
           }}
         >
-          {Array.from({ length: 110 }, (_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-full text-center opacity-65"
-              animate={{
-                y: [700, -100],
-                letterSpacing: ["0.8rem", "0.2rem"],
-                fontSize: ["2rem", "1rem"],
-              }}
-              transition={{
-                duration: 30,
-                repeat: Infinity,
-                ease: "linear",
-                delay: (103 - i) * 1.5,
-              }}
-            >
-              {generateBinaryText()}
-            </motion.div>
-          ))}
+          {mounted &&
+            Array.from({ length: 110 }, (_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-full text-center opacity-65"
+                animate={{
+                  y: [700, -100],
+                  letterSpacing: ["0.8rem", "0.2rem"],
+                  fontSize: ["2rem", "1rem"],
+                }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: (103 - i) * 1.5,
+                }}
+              >
+                {binaryText}
+              </motion.div>
+            ))}
         </div>
       </div>
     </div>
