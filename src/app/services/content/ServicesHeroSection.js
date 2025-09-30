@@ -1,18 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import GradientText from "@/components/GradientText";
 import { BackgroundRippleEffect } from "@/components/ui/aceternity-ui/background-ripple-effect";
 const ServicesHeroSection = () => {
   return (
     <section className="section relative flex min-h-screen items-center overflow-hidden bg-transparent">
       <BackgroundRippleEffect />
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between">
         {/* Main content */}
         <div className="HeadingH1">
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="break-words text-center"
+              className="break-words"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0.8, 0.2, 1] }}
@@ -22,7 +21,7 @@ const ServicesHeroSection = () => {
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="break-words text-center"
+              className="break-words"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.1, 0.8, 0.2, 1] }}
@@ -32,7 +31,7 @@ const ServicesHeroSection = () => {
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="gradient-primary break-words text-center"
+              className="gradient-primary break-words pb-3"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
@@ -42,7 +41,7 @@ const ServicesHeroSection = () => {
           </div>
         </div>
 
-        <div className="mt-4 xl:mt-8">
+        <div className="mt-4 xl:mt-5">
           <div className="BodyText text-center">
             <div className="overflow-hidden">
               <motion.p
