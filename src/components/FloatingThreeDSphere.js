@@ -80,8 +80,8 @@ const FloatingThreeDSphere = () => {
     rendererRef.current = renderer;
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create sphere geometry (original size)
-    const geometry = new THREE.SphereGeometry(2.4, 32, 32);
+    // Create sphere geometry (smaller size)
+    const geometry = new THREE.SphereGeometry(2.0, 32, 32);
 
     // Create simple material with linear gradient
     const material = new THREE.ShaderMaterial({
