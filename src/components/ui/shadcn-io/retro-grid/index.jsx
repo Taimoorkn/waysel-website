@@ -35,8 +35,7 @@ export function RetroGrid({
             backgroundSize: `${cellSize}px ${cellSize}px`,
           }}
         />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent to-90%" />
+      </div> 
     </div>
   );
 }

@@ -19,7 +19,8 @@ const AboutPage = () => {
       <DifferenceSection />
       <Contact />
       <Footer />
-      <FloatingThreeDSphere />
+      <FloatingThreeDSphere /> 
+
     </>
   );
 };
