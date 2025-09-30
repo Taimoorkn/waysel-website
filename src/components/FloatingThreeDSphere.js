@@ -52,9 +52,12 @@ const FloatingThreeDSphere = () => {
   useEffect(() => {
     if (!mountRef.current) return;
 
+    // Capture the ref value at the start of the effect
+    const currentMount = mountRef.current;
+
     // Clear any existing content first
-    if (mountRef.current.firstChild) {
-      mountRef.current.removeChild(mountRef.current.firstChild);
+    if (currentMount.firstChild) {
+      currentMount.removeChild(currentMount.firstChild);
     }
 
     // Scene setup
@@ -78,7 +81,7 @@ const FloatingThreeDSphere = () => {
     renderer.setSize(300, 300); // Original size
     renderer.setClearColor(0x000000, 0);
     rendererRef.current = renderer;
-    mountRef.current.appendChild(renderer.domElement);
+    currentMount.appendChild(renderer.domElement);
 
     // Create sphere geometry (smaller size)
     const geometry = new THREE.SphereGeometry(2.0, 32, 32);
@@ -154,8 +157,8 @@ const FloatingThreeDSphere = () => {
       }
 
       if (rendererRef.current) {
-        if (mountRef.current && mountRef.current.contains(rendererRef.current.domElement)) {
-          mountRef.current.removeChild(rendererRef.current.domElement);
+        if (currentMount && currentMount.contains(rendererRef.current.domElement)) {
+          currentMount.removeChild(rendererRef.current.domElement);
         }
         rendererRef.current.dispose();
         rendererRef.current = null;

@@ -15,7 +15,7 @@ const PhilosophySection = () => {
           height={0}
           alt="spotlight"
           unoptimized
-          className="mx-auto h-[80%] w-[80%]"
+          className="mx-auto h-[80%] w-[80%] xl:h-auto xl:w-auto"
         />
       </div>
 
