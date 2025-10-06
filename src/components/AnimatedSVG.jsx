@@ -9,9 +9,9 @@ export default function AnimatedSVG() {
 
     const paths = Array.from(svgRef.current.querySelectorAll(".shimmer-path"));
 
-    // Store each path’s original opacity
+    // Store original fill color for each path
     paths.forEach((p) => {
-      p.dataset.originalOpacity = p.getAttribute("opacity") || "1";
+      p.dataset.originalFill = p.getAttribute("fill") || "#4A4A4A";
     });
 
     function animateBatch() {
@@ -19,35 +19,36 @@ export default function AnimatedSVG() {
       const firstBatch = shuffled.slice(0, 40);
       const secondBatch = shuffled.slice(40, 80);
 
-      // Animate first batch
-      firstBatch.forEach((p) => {
-        const original = p.dataset.originalOpacity ?? "1";
-        p.style.transition = "opacity 2s ease-in-out";
-        p.style.opacity = "1"; // brighten to 100%
+      // Animate batch color change
+      const runBatch = (batch) => {
+        batch.forEach((p) => {
+          const originalFill = p.dataset.originalFill ?? "#4A4A4A";
 
-        // Fade back after 2 seconds
-        setTimeout(() => {
-          p.style.opacity = original;
-        }, 2000);
-      });
-
-      // Animate second batch as the first batch starts fading
-      setTimeout(() => {
-        secondBatch.forEach((p) => {
-          const original = p.dataset.originalOpacity ?? "1";
-          p.style.transition = "opacity 2s ease-in-out";
-          p.style.opacity = "1"; // brighten
-
-          setTimeout(() => {
-            p.style.opacity = original;
-          }, 2000);
+          p.animate(
+            [
+              { fill: originalFill },
+              { fill: "#ffffff", offset: 0.5 },
+              { fill: originalFill },
+            ],
+            {
+              duration: 4000, // 4 seconds per wave
+              easing: "ease-in-out",
+              fill: "forwards",
+            }
+          );
         });
-      }, 1500); // overlap timing — starts as first batch begins fading
+      };
+
+      // First wave
+      runBatch(firstBatch);
+
+      // Second wave begins as first starts fading back
+      setTimeout(() => runBatch(secondBatch), 2500);
     }
 
-    // Start the loop
+    // Start initial loop
     animateBatch();
-    const interval = setInterval(animateBatch, 4500); // slower overall rhythm
+    const interval = setInterval(animateBatch, 6000); // smooth pacing
 
     return () => clearInterval(interval);
   }, []);
@@ -64,7 +65,7 @@ export default function AnimatedSVG() {
     >
       <style>{`
         .shimmer-path {
-          transition: opacity 2s ease-in-out;
+          transition: none;
         }
       `}</style>
 
