@@ -18,8 +18,8 @@ const FillerSection = () => {
           [
             {
               transform: `translate(${
-                ev.clientX - rec.left - rec.width / 2
-              }px, ${ev.clientY - rec.top - rec.height / 2}px)`,
+                ev.clientX - rec.left - rec.width / 3
+              }px, ${ev.clientY - rec.top - rec.height / 3}px)`,
             },
           ],
           {
@@ -182,7 +182,7 @@ const FillerSection = () => {
                   />
                 </div>
               </div>
-              <div className="blob"></div>
+              <div className="blob rounded-full"></div>
               <div className="fakeblob"></div>
             </div>
           ))}
