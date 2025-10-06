@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/Button";
+import FluidBackground from "@/components/FluidBackground";
 
 const HeroSection = () => {
   const [showWebGL, setShowWebGL] = useState(false);
@@ -59,6 +60,7 @@ const HeroSection = () => {
 
   return (
     <section className="section relative flex min-h-screen items-center overflow-hidden bg-transparent">
+      <FluidBackground/>
       {/* Unicorn Studio WebGL mesh background */}
       {/* {showWebGL && <div data-us-project="u8G0keiRdDw7PbxSpQ3N" className="absolute inset-0 -z-20 h-full w-full" />} */}
       {/* Overlay to cover watermark - adjust position as needed */}
