@@ -1,51 +1,28 @@
 "use client";
-
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
-
-const brands = [
-  "/logos_google.png",
-  "/logos_google.png",
-  "/logos_google.png",
-  "/logos_google.png",
-  "/logos_google.png",
-  "/logos_google.png",
-];
+import Marquee from "react-fast-marquee";
 
 export default function BrandCarousel() {
+  const brands = [
+    "/logos_google.png",
+    "/logos_google.png",
+    "/logos_google.png",
+    "/logos_google.png",
+    "/logos_google.png",
+  ];
+
   return (
-    <div className="w-full overflow-hidden bg-primary_bg py-8">
-      <Swiper
-        modules={[Autoplay]}
-        slidesPerView="auto"
-        spaceBetween={64} // 64px gap between slides
-        loop={true}
-        speed={5000} // Increased for smoother continuous effect
-        autoplay={{
-          delay: 1, // Small delay for continuous movement
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false, // Prevents pausing on hover
-        }}
-        centeredSlides={false}
-        allowTouchMove={false}
-        className="!overflow-visible"
-      >
+    <div className="bg-primary_bg py-8">
+      <Marquee speed={40} gradient={false} pauseOnHover={true}>
         {brands.map((src, i) => (
-          <SwiperSlide
-            key={i}
-            className="flex !w-auto items-center justify-center"
-          >
+          <div key={i} className="mx-16">
             <img
               src={src}
               alt={`brand-${i}`}
               className="h-12 w-auto object-contain opacity-80 transition hover:opacity-100"
-              onError={() => console.error(`Failed to load image: ${src}`)} // Debug image loading issues
             />
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </Marquee>
     </div>
   );
 }
