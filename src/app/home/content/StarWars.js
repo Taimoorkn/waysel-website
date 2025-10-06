@@ -11,7 +11,7 @@ const StarWars = () => {
       </div>
 
       {/* Main Content */}
-      <div className="mx-auto flex max-w-5xl flex-1 items-center justify-center py-12">
+      <div className="mx-auto flex max-w-5xl flex-1 items-center justify-center py-6 xl:py-12">
         <SectionHeading title="We are a team of innovators dedicated to solving complex challenges with elegant digital solutions." />
       </div>
 
