@@ -5,15 +5,15 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServicesHeroSection from "./content/ServicesHeroSection";
-import ServicesListSection from "./content/ServicesListSection";
 import Contact from "@/components/Contact";
+import ServicesSection from "./content/ServicesSection";
 
 const ServicesPage = () => {
   return (
     <>
       <Navbar />
       <ServicesHeroSection />
-      <ServicesListSection />
+      <ServicesSection />
       <Contact />
       <Footer />
     </>
