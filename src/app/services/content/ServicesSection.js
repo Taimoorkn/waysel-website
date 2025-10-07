@@ -110,7 +110,7 @@ function ServiceBlock({ service, isReversed }) {
       }`}
     >
       {/* Visual - Image/Color block */}
-      <div className="relative order-1 h-[400px] w-full rounded-md bg-black xl:order-none xl:h-[600px]">
+      <div className="relative order-1 w-full flex-1 rounded-md bg-black xl:order-none">
         {/* Centered oval glow */}
         <div
           className="absolute left-1/2 top-1/2 -z-10 h-[87%] w-[87%] -translate-x-1/2 -translate-y-1/2 transform"
@@ -123,7 +123,7 @@ function ServiceBlock({ service, isReversed }) {
       </div>
 
       {/* Text/Accordion */}
-      <div className="order-2 flex w-full flex-col items-start gap-2 xl:order-none xl:gap-12">
+      <div className="order-2 flex w-full flex-1 flex-col items-start gap-2 xl:order-none xl:gap-12">
         <div className="flex w-full flex-col justify-between">
           <div>
             <h3 className="HeadingH5">{service.title}</h3>
@@ -166,7 +166,8 @@ function ServiceBlock({ service, isReversed }) {
           ))}
         </div>
 
-        <div className="text-center">
+        {/* Button aligned by layout direction */}
+        <div className={`w-full xl:w-auto ${isReversed ? "xl:ml-auto xl:self-end" : "xl:mr-auto xl:self-start"}`}>
           <button className="rounded-full bg-white px-6 py-2 font-medium text-black transition hover:bg-[#e5e5e5]">
             Get service now
           </button>
