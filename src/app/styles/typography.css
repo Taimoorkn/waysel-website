@@ -31,5 +31,5 @@
 }
 
 .BodyTextBold {
-  @apply text-body-base-bold sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
+  @apply text-body-base-bold text-text-primary sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
 }
