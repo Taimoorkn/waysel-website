@@ -1,22 +1,26 @@
+"use client";
+import React, { useRef } from "react";
 import Image from "next/image";
-import React from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
 import SectionHeading from "../../../components/SectionHeading";
 import GradientText from "@/components/GradientText";
 
-// Single project component
-function ProjectSection({ title, description, imageSrc, isReversed = false, scrollOffset = 0 }) {
-  const { scrollY } = useScroll();
+// Single Project Component
+function ProjectSection({ title, description, imageSrc, isReversed = false }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.2 });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
-  // Transform scroll position to movement values with offset for each section
-  const column1YRaw = useTransform(scrollY, [scrollOffset, scrollOffset + 1000], [0, -400]);
-  const column2YRaw = useTransform(scrollY, [scrollOffset, scrollOffset + 1000], [0, 400]);
-  const column3YRaw = useTransform(scrollY, [scrollOffset, scrollOffset + 1000], [0, -400]);
+  // Transform based on scroll progress (0 → 1)
+  const column1YRaw = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const column2YRaw = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const column3YRaw = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
-  // Add smooth spring physics to the transforms
-  const column1Y = useSpring(column1YRaw, { stiffness: 100, damping: 30, mass: 0.8 });
-  const column2Y = useSpring(column2YRaw, { stiffness: 100, damping: 30, mass: 0.8 });
-  const column3Y = useSpring(column3YRaw, { stiffness: 100, damping: 30, mass: 0.8 });
+  // Add smooth spring physics
+  const springConfig = { stiffness: 70, damping: 25, mass: 0.8 };
+  const column1Y = useSpring(column1YRaw, springConfig);
+  const column2Y = useSpring(column2YRaw, springConfig);
+  const column3Y = useSpring(column3YRaw, springConfig);
 
   const textSection = (
     <div
@@ -37,56 +41,47 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
         isReversed ? "xl:rounded-l-[32px]" : "xl:rounded-r-[32px]"
       }`}
     >
-      {/* Top gradient */}
-      <div
-        className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-20"
-        style={{ background: "linear-gradient(180deg, #0D0D0C 0%, rgba(13, 13, 12, 0) 100%)" }}
-      ></div>
+      {/* Gradients for smooth top/bottom fade */}
+      <div className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-20 bg-gradient-to-b from-[#0D0D0C] to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-20 bg-gradient-to-t from-[#0D0D0C] to-transparent" />
 
-      {/* Bottom gradient */}
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-20"
-        style={{ background: "linear-gradient(180deg, rgba(13, 13, 12, 0) 0%, #0D0D0C 100%)" }}
-      ></div>
-
-      {/* First column - scroll down moves down */}
+      {/* Columns */}
       <motion.div
-        className="-my-48 -ml-32 hidden flex-col items-center justify-center gap-8 overflow-hidden xl:flex"
-        style={{ y: column1Y }}
+        style={{ y: column1Y, willChange: "transform" }}
+        className="-my-48 -ml-32 hidden flex-col items-center justify-center gap-8 xl:flex"
       >
-        {[...Array(8)].map((_, index) => (
-          <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
-            <Image src={imageSrc} alt={`${title} mockup ${index + 1}`} width={450} height={280} />
+        {[...Array(8)].map((_, i) => (
+          <div key={i} className="rounded-2xl border border-[#FFFFFF29] p-[2px]">
+            <Image src={imageSrc} alt={`${title} mockup ${i + 1}`} width={450} height={280} />
           </div>
         ))}
       </motion.div>
 
       {/* Second column - scroll down moves up */}
       <motion.div
+        style={{ y: column2Y, willChange: "transform" }}
         className="-my-32 flex flex-col items-center justify-center gap-6 xl:-my-48 xl:gap-8"
-        style={{ y: column2Y }}
       >
-        {[...Array(6)].map((_, index) => (
-          <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
+        {[...Array(6)].map((_, i) => (
+          <div key={i} className="rounded-2xl border border-[#FFFFFF29] p-[2px]">
             <Image
               src={imageSrc}
-              alt={`${title} mockup ${index + 1}`}
+              alt={`${title} mockup ${i + 1}`}
               width={300}
               height={188}
-              className="w-full xl:h-[280px] xl:w-[450px]"
+              className="w-full xl:w-[450px]"
             />
           </div>
         ))}
       </motion.div>
 
-      {/* Third column - scroll down moves down */}
       <motion.div
-        className="-my-48 -mr-32 hidden flex-col items-center justify-center gap-8 overflow-hidden xl:flex"
-        style={{ y: column3Y }}
+        style={{ y: column3Y, willChange: "transform" }}
+        className="-my-48 -mr-32 hidden flex-col items-center justify-center gap-8 xl:flex"
       >
-        {[...Array(8)].map((_, index) => (
-          <div key={index} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
-            <Image src={imageSrc} alt={`${title} mockup ${index + 1}`} width={450} height={280} />
+        {[...Array(8)].map((_, i) => (
+          <div key={i} className="rounded-2xl border border-[#FFFFFF29] p-[2px]">
+            <Image src={imageSrc} alt={`${title} mockup ${i + 1}`} width={450} height={280} />
           </div>
         ))}
       </motion.div>
@@ -94,17 +89,22 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
   );
 
   return (
-    <div className="relative">
+    <div ref={ref} className="relative will-change-transform">
       <div className="oval-blur left-1/2 top-[15%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
-      <div className="rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px pb-[0.8px]">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px"
+      >
         <section className="relative z-10 flex min-h-[500px] flex-col items-center justify-between rounded-[32px] bg-card text-white xl:h-[65vh] xl:flex-row">
-          {/* Mobile: Always text first, then images */}
+          {/* Mobile always text first */}
           <div className="xl:hidden">
             {textSection}
             {imageSection}
           </div>
 
-          {/* Desktop: Respect isReversed prop */}
+          {/* Desktop layout */}
           {isReversed ? (
             <div className="hidden xl:contents">
               {imageSection}
@@ -117,14 +117,14 @@ function ProjectSection({ title, description, imageSrc, isReversed = false, scro
             </div>
           )}
         </section>
-      </div>
+      </motion.div>
     </div>
   );
 }
 
 function PortfolioSection() {
   return (
-    <div className="section">
+    <div className="section overflow-hidden">
       <SectionHeading
         title={
           <>
@@ -135,29 +135,26 @@ function PortfolioSection() {
         description="Real builds that launched and worked. Not case studies with fake testimonials."
       />
 
-      <div className="flex flex-col gap-16 py-8">
+      <div className="flex flex-col gap-24 py-12">
         <ProjectSection
           title="Hospice Care Web"
-          description="Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency."
+          description="Crafting user-friendly, cross-platform solutions with elegant UX and solid performance."
           imageSrc="/images/portfolio/project1.svg"
           isReversed={false}
-          scrollOffset={0}
         />
 
         <ProjectSection
           title="E-Commerce Platform"
-          description="Building modern, scalable online shopping experiences with seamless user journeys. Optimized for performance and conversion across all devices and platforms."
+          description="Modern, scalable online shopping with optimized user journeys and seamless interactions."
           imageSrc="/images/portfolio/project1.svg"
           isReversed={true}
-          scrollOffset={1000}
         />
 
         <ProjectSection
           title="Mobile Banking App"
-          description="Secure, intuitive financial management at your fingertips. Streamlined interface design focused on user trust and accessibility for modern banking needs."
+          description="Secure, intuitive financial management focused on accessibility and trust."
           imageSrc="/images/portfolio/project1.svg"
           isReversed={false}
-          scrollOffset={2000}
         />
       </div>
     </div>

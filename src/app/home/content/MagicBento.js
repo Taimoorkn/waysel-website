@@ -15,7 +15,7 @@ const cardData = [
       },
       {
         label: "Brand Strategy:",
-        text: "We define your brand’s digital identity to stand out in the market.",
+        text: "We define your brand's digital identity to stand out in the market.",
       },
     ],
   },
