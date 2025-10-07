@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden bg-primary_bg w-full">
+    <footer className="relative w-full overflow-hidden bg-primary_bg">
       {/* Top Section */}
       <div className="relative flex flex-col justify-between px-6 py-8 xl:flex-row xl:px-24 xl:py-12">
         <div className="flex w-full flex-col gap-8 xl:flex-row xl:gap-16">
@@ -62,7 +62,7 @@ const Footer = () => {
       {/* Large WAYSEL Text with Gradient Background */}
       <div className="relative -mb-[2px] h-[70px] overflow-hidden xl:h-[250px]">
         <div
-          className="font-hurme flex select-none items-center justify-center text-[100px] font-semibold italic leading-none xl:text-[364px]"
+          className="flex select-none items-center justify-center font-hurme text-[100px] italic leading-none xl:text-[364px]"
           style={{
             leadingTrim: "both",
             textEdge: "cap",

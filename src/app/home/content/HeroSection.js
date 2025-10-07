@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Button from "@/components/Button";
+import Button from "@/components/Button"; 
 import FluidBackground from "@/components/FluidBackground";
 
 const HeroSection = () => {
@@ -65,7 +65,7 @@ const HeroSection = () => {
       {/* {showWebGL && <div data-us-project="u8G0keiRdDw7PbxSpQ3N" className="absolute inset-0 -z-20 h-full w-full" />} */}
       {/* Overlay to cover watermark - adjust position as needed */}
       {/* <div className="absolute bottom-6 left-0 right-0 -z-10 mx-auto h-16 w-48" /> */}
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between">
+      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between z-20">
         {/* Main content */}
         <div className="HeadingH1">
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>

@@ -47,9 +47,8 @@ export default function FluidBackground() {
     <canvas
       ref={canvasRef}
       id="fluid-canvas"
-      className="fixed inset-0 w-full h-full z-10"
+      className="absolute inset-0 w-full h-full z-10"
       style={{
-        cursor: "crosshair",
         background: "black",
         pointerEvents: "auto",
       }}

@@ -25,7 +25,6 @@ const HomePage = () => {
       {/* <MagicBento enableBorderGlow={true} disableAnimations={false} glowColor="255, 76, 36" /> */}
       <TechStack />
       <FAQ faqs={generalFaqs} />
-
       <StarWars />
       <Contact />
     </>

@@ -99,7 +99,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/portfolio", label: "Portfolio" },
+    // { href: "/portfolio", label: "Portfolio" },
     { href: "/services", label: "Services" },
     { href: "/about", label: "About Us" },
   ];
@@ -107,7 +107,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="pointer-events-none fixed inset-x-0 top-0 z-30"
+        className="pointer-events-none fixed inset-x-0 top-0 z-50"
         style={{
           height: "200px",
           background: `linear-gradient(180deg,
