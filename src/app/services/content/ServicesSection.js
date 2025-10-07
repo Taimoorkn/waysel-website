@@ -95,7 +95,7 @@ export default function ServicesSection() {
       <h2 className="HeadingH3 py-4">Our services</h2>
 
       {services.map((service, index) => (
-        <div className="py-20">
+        <div className="py-8 xl:py-20">
           <ServiceBlock key={service.id} service={service} isReversed={index % 2 !== 0} />
         </div>
       ))}
@@ -114,26 +114,42 @@ function ServiceBlock({ service, isReversed }) {
       }`}
     >
       {/* Text/Accordion */}
-      <div className="flex w-full flex-col items-start gap-12">
+      <div className="flex w-full flex-col items-start gap-2 xl:gap-12">
         <div className="flex w-full flex-col justify-between">
           <div>
             <h3 className="HeadingH5">{service.title}</h3>
             <p className="BodyText mt-3">{service.desc}</p>
-            <div className="my-8 border border-[#ffffff1a]"></div>
+            <div className="my-8 border border-border-secondary"></div>
           </div>
 
           {service.faqs.map((faq) => (
             <Accordion key={faq.id} open={open === faq.id}>
               <AccordionHeader
                 onClick={() => handleOpen(faq.id)}
-                className="m-0 flex h-full w-full items-center justify-between border-none p-0"
+                className="m-0 flex h-full w-full items-start justify-between border-none p-0"
               >
-                <span className="BodyTextBold">{faq.title}</span>
-                {open === faq.id ? (
-                  <MinusIcon size={20} weight="bold" className="text-text-primary" />
-                ) : (
-                  <PlusIcon size={20} weight="bold" className="text-text-primary" />
-                )}
+                <span
+                  className={`BodyTextBold w-full ${open === faq.id ? "!text-text-primary" : "!text-text-tertiary"}`}
+                >
+                  {faq.title}
+                </span>
+                <div>
+                  {" "}
+                  {/* Adds 16px gap */}
+                  {open === faq.id ? (
+                    <MinusIcon
+                      size={20}
+                      weight="bold"
+                      className={open === faq.id ? "text-text-primary" : "text-text-secondary"}
+                    />
+                  ) : (
+                    <PlusIcon
+                      size={20}
+                      weight="bold"
+                      className={open === faq.id ? "text-text-primary" : "text-text-secondary"}
+                    />
+                  )}
+                </div>
               </AccordionHeader>
               <AccordionBody className="m-0 mt-4 p-0">
                 <p className="BodyText">{faq.desc}</p>
@@ -152,7 +168,7 @@ function ServiceBlock({ service, isReversed }) {
 
       {/* Visual */}
       <div
-        className={`relative h-[700px] w-full rounded-md ${service.color} shadow-[0_0_80px_10px_rgba(255,255,0,0.2)]`}
+        className={`relative h-[400px] w-full rounded-md xl:h-[600] ${service.color} shadow-[0_0_80px_10px_rgba(255,255,0,0.2)]`}
       ></div>
     </div>
   );
