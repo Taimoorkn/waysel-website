@@ -31,7 +31,6 @@ const services = [
         desc: "We optimize for speed and insights using Lighthouse metrics, SEO enhancements, and analytics integrations.",
       },
     ],
-    color: "bg-yellow-400",
   },
   {
     id: 2,
@@ -46,7 +45,6 @@ const services = [
       },
       { id: 3, title: "Organic growth", desc: "Leverage SEO and social channels for long-term audience retention." },
     ],
-    color: "bg-yellow-400",
   },
   {
     id: 3,
@@ -61,7 +59,6 @@ const services = [
       { id: 2, title: "Serverless deployment", desc: "Automated deployment pipelines using AWS Lambda and Amplify." },
       { id: 3, title: "Cloud-native design", desc: "Resilient designs optimized for distributed systems." },
     ],
-    color: "bg-black",
   },
   {
     id: 4,
@@ -85,7 +82,6 @@ const services = [
       },
       { id: 4, title: "Cost optimization", desc: "Monitor and optimize cloud costs with AWS tools and strategies." },
     ],
-    color: "bg-yellow-400",
   },
 ];
 
@@ -110,11 +106,24 @@ function ServiceBlock({ service, isReversed }) {
   return (
     <div
       className={`flex flex-col items-center justify-between gap-16 xl:flex-row ${
-        isReversed ? "xl:flex-row-reverse" : ""
+        isReversed ? "" : "xl:flex-row-reverse"
       }`}
     >
+      {/* Visual - Image/Color block */}
+      <div className="relative order-1 h-[400px] w-full rounded-md bg-black xl:order-none xl:h-[600px]">
+        {/* Centered oval glow */}
+        <div
+          className="absolute left-1/2 top-1/2 -z-10 h-[87%] w-[87%] -translate-x-1/2 -translate-y-1/2 transform"
+          style={{
+            background: "linear-gradient(90deg, #7a66e1 0%, #fb3081 50%, #f8805f 100%)",
+            filter: "blur(80px)",
+            borderRadius: "50%",
+          }}
+        />
+      </div>
+
       {/* Text/Accordion */}
-      <div className="flex w-full flex-col items-start gap-2 xl:gap-12">
+      <div className="order-2 flex w-full flex-col items-start gap-2 xl:order-none xl:gap-12">
         <div className="flex w-full flex-col justify-between">
           <div>
             <h3 className="HeadingH5">{service.title}</h3>
@@ -134,8 +143,6 @@ function ServiceBlock({ service, isReversed }) {
                   {faq.title}
                 </span>
                 <div>
-                  {" "}
-                  {/* Adds 16px gap */}
                   {open === faq.id ? (
                     <MinusIcon
                       size={20}
@@ -165,11 +172,6 @@ function ServiceBlock({ service, isReversed }) {
           </button>
         </div>
       </div>
-
-      {/* Visual */}
-      <div
-        className={`relative h-[400px] w-full rounded-md xl:h-[600] ${service.color} shadow-[0_0_80px_10px_rgba(255,255,0,0.2)]`}
-      ></div>
     </div>
   );
 }
