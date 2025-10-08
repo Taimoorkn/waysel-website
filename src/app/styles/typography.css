@@ -2,7 +2,7 @@
 
 /* Heading Styles */
 .HeadingH1 {
-  @apply text-center text-h1-md-med tracking-[-0.03em] text-text-primary lg:text-h1-lg-med xl:text-h1-xl-med;
+  @apply text-center text-[34px] font-semibold leading-[38px] tracking-[-0.03em] text-text-primary lg:text-h1-lg-med xl:text-h1-xl-med;
 }
 
 .HeadingH2 {
@@ -31,5 +31,5 @@
 }
 
 .BodyTextBold {
-  @apply text-body-base-bold sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
+  @apply text-body-base-bold text-text-primary sm:text-body-sm-bold md:text-body-md-bold lg:text-body-lg-bold xl:text-body-xl-bold;
 }

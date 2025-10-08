@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/Button";
+import FluidBackground from "@/components/FluidBackground";
 
 const HeroSection = () => {
   const [showWebGL, setShowWebGL] = useState(false);
@@ -58,14 +59,15 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="section relative flex min-h-screen items-center overflow-hidden bg-transparent">
+    <section className="section relative flex h-[100vh] items-center overflow-hidden bg-transparent">
+      <FluidBackground />
       {/* Unicorn Studio WebGL mesh background */}
       {/* {showWebGL && <div data-us-project="u8G0keiRdDw7PbxSpQ3N" className="absolute inset-0 -z-20 h-full w-full" />} */}
       {/* Overlay to cover watermark - adjust position as needed */}
       {/* <div className="absolute bottom-6 left-0 right-0 -z-10 mx-auto h-16 w-48" /> */}
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between">
+      <div className="z-20 mx-auto flex max-w-4xl flex-col items-center justify-between">
         {/* Main content */}
-        <div className="HeadingH1">
+        <div className="HeadingH1 px-4 text-center md:px-0">
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="break-words"
@@ -73,7 +75,7 @@ const HeroSection = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              Curating the kind of
+              We design with intent,
             </motion.h1>
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
@@ -83,7 +85,7 @@ const HeroSection = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              solutions you wish <br />
+              build with precision,
             </motion.h1>
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
@@ -93,7 +95,7 @@ const HeroSection = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              you started with.
+              and launch with impact.
             </motion.h1>
           </div>
         </div>
@@ -126,11 +128,11 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
         >
-          <Button variant="primary" href="/contact">
+          <Button variant="primary" scrollToContact>
             Dis a Button
           </Button>
-          <Button variant="secondary" href="/contact">
-            Another Button
+          <Button variant="secondary" scrollToContact>
+            Contact Us
           </Button>
         </motion.div>
       </div>

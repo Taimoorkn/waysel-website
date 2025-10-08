@@ -4,6 +4,7 @@ import "./styles/globals.css";
 import "./styles/animations.css";
 import "./styles/typography.css";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const satoshi = localFont({
   src: [
@@ -11,6 +12,12 @@ const satoshi = localFont({
     { path: "../../public/font/Satoshi/Satoshi-VariableItalic.woff2", weight: "300 900", style: "italic" },
   ],
   variable: "--font-satoshi",
+  display: "swap",
+});
+
+const hurme = localFont({
+  src: [{ path: "../../public/font/Hurme/HurmeGeometricSans1-SemiBoldObl.ttf", weight: "300 900", style: "normal" }],
+  variable: "--font-hurme",
   display: "swap",
 });
 
@@ -95,11 +102,16 @@ export default function RootLayout({ children }) {
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
       </head>
-      <body suppressHydrationWarning className={` ${satoshi.variable} bg-primary_bg font-satoshi antialiased`}>
+      <body
+        suppressHydrationWarning
+        className={` ${satoshi.variable} ${hurme.variable} bg-primary_bg font-satoshi antialiased`}
+      >
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
 
-        <div id="root">{children}</div>
+        <LoadingScreen>
+          <div id="root">{children}</div>
+        </LoadingScreen>
       </body>
     </html>
   );

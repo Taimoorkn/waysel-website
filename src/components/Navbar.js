@@ -10,6 +10,7 @@ import Button from "./Button";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef(null);
+  const menuRef = useRef(null); // Added for focus trapping
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -99,7 +100,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/portfolio", label: "Portfolio" },
+    // { href: "/portfolio", label: "Portfolio" },
     { href: "/services", label: "Services" },
     { href: "/about", label: "About Us" },
   ];
@@ -107,7 +108,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="pointer-events-none fixed inset-x-0 top-0 z-30"
+        className="pointer-events-none fixed inset-x-0 top-0 z-50"
         style={{
           height: "200px",
           background: `linear-gradient(180deg,
@@ -177,22 +178,35 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <motion.div
-            className="ml-auto flex items-center xl:hidden"
+            className="-mr-2 flex items-center xl:hidden"
             initial={{ x: 30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white" aria-label="Toggle menu">
-              {isMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
+            <div
+              className={`hamburger ${isMenuOpen ? "active" : ""}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 200 200">
+                <g strokeWidth="4" strokeLinecap="round">
+                  <path d="M72 82.286h28.75" stroke="#fff" />
+                  <path
+                    d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                    fill="none"
+                    stroke="#fff"
+                  />
+                  <path d="M72 125.143h28.75" stroke="#fff" />
+                  <path
+                    d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                    fill="none"
+                    stroke="#fff"
+                  />
+                  <path d="M100.75 82.286h28.75" stroke="#fff" />
+                  <path d="M100.75 125.143h28.75" stroke="#fff" />
+                </g>
+              </svg>
+            </div>
           </motion.div>
 
           {/* Mobile menu */}
@@ -241,6 +255,66 @@ const Navbar = () => {
           )}
         </div>
       </motion.nav>
+      <style jsx>{`
+        .hamburger {
+          cursor: pointer;
+          display: flex;
+          transition: transform 0.2s ease;
+        }
+        .hamburger:active {
+          transform: scale(0.95);
+        }
+        svg {
+          transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .active svg {
+          transform: rotate(90deg);
+        }
+        path {
+          transition:
+            transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        path:nth-child(1) {
+          transform-origin: 36% 40%;
+        }
+        path:nth-child(2) {
+          stroke-dasharray: 29 299;
+        }
+        path:nth-child(3) {
+          transform-origin: 35% 63%;
+        }
+        path:nth-child(4) {
+          stroke-dasharray: 29 299;
+        }
+        path:nth-child(5) {
+          transform-origin: 61% 52%;
+        }
+        path:nth-child(6) {
+          transform-origin: 62% 52%;
+        }
+        .active path:nth-child(1) {
+          transform: translateX(9px) translateY(1px) rotate(45deg);
+        }
+        .active path:nth-child(2) {
+          stroke-dasharray: 225 299;
+          stroke-dashoffset: -72px;
+        }
+        .active path:nth-child(3) {
+          transform: translateX(9px) translateY(1px) rotate(-45deg);
+        }
+        .active path:nth-child(4) {
+          stroke-dasharray: 225 299;
+          stroke-dashoffset: -72px;
+        }
+        .active path:nth-child(5) {
+          transform: translateX(9px) translateY(1px) rotate(-45deg);
+        }
+        .active path:nth-child(6) {
+          transform: translateX(9px) translateY(1px) rotate(45deg);
+        }
+      `}</style>
     </>
   );
 };

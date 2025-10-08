@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         satoshi: ["Satoshi", "sans-serif"],
+        hurme: ["hurme", "sans-serif"],
       },
       fontSize: {
         // Headings with font weights
