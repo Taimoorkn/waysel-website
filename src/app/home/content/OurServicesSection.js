@@ -3,7 +3,7 @@ import Image from "next/image";
 import SectionHeading from "../../../components/SectionHeading";
 import GradientText from "@/components/GradientText";
 
-const FillerSection = () => {
+const OurServicesSection = () => {
   useEffect(() => {
     const handleMouseMove = (ev) => {
       const cards = document.querySelectorAll(".card");
@@ -53,44 +53,29 @@ const FillerSection = () => {
       ],
     },
     {
-      title: "Development",
+      title: "Web & App development",
       image: "/images/filler/filler2.svg",
       content: [
         {
-          label: "Frontend:",
-          text: "Modern web applications built with cutting-edge technologies and frameworks.",
-        },
-        {
-          label: "Backend:",
-          text: "Scalable server solutions and robust API development for your business needs.",
+          text: "Clean builds. Fast shipping. Works on whatever stack you're already on.",
         },
       ],
     },
     {
-      title: "Consultation",
+      title: "Product-driven marketing",
       image: "/images/filler/filler3.svg",
       content: [
         {
-          label: "Tech Advisory:",
-          text: "Expert guidance on technology stack selection and architecture decisions.",
-        },
-        {
-          label: "Digital Strategy:",
-          text: "Comprehensive roadmaps for your digital transformation journey.",
+          text: "Funnels, landing pages, SEO that ties into actual product goals.",
         },
       ],
     },
     {
-      title: "Support",
+      title: "Healthcare & compliance products",
       image: "/images/filler/filler4.svg",
       content: [
         {
-          label: "Maintenance:",
-          text: "Ongoing support and updates to keep your systems running smoothly.",
-        },
-        {
-          label: "Optimization:",
-          text: "Performance improvements and feature enhancements for existing solutions.",
+          text: "EHRs, dashboards, forms — built for more than demo; for practical use.",
         },
       ],
     },
@@ -204,7 +189,7 @@ const FillerSection = () => {
   );
 };
 
-export default FillerSection;
+export default OurServicesSection;
 
 // <div className="z-10 grid w-full grid-cols-2 gap-4">
 //   {cards.map((card, index) => (
