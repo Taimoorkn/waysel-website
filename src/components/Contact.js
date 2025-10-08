@@ -44,12 +44,12 @@ export default function Contact() {
 
     try {
       const emailContent = `
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Contact No: ${formData.contactNo}
+        Name: ${formData.firstName} ${formData.lastName}
+        Email: ${formData.email}
+        Contact No: ${formData.contactNo}
 
-Message:
-${formData.message}
+        Message:
+        ${formData.message}
       `;
 
       const response = await fetch("/api/send-email", {
