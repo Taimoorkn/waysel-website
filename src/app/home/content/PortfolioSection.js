@@ -37,7 +37,7 @@ function ProjectSection({ title, description, imageSrc, isReversed = false }) {
 
   const imageSection = (
     <div
-      className={`relative flex h-80 w-full items-center justify-between gap-4 overflow-hidden rounded-b-[32px] bg-black xl:h-full xl:w-1/2 xl:rounded-none ${
+      className={`relative flex h-80 w-full items-center justify-between gap-6 overflow-hidden rounded-b-[32px] bg-black xl:h-full xl:w-1/2 xl:rounded-none ${
         isReversed ? "xl:rounded-l-[32px]" : "xl:rounded-r-[32px]"
       }`}
     >
@@ -48,10 +48,10 @@ function ProjectSection({ title, description, imageSrc, isReversed = false }) {
       {/* Columns */}
       <motion.div
         style={{ y: column1Y, willChange: "transform" }}
-        className="-my-48 -ml-32 hidden flex-col items-center justify-center gap-8 xl:flex"
+        className="-my-48 -ml-32 hidden flex-col items-center justify-center gap-6 xl:flex"
       >
         {[...Array(8)].map((_, i) => (
-          <div key={i} className="rounded-2xl border border-[#FFFFFF29] p-[2px]">
+          <div key={i} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
             <Image src={imageSrc} alt={`${title} mockup ${i + 1}`} width={450} height={280} />
           </div>
         ))}
@@ -60,10 +60,10 @@ function ProjectSection({ title, description, imageSrc, isReversed = false }) {
       {/* Second column - scroll down moves up */}
       <motion.div
         style={{ y: column2Y, willChange: "transform" }}
-        className="-my-32 flex flex-col items-center justify-center gap-6 xl:-my-48 xl:gap-8"
+        className="-my-32 flex flex-col items-center justify-center gap-6 xl:-my-48"
       >
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="rounded-2xl border border-[#FFFFFF29] p-[2px]">
+          <div key={i} className="rounded-2xl border-2 border-[#ffffff29] p-[2px]">
             <Image
               src={imageSrc}
               alt={`${title} mockup ${i + 1}`}
@@ -77,10 +77,10 @@ function ProjectSection({ title, description, imageSrc, isReversed = false }) {
 
       <motion.div
         style={{ y: column3Y, willChange: "transform" }}
-        className="-my-48 -mr-32 hidden flex-col items-center justify-center gap-8 xl:flex"
+        className="-my-48 -mr-32 hidden flex-col items-center justify-center gap-6 xl:flex"
       >
         {[...Array(8)].map((_, i) => (
-          <div key={i} className="rounded-2xl border border-[#FFFFFF29] p-[2px]">
+          <div key={i} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
             <Image src={imageSrc} alt={`${title} mockup ${i + 1}`} width={450} height={280} />
           </div>
         ))}
