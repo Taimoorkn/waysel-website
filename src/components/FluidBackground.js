@@ -11,7 +11,6 @@ export default function FluidBackground() {
       const canvas = canvasRef.current;
       if (!canvas) return;
 
-      // ✅ Import only in client
       const { default: Fluid } = await import("webgl-fluid");
 
       const resize = () => {
@@ -21,12 +20,17 @@ export default function FluidBackground() {
       resize();
       window.addEventListener("resize", resize);
 
-      // Canvas settings
       canvas.style.pointerEvents = "auto";
       canvas.style.touchAction = "none";
 
-      // Initialize fluid sim
+      // ✅ No splash on load
       Fluid(canvas, {
+        // --- turn off any auto-splats ---
+        IMMEDIATE: false, // no initial random splats
+        AUTO: false, // no interval splats
+        SPLAT_COUNT: 0, // guard: zero splats if triggered
+
+        // --- your existing tuning ---
         SIM_RESOLUTION: 256,
         DYE_RESOLUTION: 1024,
         DENSITY_DISSIPATION: 0.97,
@@ -56,10 +60,7 @@ export default function FluidBackground() {
       ref={canvasRef}
       id="fluid-canvas"
       className="absolute inset-0 z-10 h-full w-full"
-      style={{
-        background: "black",
-        pointerEvents: "auto",
-      }}
+      style={{ background: "black", pointerEvents: "auto" }}
     />
   );
 }
