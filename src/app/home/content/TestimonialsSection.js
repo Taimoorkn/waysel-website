@@ -134,7 +134,7 @@ const TestimonialsSection = () => {
           return (
             <SwiperSlide key={testimonial.id} onClick={() => handleSlideClick(index)}>
               <div
-                className={`flex flex-col gap-6 overflow-hidden rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-card bg-opacity-80 px-6 py-6 backdrop-blur-sm transition-all duration-500 ease-in-out xl:gap-8 xl:px-10 xl:py-8 ${isExpanded ? "max-h-[700px]" : "h-[340px]"} `}
+                className={`flex flex-col gap-6 overflow-hidden rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-card bg-opacity-80 px-6 py-6 backdrop-blur-sm transition-all duration-500 ease-in-out xl:gap-8 xl:px-10 xl:py-8 ${isExpanded ? "max-h-[700px]" : "h-[375px]"} `}
               >
                 <div className="flex h-full flex-col items-start justify-between gap-6">
                   <h3 className="HeadingH5">{testimonial.projectName}</h3>

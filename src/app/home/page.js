@@ -4,7 +4,7 @@
 import React from "react";
 import HeroSection from "./content/HeroSection";
 import PortfolioSection from "./content/PortfolioSection";
-import FillerSection from "./content/FillerSection";
+import OurServicesSection from "./content/OurServicesSection";
 import StarWars from "./content/StarWars";
 import TestimonialsSection from "./content/TestimonialsSection";
 import FAQ from "../../components/FAQs";
@@ -22,7 +22,7 @@ const HomePage = () => {
       {/* <BrandCarousel /> */}
       <ThingsWeBuildSection />
       <PortfolioSection />
-      <FillerSection />
+      <OurServicesSection />
       <TestimonialsSection />
       {/* <MagicBento enableBorderGlow={true} disableAnimations={false} glowColor="255, 76, 36" /> */}
       <TechStack />
