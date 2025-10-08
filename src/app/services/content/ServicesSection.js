@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
 import { Minus, MinusIcon, Plus, PlusIcon } from "@phosphor-icons/react";
+import Link from "next/link";
 
 const services = [
   {
@@ -172,9 +173,12 @@ function ServiceBlock({ service, isReversed }) {
         </div>
 
         <div className={`w-full xl:w-auto ${isReversed ? "xl:ml-auto xl:self-end" : "xl:mr-auto xl:self-start"}`}>
-          <button className="rounded-full bg-white px-6 py-2 font-medium text-black transition hover:bg-[#e5e5e5]">
+          <Link
+            href="/contact"
+            className="rounded-full bg-white px-6 py-2 font-medium text-black transition hover:bg-[#e5e5e5]"
+          >
             Get service now
-          </button>
+          </Link>
         </div>
       </div>
     </div>
