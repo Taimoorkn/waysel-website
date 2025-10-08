@@ -128,10 +128,10 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
         >
-          <Button variant="primary" href="/contact">
+          <Button variant="primary" scrollToContact>
             Dis a Button
           </Button>
-          <Button variant="secondary" href="/contact">
+          <Button variant="secondary" scrollToContact>
             Contact Us
           </Button>
         </motion.div>
