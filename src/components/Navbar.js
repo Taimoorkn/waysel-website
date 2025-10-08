@@ -243,7 +243,7 @@ const Navbar = () => {
                   transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
                 >
                   <Link
-                    scrollToContact
+                    href="/contact"
                     className="BodyTextMedium block w-full rounded-[4px] bg-slate-50 px-4 py-[10px] text-center !text-black"
                     onClick={() => setIsMenuOpen(false)}
                   >
