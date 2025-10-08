@@ -66,9 +66,9 @@ function ProjectSection({ title, description, images, isReversed = false }) {
             <Image
               src={src}
               alt={`${title} mockup ${i + 1}`}
-              width={450}
-              height={280}
-              className="w-full object-contain"
+              width={300}
+              height={188}
+              className="w-full overflow-hidden rounded-2xl object-contain xl:w-[450px]"
             />
           </div>
         ))}
@@ -95,7 +95,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
               alt={`${title} mockup ${i + 1}`}
               width={300}
               height={188}
-              className="w-full xl:w-[450px]"
+              className="w-full overflow-hidden rounded-2xl object-contain xl:w-[450px]"
             />
           </div>
         ))}
@@ -121,9 +121,9 @@ function ProjectSection({ title, description, images, isReversed = false }) {
             <Image
               src={src}
               alt={`${title} mockup ${i + 1}`}
-              width={450}
-              height={280}
-              className="w-full object-contain"
+              width={300}
+              height={188}
+              className="w-full overflow-hidden rounded-2xl object-contain xl:w-[450px]"
             />
           </div>
         ))}
@@ -191,8 +191,8 @@ function PortfolioSection() {
           title="Hospice Care Web"
           description="Crafting user-friendly, cross-platform solutions with elegant UX and solid performance."
           images={[
-            "/images/portfolio/Hospice/1.svg",
             "/images/portfolio/Hospice/2.svg",
+            "/images/portfolio/Hospice/1.svg",
             "/images/portfolio/Hospice/3.svg",
             "/images/portfolio/Hospice/4.svg",
           ]}
@@ -203,8 +203,8 @@ function PortfolioSection() {
           title="Palliative Platform"
           description="Building a care-focused digital experience that connects patients, families, and providers seamlessly."
           images={[
-            "/images/portfolio/Pallative/1.png",
             "/images/portfolio/Pallative/2.png",
+            "/images/portfolio/Pallative/1.png",
             "/images/portfolio/Pallative/3.png",
             "/images/portfolio/Pallative/4.png",
           ]}
