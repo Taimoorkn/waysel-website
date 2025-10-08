@@ -13,12 +13,14 @@ import { generalFaqs } from "../../constants/FaqConstants";
 import MagicBento from "./content/MagicBento";
 import Contact from "@/components/Contact";
 import BrandCarousel from "@/components/BrandCarousel";
+import ThingsWeBuildSection from "./content/ThingsWeBuildSection";
 
 const HomePage = () => {
   return (
     <>
       <HeroSection />
       {/* <BrandCarousel /> */}
+      <ThingsWeBuildSection />
       <PortfolioSection />
       <FillerSection />
       <TestimonialsSection />
