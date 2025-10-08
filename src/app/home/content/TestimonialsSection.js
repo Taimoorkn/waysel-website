@@ -184,23 +184,28 @@ const TestimonialsSection = () => {
                   </p>
 
                   {/* Footer */}
-                  <div className="flex w-full items-center justify-between border">
-                    <div className="flex items-center gap-4">
+                  <div className="mt-auto flex w-full items-center justify-between pt-4">
+                    {/* Left: Avatar + Info */}
+                    <div className="flex items-center gap-3 xl:gap-4">
                       <Image
                         src={testimonial.avatar}
                         alt={testimonial.name}
                         width={48}
                         height={48}
-                        className="size-8 rounded-full border-2 border-[#ffffff33] object-cover xl:size-12"
+                        className="size-9 rounded-full border-2 border-text-tertiary object-cover xl:size-12"
                       />
-                      <div className="flex flex-col items-start justify-start">
-                        <h4 className="BodyText">{testimonial.name}</h4>
-                        <p className="text-body-sm-reg text-text-tertiary">{testimonial.position}</p>
+                      <div className="flex flex-col justify-center">
+                        <h4 className="text-base font-medium leading-tight text-white xl:text-lg">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-xs text-text-tertiary xl:text-sm">{testimonial.position}</p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-2 text-text-secondary">
+
+                    {/* Right: Company + Icon */}
+                    <div className="flex shrink-0 items-center gap-2 text-text-secondary">
                       <IconComponent className="size-5 xl:size-6" />
-                      <span className="hidden text-sm xl:inline xl:text-xl">{testimonial.company}</span>
+                      <span className="hidden text-base font-medium xl:inline xl:text-lg">{testimonial.company}</span>
                     </div>
                   </div>
                 </div>
