@@ -136,7 +136,7 @@ const TestimonialsSection = () => {
               <div
                 className={`flex flex-col gap-6 overflow-hidden rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-card bg-opacity-80 px-6 py-6 backdrop-blur-sm transition-all duration-500 ease-in-out xl:gap-8 xl:px-10 xl:py-8 ${isExpanded ? "max-h-[700px]" : "h-[340px]"} `}
               >
-                <div className="flex h-full flex-col items-start justify-between gap-4">
+                <div className="flex h-full flex-col items-start justify-between gap-6">
                   <h3 className="HeadingH5">{testimonial.projectName}</h3>
 
                   {/* Content + Inline Button */}
@@ -184,7 +184,7 @@ const TestimonialsSection = () => {
                   </p>
 
                   {/* Footer */}
-                  <div className="mt-auto flex w-full items-center justify-between pt-4">
+                  <div className="flex w-full items-center justify-between border">
                     <div className="flex items-center gap-4">
                       <Image
                         src={testimonial.avatar}
@@ -193,7 +193,7 @@ const TestimonialsSection = () => {
                         height={48}
                         className="size-8 rounded-full border-2 border-[#ffffff33] object-cover xl:size-12"
                       />
-                      <div className="flex flex-col items-start gap-[2px]">
+                      <div className="flex flex-col items-start justify-start">
                         <h4 className="BodyText">{testimonial.name}</h4>
                         <p className="text-body-sm-reg text-text-tertiary">{testimonial.position}</p>
                       </div>
