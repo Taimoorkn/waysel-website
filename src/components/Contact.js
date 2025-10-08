@@ -90,7 +90,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="section relative bg-primary_bg">
+    <section id="contact" className="section relative bg-primary_bg">
       <div className="mx-auto flex flex-col items-stretch gap-8 xl:flex-row xl:gap-12">
         {/* Left Section - Changed to items-stretch on parent and removed !h-full */}
         <div className="flex w-full flex-col gap-8 p-6 xl:w-[40%] xl:gap-12 xl:p-16">
