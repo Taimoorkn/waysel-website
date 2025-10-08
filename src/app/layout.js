@@ -4,6 +4,7 @@ import "./styles/globals.css";
 import "./styles/animations.css";
 import "./styles/typography.css";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const satoshi = localFont({
   src: [
@@ -108,7 +109,9 @@ export default function RootLayout({ children }) {
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
 
-        <div id="root">{children}</div>
+        <LoadingScreen>
+          <div id="root">{children}</div>
+        </LoadingScreen>
       </body>
     </html>
   );
