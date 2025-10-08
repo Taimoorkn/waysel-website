@@ -37,18 +37,33 @@ function ProjectSection({ title, description, imageSrc, isReversed = false }) {
       className={`relative flex h-80 w-full items-center justify-between gap-6 overflow-hidden rounded-b-[32px] bg-black xl:h-full xl:w-1/2 xl:rounded-none ${
         isReversed ? "xl:rounded-l-[32px]" : "xl:rounded-r-[32px]"
       }`}
+      style={{
+        perspective: "1200px", // <-- enables 3D space
+        transformStyle: "preserve-3d",
+      }}
     >
       {/* Gradients */}
       <div className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-20 bg-gradient-to-b from-[#0D0D0C] to-transparent" />
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-20 bg-gradient-to-t from-[#0D0D0C] to-transparent" />
 
-      {/* Column 1 - moved further left & scaled up visually */}
+      {/* Column 1 — tilt RIGHT (Y-axis) */}
       <motion.div
-        style={{ y: column1Y, willChange: "transform" }}
+        style={{
+          y: column1Y,
+          rotateY: 30, // <--- tilt right
+          transformStyle: "preserve-3d",
+          willChange: "transform",
+        }}
         className="-my-48 -ml-48 hidden scale-[1.15] flex-col items-center justify-center gap-6 xl:flex"
       >
         {[...Array(8)].map((_, i) => (
-          <div key={i} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
+          <div
+            key={i}
+            style={{
+              transform: "translateZ(40px)",
+            }}
+            className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px] shadow-[0_0_30px_rgba(0,0,0,0.2)]"
+          >
             <Image
               src={imageSrc}
               alt={`${title} mockup ${i + 1}`}
@@ -60,13 +75,24 @@ function ProjectSection({ title, description, imageSrc, isReversed = false }) {
         ))}
       </motion.div>
 
-      {/* Column 2 - slight scale for presence */}
+      {/* Column 2 — tilt LEFT (Y-axis) */}
       <motion.div
-        style={{ y: column2Y, willChange: "transform" }}
+        style={{
+          y: column2Y,
+          rotateY: -30, // <--- tilt left
+          transformStyle: "preserve-3d",
+          willChange: "transform",
+        }}
         className="-my-32 flex scale-[1.1] flex-col items-center justify-center gap-6 xl:-my-48"
       >
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="rounded-2xl border-2 border-[#ffffff29] p-[2px]">
+          <div
+            key={i}
+            style={{
+              transform: "translateZ(20px)",
+            }}
+            className="rounded-2xl border-2 border-[#ffffff29] p-[2px] shadow-[0_0_30px_rgba(0,0,0,0.25)]"
+          >
             <Image
               src={imageSrc}
               alt={`${title} mockup ${i + 1}`}
@@ -78,13 +104,23 @@ function ProjectSection({ title, description, imageSrc, isReversed = false }) {
         ))}
       </motion.div>
 
-      {/* Column 3 - symmetrical with first */}
+      {/* Column 3 — tilt RIGHT again (moved closer) */}
       <motion.div
-        style={{ y: column3Y, willChange: "transform" }}
+        style={{
+          y: column3Y,
+          rotateY: 30,
+          x: -64, // <-- pull toward the middle (tune: -48 / -80 if needed)
+          transformStyle: "preserve-3d",
+          willChange: "transform",
+        }}
         className="-my-48 -mr-40 hidden scale-[1.15] flex-col items-center justify-center gap-6 xl:flex"
       >
         {[...Array(8)].map((_, i) => (
-          <div key={i} className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px]">
+          <div
+            key={i}
+            style={{ transform: "translateZ(40px)" }}
+            className="rounded-2xl border-2 border-[#FFFFFF29] p-[2px] shadow-[0_0_30px_rgba(0,0,0,0.2)]"
+          >
             <Image
               src={imageSrc}
               alt={`${title} mockup ${i + 1}`}
