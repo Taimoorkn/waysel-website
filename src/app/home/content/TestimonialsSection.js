@@ -101,15 +101,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="section relative px-0">
-      <SectionHeading
-        title={
-          <>
-            Most of the good feedback is private.
-            <br />
-            Here&apos;s what we&apos;re allowed to post.
-          </>
-        }
-      />
+      <SectionHeading title={<>Testimonials</>} />
       <Swiper
         ref={swiperRef}
         slidesPerView={1.1}

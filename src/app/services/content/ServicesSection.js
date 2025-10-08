@@ -91,7 +91,7 @@ export default function ServicesSection() {
       <h2 className="HeadingH3 py-4">Our services</h2>
 
       {services.map((service, index) => (
-        <div className="py-8 xl:py-20">
+        <div key={index} className="py-8 xl:py-20">
           <ServiceBlock key={service.id} service={service} isReversed={index % 2 !== 0} />
         </div>
       ))}
@@ -104,12 +104,14 @@ function ServiceBlock({ service, isReversed }) {
   const handleOpen = (id) => setOpen(open === id ? 0 : id);
 
   return (
-    <div className={`flex flex-col xl:flex-row ${isReversed ? "xl:flex-row-reverse" : ""} items-stretch gap-16`}>
-      {/* Visual Block */}
-      <div className="relative flex flex-1 rounded-md bg-black">
-        <img src="/your-image.jpg" alt="service illustration" className="h-full w-full rounded-md object-cover" />
-
-        {/* Optional gradient glow */}
+    <div
+      className={`flex flex-col items-center justify-between gap-16 xl:flex-row ${
+        isReversed ? "" : "xl:flex-row-reverse"
+      }`}
+    >
+      {/* Visual - Image/Color block */}
+      <div className="relative order-1 h-[400px] w-full rounded-md bg-black xl:order-none xl:h-[600px]">
+        {/* Centered oval glow */}
         <div
           className="absolute left-1/2 top-1/2 -z-10 h-[87%] w-[87%] -translate-x-1/2 -translate-y-1/2 transform"
           style={{
@@ -120,12 +122,14 @@ function ServiceBlock({ service, isReversed }) {
         />
       </div>
 
-      {/* Text / Accordion */}
-      <div className="flex flex-1 flex-col justify-between">
-        <div>
-          <h3 className="HeadingH5">{service.title}</h3>
-          <p className="BodyText mt-3">{service.desc}</p>
-          <div className="my-8 border border-border-secondary"></div>
+      {/* Text/Accordion */}
+      <div className="order-2 flex w-full flex-col items-start gap-2 xl:order-none xl:gap-12">
+        <div className="flex w-full flex-col justify-between">
+          <div>
+            <h3 className="HeadingH5">{service.title}</h3>
+            <p className="BodyText mt-3">{service.desc}</p>
+            <div className="my-8 border border-border-secondary"></div>
+          </div>
 
           {service.faqs.map((faq) => (
             <Accordion key={faq.id} open={open === faq.id}>
@@ -138,20 +142,25 @@ function ServiceBlock({ service, isReversed }) {
                 >
                   {faq.title}
                 </span>
-                <div>
-                  {open === faq.id ? (
-                    <MinusIcon
-                      size={20}
-                      weight="bold"
-                      className={open === faq.id ? "text-text-primary" : "text-text-secondary"}
-                    />
-                  ) : (
-                    <PlusIcon
-                      size={20}
-                      weight="bold"
-                      className={open === faq.id ? "text-text-primary" : "text-text-secondary"}
-                    />
-                  )}
+                <div className="relative flex h-6 w-6 items-center justify-center xl:h-8 xl:w-8">
+                  <PlusIcon
+                    size={20}
+                    weight="bold"
+                    className={`absolute inset-0 m-auto transform transition-all duration-300 ease-in-out ${
+                      open === faq.id
+                        ? "rotate-180 scale-0 text-text-primary opacity-0"
+                        : "rotate-0 scale-100 text-text-tertiary opacity-100"
+                    }`}
+                  />
+                  <MinusIcon
+                    size={20}
+                    weight="bold"
+                    className={`absolute inset-0 m-auto transform transition-all duration-300 ease-in-out ${
+                      open === faq.id
+                        ? "rotate-0 scale-100 text-text-primary opacity-100"
+                        : "-rotate-180 scale-0 text-text-tertiary opacity-0"
+                    }`}
+                  />
                 </div>
               </AccordionHeader>
               <AccordionBody className="m-0 mt-4 p-0">

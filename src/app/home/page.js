@@ -18,7 +18,7 @@ const HomePage = () => {
   return (
     <>
       <HeroSection />
-      <BrandCarousel />
+      {/* <BrandCarousel /> */}
       <PortfolioSection />
       <FillerSection />
       <TestimonialsSection />

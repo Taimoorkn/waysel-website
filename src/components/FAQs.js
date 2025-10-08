@@ -3,7 +3,7 @@
 
 import React from "react";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
-import { ArrowCircleDownIcon } from "@phosphor-icons/react";
+import { PlusIcon, MinusIcon } from "@phosphor-icons/react";
 import GradientText from "./GradientText";
 
 const FAQ = ({ faqs = [] }) => {
@@ -37,10 +37,15 @@ const FAQ = ({ faqs = [] }) => {
                   <span className="flex-1 text-base font-medium tracking-[-0.5px] text-[#ffffffcc] xl:text-lg xl:leading-relaxed">
                     {item.question}
                   </span>
-                  <span className="ml-6 flex-shrink-0">
-                    <ArrowCircleDownIcon
-                      className={`h-7 w-7 text-[#fed7be88] transition-all duration-300 ease-in-out xl:h-9 xl:w-9 ${
-                        open === index ? "rotate-180 text-[#fed7bebb]" : "group-hover:text-[#fed7beaa]"
+                  <span className="relative flex h-6 w-6 items-center justify-center xl:h-8 xl:w-8">
+                    <PlusIcon
+                      className={`absolute inset-0 m-auto size-4 transform text-[#fed7be88] transition-all duration-300 ease-in-out xl:size-6 ${
+                        open === index ? "rotate-180 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"
+                      }`}
+                    />
+                    <MinusIcon
+                      className={`absolute inset-0 m-auto size-4 transform text-[#fed7bebb] transition-all duration-300 ease-in-out xl:size-6 ${
+                        open === index ? "rotate-0 scale-100 opacity-100" : "-rotate-180 scale-0 opacity-0"
                       }`}
                     />
                   </span>
