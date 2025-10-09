@@ -30,6 +30,7 @@ export default function LoadingScreen({ children }) {
   return (
     <>
       {!showChildren && (
+        
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: fadeOut ? 0 : 1 }}
