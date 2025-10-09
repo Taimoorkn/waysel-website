@@ -30,7 +30,6 @@ export default function LoadingScreen({ children }) {
   return (
     <>
       {!showChildren && (
-        
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: fadeOut ? 0 : 1 }}
@@ -43,7 +42,7 @@ export default function LoadingScreen({ children }) {
               initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-xl font-satoshi font-thin tracking-[0.4em]"
+              className="font-satoshi text-xl font-thin tracking-[0.4em]"
             >
               {letter}
             </motion.span>
@@ -55,4 +54,4 @@ export default function LoadingScreen({ children }) {
       {showChildren && children}
     </>
   );
-} 
+}
