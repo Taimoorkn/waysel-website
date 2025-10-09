@@ -131,7 +131,7 @@ const HeroSection = () => {
           <Button variant="primary" href="/contact">
             Start something
           </Button>
-          <Button variant="secondary" href="/contact">
+          <Button variant="secondary" scrollToContact>
             Contact Us
           </Button>
         </motion.div>
