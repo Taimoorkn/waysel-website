@@ -112,10 +112,10 @@ function ServiceBlock({ service, isReversed }) {
       }`}
     >
       {/* Text Section */}
-      <div className="flex w-full flex-col border xl:w-1/2">
-        <div className="space-y-4 border">
-          <h3 className="HeadingH5 border">{service.title}</h3>
-          <p className="BodyText whitespace-pre-line border !text-text-secondary">{service.desc}</p>
+      <div className="flex w-full flex-col xl:w-1/2">
+        <div className="space-y-4">
+          <h3 className="HeadingH5">{service.title}</h3>
+          <p className="BodyText whitespace-pre-line !text-text-secondary">{service.desc}</p>
         </div>
         <div className="my-8 border border-border-secondary"></div>
 
@@ -127,7 +127,7 @@ function ServiceBlock({ service, isReversed }) {
           ))}
         </div>
 
-        <div className="mt-10">
+        <div className={`mt-10 w-full xl:w-auto ${isReversed ? "xl:ml-auto xl:self-end" : "xl:mr-auto xl:self-start"}`}>
           <Link
             href="/contact"
             className="rounded-full bg-white px-6 py-2 font-medium text-black transition hover:bg-[#e5e5e5]"
