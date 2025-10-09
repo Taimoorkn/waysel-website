@@ -201,7 +201,7 @@ export default function Contact() {
                     type="button"
                     onClick={handleSubmit}
                     disabled={isSubmitting || !formData.firstName || !formData.email || !formData.message}
-                    className="BodyTextMedium transform rounded-full bg-white px-8 py-3 !text-black transition-all duration-300 hover:bg-opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="BodyTextMedium transform rounded-full bg-white px-6 py-2 !text-black transition-all duration-300 hover:bg-opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </button>

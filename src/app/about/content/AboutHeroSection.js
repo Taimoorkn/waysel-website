@@ -18,10 +18,10 @@ const AboutHeroSection = () => {
         className="absolute inset-0 z-0"
       />
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center">
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center">
         {/* Main content */}
         <div className="HeadingH1">
-          <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
+          {/* <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="break-words text-center"
               initial={{ y: "112%" }}
@@ -40,15 +40,16 @@ const AboutHeroSection = () => {
             >
               We&apos;re the kind of team you wish
             </motion.h1>
-          </div>
+          </div> */}
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="gradient-primary break-words pb-3 text-center"
+              className="break-words pb-3 text-center"
               initial={{ y: "112%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              you had in-house.
+              We understand what <GradientText>you&apos;re building</GradientText>, even when
+              <span className="italic"> you</span> don&apos;t.
             </motion.h1>
           </div>
         </div>
@@ -61,7 +62,7 @@ const AboutHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                WAYSEL was built by people who got tired of watching bad builds the first time.
+                WAYSEL started as a few people trying to fix what didn&apos;t make sense.
               </motion.p>
             </div>
             <div className="overflow-hidden">
@@ -70,7 +71,7 @@ const AboutHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                get deployed. So we started fixing things, building new things.
+                We&apos;ve been inside enough half-finished products, broken dashboards, and lost roadmaps
               </motion.p>
             </div>
             <div className="overflow-hidden">
@@ -79,7 +80,7 @@ const AboutHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 1.3, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                and now helping other teams get it right
+                to know that most teams don&apos;t need more buzzwords; they need clarity.
               </motion.p>
             </div>
           </div>

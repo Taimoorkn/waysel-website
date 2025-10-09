@@ -15,8 +15,7 @@ const TestimonialsSection = () => {
     {
       id: 1,
       projectName: "The Rizzler",
-      content:
-        "Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency. Crafting user-friendly, cross platform solutions with efficiency.",
+      content: "We didn't need to manage them. That was the best part.",
       name: "Emily Kristen",
       position: "CEO at Google",
       avatar: "/images/gregory.webp",
@@ -27,18 +26,17 @@ const TestimonialsSection = () => {
       id: 2,
       projectName: "Deez nuts",
       content:
-        "The team delivered an exceptional solution that exceeded our expectations. Their attention to detail and technical expertise made all the difference in our project's success.",
-      name: "Michael Chen",
-      position: "CTO at Amazon",
+        "WORST PEOPLE ON THE PLANET, THEY MAKE YOU FEEL LIKE SHIT but they make good shit so i guess it all evens out at the end. win - win  :)",
+      name: "Tandoori Chicken aka Taimoor Khan",
+      position: "Smol nuts tester",
       avatar: "/images/gregory.webp",
-      company: "Amazon",
+      company: "Big Nuts LTD",
       icon: ShoppingBag,
     },
     {
       id: 3,
       projectName: "Fart Machine",
-      content:
-        "Outstanding work on our mobile application. The user experience is seamless and the performance is exceptional. Couldn't have asked for a better development partner.",
+      content: "WAYSEL worked like an internal team. But faster.",
       name: "Sarah Johnson",
       position: "Product Lead at Apple",
       avatar: "/images/gregory.webp",
@@ -48,8 +46,7 @@ const TestimonialsSection = () => {
     {
       id: 4,
       projectName: "Gugu Gaga",
-      content:
-        "Their innovative approach to solving complex problems helped us streamline our operations. The dashboard they built has become an essential tool for our team.",
+      content: "We didn't need to manage them. That was the best part.",
       name: "David Wilson",
       position: "Head of Engineering at Meta",
       avatar: "/images/gregory.webp",
@@ -59,8 +56,7 @@ const TestimonialsSection = () => {
     {
       id: 5,
       projectName: "Hastalavista",
-      content:
-        "Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects. Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects.",
+      content: "They asked the right questions. And then just built it.",
       name: "Lisa Thompson",
       position: "VP of Technology at Microsoft",
       avatar: "/images/gregory.webp",
@@ -128,13 +124,13 @@ const TestimonialsSection = () => {
         {testimonials.map((testimonial, index) => {
           const IconComponent = testimonial.icon;
           const isExpanded = expanded[testimonial.id];
-          const textLimit = 200; // truncate text to ~200 chars
+          const textLimit = 140; // truncate text to ~200 chars
           const isOverflow = testimonial.content.length > textLimit;
 
           return (
             <SwiperSlide key={testimonial.id} onClick={() => handleSlideClick(index)}>
               <div
-                className={`flex flex-col gap-6 overflow-hidden rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-card bg-opacity-80 px-6 py-6 backdrop-blur-sm transition-all duration-500 ease-in-out xl:gap-8 xl:px-10 xl:py-8 ${isExpanded ? "max-h-[700px]" : "h-[375px]"} `}
+                className={`flex flex-col gap-6 overflow-hidden rounded-2xl border border-b-0 border-r-0 border-[#fed7be33] bg-card bg-opacity-80 px-6 py-6 backdrop-blur-sm transition-all duration-500 ease-in-out xl:gap-8 xl:px-10 xl:py-8 ${isExpanded ? "max-h-[500px]" : "h-[300px]"} `}
               >
                 <div className="flex h-full flex-col items-start justify-between gap-6">
                   <h3 className="HeadingH5">{testimonial.projectName}</h3>
