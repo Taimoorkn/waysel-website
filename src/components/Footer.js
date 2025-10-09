@@ -31,13 +31,12 @@ const Footer = () => {
           <div className="flex gap-8 xl:gap-16">
             {[
               [
-                { label: "Our Work", href: "/work", isInternal: true },
                 { label: "Our Services", href: "/services", isInternal: true },
                 { label: "About Us", href: "/about", isInternal: true },
               ],
               [
-                { label: "LinkedIn", href: "https://linkedin.com", isInternal: false },
-                { label: "Instagram", href: "https://instagram.com", isInternal: false },
+                { label: "LinkedIn", href: "https://www.linkedin.com/company/waysel/", isInternal: false },
+                { label: "Instagram", href: "https://www.instagram.com/wayselofficial/", isInternal: false },
                 { label: "Contact Us", href: "/contact", isInternal: true },
               ],
             ].map((column, columnIndex) => (
