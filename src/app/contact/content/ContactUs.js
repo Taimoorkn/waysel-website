@@ -99,10 +99,10 @@ const ContactUs = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h1 className="text-4xl font-bold tracking-tight text-text-primary sm:text-5xl xl:text-6xl">
-          Let’s <GradientText>Start Something</GradientText> Bold
+        <h1 className="HeadingH1">
+          Let's <GradientText>Start Something</GradientText> Bold
         </h1>
-        <p className="mt-4 max-w-2xl text-lg leading-7 text-text-secondary sm:text-xl xl:text-2xl xl:leading-8">
+        <p className="BodyText mt-4 max-w-2xl">
           We collaborate with brands, founders, and teams who believe in craft. If that’s you — let’s build something
           that makes people stop and look twice.
         </p>
@@ -119,12 +119,10 @@ const ContactUs = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           >
             <div>
-              <h2 className="text-2xl font-semibold text-text-primary sm:text-3xl">
-                Get in <GradientText>Touch</GradientText>
+              <h2 className="HeadingH5">
+                We'll ask what <GradientText>you're trying </GradientText>to do.
               </h2>
-              <p className="mt-3 text-base text-text-secondary sm:text-lg">
-                Ready to bring your vision to life? Reach out, and let’s make it happen.
-              </p>
+              <p className="BodyText mt-3">Then we'll build it like it was ours.</p>
             </div>
             <div className="flex flex-col gap-6">
               {[
@@ -162,7 +160,7 @@ const ContactUs = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="w-full rounded-2xl bg-opacity-80 bg-gradient-to-br from-border-primary to-border-secondary p-px backdrop-blur-sm">
+            <div className="w-full rounded-2xl bg-gradient-to-br from-border-primary to-border-secondary p-px backdrop-blur-sm">
               <div className="w-full rounded-2xl bg-card px-6 py-8 sm:px-10 sm:py-10">
                 <div className="space-y-8">
                   {/* Name Fields */}
@@ -198,7 +196,7 @@ const ContactUs = () => {
                       <input
                         type="email"
                         name="email"
-                        placeholder="E.g abc@gmail.com"
+                        placeholder="e.g user@gmail.com"
                         value={formData.email}
                         onChange={handleChange}
                         className="contact-input focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-border-primary bg-card px-4 py-3 text-text-secondary placeholder-text-tertiary focus:outline-none focus:ring-2"
@@ -257,7 +255,7 @@ const ContactUs = () => {
       </section>
 
       {/* Gradient vector blur at bottom edge */}
-      <div className="oval-blur bottom-20 right-0 z-0 -translate-x-1/2 -translate-y-1/2 transform" />
+      <div className="oval-blur bottom-40 right-0 z-0 -translate-x-1/2 -translate-y-1/2 transform" />
     </main>
   );
 };

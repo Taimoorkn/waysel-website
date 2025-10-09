@@ -34,7 +34,7 @@ const AboutHeroSection = () => {
 
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="gradient-primary break-words text-center"
+              className="gradient-primary break-words pb-3 text-center"
               initial={{ y: "112%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
@@ -44,7 +44,7 @@ const AboutHeroSection = () => {
           </div>
         </div>
 
-        <div className="mt-4 xl:mt-8">
+        <div className="mt-1 xl:mt-5">
           <div className="BodyText text-center">
             <div className="overflow-hidden">
               <motion.p
