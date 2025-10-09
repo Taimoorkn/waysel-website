@@ -62,7 +62,7 @@ const PhilosophySection = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                We're always learning. That&apos;s why our work gets better.
+                We&apos;re always learning. That&apos;s why our work gets better.
               </motion.p>
             </div>
 
