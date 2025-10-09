@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import SectionHeading from "./SectionHeading";
 import GradientText from "@/components/GradientText";
 import Button from "@/components/Button";
+import { Circle } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,7 +16,11 @@ export default function Contact() {
   const [csrfToken, setCsrfToken] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
-
+  const steps = [
+    "We&apos;ll ask what you&apos;re trying to do.",
+    "We&apos;ll tell you if it makes sense.",
+    "If it does, we&apos;ll build it like it was ours.",
+  ];
   useEffect(() => {
     // Get CSRF token on component mount
     const fetchCsrfToken = async () => {
@@ -92,7 +97,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section relative bg-primary_bg">
       <div className="mx-auto flex flex-col items-stretch gap-8 xl:flex-row xl:gap-12">
-        {/* Left Section - Changed to items-stretch on parent and removed !h-full */}
+        {/* Left Section */}
         <div className="flex w-full flex-col gap-8 p-6 xl:w-[40%] xl:gap-12 xl:p-16">
           <div className="w-full">
             <h1 className="HeadingH3 mb-4">
@@ -103,11 +108,12 @@ export default function Contact() {
             </p>
           </div>
           <div className="BodyText">
-            We&apos;ll ask what you&apos;re trying to do.
-            <br />
-            We&apos;ll tell you if it makes sense.
-            <br />
-            If it does, we&apos;ll build it like it was ours.
+            {steps.map((text, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <Circle size={7} strokeWidth={0} fill="white" />
+                <span dangerouslySetInnerHTML={{ __html: text }} />
+              </div>
+            ))}
           </div>
         </div>
 
