@@ -224,7 +224,7 @@ const ContactUs = () => {
                       rows="6"
                       value={formData.message}
                       onChange={handleChange}
-                      className="contact-input contact-textarea focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-border-primary bg-card px-4 py-3 text-text-secondary placeholder-text-tertiary focus:outline-none focus:ring-2"
+                      className="contact-input focus:border-primary focus:ring-primary/20 w-full border border-border-primary bg-card px-4 py-3 text-text-secondary placeholder-text-tertiary focus:outline-none focus:ring-2"
                     />
                   </div>
 

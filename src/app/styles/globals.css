@@ -79,7 +79,7 @@
   .contact-input {
     /* Base styles - matching original Tailwind classes */
     width: 100%;
-    border-radius: 1rem; /* rounded-2xl */
+    border-radius: 16px; /* rounded-2xl */
     border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
     padding: 1rem 1.5rem; /* px-6 py-4 */
     font-size: 0.875rem; /* text-sm */
@@ -131,12 +131,6 @@
       color: #ffffff !important;
       border-color: rgba(255, 255, 255, 0.1) !important;
     }
-  }
-
-  /* Textarea specific styling */
-  .contact-textarea {
-    resize: none;
-    border-radius: 0.75rem;
   }
 }
 
