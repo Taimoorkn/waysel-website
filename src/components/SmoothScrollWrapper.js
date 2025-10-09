@@ -2,8 +2,8 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Smooth inertia-style scrolling
- * Works with any Next.js + Tailwind layout
+ * Half-more glide smooth scrolling — balanced inertia
+ * Natural feel, smoother than default, without eye strain.
  */
 export default function SmoothScrollWrapper({ children }) {
   const containerRef = useRef(null);
@@ -12,24 +12,35 @@ export default function SmoothScrollWrapper({ children }) {
     const container = containerRef.current;
     let current = 0;
     let target = 0;
-    const ease = 0.08; // smaller = smoother (0.05–0.1 is ideal)
+    let rafId;
 
-    // Set body height to match scroll container
+    const ease = 0.045;        // ← balanced: more glide than 0.055 but not too floaty
+    const stopThreshold = 0.2; // ← smooth stop without abrupt snap
+
     const setBodyHeight = () => {
       document.body.style.height = `${container.getBoundingClientRect().height}px`;
     };
     setBodyHeight();
     window.addEventListener("resize", setBodyHeight);
 
-    const smoothScroll = () => {
+    const animate = () => {
       target = window.scrollY;
-      current += (target - current) * ease;
-      container.style.transform = `translateY(-${current}px)`;
-      requestAnimationFrame(smoothScroll);
+      const diff = target - current;
+
+      // smooth interpolation
+      current += diff * ease;
+
+      // snap when close enough to prevent jitter
+      if (Math.abs(diff) < stopThreshold) current = target;
+
+      container.style.transform = `translate3d(0, -${current}px, 0)`;
+      rafId = requestAnimationFrame(animate);
     };
-    requestAnimationFrame(smoothScroll);
+
+    rafId = requestAnimationFrame(animate);
 
     return () => {
+      cancelAnimationFrame(rafId);
       window.removeEventListener("resize", setBodyHeight);
       document.body.style.height = "";
     };
