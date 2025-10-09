@@ -59,7 +59,7 @@ const PhilosophySection = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                We don&apos;t just follow standards—we establish new ones for your market.
+                We don&apos;t just follow standards - we establish new ones for your market.
               </motion.p>
             </div>
 

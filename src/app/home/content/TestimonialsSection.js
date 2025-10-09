@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
     },
     {
       id: 3,
-      projectName: "Mobile Banking App",
+      projectName: "Fart Machine",
       content:
         "Outstanding work on our mobile application. The user experience is seamless and the performance is exceptional. Couldn't have asked for a better development partner.",
       name: "Sarah Johnson",
@@ -47,7 +47,7 @@ const TestimonialsSection = () => {
     },
     {
       id: 4,
-      projectName: "AI Analytics Dashboard",
+      projectName: "Gugu Gaga",
       content:
         "Their innovative approach to solving complex problems helped us streamline our operations. The dashboard they built has become an essential tool for our team.",
       name: "David Wilson",
@@ -60,7 +60,7 @@ const TestimonialsSection = () => {
       id: 5,
       projectName: "Hastalavista",
       content:
-        "Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects. Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects. Their continuous support even after delivery was outstanding.",
+        "Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects. Exceptional expertise in cloud architecture and deployment. They helped us migrate our entire infrastructure with zero downtime. Highly recommended for complex projects.",
       name: "Lisa Thompson",
       position: "VP of Technology at Microsoft",
       avatar: "/images/gregory.webp",
@@ -102,7 +102,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="section relative px-0">
-      <SectionHeading title={<>Testimonials</>} />
+      <SectionHeading title={"Some of the nicest things we heard from our clients"} />
       <Swiper
         ref={swiperRef}
         slidesPerView={1.1}

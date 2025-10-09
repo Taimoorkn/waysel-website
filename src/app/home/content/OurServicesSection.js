@@ -75,7 +75,7 @@ const OurServicesSection = () => {
       image: "/images/filler/filler4.svg",
       content: [
         {
-          text: "EHRs, dashboards, forms — built for more than demo; for practical use.",
+          text: "EHRs, dashboards, forms - built for more than demo; for practical use.",
         },
       ],
     },

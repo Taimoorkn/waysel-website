@@ -18,7 +18,7 @@ export default function AnimatedSVG() {
 
     const paths = Array.from(svgRef.current.querySelectorAll(".shimmer-path"));
 
-    // Store original fill color for each path
+    // Store each path’s original fill color
     paths.forEach((p) => {
       p.dataset.originalFill = p.getAttribute("fill") || "#4A4A4A";
     });
@@ -32,7 +32,7 @@ export default function AnimatedSVG() {
         batch.forEach((p) => {
           const originalFill = p.dataset.originalFill ?? "#4A4A4A";
           p.animate([{ fill: originalFill }, { fill: "#ffffff", offset: 0.5 }, { fill: originalFill }], {
-            duration: 4000,
+            duration: 2000, // ⚡ faster (was 4000)
             easing: "ease-in-out",
             fill: "forwards",
           });
@@ -40,11 +40,12 @@ export default function AnimatedSVG() {
       };
 
       runBatch(firstBatch);
-      setTimeout(() => runBatch(secondBatch), 2500);
+      setTimeout(() => runBatch(secondBatch), 1000); // ⚡ start second wave sooner (was 2500)
     }
 
     animateBatch();
-    const interval = setInterval(animateBatch, 6000);
+    const interval = setInterval(animateBatch, 3000); // ⚡ loop faster (was 6000)
+
     return () => clearInterval(interval);
   }, []);
 

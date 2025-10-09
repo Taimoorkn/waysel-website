@@ -6,25 +6,22 @@ import { usePathname } from "next/navigation";
 
 export default function LoadingScreen({ children }) {
   const pathname = usePathname();
-  const [isVisible, setIsVisible] = useState(true); // controls mount/unmount
-  const [fadeOut, setFadeOut] = useState(false); // controls opacity
+  const [showChildren, setShowChildren] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    setShowChildren(false);
     setFadeOut(false);
 
-    // 1️⃣ Duration before fade-out starts
-    const visibleTime = 1500; // adjust this (ms)
-
-    // 2️⃣ Duration of fade-out itself
-    const fadeDuration = 500; // adjust this (ms)
+    const visibleTime = 1500;
+    const fadeDuration = 500;
 
     const fadeTimer = setTimeout(() => setFadeOut(true), visibleTime);
-    const removeTimer = setTimeout(() => setIsVisible(false), visibleTime + fadeDuration);
+    const showTimer = setTimeout(() => setShowChildren(true), visibleTime + fadeDuration);
 
     return () => {
       clearTimeout(fadeTimer);
-      clearTimeout(removeTimer);
+      clearTimeout(showTimer);
     };
   }, [pathname]);
 
@@ -32,31 +29,29 @@ export default function LoadingScreen({ children }) {
 
   return (
     <>
-      {isVisible && (
+      {!showChildren && (
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: fadeOut ? 0 : 1 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white"
+          className="fixed  inset-0 z-[9999] flex items-center justify-center bg-black text-white"
         >
           {letters.map((letter, i) => (
             <motion.span
               key={i}
               initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: [0.25, 0.1, 0.25, 1],
-              }}
-              className="text- xl font-satoshi font-thin tracking-[0.4em]"
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="font-satoshi text-xl font-thin tracking-[0.4em]"
             >
               {letter}
             </motion.span>
           ))}
         </motion.div>
       )}
-      {children}
+
+      {/* render page only after loader finishes */}
+      {showChildren && children}
     </>
   );
 }

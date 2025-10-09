@@ -149,7 +149,7 @@ export default function Contact() {
                     <input
                       type="email"
                       name="email"
-                      placeholder="E.g abc@gmail.com"
+                      placeholder="e.g user@gmail.com"
                       value={formData.email}
                       onChange={handleChange}
                       className="contact-input text-text-secondary placeholder-text-tertiary"
@@ -177,7 +177,7 @@ export default function Contact() {
                     rows="6"
                     value={formData.message}
                     onChange={handleChange}
-                    className="contact-input contact-textarea text-text-secondary placeholder-text-tertiary"
+                    className="contact-input text-text-secondary placeholder-text-tertiary"
                   />
                 </div>
 

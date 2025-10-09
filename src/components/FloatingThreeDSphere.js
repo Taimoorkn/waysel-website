@@ -12,6 +12,7 @@ const FloatingThreeDSphere = () => {
   const [scrollY, setScrollY] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [documentHeight, setDocumentHeight] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -20,9 +21,10 @@ const FloatingThreeDSphere = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    // Set initial window dimensions
+    // Set initial window and document dimensions
     setWindowHeight(window.innerHeight);
     setWindowWidth(window.innerWidth);
+    setDocumentHeight(document.documentElement.scrollHeight);
     checkMobile();
 
     // Handle scroll events
@@ -34,6 +36,7 @@ const FloatingThreeDSphere = () => {
     const handleResize = () => {
       setWindowHeight(window.innerHeight);
       setWindowWidth(window.innerWidth);
+      setDocumentHeight(document.documentElement.scrollHeight);
       checkMobile();
     };
 
@@ -78,12 +81,12 @@ const FloatingThreeDSphere = () => {
       alpha: true,
       antialias: true,
     });
-    renderer.setSize(300, 300); // Original size
+    renderer.setSize(300, 300);
     renderer.setClearColor(0x000000, 0);
     rendererRef.current = renderer;
     currentMount.appendChild(renderer.domElement);
 
-    // Create sphere geometry (smaller size)
+    // Create sphere geometry
     const geometry = new THREE.SphereGeometry(2.0, 32, 32);
 
     // Create simple material with linear gradient
@@ -177,57 +180,75 @@ const FloatingThreeDSphere = () => {
 
   // Calculate position and size based on scroll
   const calculatePosition = () => {
-    const heroEnd = 50; // End of hero section
-    const shrinkingPhaseEnd = 600; // End of shrinking phase (sphere finishes shrinking and moves left)
+    const heroEnd = 50;
+    const shrinkingPhaseEnd = 600;
+    const halfPageThreshold = documentHeight * 0.5; // middle of the page
+    const fadeRange = 200; // scroll distance for fading
 
-    // On mobile, keep sphere centered in hero section and hide when scrolled out
+    // --- FIXED: One-direction fade logic ---
+    // Fully visible until halfway; then fade out once; fade back in only when scrolling above again
+    let opacity = 1;
+
+    if (scrollY > halfPageThreshold && scrollY <= halfPageThreshold + fadeRange) {
+      // fade from 1 → 0 as you move through the fade zone
+      opacity = 1 - (scrollY - halfPageThreshold) / fadeRange;
+    } else if (scrollY > halfPageThreshold + fadeRange) {
+      // completely hidden past fade zone
+      opacity = 0;
+    } else if (scrollY < halfPageThreshold) {
+      // fully visible again when above halfway
+      opacity = 1;
+    }
+
+    // Clamp to [0,1]
+    opacity = Math.min(Math.max(opacity, 0), 1);
+
+    // ---- Position / scale logic stays same ----
     if (isMobile) {
       const isInHeroSection = scrollY < heroEnd;
       return {
         left: "50%",
         top: "50%",
-        transform: "translate(-50%, -50%) scale(1)",
-        transition: "all 0.8s ease-out",
+        transform: isInHeroSection ? "translate(-50%, -50%) scale(1)" : "translate(-50%, -50%) scale(0.5)",
+        transition: "all 0.8s ease-out, opacity 0.4s ease-out",
         width: "300px",
         height: "300px",
         pointerEvents: isInHeroSection ? "auto" : "none",
+        opacity,
       };
     }
 
-    // Desktop behavior - multi-stage transition
     if (scrollY < heroEnd) {
-      // Stage 1: In hero section - full size, centered
       return {
         left: "50%",
         top: "50%",
         transform: "translate(-50%, -50%) scale(1)",
-        transition: "all 0.8s ease-out",
+        transition: "all 0.8s ease-out, opacity 0.4s ease-out",
         width: "300px",
         height: "300px",
+        opacity,
       };
     } else if (scrollY < shrinkingPhaseEnd) {
-      // Stage 2-3: Shrinking phase - gradually shrink while staying centered
-      // Calculate scale: gradually shrink from 1.0 to 0.6
       const progress = (scrollY - heroEnd) / (shrinkingPhaseEnd - heroEnd);
-      const scale = 1 - progress * 0.4; // Scale from 1.0 to 0.6
-
+      const scale = 0.5 - progress * 0.2;
       return {
         left: "50%",
         top: "50%",
         transform: `translate(-50%, -50%) scale(${scale})`,
-        transition: "all 1s ease-out",
+        transition: "all 1s ease-out, opacity 0.4s ease-out",
         width: "300px",
         height: "300px",
+        opacity,
       };
     } else {
-      // Stage 4: After philosophy section - move to left edge at small size
       return {
         left: "-40px",
         top: "300px",
-        transform: "scale(0.6)",
-        transition: "all 1s ease-out",
+        transform: "scale(0.3)",
+        transition: "all 1s ease-out, opacity 0.4s ease-out",
         width: "300px",
         height: "300px",
+        opacity,
       };
     }
   };
