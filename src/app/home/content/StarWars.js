@@ -13,17 +13,10 @@ const StarWars = () => {
 
       {/* Main Content */}
       <div className="mx-auto flex max-w-5xl flex-1 items-center justify-center py-6 xl:py-12">
-        <SectionHeading
-          title={
-            <>
-              We are a <GradientText>team of innovators</GradientText> dedicated to
-              <br />
-              <GradientText>solving complex challenges</GradientText> with
-              <br />
-              elegant digital solutions.
-            </>
-          }
-        />
+        <h2 className="HeadingH2 text-center">
+          We are a <GradientText>team of innovators</GradientText> dedicated to
+          <GradientText> solving complex challenges</GradientText> with elegant digital solutions.
+        </h2>
       </div>
 
       {/* Bottom Binary Pattern (flipped) */}

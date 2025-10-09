@@ -47,7 +47,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
       <div className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-20 bg-gradient-to-b from-[#0D0D0C] to-transparent" />
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-20 bg-gradient-to-t from-[#0D0D0C] to-transparent" />
 
-      {/* Column 1 — tilt RIGHT */}
+      {/* Column 1 - tilt RIGHT */}
       <motion.div
         style={{
           y: column1Y,
@@ -74,7 +74,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
         ))}
       </motion.div>
 
-      {/* Column 2 — tilt LEFT */}
+      {/* Column 2 - tilt LEFT */}
       <motion.div
         style={{
           y: column2Y,
@@ -101,7 +101,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
         ))}
       </motion.div>
 
-      {/* Column 3 — tilt RIGHT again (moved closer) */}
+      {/* Column 3 - tilt RIGHT again (moved closer) */}
       <motion.div
         style={{
           y: column3Y,

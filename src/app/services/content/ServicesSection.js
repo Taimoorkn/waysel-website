@@ -9,7 +9,7 @@ const services = [
   {
     id: 1,
     title: "Website development",
-    desc: "We design and build websites that don't just look good — they perform. Every layer of the process connects design, development, and reliability into one seamless system.",
+    desc: "We design and build websites that don't just look good - they perform. Every layer of the process connects design, development, and reliability into one seamless system.",
     faqs: [
       {
         id: 1,
@@ -129,14 +129,14 @@ function ServiceBlock({ service, isReversed }) {
           <div>
             <h3 className="HeadingH5">{service.title}</h3>
             <p className="BodyText mt-3">{service.desc}</p>
-            <div className="mt-8 border border-border-secondary"></div>
+            <div className="my-8 border border-border-secondary"></div>
           </div>
 
           {service.faqs.map((faq) => (
-            <Accordion key={faq.id} open={open === faq.id} className="">
+            <Accordion key={faq.id} open={open === faq.id}>
               <AccordionHeader
                 onClick={() => handleOpen(faq.id)}
-                className="m-0 flex h-full w-full items-start justify-between p-0 py-8"
+                className="m-0 flex h-full w-full items-start justify-between border-none p-0"
               >
                 <span
                   className={`BodyTextBold w-full ${open === faq.id ? "!text-text-primary" : "!text-text-tertiary"}`}
@@ -167,12 +167,12 @@ function ServiceBlock({ service, isReversed }) {
               <AccordionBody className="m-0 mt-4 p-0">
                 <p className="BodyText">{faq.desc}</p>
               </AccordionBody>
-              <div className="border border-border-secondary"></div>
+              <div className="my-8 border border-border-secondary"></div>
             </Accordion>
           ))}
         </div>
 
-        <div className={`mt-8 w-full xl:w-auto ${isReversed ? "xl:ml-auto xl:self-end" : "xl:mr-auto xl:self-start"}`}>
+        <div className={`w-full xl:w-auto ${isReversed ? "xl:ml-auto xl:self-end" : "xl:mr-auto xl:self-start"}`}>
           <Link
             href="/contact"
             className="rounded-full bg-white px-6 py-2 font-medium text-black transition hover:bg-[#e5e5e5]"

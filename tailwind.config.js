@@ -74,9 +74,9 @@ module.exports = {
         "body-lg-bold": ["16px", { lineHeight: "24px", fontWeight: "700" }],
 
         // xl (1280px+) - Desktop (Your current body design)
-        "body-xl-reg": ["20px", { lineHeight: "36px", fontWeight: "400" }],
-        "body-xl-med": ["20px", { lineHeight: "36px", fontWeight: "500" }],
-        "body-xl-bold": ["20px", { lineHeight: "36px", fontWeight: "700" }],
+        "body-xl-reg": ["20px", { lineHeight: "32px", fontWeight: "400" }],
+        "body-xl-med": ["20px", { lineHeight: "32px", fontWeight: "500" }],
+        "body-xl-bold": ["20px", { lineHeight: "32px", fontWeight: "700" }],
       },
       colors: {
         primary_bg: "#0D0D0C",
