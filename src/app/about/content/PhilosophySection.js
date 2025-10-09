@@ -49,8 +49,11 @@ const PhilosophySection = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                Our mission is to build products that are powered by smart automation & deployed on secure, infinitely
-                scalable infrastructure.
+                We&apos;ve built for healthcare, SaaS, cloud-native platforms, and clients with nothing but an idea.
+                <br />
+                The one thing that stays constant? Curiosity, clarity, and code that runs clean.
+                <br /> We&apos;re not an agency. <br />
+                We&apos;re a few people who care about getting it right.
               </motion.p>
               <motion.p
                 className="font-medium text-text-secondary"
@@ -59,7 +62,7 @@ const PhilosophySection = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                We don&apos;t just follow standards - we establish new ones for your market.
+                We're always learning. That&apos;s why our work gets better.
               </motion.p>
             </div>
 

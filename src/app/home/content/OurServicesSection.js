@@ -1,8 +1,9 @@
+"use client";
+
 import React, { useEffect } from "react";
 import Image from "next/image";
 import SectionHeading from "../../../components/SectionHeading";
 import GradientText from "@/components/GradientText";
-import { Circle } from "lucide-react";
 
 const OurServicesSection = () => {
   useEffect(() => {
@@ -32,54 +33,45 @@ const OurServicesSection = () => {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const cards = [
+  const services = [
     {
-      title: "Strategic Design",
-      image: "/images/filler/filler1.svg",
-      content: [
-        {
-          label: "UX/UI Design:",
-          text: "We craft seamless user experiences and modern interfaces that users love.",
-        },
-        {
-          label: "Brand Strategy:",
-          text: "We define your brand's digital identity to stand out in the market.",
-        },
-      ],
+      title: "AI-Integrated Web & App Development",
+      desc: `Full-stack web and software builds that merge intuitive Material 3 UI with automation. AI handles OCR, validation, and predictions — your users get faster, smarter workflows.`,
     },
     {
-      title: "Web & App development",
-      image: "/images/filler/filler2.svg",
-      content: [
-        {
-          text: "Clean builds. Fast shipping. Works on whatever stack you're already on.",
-        },
-      ],
+      title: "Next-Generation EHR & SaaS Platforms",
+      desc: `Enterprise-grade systems built for healthcare and regulated industries — guided by Material 3, Apple HIG, and WCAG, and powered by secure, scalable cloud architecture.`,
     },
     {
-      title: "Product-driven marketing",
-      image: "/images/filler/filler3.svg",
-      content: [
-        {
-          text: "Funnels, landing pages, SEO that ties into actual product goals.",
-        },
-      ],
+      title: "Digital Infrastructure & Analytics",
+      desc: `From websites to complex ecosystems — we wire analytics into every layer, turning clicks and scrolls into actionable insights for smarter, continuous improvement.`,
     },
     {
-      title: "Healthcare & compliance products",
-      image: "/images/filler/filler4.svg",
-      content: [
-        {
-          text: "EHRs, dashboards, forms - built for more than demo; for practical use.",
-        },
-      ],
+      title: "AI Models & OCR Integrations",
+      desc: `We turn paper into structured data. Our AI-powered OCR systems transform handwritten or printed forms into accurate, usable records — ready for any industry.`,
     },
+    {
+      title: "Cross-Platform Product Engineering",
+      desc: `Apps that perform on every device. Built with Flutter Bloc, AWS, and CI/CD pipelines for reproducibility, speed, and continuous improvement.`,
+    },
+    {
+      title: "Cloud-Native Deployment & DevOps",
+      desc: `Serverless by design — AWS Lambda, Amplify, or Vercel. Automated CI/CD, uptime monitoring, and blue-green releases come standard.`,
+    },
+    {
+      title: "Digital Marketing Ecosystems",
+      desc: `From SEO to HubSpot to Salesforce — we connect every piece into one measurable marketing engine that gets smarter with every campaign.`,
+    },
+  ];
+
+  const images = [
+    "/images/filler/filler1.svg",
+    "/images/filler/filler2.svg",
+    "/images/filler/filler3.svg",
+    "/images/filler/filler4.svg",
   ];
 
   return (
@@ -94,7 +86,11 @@ const OurServicesSection = () => {
           left: 0;
           width: 350px;
           height: 350px;
-          background: linear-gradient(to bottom, rgba(251, 48, 129), rgba(251, 48, 129, 0.2));
+          background: linear-gradient(
+            to bottom,
+            rgba(251, 48, 129),
+            rgba(251, 48, 129, 0.2)
+          );
           transition: all 300ms ease-in-out;
         }
         .fakeblob {
@@ -119,73 +115,61 @@ const OurServicesSection = () => {
         />
 
         <div className="z-10 grid w-full grid-cols-1 gap-4 xl:grid-cols-2">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className={`card relative overflow-hidden rounded-[32px] p-[1px] pr-[0.5px] ${
-                index % 2 === 0
-                  ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
-                  : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
-              }`}
-              style={{
-                background: "rgba(128, 128, 128, 0.1)",
-                transition: "all 300ms ease-in-out",
-              }}
-            >
+          {services.map((service, index) => {
+            const image = images[index % images.length];
+            const isLast = index === services.length - 1;
+
+            return (
               <div
-                className={`flex h-full flex-col rounded-[32px] !p-6 xl:min-h-[520px] xl:!p-10 ${
+                key={index}
+                className={`card relative overflow-hidden rounded-[32px] p-[1px] pr-[0.5px] ${
                   index % 2 === 0
                     ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
                     : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
-                } ${index >= 2 ? "bg-black/50 backdrop-blur-md" : "bg-[#0D0D0C]"} `}
+                }`}
                 style={{
+                  background: "rgba(128, 128, 128, 0.1)",
                   transition: "all 300ms ease-in-out",
-                  backgroundImage:
-                    index < 2
-                      ? index === 0
-                        ? "linear-gradient(45deg, #1A1A1A 0%, transparent 100%)"
-                        : "linear-gradient(315deg, #1A1A1A 0%, transparent 100%)"
-                      : "none", // remove extra gradient for last two
                 }}
               >
-                <h3 className="HeadingH5 mb-4">{card.title}</h3>
+                <div
+                  className={`flex h-full flex-col rounded-[32px] !p-6 xl:min-h-[520px] xl:!p-10 ${
+                    index % 2 === 0
+                      ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
+                      : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
+                  } ${isLast ? "bg-black/50 backdrop-blur-md" : "bg-[#0D0D0C]"} `}
+                  style={{
+                    transition: "all 300ms ease-in-out",
+                    backgroundImage: !isLast
+                      ? index % 2 === 0
+                        ? "linear-gradient(45deg, #1A1A1A 0%, transparent 100%)"
+                        : "linear-gradient(315deg, #1A1A1A 0%, transparent 100%)"
+                      : "none",
+                  }}
+                >
+                  <h3 className="HeadingH5 mb-4">{service.title}</h3>
+                  <p className="BodyText mb-8">{service.desc}</p>
 
-                <div className="flex-1">
-                  {card.content.map((item, i) => (
-                    <div key={i} className="BodyText">
-                      {item.label ? (
-                        <div className="flex items-center gap-3">
-                          {/* White Lucide Circle icon */}
-                          <Circle size={7} strokeWidth={0} fill="white" />
-                          <span>
-                            <span className="BodyTextBold">{item.label}</span> {item.text}
-                          </span>
-                        </div>
-                      ) : (
-                        <>{item.text}</>
-                      )}
-                    </div>
-                  ))}
+                  <div className="flex justify-center xl:justify-end mt-auto">
+                    <Image
+                      src={image}
+                      alt={service.title}
+                      width={280}
+                      height={200}
+                      className="w-[200px] object-contain xl:w-[280px]"
+                    />
+                  </div>
                 </div>
 
-                <div className="flex justify-center xl:justify-end">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    width={280}
-                    height={200}
-                    className="w-[200px] object-contain xl:w-[280px]"
-                  />
-                </div>
+                <div className="blob rounded-full"></div>
+                <div className="fakeblob"></div>
               </div>
-              <div className="blob rounded-full"></div>
-              <div className="fakeblob"></div>
-            </div>
-          ))}
+            );
+          })}
         </div>
-
-        {/* Gradient vector blur at top edge */}
       </div>
+
+      {/* Gradient spotlight at bottom */}
       <div className="absolute bottom-0 left-[49.12%] -z-10 w-full -translate-x-1/2 scale-y-[-1] transform">
         <Image
           src="/images/filler/spotlight.png"
