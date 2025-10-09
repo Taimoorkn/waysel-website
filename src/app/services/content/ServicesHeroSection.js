@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BackgroundRippleEffect } from "@/components/ui/aceternity-ui/background-ripple-effect";
+import GradientText from "@/components/GradientText";
 const ServicesHeroSection = () => {
   return (
     <section className="section relative flex min-h-screen items-center overflow-hidden">
@@ -13,7 +14,7 @@ const ServicesHeroSection = () => {
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between">
         {/* Main content */}
         <div className="HeadingH1">
-          <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
+          {/* <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="break-words"
               initial={{ y: "112%" }}
@@ -32,15 +33,15 @@ const ServicesHeroSection = () => {
             >
               for modern
             </motion.h1>
-          </div>
+          </div> */}
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
-              className="gradient-primary break-words pb-3"
+              className="break-words pb-3"
               initial={{ y: "112%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              digital challenges
+              What we <GradientText>actually </GradientText>do
             </motion.h1>
           </div>
         </div>
@@ -53,7 +54,8 @@ const ServicesHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                Not fluff. Not theory. Just the kind of work that
+                We design and engineer digital systems that behave like products: measurable, adaptable, and built to
+                last.
               </motion.p>
             </div>
             <div className="overflow-hidden">
@@ -62,7 +64,7 @@ const ServicesHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                ships, scales, and stays alive in the wild.
+                Everything we deliver runs on research, clean code, and cloud-native infrastructure.
               </motion.p>
             </div>
           </div>

@@ -108,7 +108,7 @@ const OurServicesSection = () => {
         <SectionHeading
           title={
             <>
-              This is <GradientText>(some of the insane stuff)</GradientText>
+              This is <GradientText>(some of the stuff)</GradientText>
               <br /> we actually do.
             </>
           }

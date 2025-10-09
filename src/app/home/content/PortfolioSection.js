@@ -182,7 +182,7 @@ function PortfolioSection() {
             <br /> fixed & rescued
           </>
         }
-        description="Real builds that launched and worked. Not case studies with fake testimonials."
+        description="Real clients. Real constraints. Real builds that launched and worked. Not case studies with fake testimonials."
       />
 
       <div className="flex flex-col gap-24 py-12">

@@ -5,6 +5,7 @@ import "./styles/animations.css";
 import "./styles/typography.css";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 import LoadingScreen from "@/components/LoadingScreen";
+import SmoothScrollWrapper from "@/components/SmoothScrollWrapper";
 
 const satoshi = localFont({
   src: [
@@ -110,7 +111,9 @@ export default function RootLayout({ children }) {
         <StructuredData data={websiteSchema} />
 
         <LoadingScreen>
-          <div id="root">{children}</div>
+          <SmoothScrollWrapper>
+            <div id="root">{children}</div>
+          </SmoothScrollWrapper>
         </LoadingScreen>
       </body>
     </html>
