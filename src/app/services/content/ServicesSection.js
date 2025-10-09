@@ -1,87 +1,91 @@
 "use client";
 
-import React, { useState } from "react";
-import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
-import { Minus, MinusIcon, Plus, PlusIcon } from "@phosphor-icons/react";
+import React from "react";
 import Link from "next/link";
 
 const services = [
   {
     id: 1,
-    title: "Website development",
-    desc: "We design and build websites that don't just look good - they perform. Every layer of the process connects design, development, and reliability into one seamless system.",
-    faqs: [
-      {
-        id: 1,
-        title: "User Experience",
-        desc: "We start with purposeful design utilizing Material Design 3 to create intuitive user journeys that solve users' problems.",
-      },
-      {
-        id: 2,
-        title: "Front-End Development",
-        desc: "We build responsive, accessible interfaces using React, Next.js, and modern frameworks for pixel-perfect delivery.",
-      },
-      {
-        id: 3,
-        title: "Backend & Hosting",
-        desc: "Our backend services ensure reliable APIs, authentication, and hosting built on Node.js, Supabase, and scalable infrastructures.",
-      },
-      {
-        id: 4,
-        title: "Performance & Analytics",
-        desc: "We optimize for speed and insights using Lighthouse metrics, SEO enhancements, and analytics integrations.",
-      },
+    title: "AI-Integrated Web & App Development",
+    desc: `Full-stack web and software builds that merge intuitive Material 3 UI with automation. AI models handle the tedious parts - OCR data capture, validation, predictions - while your users get faster, smarter workflows.`,
+    points: [
+      "React / Next.js",
+      "Node.js / Express",
+      "OpenAI API / LangChain",
+      "OCR / Vision AI",
+      "TensorFlow / PyTorch",
     ],
   },
   {
     id: 2,
-    title: "Digital marketing",
-    desc: "We craft marketing strategies that align with your business goals and drive measurable results.",
-    faqs: [
-      { id: 1, title: "Campaign ads", desc: "Data-driven campaigns designed to convert." },
-      {
-        id: 2,
-        title: "Content strategy",
-        desc: "Create and manage consistent brand narratives that drive engagement.",
-      },
-      { id: 3, title: "Organic growth", desc: "Leverage SEO and social channels for long-term audience retention." },
+    title: "Next-Generation EHR & SaaS Platforms",
+    desc: `Enterprise-grade platforms built for healthcare and other regulated industries. Guided by Material 3, Apple HIG, and WCAG, we design with compliance at the core. Cloud-native architecture keeps everything secure and scalable, while AI automations cut administrative noise so teams can focus on real work.`,
+    points: [
+      "Material 3 / Apple HIG / WCAG",
+      "AWS (Lambda, Cognito, DynamoDB)",
+      "FHIR / HL7 Standards",
+      "HIPAA-Compliant Cloud",
+      "React / Angular",
     ],
   },
   {
     id: 3,
-    title: "Cloud-native application development on AWS",
-    desc: "Harness the power of the cloud with applications designed for scale, reliability, and cost efficiency.",
-    faqs: [
-      {
-        id: 1,
-        title: "Cross-platform apps",
-        desc: "Flutter-based apps with a modular, block architecture for Android, iOS, and web.",
-      },
-      { id: 2, title: "Serverless deployment", desc: "Automated deployment pipelines using AWS Lambda and Amplify." },
-      { id: 3, title: "Cloud-native design", desc: "Resilient designs optimized for distributed systems." },
+    title: "Digital Infrastructure & Analytics",
+    desc: `From single websites to complex, multi-site ecosystems - we build digital foundations with analytics wired in from the start. Every click, scroll, and journey is measurable, feeding data into continuous improvement loops that drive smarter decisions over time.`,
+    points: [
+      "Google Analytics / GA4",
+      "AWS CloudWatch / Datadog",
+      "PostgreSQL / BigQuery",
+      "Tag Manager / Mixpanel",
+      "CDP / CDI Systems",
     ],
   },
   {
     id: 4,
-    title: "AWS Amplify-powered applications",
-    desc: "We specialize in building entire application architectures using AWS Amplify, AppSync, and GraphQL.",
-    faqs: [
-      {
-        id: 1,
-        title: "GraphQL API with AppSync",
-        desc: "Secure, high-performance APIs tailored to your app’s needs.",
-      },
-      {
-        id: 2,
-        title: "Full AWS integration",
-        desc: "Seamless integrations with AWS services like S3, Lambda, and Cognito.",
-      },
-      {
-        id: 3,
-        title: "Real-time & offline support",
-        desc: "Sync data across devices with real-time updates and offline persistence.",
-      },
-      { id: 4, title: "Cost optimization", desc: "Monitor and optimize cloud costs with AWS tools and strategies." },
+    title: "AI Models & OCR Integrations",
+    desc: `We turn paper into data - and data into decisions. Our AI-driven OCR systems convert handwritten or printed forms into structured, verified records. Originally built for banks, refined for healthcare, and now ready for any industry buried in paperwork.`,
+    points: [
+      "AWS Textract / Google Vision",
+      "OpenAI / Custom ML Models",
+      "FastAPI / Flask",
+      "Pandas / Numpy for Data Validation",
+      "MongoDB / DynamoDB",
+    ],
+  },
+  {
+    id: 5,
+    title: "Cross-Platform Product Engineering",
+    desc: `Apps that work everywhere and improve with every release. We build on Flutter Bloc architecture with Cubit, deployed across AWS for reproducibility, speed, and resilience. Every build is stress-tested, A/B-tested, and tuned for performance.`,
+    points: [
+      "Flutter / Dart (Bloc, Cubit)",
+      "AWS Amplify / Cognito / S3",
+      "Firebase / Supabase",
+      "Docker / CI-CD Pipelines",
+      "REST / GraphQL APIs",
+    ],
+  },
+  {
+    id: 6,
+    title: "Cloud-Native Deployment & DevOps",
+    desc: `Serverless by design - AWS Lambda, Amplify, Fargate, or Vercel, depending on what the build needs. We automate CI/CD, maintain constant uptime, and manage blue/green releases and RCA visibility as standard.`,
+    points: [
+      "AWS Lambda / Fargate / Amplify",
+      "Vercel / Netlify",
+      "Docker / Kubernetes",
+      "GitHub Actions / CircleCI",
+      "Blue-Green Deployments / Canary Testing",
+    ],
+  },
+  {
+    id: 7,
+    title: "Digital Marketing Ecosystems",
+    desc: `End-to-end marketing systems that integrate analytics, automation, and attribution. We connect every tool - from SEO to HubSpot to Salesforce - into one measurable ecosystem that grows smarter with every campaign.`,
+    points: [
+      "SEO / SEM / Google Ads",
+      "Meta / LinkedIn Ads Manager",
+      "HubSpot / Salesforce Integration",
+      "Analytics & Attribution (GA4, Mixpanel)",
+      "Marketing Automation (Zapier, Segment)",
     ],
   },
 ];
@@ -89,11 +93,11 @@ const services = [
 export default function ServicesSection() {
   return (
     <section className="section">
-      <h2 className="HeadingH3 py-4">Our services</h2>
+      <h2 className="HeadingH3 py-4">Our Services</h2>
 
       {services.map((service, index) => (
-        <div key={index} className="py-8 xl:py-20">
-          <ServiceBlock key={service.id} service={service} isReversed={index % 2 !== 0} />
+        <div key={service.id} className="py-16 xl:py-24">
+          <ServiceBlock service={service} isReversed={index % 2 !== 0} />
         </div>
       ))}
     </section>
@@ -101,78 +105,29 @@ export default function ServicesSection() {
 }
 
 function ServiceBlock({ service, isReversed }) {
-  const [open, setOpen] = useState(1);
-  const handleOpen = (id) => setOpen(open === id ? 0 : id);
-
   return (
     <div
       className={`flex flex-col items-center justify-between gap-16 xl:flex-row ${
-        isReversed ? "" : "xl:flex-row-reverse"
+        isReversed ? "xl:flex-row-reverse" : ""
       }`}
     >
-      {/* Visual - Image/Color block */}
-      <div className="relative order-1 h-[400px] w-full rounded-md bg-black xl:order-none xl:h-[600px]">
-        {/* Centered oval glow */}
-        <div
-          className="absolute left-1/2 top-1/2 -z-10 h-[87%] w-[87%] -translate-x-1/2 -translate-y-1/2 transform"
-          style={{
-            background: "linear-gradient(90deg, #7a66e1 0%, #fb3081 50%, #f8805f 100%)",
-            filter: "blur(80px)",
-            borderRadius: "50%",
-          }}
-        />
-      </div>
+      {/* Text Section */}
+      <div className="flex w-full flex-col xl:w-1/2">
+        <div className="space-y-4">
+          <h3 className="HeadingH5">{service.title}</h3>
+          <p className="BodyText whitespace-pre-line !text-text-secondary">{service.desc}</p>
+        </div>
+        <div className="my-8 border border-border-secondary"></div>
 
-      {/* Text/Accordion */}
-      <div className="order-2 flex w-full flex-col items-start gap-2 xl:order-none xl:gap-12">
-        <div className="flex w-full flex-col justify-between">
-          <div>
-            <h3 className="HeadingH5">{service.title}</h3>
-            <p className="BodyText mt-3">{service.desc}</p>
-            <div className="my-8 border border-border-secondary"></div>
-          </div>
-
-          {service.faqs.map((faq) => (
-            <Accordion key={faq.id} open={open === faq.id}>
-              <AccordionHeader
-                onClick={() => handleOpen(faq.id)}
-                className="m-0 flex h-full w-full items-start justify-between border-none p-0"
-              >
-                <span
-                  className={`BodyTextBold w-full ${open === faq.id ? "!text-text-primary" : "!text-text-tertiary"}`}
-                >
-                  {faq.title}
-                </span>
-                <div className="relative flex h-6 w-6 items-center justify-center xl:h-8 xl:w-8">
-                  <PlusIcon
-                    size={20}
-                    weight="bold"
-                    className={`absolute inset-0 m-auto transform transition-all duration-300 ease-in-out ${
-                      open === faq.id
-                        ? "rotate-180 scale-0 text-text-primary opacity-0"
-                        : "rotate-0 scale-100 text-text-tertiary opacity-100"
-                    }`}
-                  />
-                  <MinusIcon
-                    size={20}
-                    weight="bold"
-                    className={`absolute inset-0 m-auto transform transition-all duration-300 ease-in-out ${
-                      open === faq.id
-                        ? "rotate-0 scale-100 text-text-primary opacity-100"
-                        : "-rotate-180 scale-0 text-text-tertiary opacity-0"
-                    }`}
-                  />
-                </div>
-              </AccordionHeader>
-              <AccordionBody className="m-0 mt-4 p-0">
-                <p className="BodyText">{faq.desc}</p>
-              </AccordionBody>
-              <div className="my-8 border border-border-secondary"></div>
-            </Accordion>
+        <div className="grid grid-cols-1 gap-y-2 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-3">
+          {service.points.map((point, i) => (
+            <p key={i} className="BodyTextMedium !text-text-tertiary">
+              {point}
+            </p>
           ))}
         </div>
 
-        <div className={`w-full xl:w-auto ${isReversed ? "xl:ml-auto xl:self-end" : "xl:mr-auto xl:self-start"}`}>
+        <div className={`mt-10 w-full xl:w-auto ${isReversed ? "xl:ml-auto xl:self-end" : "xl:mr-auto xl:self-start"}`}>
           <Link
             href="/contact"
             className="rounded-full bg-white px-6 py-2 font-medium text-black transition hover:bg-[#e5e5e5]"
@@ -180,6 +135,18 @@ function ServiceBlock({ service, isReversed }) {
             Get service now
           </Link>
         </div>
+      </div>
+
+      {/* Glow Block */}
+      <div className="relative h-[400px] w-full overflow-hidden rounded-md bg-black xl:h-[500px] xl:w-1/2">
+        <div
+          className="absolute left-1/2 top-1/2 -z-10 h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 transform"
+          style={{
+            background: "linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%)",
+            filter: "blur(80px)",
+            borderRadius: "50%",
+          }}
+        />
       </div>
     </div>
   );

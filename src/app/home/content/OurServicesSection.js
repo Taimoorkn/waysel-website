@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import SectionHeading from "../../../components/SectionHeading";
 import GradientText from "@/components/GradientText";
+import { Circle } from "lucide-react";
 
 const OurServicesSection = () => {
   useEffect(() => {
@@ -151,9 +152,19 @@ const OurServicesSection = () => {
 
                 <div className="flex-1">
                   {card.content.map((item, i) => (
-                    <p key={i} className="BodyText">
-                      <span className="BodyTextBold">{item.label}</span> {item.text}
-                    </p>
+                    <div key={i} className="BodyText">
+                      {item.label ? (
+                        <div className="flex items-center gap-3">
+                          {/* White Lucide Circle icon */}
+                          <Circle size={7} strokeWidth={0} fill="white" />
+                          <span>
+                            <span className="BodyTextBold">{item.label}</span> {item.text}
+                          </span>
+                        </div>
+                      ) : (
+                        <>{item.text}</>
+                      )}
+                    </div>
                   ))}
                 </div>
 

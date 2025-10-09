@@ -191,8 +191,8 @@ function PortfolioSection() {
           title="Hospice Care Web"
           description="Crafting user-friendly, cross-platform solutions with elegant UX and solid performance."
           images={[
-            "/images/portfolio/Hospice/2.svg",
             "/images/portfolio/Hospice/1.svg",
+            "/images/portfolio/Hospice/2.svg",
             "/images/portfolio/Hospice/3.svg",
             "/images/portfolio/Hospice/4.svg",
           ]}

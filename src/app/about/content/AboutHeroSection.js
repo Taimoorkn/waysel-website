@@ -28,10 +28,19 @@ const AboutHeroSection = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              The integrated powerhouse for
+              We&apos;re not an agency.
             </motion.h1>
           </div>
-
+          <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
+            <motion.h1
+              className="break-words text-center"
+              initial={{ y: "112%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
+            >
+              We&apos;re the kind of team you wish
+            </motion.h1>
+          </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="gradient-primary break-words pb-3 text-center"
@@ -39,7 +48,7 @@ const AboutHeroSection = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              AI, Design, & Cloud-Native Scale
+              you had in-house.
             </motion.h1>
           </div>
         </div>
@@ -52,7 +61,7 @@ const AboutHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                We are a specialized technology partner dedicated to transforming ambitious
+                WAYSEL was built by people who got tired of watching bad builds the first time.
               </motion.p>
             </div>
             <div className="overflow-hidden">
@@ -61,7 +70,16 @@ const AboutHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                ideas into robust, intelligent, and scalable digital realities.
+                get deployed. So we started fixing things, building new things.
+              </motion.p>
+            </div>
+            <div className="overflow-hidden">
+              <motion.p
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.6, delay: 1.3, ease: [0.1, 0.8, 0.2, 1] }}
+              >
+                and now helping other teams get it right
               </motion.p>
             </div>
           </div>
