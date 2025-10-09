@@ -40,7 +40,7 @@ const Footer = () => {
                 { label: "Contact Us", href: "/contact", isInternal: true },
               ],
             ].map((column, columnIndex) => (
-              <div key={columnIndex} className="BodyText flex flex-col items-start gap-4 text-nowrap">
+              <div key={columnIndex} className="BodyText flex flex-col items-start gap-1 text-nowrap">
                 {column.map(({ label, href, isInternal }) =>
                   isInternal ? (
                     <Link key={label} href={href}>
