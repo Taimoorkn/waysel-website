@@ -129,7 +129,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
         >
           <Button variant="primary" href="/contact">
-            Start something
+            Start Something
           </Button>
           <Button variant="secondary" scrollToContact>
             Contact Us

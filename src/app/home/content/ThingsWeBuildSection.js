@@ -23,12 +23,12 @@ const ThingsWeBuildSection = () => {
 
           <div className="flex flex-col gap-6 font-satoshi text-lg leading-8 tracking-[-0.03em] text-text-tertiary xl:text-[22px] xl:leading-[38px]">
             <p>
-              Whether you’ve got an MVP, a half-finished doc, or no roadmap at all — we help you make sense of it, build
-              it right, and get it out.
+              Whether you&apos;ve got an MVP, a half-finished doc, or no roadmap at all — we help you make sense of it,
+              build it right, and get it out.
             </p>
             <p>
-              We don’t just “design experiences.” We wire them, test them, run them under stress, and build the version
-              that actually makes sense.
+              We don&apos;t just “design experiences.” We wire them, test them, run them under stress, and build the
+              version that actually makes sense.
             </p>
             <p className="font-medium text-text-secondary">
               Design-led development. Infra-aware UI. Marketing built like product. Everything versioned, tracked, and

@@ -18,7 +18,7 @@ export default function AnimatedSVG() {
 
     const paths = Array.from(svgRef.current.querySelectorAll(".shimmer-path"));
 
-    // Store each path’s original fill color
+    // Store each path&apos;s original fill color
     paths.forEach((p) => {
       p.dataset.originalFill = p.getAttribute("fill") || "#4A4A4A";
     });

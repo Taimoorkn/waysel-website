@@ -103,8 +103,8 @@ const ContactUs = () => {
           Let&apos;s <GradientText>Start Something</GradientText> Bold
         </h1>
         <p className="BodyText mt-4 max-w-2xl">
-          We collaborate with brands, founders, and teams who believe in craft. If that’s you - let’s build something
-          that makes people stop and look twice.
+          We collaborate with brands, founders, and teams who believe in craft. If that&apos;s you - let&apos;s build
+          something that makes people stop and look twice.
         </p>
       </motion.section>
 
