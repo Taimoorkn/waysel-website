@@ -72,15 +72,15 @@ const AboutHeroSection = () => {
               >
                 get deployed. So we started fixing things, building new things.
               </motion.p>
-              <div className="overflow-hidden">
-                <motion.p
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.1, ease: [0.1, 0.8, 0.2, 1] }}
-                >
-                  and now helping other teams get it right
-                </motion.p>
-              </div>
+            </div>
+            <div className="overflow-hidden">
+              <motion.p
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.6, delay: 1.3, ease: [0.1, 0.8, 0.2, 1] }}
+              >
+                and now helping other teams get it right
+              </motion.p>
             </div>
           </div>
         </div>

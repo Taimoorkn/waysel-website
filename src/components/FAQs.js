@@ -20,7 +20,7 @@ const FAQ = ({ faqs = [] }) => {
         </h1>
         <p className="text-xl leading-[32px] text-[#ffffffe6]">Get answers to common questions about our services</p>
       </div>
-      <div className="relative z-10 w-full space-y-4">
+      <div className="relative z-10 w-full space-y-7">
         {faqs.length > 0 ? (
           faqs.map((item, index) => (
             <div
