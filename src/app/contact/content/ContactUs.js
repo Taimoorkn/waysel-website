@@ -100,7 +100,7 @@ const ContactUs = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h1 className="HeadingH1">
-          Let's <GradientText>Start Something</GradientText> Bold
+          Let&apos;s <GradientText>Start Something</GradientText> Bold
         </h1>
         <p className="BodyText mt-4 max-w-2xl">
           We collaborate with brands, founders, and teams who believe in craft. If that’s you - let’s build something
@@ -120,9 +120,9 @@ const ContactUs = () => {
           >
             <div>
               <h2 className="HeadingH5">
-                We'll ask what <GradientText>you're trying </GradientText>to do.
+                We&apos;ll ask what <GradientText>you&apos;re trying </GradientText>to do.
               </h2>
-              <p className="BodyText mt-3">Then we'll build it like it was ours.</p>
+              <p className="BodyText mt-3">Then we&apos;ll build it like it was ours.</p>
             </div>
             <div className="flex flex-col gap-6">
               {[
