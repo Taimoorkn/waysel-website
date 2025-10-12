@@ -109,11 +109,11 @@ const ContactUs = () => {
       </motion.section>
 
       {/* Contact Info + Form Section */}
-      <section className="mx-auto mt-16 px-6 pb-32">
+      <section className="mx-auto mt-16 pb-32">
         <div className="flex flex-col gap-12 xl:flex-row xl:gap-16">
           {/* Left Section - Contact Info */}
           <motion.div
-            className="flex w-full flex-col gap-8 xl:w-[40%] xl:gap-10 xl:p-8"
+            className="flex w-full flex-col gap-8 px-6 xl:w-[40%] xl:gap-10 xl:p-8"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
@@ -242,7 +242,7 @@ const ContactUs = () => {
                       type="button"
                       onClick={handleSubmit}
                       disabled={isSubmitting || !formData.firstName || !formData.email || !formData.message}
-                      className="bg-primary hover:bg-primary/90 rounded-full px-6 py-2 text-base font-medium text-white transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="BodyTextMedium transform rounded-full bg-white px-6 py-2 !text-black transition-all duration-300 hover:bg-opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
