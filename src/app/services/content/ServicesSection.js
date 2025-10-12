@@ -112,7 +112,7 @@ function ServiceBlock({ service, isReversed }) {
       }`}
     >
       {/* Text Section */}
-      <div className="flex w-full flex-col xl:w-1/2">
+      <div className="flex w-full flex-col xl:w-1/2 order-2 xl:order-none">
         <div className="space-y-4">
           <h3 className="HeadingH5">{service.title}</h3>
           <p className="BodyText whitespace-pre-line !text-text-secondary">{service.desc}</p>
@@ -138,7 +138,7 @@ function ServiceBlock({ service, isReversed }) {
       </div>
 
       {/* Glow Block */}
-      <div className="relative h-[400px] w-full overflow-hidden rounded-md bg-black xl:h-[500px] xl:w-1/2">
+      <div className="relative h-[400px] w-full overflow-hidden rounded-md bg-black xl:h-[500px] xl:w-1/2 order-1 xl:order-none">
         <div
           className="absolute left-1/2 top-1/2 -z-10 h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 transform"
           style={{
