@@ -40,38 +40,38 @@ const OurServicesSection = () => {
     {
       title: "AI-Integrated Web & App Development",
       desc: `Full-stack web and software builds that merge intuitive Material 3 UI with automation. AI handles OCR, validation, and predictions — your users get faster, smarter workflows.`,
+      image: "/images/development.svg",
     },
     {
       title: "Next-Generation EHR & SaaS Platforms",
       desc: `Enterprise-grade systems built for healthcare and regulated industries — guided by Material 3, Apple HIG, and WCAG, and powered by secure, scalable cloud architecture.`,
+      image: "/images/ehr saas.svg",
     },
     {
       title: "Digital Infrastructure & Analytics",
       desc: `From websites to complex ecosystems — we wire analytics into every layer, turning clicks and scrolls into actionable insights for smarter, continuous improvement.`,
+      image: "/images/digital analytics.svg",
     },
     {
       title: "AI Models & OCR Integrations",
       desc: `We turn paper into structured data. Our AI-powered OCR systems transform handwritten or printed forms into accurate, usable records — ready for any industry.`,
+      image: "/images/ocr.svg",
     },
     {
       title: "Cross-Platform Product Engineering",
       desc: `Apps that perform on every device. Built with Flutter Bloc, AWS, and CI/CD pipelines for reproducibility, speed, and continuous improvement.`,
+      image: "/images/cross platform product.svg",
     },
     {
       title: "Cloud-Native Deployment & DevOps",
       desc: `Serverless by design — AWS Lambda, Amplify, or Vercel. Automated CI/CD, uptime monitoring, and blue-green releases come standard.`,
+      image: "/images/digital marketing.svg",
     },
     {
       title: "Digital Marketing Ecosystems",
       desc: `From SEO to HubSpot to Salesforce — we connect every piece into one measurable marketing engine that gets smarter with every campaign.`,
+      image: "/images/digital marketing.svg",
     },
-  ];
-
-  const images = [
-    "/images/filler/filler1.svg",
-    "/images/filler/filler2.svg",
-    "/images/filler/filler3.svg",
-    "/images/filler/filler4.svg",
   ];
 
   return (
@@ -116,7 +116,6 @@ const OurServicesSection = () => {
 
         <div className="z-10 grid w-full grid-cols-1 gap-4 xl:grid-cols-2">
           {services.map((service, index) => {
-            const image = images[index % images.length];
             const isLast = index === services.length - 1;
 
             return (
@@ -152,7 +151,7 @@ const OurServicesSection = () => {
 
                   <div className="flex justify-center xl:justify-end mt-auto">
                     <Image
-                      src={image}
+                      src={service.image}
                       alt={service.title}
                       width={280}
                       height={200}
