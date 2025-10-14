@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
@@ -15,6 +16,7 @@ const services = [
       "OCR / Vision AI",
       "TensorFlow / PyTorch",
     ],
+    image: "/images/development.svg",
   },
   {
     id: 2,
@@ -27,6 +29,7 @@ const services = [
       "HIPAA-Compliant Cloud",
       "React / Angular",
     ],
+    image: "/images/ehr saas.svg",
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ const services = [
       "Tag Manager / Mixpanel",
       "CDP / CDI Systems",
     ],
+    image: "/images/digital analytics.svg",
   },
   {
     id: 4,
@@ -51,6 +55,7 @@ const services = [
       "Pandas / Numpy for Data Validation",
       "MongoDB / DynamoDB",
     ],
+    image: "/images/ocr.svg",
   },
   {
     id: 5,
@@ -63,6 +68,7 @@ const services = [
       "Docker / CI-CD Pipelines",
       "REST / GraphQL APIs",
     ],
+    image: "/images/cross platform product.svg",
   },
   {
     id: 6,
@@ -75,6 +81,7 @@ const services = [
       "GitHub Actions / CircleCI",
       "Blue-Green Deployments / Canary Testing",
     ],
+    image: "/images/digital marketing.svg",
   },
   {
     id: 7,
@@ -87,6 +94,7 @@ const services = [
       "Analytics & Attribution (GA4, Mixpanel)",
       "Marketing Automation (Zapier, Segment)",
     ],
+    image: "/images/digital marketing.svg",
   },
 ];
 
@@ -138,7 +146,7 @@ function ServiceBlock({ service, isReversed }) {
       </div>
 
       {/* Glow Block */}
-      <div className="relative h-[400px] w-full overflow-hidden rounded-md bg-black xl:h-[500px] xl:w-1/2 order-1 xl:order-none">
+      <div className="relative h-[400px] w-full overflow-hidden rounded-md bg-black xl:h-[500px] xl:w-1/2 order-1 xl:order-none flex items-center justify-center">
         <div
           className="absolute left-1/2 top-1/2 -z-10 h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 transform"
           style={{
@@ -146,6 +154,13 @@ function ServiceBlock({ service, isReversed }) {
             filter: "blur(80px)",
             borderRadius: "50%",
           }}
+        />
+        <Image
+          src={service.image}
+          alt={service.title}
+          width={300}
+          height={300}
+          className="w-[250px] h-[250px] xl:w-[500px] xl:h-[500px] object-contain"
         />
       </div>
     </div>
