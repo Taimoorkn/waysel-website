@@ -5,6 +5,7 @@ import "./styles/animations.css";
 import "./styles/typography.css";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 import LoadingScreen from "@/components/LoadingScreen";
+import { Analytics } from "@vercel/analytics/react";
 
 const satoshi = localFont({
   src: [
@@ -112,6 +113,7 @@ export default function RootLayout({ children }) {
         <LoadingScreen>
           <div id="root">{children}</div>
         </LoadingScreen>
+        <Analytics />
       </body>
     </html>
   );
