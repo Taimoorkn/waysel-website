@@ -23,7 +23,7 @@ const ThingsWeBuildSection = () => {
 
           <div className="flex flex-col gap-6 font-satoshi text-lg leading-8 tracking-[-0.03em] text-text-tertiary xl:text-[22px] xl:leading-[38px]">
             <p>
-              Whether you&apos;ve got an MVP, a half-finished doc, or no roadmap at all — we help you make sense of it,
+              Whether you&apos;ve got an MVP, a half-finished doc, or no roadmap at all - we help you make sense of it,
               build it right, and get it out.
             </p>
             <p>
