@@ -188,8 +188,8 @@ function PortfolioSection() {
       <div className="flex flex-col gap-24 py-12">
         {/* Hospice Project */}
         <ProjectSection
-          title="Hospice Care Web"
-          description="Crafting user-friendly, cross-platform solutions with elegant UX and solid performance."
+          title="EHR Platform"
+          description="A next-generation, cloud-native EHR that unifies clinical care, compliance, and billing into one intelligent system. Accessible across devices, it automates workflows and delivers AI-driven insights for faster, safer, and more efficient care. Built for interoperability, scalability, and data security - it redefines how healthcare teams connect and perform."
           images={[
             "/images/portfolio/Hospice/1.svg",
             "/images/portfolio/Hospice/2.svg",
@@ -200,8 +200,8 @@ function PortfolioSection() {
 
         {/* Pallative Project */}
         <ProjectSection
-          title="Palliative Platform"
-          description="Building a care-focused digital experience that connects patients, families, and providers seamlessly."
+          title="Region-Specific Smart Website"
+          description="A cloud-native platform for building localized, data-driven websites with built-in analytics and marketing automation. Each site adapts to regional behavior, language, and SEO for authentic engagement and measurable growth. Hardcoded analytics and AI-backed insights turn every interaction into actionable marketing intelligence."
           images={[
             "/images/portfolio/Pallative/2.png",
             "/images/portfolio/Pallative/1.png",
