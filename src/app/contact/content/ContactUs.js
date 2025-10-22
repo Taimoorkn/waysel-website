@@ -60,7 +60,7 @@ const ContactUs = () => {
           "x-csrf-token": csrfToken,
         },
         body: JSON.stringify({
-          to: "taimoorkn2221@gmail.com",
+          to: "sw@waysel.com",
           subject: `Contact Form Submission from ${formData.firstName} ${formData.lastName}`,
           message: emailContent,
           from: formData.email,
