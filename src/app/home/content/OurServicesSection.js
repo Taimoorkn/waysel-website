@@ -118,9 +118,11 @@ const OurServicesSection = () => {
               <div
                 key={index}
                 className={`card relative overflow-hidden rounded-[32px] p-[1px] pr-[0.5px] ${
-                  index % 2 === 0
-                    ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
-                    : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
+                  isLast
+                    ? "xl:col-span-2 xl:mx-auto xl:w-1/2 xl:rounded-bl-[32px] xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-none"
+                    : index % 2 === 0
+                      ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
+                      : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
                 }`}
                 style={{
                   background: "rgba(128, 128, 128, 0.1)",
@@ -129,9 +131,11 @@ const OurServicesSection = () => {
               >
                 <div
                   className={`flex h-full flex-col rounded-[32px] !p-6 xl:min-h-[520px] xl:!p-10 ${
-                    index % 2 === 0
-                      ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
-                      : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
+                    isLast
+                      ? "xl:rounded-bl-[32px] xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-none"
+                      : index % 2 === 0
+                        ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
+                        : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
                   } ${isLast ? "bg-black/50 backdrop-blur-md" : "bg-[#0D0D0C]"} `}
                   style={{
                     transition: "all 300ms ease-in-out",
