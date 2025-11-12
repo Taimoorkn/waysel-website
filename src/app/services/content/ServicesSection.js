@@ -68,7 +68,7 @@ const services = [
       "Docker / CI-CD Pipelines",
       "REST / GraphQL APIs",
     ],
-    image: "/images/cross platform product.svg",
+    image: "/images/pc.svg",
   },
   {
     id: 6,
@@ -81,7 +81,7 @@ const services = [
       "GitHub Actions / CircleCI",
       "Blue-Green Deployments / Canary Testing",
     ],
-    image: "/images/digital marketing.svg",
+    image: "/images/cross platform product.svg",
   },
   {
     id: 7,
