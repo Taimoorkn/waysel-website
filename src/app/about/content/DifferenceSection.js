@@ -60,7 +60,14 @@ const DifferenceSection = () => {
           viewport={{ once: true }}
         >
           <div className="oval-blur absolute left-1/2 top-[60%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
-          <div className="relative z-10 h-full w-full rounded-[31px] bg-card"></div>
+          <Image
+            src="/images/filler/spotlight.png"
+            width={0}
+            height={0}
+            alt="spotlight"
+            unoptimized
+            className="mx-auto h-[80%] w-[80%] xl:h-auto xl:w-auto"
+          />
         </motion.div>
       </div>
     </section>
