@@ -1,13 +1,12 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import SectionHeading from "../../../components/SectionHeading";
 import GradientText from "@/components/GradientText";
 
 function ProjectSection({ title, description, images, isReversed = false }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.2 });
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
 
   const column1YRaw = useTransform(scrollYProgress, [0, 1], [0, -200]);
@@ -18,7 +17,6 @@ function ProjectSection({ title, description, images, isReversed = false }) {
   const column1Y = useSpring(column1YRaw, springConfig);
   const column2Y = useSpring(column2YRaw, springConfig);
   const column3Y = useSpring(column3YRaw, springConfig);
-  const hasAnimatedRef = useRef(false);
 
   const textSection = (
     <div
@@ -69,6 +67,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
               width={300}
               height={188}
               className="w-full overflow-hidden rounded-2xl object-contain xl:w-[450px]"
+              priority
             />
           </div>
         ))}
@@ -96,6 +95,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
               width={300}
               height={188}
               className="w-full overflow-hidden rounded-2xl object-contain xl:w-[450px]"
+              priority
             />
           </div>
         ))}
@@ -106,7 +106,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
         style={{
           y: column3Y,
           rotateY: 30,
-          x: -64, // pull inward slightly
+          x: -64,
           transformStyle: "preserve-3d",
           willChange: "transform",
         }}
@@ -124,6 +124,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
               width={300}
               height={188}
               className="w-full overflow-hidden rounded-2xl object-contain xl:w-[450px]"
+              priority
             />
           </div>
         ))}
@@ -134,21 +135,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
   return (
     <div ref={ref} className="relative will-change-transform">
       <div className="oval-blur left-1/2 top-[15%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={
-          !hasAnimatedRef.current && isInView
-            ? { opacity: 1, y: 0 }
-            : hasAnimatedRef.current
-              ? { opacity: 1, y: 0 }
-              : {}
-        }
-        onAnimationComplete={() => {
-          hasAnimatedRef.current = true;
-        }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px"
-      >
+      <div className="rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px">
         <section className="relative z-10 flex min-h-[500px] flex-col items-center justify-between rounded-[32px] bg-card text-white xl:h-[65vh] xl:flex-row">
           <div className="xl:hidden">
             {textSection}
@@ -167,7 +154,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
             </div>
           )}
         </section>
-      </motion.div>
+      </div>
     </div>
   );
 }
