@@ -34,7 +34,7 @@ export default function LoadingScreen({ children }) {
           initial={{ opacity: 1 }}
           animate={{ opacity: fadeOut ? 0 : 1 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed  inset-0 z-[9999] flex items-center justify-center bg-black text-white"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white"
         >
           {letters.map((letter, i) => (
             <motion.span

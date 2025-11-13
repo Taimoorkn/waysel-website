@@ -65,9 +65,7 @@ const Button = ({
         className="single-letter nav-link-text"
       >
         <span>{char === " " ? "\u00A0" : char}</span>
-        <span style={{ position: "absolute", top: "100%", left: 0 }}>
-          {char === " " ? "\u00A0" : char}
-        </span>
+        <span style={{ position: "absolute", top: "100%", left: 0 }}>{char === " " ? "\u00A0" : char}</span>
       </div>
     );
   });

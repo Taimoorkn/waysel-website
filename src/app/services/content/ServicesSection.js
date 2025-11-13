@@ -120,7 +120,7 @@ function ServiceBlock({ service, isReversed }) {
       }`}
     >
       {/* Text Section */}
-      <div className="flex w-full flex-col xl:w-1/2 order-2 xl:order-none">
+      <div className="order-2 flex w-full flex-col xl:order-none xl:w-1/2">
         <div className="space-y-4">
           <h3 className="HeadingH5">{service.title}</h3>
           <p className="BodyText whitespace-pre-line !text-text-secondary">{service.desc}</p>
@@ -146,22 +146,17 @@ function ServiceBlock({ service, isReversed }) {
       </div>
 
       {/* Glow Block */}
-      <div className="relative h-[400px] w-full overflow-hidden rounded-md bg-black xl:h-[500px] xl:w-1/2 order-1 xl:order-none flex items-center justify-center">
-        <div
-          className="absolute left-1/2 top-1/2 -z-10 h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 transform"
-          style={{
-            background: "linear-gradient(90deg, #7A66E1 0%, #FB3081 50%, #F8805F 100%)",
-            filter: "blur(80px)",
-            borderRadius: "50%",
-          }}
-        />
-        <Image
-          src={service.image}
-          alt={service.title}
-          width={300}
-          height={300}
-          className="w-[250px] h-[250px] xl:w-[500px] xl:h-[500px] object-contain"
-        />
+      <div className="relative order-1 h-[400px] w-full rounded-[32px] bg-gradient-to-b from-[#7A66E1]/60 via-[#FB3081]/60 to-[#F8805F]/60 p-px xl:order-none xl:h-[500px] xl:w-1/2">
+        <div className="oval-blur-services absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform" />
+        <div className="relative z-10 flex h-full w-full items-center justify-center rounded-[31px] bg-card">
+          <Image
+            src={service.image}
+            alt={service.title}
+            width={300}
+            height={300}
+            className="h-[250px] w-[250px] scale-[0.8] object-contain xl:h-[500px] xl:w-[500px]"
+          />
+        </div>
       </div>
     </div>
   );
