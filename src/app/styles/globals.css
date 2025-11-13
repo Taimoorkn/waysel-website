@@ -21,10 +21,17 @@
     background: linear-gradient(90deg, #7a66e1 0%, #fb3081 50%, #f8805f 100%);
     filter: blur(200px);
   }
+
   .oval-blur-footer {
     @apply absolute h-[130px] w-[70%] rounded-full;
     background: linear-gradient(90deg, #7a66e1 0%, #fb3081 50%, #f8805f 100%);
     filter: blur(100px);
+  }
+
+  .oval-blur-services {
+    @apply absolute h-[200px] w-[200px] rounded-full xl:h-[400px] xl:w-[460px];
+    background: linear-gradient(90deg, #7a66e1 0%, #fb3081 50%, #f8805f 100%);
+    filter: blur(120px);
   }
 
   .waysel-letter {
