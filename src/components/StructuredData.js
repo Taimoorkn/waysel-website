@@ -9,7 +9,7 @@ export const organizationSchema = {
   url: "https://waysel.com",
   logo: "https://waysel.com/waysellogo.svg",
   description:
-    "Start building websites people remember with Waysel's collection of components, techniques, tricks and tutorials. Your personal toolbox for web development.",
+    "Waysel is a software development agency specializing in AI-integrated web applications, next-generation EHR & SaaS platforms, digital infrastructure, OCR systems, and cloud-native solutions. We design with intent, build with precision, and launch with impact.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "US",
@@ -17,33 +17,87 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
+    email: "sw@waysel.com",
     availableLanguage: ["English"],
   },
-  sameAs: ["https://linkedin.com/company/waysel", "https://twitter.com/waysel", "https://github.com/waysel"],
+  sameAs: ["https://linkedin.com/company/waysel", "https://instagram.com/waysel"],
   foundingDate: "2024",
+  knowsAbout: [
+    "Artificial Intelligence Integration",
+    "Healthcare Software Development",
+    "EHR Systems",
+    "SaaS Platform Development",
+    "Cloud-Native Architecture",
+    "AWS Cloud Services",
+    "React & Next.js Development",
+    "Material 3 Design",
+    "HIPAA Compliance",
+    "OCR Technology",
+    "Digital Marketing Ecosystems",
+    "DevOps & CI/CD",
+  ],
   makesOffer: [
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Web Components",
-        description: "Ready-to-use web development components",
+        name: "AI-Integrated Web & App Development",
+        description:
+          "Full-stack web and software builds that merge intuitive Material 3 UI with AI automation, OCR data capture, validation, and predictions.",
       },
     },
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Development Resources",
-        description: "Tools, tutorials, and documentation for web developers",
+        name: "Next-Generation EHR & SaaS Platforms",
+        description:
+          "Enterprise-grade platforms for healthcare and regulated industries with HIPAA compliance, FHIR/HL7 standards, and cloud-native architecture.",
       },
     },
     {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Design System",
-        description: "Complete design system for building memorable websites",
+        name: "Digital Infrastructure & Analytics",
+        description:
+          "Multi-site ecosystems with analytics wired in from the start, feeding data into continuous improvement loops.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "AI Models & OCR Integrations",
+        description:
+          "AI-driven OCR systems that convert handwritten or printed forms into structured, verified records using AWS Textract and custom ML models.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Cross-Platform Product Engineering",
+        description:
+          "Flutter Bloc architecture apps deployed across AWS for reproducibility, speed, and resilience with A/B testing and performance tuning.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Cloud-Native Deployment & DevOps",
+        description:
+          "Serverless architecture with AWS Lambda, Amplify, Fargate, or Vercel with automated CI/CD and blue/green deployments.",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Digital Marketing Ecosystems",
+        description:
+          "End-to-end marketing systems integrating analytics, automation, and attribution from SEO to HubSpot to Salesforce.",
       },
     },
   ],
@@ -55,7 +109,7 @@ export const websiteSchema = {
   name: "Waysel",
   url: "https://waysel.com",
   description:
-    "Start building websites people remember with Waysel's collection of components, techniques, tricks and tutorials.",
+    "Waysel builds AI-integrated web applications, next-generation EHR & SaaS platforms, digital infrastructure, and cloud-native solutions. We design with intent, build with precision, and launch with impact.",
   publisher: {
     "@type": "Organization",
     name: "Waysel",

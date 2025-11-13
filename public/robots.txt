@@ -9,7 +9,7 @@ Disallow: /temp/
 Disallow: /analyze/
 
 # Sitemap location
-Sitemap: https://techitech.com/sitemap.xml
+Sitemap: https://waysel.com/sitemap.xml
 
 # Crawl-delay (optional)
 Crawl-delay: 1
