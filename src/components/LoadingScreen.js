@@ -35,6 +35,7 @@ export default function LoadingScreen({ children }) {
           animate={{ opacity: fadeOut ? 0 : 1 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white"
+          aria-hidden="true"
         >
           {letters.map((letter, i) => (
             <motion.span
@@ -50,8 +51,10 @@ export default function LoadingScreen({ children }) {
         </motion.div>
       )}
 
-      {/* render page only after loader finishes */}
-      {showChildren && children}
+      {/* Always render children for SEO, just hide visually during loading */}
+      <div style={{ visibility: showChildren ? 'visible' : 'hidden' }}>
+        {children}
+      </div>
     </>
   );
 }

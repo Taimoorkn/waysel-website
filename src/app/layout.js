@@ -105,6 +105,9 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="mask-icon" href="/favicon.svg" color="#7A66E1" />
+        <meta name="description" content="Waysel builds AI-integrated web applications, next-generation EHR & SaaS platforms, digital infrastructure, and cloud-native solutions. We design with intent, build with precision, and launch with impact." />
         <link
           rel="stylesheet"
           type="text/css"
@@ -115,6 +118,12 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className={` ${satoshi.variable} ${hurme.variable} bg-primary_bg font-satoshi antialiased`}
       >
+        <noscript>
+          <style>{`
+            body { visibility: visible !important; }
+          `}</style>
+        </noscript>
+
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
 
