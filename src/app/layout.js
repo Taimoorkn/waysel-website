@@ -74,7 +74,7 @@ export const metadata = {
       "We build AI-integrated web applications, next-generation EHR & SaaS platforms, and cloud-native solutions. Specializing in healthcare software, digital infrastructure, and enterprise-grade platforms.",
     images: [
       {
-        url: "/waysellogo.svg",
+        url: "/favicon.svg",
         width: 1200,
         height: 630,
         alt: "Waysel - AI-Integrated Development & Cloud Solutions",
@@ -86,7 +86,7 @@ export const metadata = {
     title: "Waysel - AI-Integrated Web Development & Cloud-Native Solutions",
     description:
       "Building AI-integrated web applications, EHR & SaaS platforms, and cloud-native solutions for healthcare, enterprise, and beyond.",
-    images: ["/waysellogo.svg"],
+    images: ["/favicon.svg"],
     creator: "@waysel",
   },
   verification: {
@@ -104,7 +104,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <link rel="icon" href="/icons/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link
           rel="stylesheet"
           type="text/css"
