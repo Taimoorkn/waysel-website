@@ -43,11 +43,21 @@ const Footer = () => {
               <div key={columnIndex} className="BodyText flex flex-col items-start gap-1 text-nowrap">
                 {column.map(({ label, href, isInternal }) =>
                   isInternal ? (
-                    <Link key={label} href={href}>
+                    <Link
+                      key={label}
+                      href={href}
+                      className="relative underline decoration-text-secondary decoration-1 underline-offset-4 transition-all duration-200 hover:text-white hover:decoration-white hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.3)]"
+                    >
                       {label}
                     </Link>
                   ) : (
-                    <a key={label} href={href} target="_blank" rel="noopener noreferrer">
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative underline decoration-text-secondary decoration-1 underline-offset-4 transition-all duration-200 hover:text-white hover:decoration-white hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.3)]"
+                    >
                       {label}
                     </a>
                   )

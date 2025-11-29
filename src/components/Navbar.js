@@ -237,7 +237,7 @@ const Navbar = () => {
                   </motion.div>
                 ))}
                 <motion.div
-                  className="mt-4 border-t border-gray-700 pt-4"
+                  className="mt-4 border-t border-white/80 pt-3"
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.4, ease: "easeOut" }}
