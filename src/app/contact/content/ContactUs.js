@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import GradientText from "@/components/GradientText";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { BuildingsIcon } from "@phosphor-icons/react";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -129,17 +130,22 @@ const ContactUs = () => {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "hello@waysel.com",
+                  value: "sw@waysel.com",
                 },
                 {
                   icon: Phone,
                   label: "Phone",
-                  value: "+1 (555) 234-7765",
+                  value: "+92 3375106400",
                 },
                 {
                   icon: MapPin,
                   label: "Location",
-                  value: "Remote-first. Available worldwide.",
+                  value: "First Floor House 2065 Street 69 I-10/1, Islamabad Pakistan",
+                },
+                {
+                  icon: BuildingsIcon,
+                  label: "Company Name",
+                  value: "Waysel Private Limited",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
