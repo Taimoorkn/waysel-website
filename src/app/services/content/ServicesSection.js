@@ -12,9 +12,10 @@ const services = [
     points: [
       "React / Next.js",
       "Node.js / Express",
-      "OpenAI API / LangChain",
+      "OpenAI API",
       "OCR / Vision AI",
       "TensorFlow / PyTorch",
+      "Flutter Bloc Architecture"
     ],
     image: "/images/development.svg",
   },
@@ -37,8 +38,6 @@ const services = [
     desc: `From single websites to complex, multi-site ecosystems - we build digital foundations with analytics wired in from the start. Every click, scroll, and journey is measurable, feeding data into continuous improvement loops that drive smarter decisions over time.`,
     points: [
       "Google Analytics / GA4",
-      "AWS CloudWatch / Datadog",
-      "PostgreSQL / BigQuery",
       "Tag Manager / Mixpanel",
       "CDP / CDI Systems",
     ],
@@ -52,8 +51,6 @@ const services = [
       "AWS Textract / Google Vision",
       "OpenAI / Custom ML Models",
       "FastAPI / Flask",
-      "Pandas / Numpy for Data Validation",
-      "MongoDB / DynamoDB",
     ],
     image: "/images/ocr.svg",
   },
@@ -65,7 +62,7 @@ const services = [
       "Flutter / Dart (Bloc, Cubit)",
       "AWS Amplify / Cognito / S3",
       "Firebase / Supabase",
-      "Docker / CI-CD Pipelines",
+      "PostgreSQL / BigQuery",
       "REST / GraphQL APIs",
     ],
     image: "/images/pc.svg",
@@ -76,6 +73,9 @@ const services = [
     desc: `Serverless by design - AWS Lambda, Amplify, Fargate, or Vercel, depending on what the build needs. We automate CI/CD, maintain constant uptime, and manage blue/green releases and RCA visibility as standard.`,
     points: [
       "AWS Lambda / Fargate / Amplify",
+      "AWS CloudWatch / Datadog",
+      "Docker",
+      "CI-CD Pipelines",
       "Vercel / Netlify",
       "Docker / Kubernetes",
       "GitHub Actions / CircleCI",
