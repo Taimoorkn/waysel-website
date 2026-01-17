@@ -61,13 +61,13 @@ const DifferenceSection = () => {
           viewport={{ once: true }}
         >
           <div className="oval-blur absolute left-1/2 top-[60%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
-          <div className="relative z-10 inline-block rounded-[31px] bg-card">
+          <div className="flex relative justify-center z-10 rounded-[31px] bg-card">
             <Image
-              src="/images/geminiimg.svg"
+              src="/images/bulb.svg"
               width={600}
               height={400}
-              alt="spotlight"
-              className="mx-auto rounded-[31px]"
+              alt="AI-powered Gemini illustration"
+              className="h-[250px] w-[250px] p-10 object-contain xl:h-[500px] xl:w-[500px]"
             />
           </div>
         </motion.div>

@@ -73,7 +73,7 @@ const PhilosophySection = () => {
                 alt="Our Philosophy"
                 width={400}
                 height={400}
-                className="h-[250px] w-[250px] object-contain xl:h-[500px] xl:w-[500px]"
+                className="h-[250px] w-[250px] object-contain xl:h-[600px] xl:w-[600px]"
               />
             </div>
           </div>
