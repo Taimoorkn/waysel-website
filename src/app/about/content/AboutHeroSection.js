@@ -21,14 +21,14 @@ const AboutHeroSection = () => {
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center">
         {/* Main content */}
         <div className="HeadingH1">
-          {/* <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
+          <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="break-words text-center"
               initial={{ y: "112%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              We&apos;re not an agency.
+              We understand what
             </motion.h1>
           </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
@@ -36,11 +36,11 @@ const AboutHeroSection = () => {
               className="break-words text-center"
               initial={{ y: "112%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              We&apos;re the kind of team you wish
+              <GradientText>you&apos;re building</GradientText>, even
             </motion.h1>
-          </div> */}
+          </div>
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
             <motion.h1
               className="break-words pb-3 text-center"
@@ -48,8 +48,7 @@ const AboutHeroSection = () => {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.1, 0.8, 0.2, 1] }}
             >
-              We understand what <GradientText>you&apos;re building</GradientText>, even when
-              <span className="italic"> you</span> don&apos;t.
+              when <span className="italic">you</span> don&apos;t.
             </motion.h1>
           </div>
         </div>
