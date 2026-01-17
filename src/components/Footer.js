@@ -28,7 +28,7 @@ const Footer = () => {
             </p>
           </div>
           {/* Right Section - Navigation */}
-          <div className="flex gap-8 xl:gap-16">
+          <div className="flex gap-16">
             {[
               [
                 { label: "Our Services", href: "/services", isInternal: true },
@@ -40,7 +40,7 @@ const Footer = () => {
                 { label: "Contact Us", href: "/contact", isInternal: true },
               ],
             ].map((column, columnIndex) => (
-              <div key={columnIndex} className="BodyText flex flex-col items-start gap-1 text-nowrap">
+              <div key={columnIndex} className="BodyText flex flex-col items-start gap-[6px] md:gap-1 text-nowrap">
                 {column.map(({ label, href, isInternal }) =>
                   isInternal ? (
                     <Link
@@ -107,7 +107,7 @@ const Footer = () => {
           }}
         />
       </div>
-      <div className="oval-blur-footer bottom-[-22%] left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform overflow-hidden" />
+      <div className="hidden md:flex oval-blur-footer bottom-[-22%] left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform overflow-hidden" />
     </footer>
   );
 };
