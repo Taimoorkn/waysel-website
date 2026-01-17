@@ -86,7 +86,7 @@ const OurServicesSection = () => {
           left: 0;
           width: 350px;
           height: 350px;
-          background: linear-gradient(to bottom, rgba(251, 48, 129), rgba(251, 48, 129, 0.2));
+          background: linear-gradient(to bottom, #fb3081, #fb308133);
           transition: all 300ms ease-in-out;
         }
         .fakeblob {
@@ -136,7 +136,7 @@ const OurServicesSection = () => {
                       : index % 2 === 0
                         ? "xl:rounded-bl-[32px] xl:rounded-br-none xl:rounded-tl-[32px] xl:rounded-tr-none"
                         : "xl:rounded-bl-none xl:rounded-br-[32px] xl:rounded-tl-none xl:rounded-tr-[32px]"
-                  } ${isLast ? "bg-black/50 backdrop-blur-md" : "bg-[#0D0D0C]"} `}
+                  } ${isLast ? "bg-black/50 backdrop-blur-md" : "bg-primary_bg"} `}
                   style={{
                     transition: "all 300ms ease-in-out",
                     backgroundImage: !isLast

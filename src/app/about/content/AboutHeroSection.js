@@ -85,7 +85,7 @@ const AboutHeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-[300px] bg-gradient-to-b from-transparent via-[rgba(13,13,12,0.5)] to-[rgb(13,13,12)]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-[300px] bg-gradient-to-b from-transparent via-primary_bg/50 to-primary_bg" />
     </section>
   );
 };

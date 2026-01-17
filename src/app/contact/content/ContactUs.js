@@ -179,7 +179,7 @@ const ContactUs = () => {
                         placeholder="First name"
                         value={formData.firstName}
                         onChange={handleChange}
-                        className="contact-input focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-border-primary bg-card px-4 py-3 text-text-secondary placeholder-text-tertiary focus:outline-none focus:ring-2"
+                        className="contact-input rounded-lg border-border-primary px-4 py-3"
                       />
                     </div>
                     <div>
@@ -190,7 +190,7 @@ const ContactUs = () => {
                         placeholder="Last name"
                         value={formData.lastName}
                         onChange={handleChange}
-                        className="contact-input focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-border-primary bg-card px-4 py-3 text-text-secondary placeholder-text-tertiary focus:outline-none focus:ring-2"
+                        className="contact-input rounded-lg border-border-primary px-4 py-3"
                       />
                     </div>
                   </div>
@@ -205,7 +205,7 @@ const ContactUs = () => {
                         placeholder="e.g user@gmail.com"
                         value={formData.email}
                         onChange={handleChange}
-                        className="contact-input focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-border-primary bg-card px-4 py-3 text-text-secondary placeholder-text-tertiary focus:outline-none focus:ring-2"
+                        className="contact-input rounded-lg border-border-primary px-4 py-3"
                       />
                     </div>
                     <div>
@@ -216,7 +216,7 @@ const ContactUs = () => {
                         placeholder="e.g +1 254 364 5251"
                         value={formData.contactNo}
                         onChange={handleChange}
-                        className="contact-input focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-border-primary bg-card px-4 py-3 text-text-secondary placeholder-text-tertiary focus:outline-none focus:ring-2"
+                        className="contact-input rounded-lg border-border-primary px-4 py-3"
                       />
                     </div>
                   </div>

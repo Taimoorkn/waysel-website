@@ -42,8 +42,8 @@ function ProjectSection({ title, description, images, isReversed = false }) {
       }}
     >
       {/* Gradient overlays */}
-      <div className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-20 bg-gradient-to-b from-[#0D0D0C] to-transparent" />
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-20 bg-gradient-to-t from-[#0D0D0C] to-transparent" />
+      <div className="pointer-events-none absolute left-0 right-0 top-0 z-10 h-20 bg-gradient-to-b from-primary_bg to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-20 bg-gradient-to-t from-primary_bg to-transparent" />
 
       {/* Column 1 - tilt RIGHT */}
       <motion.div
@@ -135,7 +135,7 @@ function ProjectSection({ title, description, images, isReversed = false }) {
   return (
     <div ref={ref} className="relative will-change-transform">
       <div className="oval-blur left-1/2 top-[15%] z-0 -translate-x-1/2 -translate-y-1/2 transform" />
-      <div className="rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px">
+      <div className="rounded-[32px] bg-gradient-to-b from-border-primary to-border-secondary p-px">
         <section className="relative z-10 flex min-h-[500px] flex-col items-center justify-between rounded-[32px] bg-card text-white xl:h-[65vh] xl:flex-row">
           <div className="xl:hidden">
             {textSection}

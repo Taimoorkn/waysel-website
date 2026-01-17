@@ -132,7 +132,7 @@ export default function Contact() {
                       placeholder="First name"
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="contact-input text-text-secondary placeholder-text-tertiary"
+                      className="contact-input rounded-lg border-border-primary px-4 py-3"
                     />
                   </div>
                   <div>
@@ -143,7 +143,7 @@ export default function Contact() {
                       placeholder="Last name"
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="contact-input text-text-secondary placeholder-text-tertiary"
+                      className="contact-input rounded-lg border-border-primary px-4 py-3"
                     />
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export default function Contact() {
                       placeholder="e.g user@gmail.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="contact-input text-text-secondary placeholder-text-tertiary"
+                      className="contact-input rounded-lg border-border-primary px-4 py-3"
                     />
                   </div>
                   <div>
@@ -169,7 +169,7 @@ export default function Contact() {
                       placeholder="e.g +1 254 364 5251"
                       value={formData.contactNo}
                       onChange={handleChange}
-                      className="contact-input text-text-secondary placeholder-text-tertiary"
+                      className="contact-input rounded-lg border-border-primary px-4 py-3"
                     />
                   </div>
                 </div>
@@ -183,7 +183,7 @@ export default function Contact() {
                     rows="6"
                     value={formData.message}
                     onChange={handleChange}
-                    className="contact-input text-text-secondary placeholder-text-tertiary"
+                    className="contact-input rounded-lg border-border-primary px-4 py-3"
                   />
                 </div>
 

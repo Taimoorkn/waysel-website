@@ -54,7 +54,7 @@ const DifferenceSection = () => {
         </motion.div>
         {/* Second Section - Mobile: Full width, XL: Right half */}
         <motion.div
-          className="relative h-[300px] w-full rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px xl:h-[500px] xl:w-1/2"
+          className="relative h-[300px] w-full rounded-[32px] bg-gradient-to-b from-border-primary to-border-secondary p-px xl:h-[500px] xl:w-1/2"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

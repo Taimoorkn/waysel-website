@@ -10,7 +10,6 @@ import TestimonialsSection from "./content/TestimonialsSection";
 import FAQ from "../../components/FAQs";
 import TechStack from "../../components/TechStack";
 import { generalFaqs } from "../../constants/FaqConstants";
-import MagicBento from "./content/MagicBento";
 import Contact from "@/components/Contact";
 import BrandCarousel from "@/components/BrandCarousel";
 import ThingsWeBuildSection from "./content/ThingsWeBuildSection";
@@ -24,7 +23,6 @@ const HomePage = () => {
       <PortfolioSection />
       <OurServicesSection />
       {/* <TestimonialsSection /> */}
-      {/* <MagicBento enableBorderGlow={true} disableAnimations={false} glowColor="255, 76, 36" /> */}
       <TechStack />
       <FAQ faqs={generalFaqs} />
       <StarWars />

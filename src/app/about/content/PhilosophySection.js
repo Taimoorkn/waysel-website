@@ -33,7 +33,7 @@ const PhilosophySection = () => {
 
         {/* Main Philosophy Container */}
         <motion.div
-          className="relative rounded-[32px] bg-gradient-to-b from-[#FB3081]/20 to-[#999999]/20 p-px"
+          className="relative rounded-[32px] bg-gradient-to-b from-border-primary to-border-secondary p-px"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

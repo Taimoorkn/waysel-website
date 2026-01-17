@@ -94,8 +94,8 @@ module.exports = {
 
         // Background colors
         border: {
-          primary: "#fb308133",
-          secondary: "#99999933",
+          primary: "#fb308133", //20% opacity of fb3081
+          secondary: "#99999933", // 20% opacity of 999999
         },
       },
       backgroundImage: {
