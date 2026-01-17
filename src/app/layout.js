@@ -126,10 +126,8 @@ export default function RootLayout({ children }) {
 
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
-
-        <LoadingScreen>
-          <div id="root">{children}</div>
-        </LoadingScreen>
+ 
+          <div id="root">{children}</div> 
         <Analytics />
       </body>
     </html>

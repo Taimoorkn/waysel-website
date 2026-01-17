@@ -100,9 +100,9 @@ export default function Contact() {
         {/* Left Section */}
         <div className="flex w-full flex-col gap-8 p-6 xl:w-[40%] xl:gap-12 xl:p-16">
           <div className="w-full">
-            <h1 className="HeadingH3 mb-4">
+            <h2 className="HeadingH3 mb-4">
               <GradientText>Have an idea?</GradientText>
-            </h1>
+            </h2>
             <p className="text-lg tracking-[-3%] text-text-secondary xl:text-[32px] xl:leading-[52px]">
               Need help finishing what you started?
             </p>
