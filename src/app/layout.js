@@ -113,6 +113,7 @@ export default function RootLayout({ children }) {
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
+        <meta name="google-site-verification" content="TtXjuDAMu6ENzGCmzTb00ahqnjfScI--UUXxNFreBDs" />
       </head>
       <body
         suppressHydrationWarning
