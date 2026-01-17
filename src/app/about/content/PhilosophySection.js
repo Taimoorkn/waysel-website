@@ -13,7 +13,7 @@ const PhilosophySection = () => {
           src="/images/filler/spotlight.png"
           width={0}
           height={0}
-          alt="spotlight"
+          alt=""
           unoptimized
           className="mx-auto h-[80%] w-[80%] xl:h-auto xl:w-auto"
         />
@@ -69,7 +69,7 @@ const PhilosophySection = () => {
             {/* Second Section - Mobile: Full width, XL: Right half */}
             <div className="flex h-[300px] w-full flex-col items-center justify-center rounded-b-[32px] bg-card xl:h-auto xl:w-1/2 xl:rounded-b-none xl:rounded-r-[32px]">
               <Image
-                src="/images/our philosphy.svg"
+                src="/images/our-philosophy.svg"
                 alt="Our Philosophy"
                 width={400}
                 height={400}

@@ -29,7 +29,7 @@ const services = [
       "HIPAA-Compliant Cloud",
       "React / Angular",
     ],
-    image: "/images/ehr saas.svg",
+    image: "/images/ehr-saas.svg",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const services = [
       "Tag Manager / Mixpanel",
       "CDP / CDI Systems",
     ],
-    image: "/images/digital analytics.svg",
+    image: "/images/digital-analytics.svg",
   },
   {
     id: 4,
@@ -80,7 +80,7 @@ const services = [
       "GitHub Actions / CircleCI",
       "Blue-Green Deployments / Canary Testing",
     ],
-    image: "/images/cross platform product.svg",
+    image: "/images/cross-platform-product.svg",
   },
   {
     id: 7,
@@ -93,7 +93,7 @@ const services = [
       "Analytics & Attribution (GA4, Mixpanel)",
       "Marketing Automation (Zapier, Segment)",
     ],
-    image: "/images/digital marketing.svg",
+    image: "/images/digital-marketing.svg",
   },
 ];
 

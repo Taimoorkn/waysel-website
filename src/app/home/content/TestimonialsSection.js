@@ -218,7 +218,7 @@ const TestimonialsSection = () => {
           width={0}
           height={0}
           style={{ width: "auto", height: "auto" }}
-          alt="spotlight"
+          alt=""
           unoptimized
           className="mx-auto"
         />

@@ -40,7 +40,7 @@ const OurServicesSection = () => {
     {
       title: "AI-Integrated Web & App Development",
       desc: `Full-stack web and software builds that merge intuitive Material 3 UI with automation. AI handles OCR, validation, and predictions - your users get faster, smarter workflows.`,
-      image: "/images/digital marketing.svg",
+      image: "/images/digital-marketing.svg",
     },
     {
       title: "Next-Generation EHR & SaaS Platforms",
@@ -55,7 +55,7 @@ const OurServicesSection = () => {
     {
       title: "AI Models & OCR Integrations",
       desc: `We turn paper into structured data. Our AI-powered OCR systems transform handwritten or printed forms into accurate, usable records - ready for any industry.`,
-      image: "/images/ehr saas.svg",
+      image: "/images/ehr-saas.svg",
     },
     {
       title: "Cross-Platform Product Engineering",
@@ -65,12 +65,12 @@ const OurServicesSection = () => {
     {
       title: "Cloud-Native Deployment & DevOps",
       desc: `Serverless by design - AWS Lambda, Amplify, or Vercel. Automated CI/CD, uptime monitoring, and blue-green releases come standard.`,
-      image: "/images/cross platform product.svg",
+      image: "/images/cross-platform-product.svg",
     },
     {
       title: "Digital Marketing Ecosystems",
       desc: `From SEO to HubSpot to Salesforce - we connect every piece into one measurable marketing engine that gets smarter with every campaign.`,
-      image: "/images/digital analytics.svg",
+      image: "/images/digital-analytics.svg",
     },
   ];
 
@@ -174,7 +174,7 @@ const OurServicesSection = () => {
           src="/images/filler/spotlight.png"
           width={0}
           height={0}
-          alt="spotlight"
+          alt=""
           unoptimized
           className="mx-auto h-auto w-auto"
         />
