@@ -15,7 +15,6 @@ const services = [
       "OpenAI API",
       "OCR / Vision AI",
       "TensorFlow / PyTorch",
-      "Flutter Bloc Architecture"
     ],
     image: "/images/development.svg",
   },
@@ -60,6 +59,7 @@ const services = [
     desc: `Apps that work everywhere and improve with every release. We build on Flutter Bloc architecture with Cubit, deployed across AWS for reproducibility, speed, and resilience. Every build is stress-tested, A/B-tested, and tuned for performance.`,
     points: [
       "Flutter / Dart (Bloc, Cubit)",
+      "Flutter Bloc Architecture",
       "AWS Amplify / Cognito / S3",
       "Firebase / Supabase",
       "PostgreSQL / BigQuery",
@@ -74,10 +74,9 @@ const services = [
     points: [
       "AWS Lambda / Fargate / Amplify",
       "AWS CloudWatch / Datadog",
-      "Docker",
+      "Docker / Kubernetes",
       "CI-CD Pipelines",
       "Vercel / Netlify",
-      "Docker / Kubernetes",
       "GitHub Actions / CircleCI",
       "Blue-Green Deployments / Canary Testing",
     ],
