@@ -190,15 +190,15 @@ function PortfolioSection() {
           title="Region-Specific Smart Website"
           description="A cloud-native platform for building localized, data-driven websites with built-in analytics and marketing automation. Each site adapts to regional behavior, language, and SEO for authentic engagement and measurable growth. Hardcoded analytics and AI-backed insights turn every interaction into actionable marketing intelligence."
           images={[
-            "/images/portfolio/Pallative/4.jpg",
-            "/images/portfolio/Pallative/5.jpg",
-            "/images/portfolio/Pallative/1.jpg",
-            "/images/portfolio/Pallative/11.jpg",
-            "/images/portfolio/Pallative/7.jpg",
-            "/images/portfolio/Pallative/8.jpg",
-            "/images/portfolio/Pallative/9.jpg",
-            "/images/portfolio/Pallative/10.jpg",
-            "/images/portfolio/Pallative/11.jpg",
+            "/images/portfolio/Pallative/4.JPG",
+            "/images/portfolio/Pallative/5.JPG",
+            "/images/portfolio/Pallative/1.JPG",
+            "/images/portfolio/Pallative/11.JPG",
+            "/images/portfolio/Pallative/7.JPG",
+            "/images/portfolio/Pallative/8.JPG",
+            "/images/portfolio/Pallative/9.JPG",
+            "/images/portfolio/Pallative/10.JPG",
+            "/images/portfolio/Pallative/6.JPG",
           ]}
           isReversed
         />
