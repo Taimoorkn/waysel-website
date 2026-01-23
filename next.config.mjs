@@ -21,6 +21,21 @@ const nextConfig = {
   // Compress responses
   compress: true,
   
+  // Headers to prevent indexing of Next.js internal files
+  async headers() {
+    return [
+      {
+        source: '/_next/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow, noarchive, nosnippet',
+          },
+        ],
+      },
+    ];
+  },
+  
   // Optimize webpack chunks
   webpack: (config, { dev, isServer }) => {
     // Bundle analyzer for client-side bundles (conditional import)
