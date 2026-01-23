@@ -96,6 +96,16 @@ export const metadata = {
   alternates: {
     canonical: "https://waysel.com",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+    ],
+    apple: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -105,8 +115,10 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <link rel="mask-icon" href="/favicon.svg" color="#7A66E1" />
+        <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
         <meta name="description" content="Waysel builds AI-integrated web applications, next-generation EHR & SaaS platforms, digital infrastructure, and cloud-native solutions. We design with intent, build with precision, and launch with impact." />
         <link
           rel="stylesheet"
