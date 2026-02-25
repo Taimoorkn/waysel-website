@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
     {
       id: 3,
       projectName: "Fart Machine",
-      content: "WAYSEL worked like an internal team. But faster.",
+      content: "WaySel worked like an internal team. But faster.",
       name: "Sarah Johnson",
       position: "Product Lead at Apple",
       avatar: "/images/gregory.webp",

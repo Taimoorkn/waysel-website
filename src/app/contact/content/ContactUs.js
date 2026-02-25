@@ -145,7 +145,7 @@ const ContactUs = () => {
                 {
                   icon: BuildingsIcon,
                   label: "Company Name",
-                  value: "WAYSEL",
+                  value: "WaySel",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">

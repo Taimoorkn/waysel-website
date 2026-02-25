@@ -61,7 +61,7 @@ const AboutHeroSection = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9, ease: [0.1, 0.8, 0.2, 1] }}
               >
-                WAYSEL started as a few people trying to fix what didn&apos;t make sense.
+                WaySel started as a few people trying to fix what didn&apos;t make sense.
               </motion.p>
             </div>
             <div className="overflow-hidden">

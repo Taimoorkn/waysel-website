@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Large WAYSEL Text with Gradient Background */}
+      {/* Large WaySel Text with Gradient Background */}
       <div className="relative -mb-[2px] h-[70px] overflow-hidden xl:h-[250px]">
         <div
           className="flex select-none items-center justify-center font-hurme text-[100px] italic leading-none xl:text-[364px]"
