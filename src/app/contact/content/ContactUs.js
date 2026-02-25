@@ -135,17 +135,17 @@ const ContactUs = () => {
                 {
                   icon: Phone,
                   label: "Phone",
-                  value: "+92 3375106400",
+                  value: "+1 (307) 301 7848",
                 },
                 {
                   icon: MapPin,
                   label: "Location",
-                  value: "First Floor House 2065 Street 69 I-10/1, Islamabad Pakistan",
+                  value: "312 W 2nd St, Unit #A9317, Casper, WY 82601",
                 },
                 {
                   icon: BuildingsIcon,
                   label: "Company Name",
-                  value: "WAYSEL PRIVATE LIMITED",
+                  value: "WAYSEL",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
