@@ -6,6 +6,7 @@ import "./styles/typography.css";
 import StructuredData, { organizationSchema, websiteSchema } from "../components/StructuredData";
 import LoadingScreen from "@/components/LoadingScreen";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const satoshi = localFont({
   src: [
@@ -142,6 +143,7 @@ export default function RootLayout({ children }) {
  
           <div id="root">{children}</div> 
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
