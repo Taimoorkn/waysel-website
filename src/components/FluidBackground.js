@@ -12,6 +12,7 @@ export default function FluidBackground() {
       if (!canvas) return;
 
       const { default: Fluid } = await import("webgl-fluid");
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
       const resize = () => {
         canvas.width = window.innerWidth;
@@ -21,16 +22,39 @@ export default function FluidBackground() {
       window.addEventListener("resize", resize);
 
       canvas.style.pointerEvents = "auto";
-      canvas.style.touchAction = "pan-y";
+      canvas.style.touchAction = isMobile ? "pan-y" : "none";
 
-      // ✅ No splash on load
+      // webgl-fluid prevents default touch events; make these listeners passive
+      // on mobile so drag scrolling still works over the hero.
+      const nativeAddEventListener = canvas.addEventListener;
+      if (isMobile) {
+        canvas.addEventListener = function (type, listener, options) {
+          if (type === "touchstart" || type === "touchmove") {
+            if (typeof options === "boolean") {
+              return nativeAddEventListener.call(canvas, type, listener, {
+                capture: options,
+                passive: true,
+              });
+            }
+
+            return nativeAddEventListener.call(canvas, type, listener, {
+              ...(options || {}),
+              passive: true,
+            });
+          }
+
+          return nativeAddEventListener.call(canvas, type, listener, options);
+        };
+      }
+
+      // No splash on load.
       Fluid(canvas, {
-        // --- turn off any auto-splats ---
-        IMMEDIATE: false, // no initial random splats
-        AUTO: false, // no interval splats
-        SPLAT_COUNT: 0, // guard: zero splats if triggered
+        // turn off any auto-splats
+        IMMEDIATE: false,
+        AUTO: false,
+        SPLAT_COUNT: 0,
 
-        // --- your existing tuning ---
+        // existing tuning
         SIM_RESOLUTION: 256,
         DYE_RESOLUTION: 1024,
         DENSITY_DISSIPATION: 0.97,
@@ -45,6 +69,10 @@ export default function FluidBackground() {
         BACK_COLOR: { r: 0, g: 0, b: 0 },
         TRANSPARENT: false,
       });
+
+      if (isMobile) {
+        canvas.addEventListener = nativeAddEventListener;
+      }
 
       cleanup = () => {
         window.removeEventListener("resize", resize);
