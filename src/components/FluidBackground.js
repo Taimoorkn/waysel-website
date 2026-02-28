@@ -21,7 +21,7 @@ export default function FluidBackground() {
       window.addEventListener("resize", resize);
 
       canvas.style.pointerEvents = "auto";
-      canvas.style.touchAction = "none";
+      canvas.style.touchAction = "pan-y";
 
       // ✅ No splash on load
       Fluid(canvas, {

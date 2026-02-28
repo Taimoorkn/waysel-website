@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/Button";
 import FluidBackground from "@/components/FluidBackground";
@@ -9,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className="section relative flex h-[100vh] items-center overflow-hidden bg-transparent">
       <FluidBackground />
-      <div className="pointer-events-none z-20 mx-auto flex max-w-4xl flex-col items-center justify-between">
+      <div className="pointer-events-auto z-20 mx-auto flex max-w-4xl flex-col items-center justify-between">
         {/* Main content */}
         <div className="HeadingH1 px-4 text-center md:px-0">
           <div style={{ clipPath: "inset(0 0 -0.7rem 0)" }}>
